@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Icon } from "../../components/Icon/Icon";
+import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./Header.module.scss";
 
 export const Header: FC = () => {
@@ -30,7 +30,7 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <div className={styles.navBlock}>
         <Link to='/'>
-          <Icon id='logo' width='130px' hight='22px' />
+          <SvgSprite id='logo' width='130px' height='22px' />
         </Link>
         <nav className={styles.navLinks}>
           {navigation.map(({ name, to }, index) => (
@@ -54,7 +54,7 @@ export const Header: FC = () => {
             to={to}
             className={styles.connectionItem}
           >
-            <Icon id={iconID} width='40px' hight='40px' />
+            <SvgSprite id={iconID} width='40px' height='40px' />
             <div>
               <div className={styles.connectionItemUs}>{us}</div>
               <div className={styles.connectionItemData}>{data}</div>
