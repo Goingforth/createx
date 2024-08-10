@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
-import { imagesSlider } from "../../data/data";
+
+import { contantSliders } from "../../data/data";
 import SvgSprite from "../SvgSprite/SvgSprite";
 
 import styles from "./SliderHero.module.scss";
@@ -8,7 +9,7 @@ const SLIDE_WIDTH = 1920;
 const SliderHero: FC = () => {
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);
-  const sliderLength = imagesSlider.length;
+  const sliderLength = contantSliders.length;
 
   const SlideLeft = () => {
     offset !== 0
@@ -34,15 +35,31 @@ const SliderHero: FC = () => {
             transform: `translateX(${offset}px)`,
           }}
         >
-          {imagesSlider.map(({ id, path }) => {
+          {contantSliders.map(({ id, path, title, content }) => {
             return (
-              <img
-                key={id}
-                src={path}
-                width='1920px'
-                height='988px'
-                alt='Picture of the author'
-              />
+              <div style={{ position: "relative" }}>
+                <img
+                  key={id}
+                  src={path}
+                  width='1920px'
+                  height='988px'
+                  alt='Picture of the author'
+                />
+                <div className={styles.info}>
+                  <div
+                    className={[styles.display1, styles.title].join(" ")}
+                    dangerouslySetInnerHTML={{
+                      __html: `<p>${title}</p>`,
+                    }}
+                  />
+                  <div
+                    className={styles.lead_regular}
+                    dangerouslySetInnerHTML={{
+                      __html: `<p>${content}</p>`,
+                    }}
+                  />
+                </div>
+              </div>
             );
           })}
         </div>
@@ -69,6 +86,7 @@ const SliderHero: FC = () => {
             key={`counter${i}`}
             className={[
               styles.counterItem,
+              styles.h3,
               index === i + 1 ? styles.active : "",
             ].join(" ")}
             onClick={() => {

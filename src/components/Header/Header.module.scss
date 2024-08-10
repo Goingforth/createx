@@ -18,10 +18,8 @@ a.active {
   gap: 60px;
 }
 .navLink {
-  font-size: 16px;
-  line-height: 25.6px;
-  font-weight: 700;
   color: $gray800;
+
   &:hover {
     color: $primary;
     transition: color 0.5s;
@@ -42,14 +40,8 @@ a.active {
 }
 
 .connectionItemUs {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 21px;
   color: $gray800;
 }
 .connectionItemData {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
   color: $gray900;
 }
