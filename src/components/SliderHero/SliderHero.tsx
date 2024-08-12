@@ -37,9 +37,8 @@ const SliderHero: FC = () => {
         >
           {contantSliders.map(({ id, path, title, content }) => {
             return (
-              <div style={{ position: "relative" }}>
+              <div key={id} style={{ position: "relative" }}>
                 <img
-                  key={id}
                   src={path}
                   width='1920px'
                   height='988px'
@@ -86,7 +85,6 @@ const SliderHero: FC = () => {
             key={`counter${i}`}
             className={[
               styles.counterItem,
-              styles.h3,
               index === i + 1 ? styles.active : "",
             ].join(" ")}
             onClick={() => {
@@ -94,7 +92,7 @@ const SliderHero: FC = () => {
               setOffset(-i * SLIDE_WIDTH);
             }}
           >
-            {item}
+            <h3>{item}</h3>
           </div>
         ))}
       </div>

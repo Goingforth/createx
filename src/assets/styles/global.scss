@@ -2,12 +2,22 @@ $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
 $semiWhite: rgba(255, 255, 255, 0.5);
 
+$gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
-
-.h3 {
-  //styleName: h3;
+h1,
+h3 {
   font-family: Ubuntu;
+  margin: 0;
+}
+h1 {
+  //styleName: h1;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 59.8px;
+  text-align: center;
+}
+h3 {
   font-size: 28px;
   font-weight: 700;
   line-height: 42px;
@@ -37,7 +47,7 @@ $gray900: #1e212c;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  text-align: left;
+  text-align: center;
 }
 .lead_regular {
   //styleName: lead/regular;
@@ -56,4 +66,14 @@ $gray900: #1e212c;
   line-height: 93.6px;
   letter-spacing: 1px;
   text-align: left;
+}
+.containerChildren {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid red;
 }
