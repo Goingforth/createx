@@ -1,3 +1,5 @@
+$widthBlock: 1230px;
+
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
 $semiWhite: rgba(255, 255, 255, 0.5);
@@ -32,6 +34,15 @@ h3 {
   line-height: 25.6px;
   text-align: left;
 }
+.lead_bold {
+  //styleName: lead/bold;
+  font-family: Ubuntu;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: $gray900;
+}
 
 .small_bold {
   //styleName: small/bold;
@@ -41,6 +52,16 @@ h3 {
   line-height: 21px;
   text-align: left;
 }
+.base_regular {
+  //styleName: base/regular;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  text-align: center;
+  color: $gray700;
+}
+
 .large_regular {
   //styleName: large/regular;
   font-family: Ubuntu;
@@ -72,8 +93,21 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1230px;
+  width: $widthBlock;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid red;
+}
+.boxBasic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
+}
+
+.infoTitle {
+  margin-top: 24px;
+  margin-bottom: 60px;
+  color: $gray700;
 }

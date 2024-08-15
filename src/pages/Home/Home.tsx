@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Hero from "../../components/Hero/Hero";
 import Video from "../../components/Video/Video";
+import CoreValues from "../../components/CoreValues/CoreValues";
 import styles from "./Home.module.scss";
 
 const Home: FC = () => {
@@ -8,6 +9,7 @@ const Home: FC = () => {
     <div className={styles.container}>
       <Hero />
       <Video />
+      <CoreValues />
     </div>
   );
 };

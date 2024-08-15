@@ -49,3 +49,27 @@ export const contantSliders = [
       "Dolor sit amet consectetur adipisicing elit. Molestias reiciendis sint, provident laborum rem dignissimos beatae suscipit dolorum sapiente nihil nostrum, ea ratione voluptatibus aspernatur magnam deserunt? Eius, vitae quod?",
   },
 ];
+
+export const coreValuesItems = [
+  {
+    id: "CoreValuesItem0",
+    icon: "ic-like",
+    title: "Quality",
+    content:
+      "Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit </br>nostrud aliquip sunt.",
+  },
+  {
+    id: "CoreValuesItem1",
+    icon: "ic-hand",
+    title: "Safety",
+    content:
+      "Anim reprehenderit sint voluptate exercitation adipisicing laborum adipisicing. Minim empor est ea.",
+  },
+  {
+    id: "CoreValuesItem2",
+    icon: "ic-slippers",
+    title: "Comfort",
+    content:
+      "Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate</br> ullamco proident ea ad.",
+  },
+];
