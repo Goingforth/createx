@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  input {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-bottom: auto;
+    accent-color: $primary;
+  }
+  span {
+    @extend .small_regular;
+    color: $gray800;
+    margin-top: 0;
+  }
+}

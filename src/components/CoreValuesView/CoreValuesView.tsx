@@ -10,10 +10,10 @@ const CoreValuesView: FC<Props> = () => {
   return (
     <div className={styles.container}>
       {coreValuesItems.map(({ id, icon, title, content }, index) => (
-        <>
-          <IconBoxBasic key={id} icon={icon} title={title} content={content} />
+        <div key={id}>
+          <IconBoxBasic icon={icon} title={title} content={content} />
           {index !== coreValuesItems.length - 1 && <SvgSprite id='divider' />}
-        </>
+        </div>
       ))}
     </div>
   );

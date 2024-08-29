@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./ButtonBasic.module.scss";
 
 type Props = {
+  type?: "submit" | "reset" | "button";
   title?: string;
   bg?: "primary" | "transparent";
   size: "large" | "regular" | "small";
@@ -9,13 +10,15 @@ type Props = {
 };
 
 const ButtonBasic: FC<Props> = ({
+  type = "button",
   title = "Large Button",
-  bg,
+  bg = "primary",
   size,
   border,
 }) => {
   return (
     <button
+      type={type}
       className={[
         styles.basic,
         bg === "primary" ? styles.bgPrimary : "",

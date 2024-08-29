@@ -73,3 +73,25 @@ export const coreValuesItems = [
       "Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate</br> ullamco proident ea ad.",
   },
 ];
+export const servicesItems = [
+  {
+    id: "servicesItem0",
+    icon: "ic-construction",
+    title: "Construction",
+  },
+  {
+    id: "servicesItem1",
+    icon: "ic-plan",
+    title: "Project Development",
+  },
+  {
+    id: "servicesItem2",
+    icon: "ic-pantone",
+    title: "Interior Design",
+  },
+  {
+    id: "servicesItem3",
+    icon: "ic-painting",
+    title: "Repairs",
+  },
+];

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../components/Layout/Layout";
 import { ErrorPage } from "../components/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
+import Formdata from "../pages/Formdata/Formdata";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "contacts",
         element: <div>Contacts</div>,
+      },
+      {
+        path: "formdata",
+        element: <Formdata />,
       },
     ],
   },

@@ -3,7 +3,13 @@ $widthBlock: 1230px;
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
 $semiWhite: rgba(255, 255, 255, 0.5);
-
+$borderInputHover: rgba(255, 90, 48, 0.4);
+$gray100: #f9f9f9;
+$gray200: #f4f5f6;
+$gray300: #e5e8ed;
+$gray400: #d7dadd;
+$gray500: #b3b7bc;
+$gray600: #9a9ca5;
 $gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
@@ -11,6 +17,7 @@ h1,
 h3 {
   font-family: Ubuntu;
   margin: 0;
+  // color: $gray900;
 }
 h1 {
   //styleName: h1;
@@ -42,6 +49,10 @@ h3 {
   line-height: 30px;
   text-align: center;
   color: $gray900;
+  // color: currentColor;
+  // &:hover {
+  //   color: $white;
+  // }
 }
 
 .small_bold {
@@ -78,6 +89,23 @@ h3 {
   line-height: 30px;
   text-align: left;
 }
+.small_regular {
+  //styleName: small/regular;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+}
+
+.extrasmall_regular {
+  //styleName: extrasmall/regular;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
 
 .display1 {
   //styleName: display/1;
@@ -104,6 +132,11 @@ h3 {
   justify-content: center;
   align-items: center;
   width: 285px;
+  fill: $primary;
+  &:hover {
+    color: $white;
+    fill: $white;
+  }
 }
 
 .infoTitle {

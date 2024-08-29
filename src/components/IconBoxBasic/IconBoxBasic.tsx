@@ -1,10 +1,11 @@
 import { FC } from "react";
 import SvgSprite from "../SvgSprite/SvgSprite";
+import styles from "./IconBoxBasic.module.scss";
 
 type Props = {
   icon: string;
-  title: string;
-  content: string;
+  title?: string;
+  content?: string;
 };
 
 const IconBoxBasic: FC<Props> = ({ icon, title, content }) => {
@@ -17,10 +18,12 @@ const IconBoxBasic: FC<Props> = ({ icon, title, content }) => {
       >
         {title}
       </p>
-      <p
-        className='base_regular'
-        dangerouslySetInnerHTML={{ __html: `${content}` }}
-      />
+      {content && (
+        <p
+          className='base_regular'
+          dangerouslySetInnerHTML={{ __html: `${content}` }}
+        />
+      )}
     </div>
   );
 };
