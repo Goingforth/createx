@@ -1,80 +1,9 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import InputForms from "../InputForms/InputForms";
 import Checkboxes from "../Checkboxes/Checkboxes";
 import ButtonBasic from "../Buttons/ButtonBasic/ButtonBasic";
 import styles from "./ApplicationForm.module.scss";
-// type TypeFormInput = {
-//   id?: string;
-//   label?: string;
-//   placeholder?: string;
-//   name: string|number|boolean;
-//   defaultValue?: string | boolean;
-//   type?: string;
-//   map: Function;
-//   value?: string;
-// };
-
-const ApplicationFormInput = [
-  {
-    id: "ApplicationFormInput0",
-    label: "Name*",
-    placeholder: "Your name",
-    name: "name",
-    messageFocus: "enter name",
-    messageInput: "name in format",
-    messageGood: "Looks good!",
-    messageFalse: "Please provide a valid input.",
-    pattern: "[a-z]{1,15}",
-    // status: "empty",
-  },
-  {
-    id: "ApplicationFormInput1",
-    label: "Phone*",
-    placeholder: "Your phone number",
-    name: "phone",
-    type: "tel",
-    messageFocus: "enter phone",
-    messageInput: "phone in format",
-    messageGood: "Looks good!",
-    messageFalse: "Please provide a valid input.",
-    pattern: "[a-z]{1,15}",
-    // status: "empty",
-  },
-  {
-    id: "ApplicationFormInput2",
-    label: "Email",
-    placeholder: "Your working email",
-    name: "email",
-    type: "email",
-    messageFocus: "enter email",
-    messageInput: "email is format",
-    messageGood: "Looks good!",
-    messageFalse: "Please provide a valid input.",
-    pattern: "[a-z]{1,15}",
-    // status: "empty",
-  },
-  {
-    id: "ApplicationFormInput3",
-    label: "Message*",
-    placeholder: "Your message",
-    name: "message",
-    type: "textarea",
-    messageFocus: "enter message",
-    messageInput: "message unformat",
-    messageGood: "Looks good!",
-    messageFalse: "Please provide a valid input.",
-    pattern: "[a-z]{1,15}",
-    // status: "empty",
-  },
-  {
-    id: "ApplicationFormInput4",
-    value:
-      "I agree to receive communications from Createx <br/>Construction Bureau.*",
-    name: "checked",
-    type: "checkbox",
-    defaultValue: false,
-  },
-];
+import { ApplicationFormInput } from "../../data/data";
 
 const valuesObj = Object.fromEntries(
   ApplicationFormInput.map(({ name, defaultValue = "" }) => [
@@ -82,55 +11,59 @@ const valuesObj = Object.fromEntries(
     defaultValue,
   ])
 );
-
 const statusInput = Object.fromEntries(
-  ApplicationFormInput.map(({ name }) => [name, "empty"]).filter((name) => {
-    console.log(name[0]);
+  ApplicationFormInput.map(({ name }) => [name, "blank"]).filter((name) => {
     return name[0] !== "checked";
   })
 );
-console.log("statusInput:", statusInput);
 
 const ApplicationForm: FC = () => {
   const [values, setValues] = useState(valuesObj);
   const [status, setStatus] = useState(statusInput);
 
-  function changeHandler(name: any, value: any) {
+  useEffect(() => {
+    console.log(
+      Object.values(status).filter((item) => item === "valid").length
+    );
+  }, [status]);
+  console.log("status:", status);
+
+  const changeHandler = (name: any, value: any) => {
     setValues({ ...values, [name]: value });
     setStatus({ ...status, [name]: "input" });
-  }
+  };
 
-  function changeFocus(name: any) {
+  const changeFocus = (name: any) => {
     setStatus({ ...status, [name]: "focus" });
-  }
+  };
 
-  function changeBlur(name: any) {
-    setStatus({ ...status, [name]: "blur" });
-  }
+  const changeBlur = (name: any, pattern: RegExp | undefined) => {
+    console.log(pattern, name);
 
-  function changeMessage(
-    name: string,
-    messageGood: string | undefined,
-    messageInput: string | undefined,
-    messageFalse: string | undefined,
-    messageFocus: string | undefined
-  ) {
+    if (values[name] === "") setStatus({ ...status, [name]: "empty" });
+    else if (pattern?.test(String(values[name])))
+      setStatus({ ...status, [name]: "valid" });
+    else setStatus({ ...status, [name]: "novalid" });
+  };
+
+  const changeMessage = (name: string, messages: any) => {
+    const { focus, input, valid, noValid } = messages;
+
     switch (status[name]) {
       case "focus":
-        return messageFocus;
+        return focus;
       case "input":
-        return messageInput;
-      case "blur":
-        if (values[name] === "") return "the field cannot be empty";
-        else return messageGood;
-      // case "blur" && value !== "":
-      //   return messageGood;
+        return input;
+      case "valid":
+        return valid;
+      case "novalid":
+        return noValid;
+      case "empty":
+        return "The field cannot be empty";
       default:
         return "default";
     }
-  }
-
-  console.log("status :", status);
+  };
 
   return (
     <div className={styles.container}>
@@ -145,11 +78,8 @@ const ApplicationForm: FC = () => {
             name,
             type,
             value,
-            // status,
-            messageInput,
-            messageFalse,
-            messageGood,
-            messageFocus,
+            messages,
+            pattern,
           }) => (
             <div key={id} style={{ position: "relative" }}>
               {type !== "checkbox" ? (
@@ -163,6 +93,8 @@ const ApplicationForm: FC = () => {
                     onChange={changeHandler}
                     onFocus={changeFocus}
                     onBlur={changeBlur}
+                    pattern={pattern}
+                    status={status[name]}
                   />
                 </div>
               ) : (
@@ -173,16 +105,17 @@ const ApplicationForm: FC = () => {
                   onChange={changeHandler}
                 />
               )}
-              {/* {type !== "checkbox" && status !== "empty" ? ( */}
-              {type !== "checkbox" && status[name] !== "empty" ? (
-                <div className={styles.message}>
-                  {changeMessage(
-                    name,
-                    messageGood,
-                    messageInput,
-                    messageFalse,
-                    messageFocus
-                  )}
+
+              {type !== "checkbox" && status[name] !== "blank" ? (
+                <div
+                  className={[
+                    styles.message,
+                    status[name] === "valid" ? styles.valid : "",
+                    status[name] === "novalid" ? styles.novalid : "",
+                    status[name] === "empty" ? styles.novalid : "",
+                  ].join(" ")}
+                >
+                  {changeMessage(name, messages)}
                 </div>
               ) : (
                 ""

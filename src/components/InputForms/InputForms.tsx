@@ -1,4 +1,5 @@
 import { FC } from "react";
+import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./InputForms.module.scss";
 type Props = {
   label?: string;
@@ -10,7 +11,9 @@ type Props = {
   onChange: Function;
   onFocus: Function;
   onBlur: Function;
+  pattern: RegExp | undefined;
   size?: "large" | "default" | "small";
+  status?: string;
 };
 
 const InputForms: FC<Props> = ({
@@ -22,7 +25,9 @@ const InputForms: FC<Props> = ({
   onChange,
   onFocus,
   onBlur,
+  pattern,
   size = "default",
+  status,
 }) => {
   return (
     <div
@@ -45,7 +50,7 @@ const InputForms: FC<Props> = ({
             onFocus(name);
           }}
           onBlur={() => {
-            onBlur(name);
+            onBlur(name, pattern);
           }}
         />
       ) : (
@@ -59,9 +64,22 @@ const InputForms: FC<Props> = ({
             onFocus(name);
           }}
           onBlur={() => {
-            onBlur(name);
+            onBlur(name, pattern);
           }}
         />
+      )}
+      {type !== "textarea" && (
+        <div className={styles.iconInput}>
+          <SvgSprite
+            id={
+              status === "valid"
+                ? "mark"
+                : status === "novalid" || status === "empty"
+                ? "danger"
+                : ""
+            }
+          />
+        </div>
       )}
     </div>
   );

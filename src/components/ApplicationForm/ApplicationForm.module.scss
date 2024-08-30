@@ -44,3 +44,9 @@
   bottom: -18px;
   @extend .extrasmall_regular;
 }
+.valid {
+  color: $success;
+}
+.novalid {
+  color: $danger;
+}
