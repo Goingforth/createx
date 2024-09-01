@@ -9,6 +9,10 @@
   text-transform: uppercase;
   &:hover {
     cursor: pointer;
+    background-color: $buttonHover;
+  }
+  &:active {
+    background-color: $buttonActive;
   }
 }
 .large {
@@ -41,4 +45,7 @@
 }
 .bgTransparent {
   background-color: transparent;
+}
+.disabled {
+  opacity: 0.5;
 }

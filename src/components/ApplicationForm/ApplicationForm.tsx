@@ -20,13 +20,13 @@ const statusInput = Object.fromEntries(
 const ApplicationForm: FC = () => {
   const [values, setValues] = useState(valuesObj);
   const [status, setStatus] = useState(statusInput);
+  const [isDisabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    console.log(
-      Object.values(status).filter((item) => item === "valid").length
-    );
+    values["checked"] === true ? setDisabled(false) : setDisabled(true);
   }, [status]);
   console.log("status:", status);
+  console.log("values:", values["checked"]);
 
   const changeHandler = (name: any, value: any) => {
     setValues({ ...values, [name]: value });
@@ -64,11 +64,15 @@ const ApplicationForm: FC = () => {
         return "default";
     }
   };
+  const onClick = () => {
+    alert(JSON.stringify(values));
+    setValues(valuesObj);
+    setStatus(statusInput);
+  };
 
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>A quick way to discuss details</h3>
-      {/* <form className={styles.form} action='/formdata" method="GET'> */}
       <form className={styles.form}>
         {ApplicationFormInput.map(
           ({
@@ -125,8 +129,12 @@ const ApplicationForm: FC = () => {
         )}
 
         <div className={styles.wrapperButton}>
-          {/* <ButtonBasic size='regular' title='send request' type='submit' /> */}
-          <ButtonBasic size='regular' title='send request' />
+          <ButtonBasic
+            size='regular'
+            title='send request'
+            disabled={isDisabled}
+            onClick={onClick}
+          />
         </div>
       </form>
     </div>

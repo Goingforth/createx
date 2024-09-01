@@ -109,7 +109,7 @@ export const ApplicationFormInput = [
       noValid: "Please provide a valid input.",
     },
 
-    pattern: /^[a-zA-Z]+ [a-zA-Z]+$/,
+    pattern: /^[a-zA-Zа-яА-я]+ [a-zA-Zа-яА-Я]+$/,
   },
   {
     id: "ApplicationFormInput1",
@@ -153,7 +153,8 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-    pattern: /\[a-zA-Z]{3,}}/,
+    // pattern: /[A-Za-zа-яА-Я0-9]{1,}/,
+    pattern: /.+/,
   },
   {
     id: "ApplicationFormInput4",
