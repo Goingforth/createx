@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
-import InputForms from "../InputForms/InputForms";
-import Checkboxes from "../Checkboxes/Checkboxes";
-import ButtonBasic from "../Buttons/ButtonBasic/ButtonBasic";
+import InputForms from "../../uikit/InputForms/InputForms";
+import Checkboxes from "../../uikit/Checkboxes/Checkboxes";
+import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
 import styles from "./ApplicationForm.module.scss";
 import { ApplicationFormInput } from "../../data/data";
 
@@ -12,9 +12,10 @@ const valuesObj = Object.fromEntries(
   ])
 );
 const statusInput = Object.fromEntries(
-  ApplicationFormInput.map(({ name }) => [name, "blank"]).filter((name) => {
-    return name[0] !== "checked";
-  })
+  // ApplicationFormInput.map(({ name }) => [name, "blank"]).filter((name) => {
+  //   return name[0] !== "checked";
+  // })
+  ApplicationFormInput.map(({ name }) => [name, "blank"])
 );
 
 const ApplicationForm: FC = () => {
@@ -23,10 +24,11 @@ const ApplicationForm: FC = () => {
   const [isDisabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    values["checked"] === true ? setDisabled(false) : setDisabled(true);
+    Object.values(status).filter((item) => item === "valid").length ===
+      Object.keys(status).length - 1 && values["checked"] === true
+      ? setDisabled(false)
+      : setDisabled(true);
   }, [status]);
-  console.log("status:", status);
-  console.log("values:", values["checked"]);
 
   const changeHandler = (name: any, value: any) => {
     setValues({ ...values, [name]: value });
@@ -38,13 +40,18 @@ const ApplicationForm: FC = () => {
   };
 
   const changeBlur = (name: any, pattern: RegExp | undefined) => {
-    console.log(pattern, name);
-
     if (values[name] === "") setStatus({ ...status, [name]: "empty" });
     else if (pattern?.test(String(values[name])))
       setStatus({ ...status, [name]: "valid" });
     else setStatus({ ...status, [name]: "novalid" });
   };
+  // const changeFocus = (name: any, pattern: RegExp | undefined) => {
+  //   // setStatus({ ...status, [name]: "focus" });
+  //   if (values[name] === "") setStatus({ ...status, [name]: "empty" });
+  //   else if (pattern?.test(String(values[name])))
+  //     setStatus({ ...status, [name]: "valid" });
+  //   else setStatus({ ...status, [name]: "novalid" });
+  // };
 
   const changeMessage = (name: string, messages: any) => {
     const { focus, input, valid, noValid } = messages;

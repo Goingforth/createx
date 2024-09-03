@@ -3,6 +3,8 @@ $widthBlock: 1230px;
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
 $semiWhite: rgba(255, 255, 255, 0.5);
+$lightlyWhite: rgba(255, 255, 255, 0.2);
+$bgInputSubscribe: rgba(255, 255, 255, 0.12);
 $borderInputHover: rgba(255, 90, 48, 0.4);
 $buttonHover: #fc3300;
 $buttonActive: #fc3300;
@@ -18,10 +20,16 @@ $gray600: #9a9ca5;
 $gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
+
 h1,
-h3 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Ubuntu;
   margin: 0;
+
   // color: $gray900;
 }
 h1 {
@@ -36,6 +44,26 @@ h3 {
   font-weight: 700;
   line-height: 42px;
   text-align: left;
+}
+h4 {
+  //styleName: h4;
+  font-family: Ubuntu;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-align: left;
+}
+input {
+  outline: none;
+  border: none;
 }
 
 .base_bold {
@@ -110,6 +138,7 @@ h3 {
   font-weight: 400;
   line-height: 18px;
   text-align: left;
+  // letter-spacing: 0.5px;
 }
 
 .display1 {

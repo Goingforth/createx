@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+
+  align-items: center;
+
+  input {
+    width: 364px;
+    box-sizing: border-box;
+    padding: 10px 16px 11px;
+    background-color: $bgInputSubscribe;
+    color: $white;
+
+    border: 1px solid $lightlyWhite;
+    border-radius: 4px 0 0 4px;
+
+    @extend .small_regular;
+
+    &:hover {
+      border-color: $semiWhite;
+    }
+
+    &::placeholder {
+      @extend .small_regular;
+      opacity: 0.6;
+    }
+  }
+}

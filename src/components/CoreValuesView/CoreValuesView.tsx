@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { coreValuesItems } from "../../data/data";
-import IconBoxBasic from "../IconBoxBasic/IconBoxBasic";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
+import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import styles from "./CoreValuesView.module.scss";
 
 type Props = [id?: string, icon?: string, title?: string, content?: string];

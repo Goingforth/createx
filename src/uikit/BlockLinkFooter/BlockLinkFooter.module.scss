@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  color: $white;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 38px;
+}
+.navLink {
+  @extend .base_regular;
+  text-align: left;
+  color: $white;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+}
+.itemNav {
+  display: flex;
+  gap: 4px;
+}
+.label {
+  display: flex;
+  align-items: center;
+  @extend .base_regular;
+  color: $white;
+}

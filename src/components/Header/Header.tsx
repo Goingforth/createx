@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { Link, NavLink } from "react-router-dom";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import { navigation, connection } from "../../data/data";
 import styles from "./Header.module.scss";
 
 export const Header: FC = () => {
   return (
-    <header className={styles.header}>
+    <header id='header' className={styles.header}>
       <div className={styles.navBlock}>
         <Link to='/'>
           <SvgSprite id='logo' width='130px' height='22px' />

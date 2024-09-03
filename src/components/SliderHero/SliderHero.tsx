@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 
 import { contantSliders } from "../../data/data";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 
 import styles from "./SliderHero.module.scss";
 

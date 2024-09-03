@@ -47,7 +47,7 @@ const InputForms: FC<Props> = ({
           placeholder={placeholder}
           onChange={(event) => onChange(name, event.target.value)}
           onFocus={() => {
-            onFocus(name);
+            onFocus(name, pattern);
           }}
           onBlur={() => {
             onBlur(name, pattern);

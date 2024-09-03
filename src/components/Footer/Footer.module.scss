@@ -1,0 +1,72 @@
+.container {
+  width: 1230px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: $white;
+}
+.blockOwn {
+  display: flex;
+  justify-content: space-between;
+}
+.blockTwo {
+  display: flex;
+  gap: 125px;
+}
+.copyright {
+  display: flex;
+  gap: 4px;
+}
+.gotop {
+  display: flex;
+  gap: 16px;
+}
+.gototop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  @extend .small_regular;
+}
+.copyrightText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  @extend .extrasmall_regular;
+}
+.iconTop {
+  cursor: pointer;
+}
+.logoSocialLink {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 24px;
+}
+.mission {
+  width: 440px;
+  @extend .small_regular;
+  opacity: 0.5;
+}
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+.subscribe {
+  width: 495px;
+}
+.titleSubscribe {
+  margin-bottom: 24px;
+}
+.note {
+  margin-top: 16px;
+  margin-bottom: 49px;
+  @extend .extrasmall_regular;
+  opacity: 0.5;
+}

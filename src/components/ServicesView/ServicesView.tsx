@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { servicesItems } from "../../data/data";
-import IconBoxBasic from "../IconBoxBasic/IconBoxBasic";
+import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
 import styles from "./ServicesView.module.scss";
 
 type Props = [id?: string, icon?: string, title?: string];

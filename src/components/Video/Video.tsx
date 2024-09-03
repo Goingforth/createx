@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player/youtube";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import BlockHome from "../BlockHome/BlockHome";
 
 import poster from "/construction.jpg";

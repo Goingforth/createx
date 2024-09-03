@@ -7,6 +7,7 @@ type Props = {
   bg?: "primary" | "transparent";
   size: "large" | "regular" | "small";
   border?: boolean;
+  borderR?: "none" | "all" | "left" | "right";
   disabled?: boolean;
   onClick?: any;
 };
@@ -17,6 +18,7 @@ const ButtonBasic: FC<Props> = ({
   bg = "primary",
   size,
   border,
+  borderR,
   disabled,
   onClick,
 }) => {
@@ -34,6 +36,10 @@ const ButtonBasic: FC<Props> = ({
         size === "regular" ? styles.regular : "",
         size === "small" ? styles.small : "",
         border ? styles.border : "",
+        borderR === "none" ? styles.borderR_None : "",
+        borderR === "all" ? styles.borderR_All : "",
+        borderR === "left" ? styles.borderR_Left : "",
+        borderR === "right" ? styles.borderR_Right : "",
       ].join(" ")}
     >
       {title}

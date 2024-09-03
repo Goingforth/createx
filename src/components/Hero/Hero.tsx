@@ -1,6 +1,6 @@
 import { FC } from "react";
 import SliderHero from "../SliderHero/SliderHero";
-import ButtonBasic from "../Buttons/ButtonBasic/ButtonBasic";
+import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
 import styles from "./Hero.module.scss";
 
 const Hero: FC = () => {

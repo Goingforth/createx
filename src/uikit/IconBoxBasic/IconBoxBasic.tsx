@@ -1,6 +1,6 @@
 import { FC } from "react";
 import SvgSprite from "../SvgSprite/SvgSprite";
-import styles from "./IconBoxBasic.module.scss";
+//import styles from "./IconBoxBasic.module.scss";
 
 type Props = {
   icon: string;
