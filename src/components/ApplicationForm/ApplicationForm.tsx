@@ -12,9 +12,6 @@ const valuesObj = Object.fromEntries(
   ])
 );
 const statusInput = Object.fromEntries(
-  // ApplicationFormInput.map(({ name }) => [name, "blank"]).filter((name) => {
-  //   return name[0] !== "checked";
-  // })
   ApplicationFormInput.map(({ name }) => [name, "blank"])
 );
 
@@ -45,13 +42,6 @@ const ApplicationForm: FC = () => {
       setStatus({ ...status, [name]: "valid" });
     else setStatus({ ...status, [name]: "novalid" });
   };
-  // const changeFocus = (name: any, pattern: RegExp | undefined) => {
-  //   // setStatus({ ...status, [name]: "focus" });
-  //   if (values[name] === "") setStatus({ ...status, [name]: "empty" });
-  //   else if (pattern?.test(String(values[name])))
-  //     setStatus({ ...status, [name]: "valid" });
-  //   else setStatus({ ...status, [name]: "novalid" });
-  // };
 
   const changeMessage = (name: string, messages: any) => {
     const { focus, input, valid, noValid } = messages;

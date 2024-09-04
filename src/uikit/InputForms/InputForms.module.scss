@@ -23,8 +23,10 @@
       box-shadow: 0px 80px 80px -20px rgba(255, 90, 48, 0.08);
     }
   }
+
   textarea {
-    height: 95px;
+    width: 100%;
+    box-sizing: border-box;
     background-color: $gray200;
     border: 1px solid $gray400;
     border-radius: 4px;

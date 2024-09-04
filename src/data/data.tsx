@@ -19,6 +19,13 @@ export const connection = [
     data: "hello@createx.com",
   },
 ];
+export const patterns = {
+  name: /^[a-zA-Zа-яА-я]+ [a-zA-Zа-яА-Я]+$/,
+  phone: /^\+[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
+  email:
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  textarea: /.+/,
+};
 export const contantSliders = [
   {
     id: "imageSlider0",
@@ -109,7 +116,7 @@ export const ApplicationFormInput = [
       noValid: "Please provide a valid input.",
     },
 
-    pattern: /^[a-zA-Zа-яА-я]+ [a-zA-Zа-яА-Я]+$/,
+    pattern: patterns["name"],
   },
   {
     id: "ApplicationFormInput1",
@@ -123,8 +130,7 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-
-    pattern: /^\+[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
+    pattern: patterns["phone"],
   },
   {
     id: "ApplicationFormInput2",
@@ -138,8 +144,7 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-    pattern:
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    pattern: patterns["email"],
   },
   {
     id: "ApplicationFormInput3",
@@ -153,8 +158,8 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
+    pattern: patterns["textarea"],
     // pattern: /[A-Za-zа-яА-Я0-9]{1,}/,
-    pattern: /.+/,
   },
   {
     id: "ApplicationFormInput4",
@@ -215,11 +220,3 @@ export const socialLinks = [
   { id: "socialLink3", name: "twitter", to: "" },
   { id: "socialLink4", name: "youTube", to: "" },
 ];
-
-export const patterns = {
-  name: /^[a-zA-Zа-яА-я]+ [a-zA-Zа-яА-Я]+$/,
-  phone: /^\+[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
-  email:
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  textarea: /.+/,
-};

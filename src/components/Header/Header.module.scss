@@ -1,9 +1,12 @@
 .header {
+  position: absolute;
+  top: 0;
+  z-index: 100;
   display: flex;
+  width: 1230px;
   justify-content: space-between;
   align-items: center;
   padding: 22px 0;
-  border: 1px solid red;
 }
 a.active {
   color: $primary;

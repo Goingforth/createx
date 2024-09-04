@@ -4,7 +4,7 @@ import Video from "../../components/Video/Video";
 import CoreValues from "../../components/CoreValues/CoreValues";
 import BlockServices from "../../components/BlockServices/BlockServices";
 import styles from "./Home.module.scss";
-import Application from "../../components/Application/Application";
+// import Application from "../../components/Application/Application";
 
 const Home: FC = () => {
   return (
@@ -13,7 +13,6 @@ const Home: FC = () => {
       <Video />
       <CoreValues />
       <BlockServices />
-      <Application />
     </div>
   );
 };
