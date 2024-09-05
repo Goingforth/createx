@@ -1,15 +1,31 @@
 .container {
   display: flex;
-  gap: 80px;
+  justify-content: space-between;
   align-items: center;
+}
+.reverse {
+  flex-direction: row-reverse;
 }
 .imgWrapper {
   width: 575px;
   height: 420px;
-  border: 1px solid green;
 }
 .blockInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 575px;
   height: 420px;
-  border: 1px solid green;
+}
+.blockInfoTitle {
+  margin-bottom: 24px;
+  color: $gray900;
+}
+.info {
+  width: 575px;
+  margin-bottom: 48px;
+  @extend .base_regular;
+  text-align: left;
+  color: $gray700;
 }
