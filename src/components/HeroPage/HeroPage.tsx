@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useLocation } from "react-router-dom";
-import { dataHeroPages } from "../../data/dataHeroPages";
+import { dataHeroPages } from "../../data";
 
 import styles from "./HeroPage.module.scss";
 
