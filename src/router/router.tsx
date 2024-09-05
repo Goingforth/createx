@@ -2,8 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../components/Layout/Layout";
 import { ErrorPage } from "../components/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
+import AboutUs from "../pages/AboutUs/AboutUs";
 import Contacts from "../pages/Contacts/Contacts";
+import Services from "../pages/Services/Services";
 import Formdata from "../pages/Formdata/Formdata";
+import News from "../pages/News/News";
+import Work from "../pages/Work/Work";
 
 export const router = createBrowserRouter([
   {
@@ -17,19 +21,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <div>About Us</div>,
+        element: <AboutUs />,
       },
       {
         path: "services",
-        element: <div>Services</div>,
+        element: <Services />,
       },
       {
         path: "work",
-        element: <div>Work</div>,
+        element: <Work />,
       },
       {
         path: "news",
-        element: <div>News</div>,
+        element: <News />,
       },
       {
         path: "contacts",
