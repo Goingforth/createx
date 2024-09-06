@@ -1,4 +1,6 @@
 import { dataHeroPages } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 
-export { dataServicesPage, dataHeroPages };
+import { navigation, connection } from "./dataHeader";
+
+export { dataServicesPage, dataHeroPages, navigation, connection };

@@ -8,6 +8,7 @@ import Services from "../pages/Services/Services";
 import Formdata from "../pages/Formdata/Formdata";
 import News from "../pages/News/News";
 import Work from "../pages/Work/Work";
+import InteriorDesign from "../pages/InteriorDesign/InteriorDesign";
 
 export const router = createBrowserRouter([
   {
@@ -20,13 +21,20 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about",
+        path: "about_us",
         element: <AboutUs />,
       },
       {
         path: "services",
-        element: <Services />,
+        children: [
+          { element: <Services />, index: true },
+          {
+            path: "interior_design",
+            element: <InteriorDesign />,
+          },
+        ],
       },
+
       {
         path: "work",
         element: <Work />,

@@ -1,17 +1,14 @@
 import { FC } from "react";
-
 import HeroPage from "../../components/HeroPage/HeroPage";
-import BlockServicePage from "../../components/BlockServicepage/BlockServicePage";
-import { dataServicesPage } from "../../data";
-import styles from "./Services.module.scss";
+import styles from "./InteriorDesign.module.scss";
 
-const Services: FC = () => {
+const InteriorDesign: FC = () => {
   return (
     <>
       <div>
         <HeroPage />
       </div>
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         {dataServicesPage.map(({ src, title, info, route }, index) => (
           <BlockServicePage
             key={title}
@@ -22,9 +19,9 @@ const Services: FC = () => {
             route={route}
           />
         ))}
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default Services;
+export default InteriorDesign;

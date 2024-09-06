@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import { navigation, connection } from "../../data/data";
+import { navigation, connection } from "../../data";
 import styles from "./Header.module.scss";
 
 export const Header: FC = () => {

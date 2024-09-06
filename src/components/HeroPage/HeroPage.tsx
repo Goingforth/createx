@@ -14,20 +14,29 @@ import styles from "./HeroPage.module.scss";
 
 type Page = {
   page?: string | undefined;
-  pageName: string | undefined;
   title?: string | undefined;
   note?: string | undefined;
   bgImage?: string | undefined;
 };
+const toCapizalize = (value: string) => {
+  return value.replace(/(^|\s)(.)/g, (_, a, b) => a + b.toUpperCase());
+};
 
 const HeroPage: FC = () => {
   const location = useLocation();
-  console.log(location.pathname);
+
   const pageData = dataHeroPages.find(function (item) {
     return item.page === location.pathname;
   });
-  console.log("page:", pageData);
-  const { pageName, title, note, bgImage }: Page = pageData;
+  const namePage = location.pathname
+    .replace("_", " ")
+    .split("/")
+    .filter((item) => item !== "")
+    .map((item) => toCapizalize(item));
+
+  const { title, note, bgImage }: Page = pageData;
+  console.log("namePagelength:", namePage.length);
+  console.log("namePagelength:", namePage);
 
   return (
     <div
@@ -36,10 +45,30 @@ const HeroPage: FC = () => {
     >
       <div className={styles.navInfo}>
         <div className={styles.homepage}>Homepage</div>
-        <div className={styles.namepage}>/</div>
-        <div className={styles.namepage}>{pageName}</div>
+        <div className={styles.route}>
+          {namePage.map((word, index) => (
+            <div className={styles.route}>
+              <div className={styles.slash}>/</div>
+              <div
+                className={
+                  index !== namePage.length - 1
+                    ? styles.homepage
+                    : styles.namepage
+                }
+              >
+                {word}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className={styles.title}>{title}</div>
+      <div
+        className={styles.title}
+        dangerouslySetInnerHTML={{
+          __html: `<p>${title}</p>`,
+        }}
+      />
+
       <div
         className={styles.note}
         dangerouslySetInnerHTML={{

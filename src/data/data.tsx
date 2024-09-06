@@ -1,24 +1,4 @@
-export const navigation = [
-  { name: "About Us", to: "/about" },
-  { name: "Services", to: "/services" },
-  { name: "Work", to: "/work" },
-  { name: "News", to: "/news" },
-  { name: "Contacts", to: "/contacts" },
-];
-export const connection = [
-  {
-    iconID: "iPhone",
-    to: "tel:405555-0128",
-    us: "Call us",
-    data: "(405) 555-0128",
-  },
-  {
-    iconID: "chat",
-    to: "mailto:hello@createx.com",
-    us: "Talk to us",
-    data: "hello@createx.com",
-  },
-];
+//
 export const patterns = {
   name: /^[a-zA-Zа-яА-я]+ [a-zA-Zа-яА-Я]+$/,
   phone: /^\+[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/,

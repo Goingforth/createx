@@ -1,5 +1,6 @@
 import { FC } from "react";
 import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+import { Link } from "react-router-dom";
 import styles from "./BlockServicePage.module.scss";
 
 type Props = {
@@ -7,9 +8,10 @@ type Props = {
   src: string;
   title: string;
   info: string;
+  route: string;
 };
 
-const BlockServicePage: FC<Props> = ({ index, title, src, info }) => {
+const BlockServicePage: FC<Props> = ({ index, title, src, info, route }) => {
   return (
     <div
       className={styles.container}
@@ -26,14 +28,21 @@ const BlockServicePage: FC<Props> = ({ index, title, src, info }) => {
             __html: `<p>${info}</p>`,
           }}
         />
-        <ButtonBasic
-          size='regular'
-          title='Learn more'
-          bg='transparent'
-          titleColor='primary'
-          borderColor='primary'
-          border
-        />
+        <Link
+          to={route}
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          <ButtonBasic
+            size='regular'
+            title='Learn more'
+            bg='transparent'
+            titleColor='primary'
+            borderColor='primary'
+            border
+          />
+        </Link>
       </div>
     </div>
   );
