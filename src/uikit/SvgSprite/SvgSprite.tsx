@@ -1,5 +1,39 @@
+type ID =
+  | "chat"
+  | "iPhone"
+  | "logo"
+  | "logo_footer"
+  | "next-btn"
+  | "prev-btn"
+  | "play-btn"
+  | "ic-hand"
+  | "ic-like"
+  | "ic-slippers"
+  | "divider"
+  | "ic-construction"
+  | "ic-house"
+  | "ic-painting"
+  | "ic-pantone"
+  | "ic-plan"
+  | "mark"
+  | "danger"
+  | "heart"
+  | "up-btn"
+  | "facebook"
+  | "messanger"
+  | "twitter"
+  | "whatsapp"
+  | "youTube"
+  | "minus"
+  | "plus"
+  | "bg-circles"
+  | "line-step"
+  | "ic-camera"
+  | "ic-contract"
+  | "ic-helmet";
+
 type Props = {
-  id: string;
+  id: ID;
   width?: string | number;
   height?: string | number;
 };
@@ -336,7 +370,6 @@ const SvgSprite = ({ id, width, height }: Props) => {
           </defs>
         </svg>
       );
-
     case "ic-construction":
       return (
         <svg

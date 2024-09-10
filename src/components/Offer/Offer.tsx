@@ -12,22 +12,22 @@ const Offer: FC = () => {
     setTimeout(() => setIsShowBox(true));
   }, [active]);
   const onClick = () => setActive(!active);
-  const dataOffer = [
-    {
-      id: "offer0",
-      offerImg: "/images/bgOffer.jpg",
-      titleArgument: "Interior design of apartments",
-      noteArgument:
-        "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
-    },
-    {
-      id: "offer1",
-      offerImg: "/images/bgOffer.jpg",
-      titleArgument: "Interior design of private houses",
-      noteArgument:
-        "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
-    },
-  ];
+  // const dataOffer = [
+  //   {
+  //     id: "offer0",
+  //     offerImg: "/images/bgOffer.jpg",
+  //     titleArgument: "Interior design of apartments",
+  //     noteArgument:
+  //       "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
+  //   },
+  //   {
+  //     id: "offer1",
+  //     offerImg: "/images/bgOffer.jpg",
+  //     titleArgument: "Interior design of private houses",
+  //     noteArgument:
+  //       "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
+  //   },
+  // ];
   return (
     <div className={styles.container}>
       <div className={styles.offer}>
