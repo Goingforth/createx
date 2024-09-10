@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  width: 285px;
+  height: 192px;
+
+  &:hover {
+    cursor: pointer;
+    .stepNumber {
+      color: $primary;
+    }
+    .iconWrapper {
+      opacity: 1;
+    }
+  }
+}
+.stepHead {
+  display: flex;
+  justify-content: space-between;
+}
+.stepNumber {
+  @extend h1;
+  color: $gray400;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.stepLine {
+  padding-top: 15px;
+}
+.iconWrapper {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  opacity: 0;
+}
+
+.stepTitle {
+  @extend .lead_bold;
+  color: $gray900;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.stepInfo {
+  @extend .base_regular;
+  text-align: left;
+  color: $gray700;
+}

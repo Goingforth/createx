@@ -1,4 +1,11 @@
-export const dataHeroPages = [
+interface TypeHeroPage {
+  page: string;
+  title: string;
+  note: string;
+  bgImage: string;
+}
+
+export const dataHeroPages: TypeHeroPage[] = [
   {
     page: "/services",
     title: "SERVICES",

@@ -1,3 +1,17 @@
-// .boxBasic :hover {
-//   background-color: red;
-// }
+.titleLight {
+  @extend .lead_bold;
+  color: $white;
+}
+.titleBasic {
+  @extend .lead_bold;
+  color: $gray900;
+}
+.contentLight {
+  @extend .base_regular;
+  color: $white;
+  opacity: 0.6;
+}
+.contentBasic {
+  @extend .base_regular;
+  color: $gray700;
+}

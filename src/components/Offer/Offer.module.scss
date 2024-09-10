@@ -4,3 +4,55 @@
   gap: 120px;
   padding: 120px 0;
 }
+.offer {
+  display: flex;
+  justify-content: space-between;
+}
+.offerImg {
+  width: 705px;
+  height: 440px;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+}
+// .offerImg_show {
+//   opacity: 1;
+// }
+.offerContent {
+  width: 420px;
+  border: 1px solid red;
+  // height: 440px;
+  .offerTitle {
+    @extend .lato_black;
+    font-size: 46px;
+    line-height: 130%;
+    color: $gray900;
+    margin-bottom: 60px;
+  }
+  .icon {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 12px;
+    // justify-content: center;
+    // align-items: center;
+  }
+  .titleArgument {
+    @extend h3;
+    color: $gray900;
+    border: 1px solid red;
+  }
+  .iconWrapper {
+    width: 24px;
+    height: 24px;
+    margin-top: 8px;
+    margin-right: 20px;
+    border: 1px solid red;
+    cursor: pointer;
+  }
+  .noteArgument {
+    margin-left: 44px;
+    @extend .base_regular;
+    text-align: left;
+    color: $gray700;
+    margin-bottom: 24px;
+  }
+}

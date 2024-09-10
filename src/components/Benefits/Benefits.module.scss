@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  @extend .containerBase;
+  padding-top: 80px;
+  padding-bottom: 126px;
+  background-color: $gray900;
+}
+
+.block {
+  @extend .containerChildren;
+  color: $white;
+  border: 1px solid red;
+  //   padding-top: 80px;
+  //   padding-bottom: 126px;
+  //   background-color: $gray900;
+}
+.title {
+  @extend h1;
+  margin-bottom: 24px;
+}
+.subTitle {
+  @extend .large_regular;
+  opacity: 0.6;
+  margin-bottom: 60px;
+}
+.benefits {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.icons {
+  display: flex;
+  gap: 94px;
+}
+.buttonDiscuss {
+  position: absolute;
+  z-index: 100;
+  bottom: -26px;
+  left: 0;
+}

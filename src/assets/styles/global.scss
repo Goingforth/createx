@@ -1,3 +1,4 @@
+$widthBase: 1920px;
 $widthBlock: 1230px;
 
 $primary: #ff5a30;
@@ -38,6 +39,7 @@ h1 {
   font-weight: 700;
   line-height: 59.8px;
   text-align: center;
+  color: inherit;
 }
 h2 {
   //styleName: h2;
@@ -89,10 +91,6 @@ input {
   line-height: 30px;
   text-align: center;
   color: $gray900;
-  // color: currentColor;
-  // &:hover {
-  //   color: $white;
-  // }
 }
 
 .small_bold {
@@ -148,6 +146,12 @@ input {
   // letter-spacing: 0.5px;
 }
 
+.lato_black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 .display1 {
   //styleName: display/1;
   font-family: Ubuntu;
@@ -156,6 +160,15 @@ input {
   line-height: 93.6px;
   letter-spacing: 1px;
   text-align: left;
+}
+.containerBase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $widthBase;
+  margin-left: auto;
+  margin-right: auto;
 }
 .containerChildren {
   display: flex;

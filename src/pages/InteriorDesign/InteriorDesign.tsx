@@ -1,6 +1,7 @@
 import { FC } from "react";
 import HeroPage from "../../components/HeroPage/HeroPage";
 import Offer from "../../components/Offer/Offer";
+import Benefits from "../../components/Benefits/Benefits";
 import styles from "./InteriorDesign.module.scss";
 
 const InteriorDesign: FC = () => {
@@ -10,19 +11,7 @@ const InteriorDesign: FC = () => {
       <div className={styles.container}>
         <Offer />
       </div>
-
-      {/* <div className={styles.container}>
-        {dataServicesPage.map(({ src, title, info, route }, index) => (
-          <BlockServicePage
-            key={title}
-            index={index}
-            src={src}
-            title={title}
-            info={info}
-            route={route}
-          />
-        ))}
-      </div> */}
+      <Benefits />
     </>
   );
 };

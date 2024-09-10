@@ -35,8 +35,6 @@ const HeroPage: FC = () => {
     .map((item) => toCapizalize(item));
 
   const { title, note, bgImage }: Page = pageData;
-  console.log("namePagelength:", namePage.length);
-  console.log("namePagelength:", namePage);
 
   return (
     <div
@@ -47,7 +45,7 @@ const HeroPage: FC = () => {
         <div className={styles.homepage}>Homepage</div>
         <div className={styles.route}>
           {namePage.map((word, index) => (
-            <div className={styles.route}>
+            <div className={styles.route} key={`word${index}`}>
               <div className={styles.slash}>/</div>
               <div
                 className={

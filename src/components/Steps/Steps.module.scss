@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+}
+.stepsTitle {
+  @extend h1;
+  color: $gray900;
+  text-align: left;
+  margin-bottom: 60px;
+}
+.steps {
+  display: flex;
+  gap: 30px;
+}

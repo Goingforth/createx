@@ -1,11 +1,23 @@
-const navigation = [
+interface NavigationItem {
+  name: string;
+  to: string;
+}
+
+interface connectionitem {
+  iconID: string;
+  to: string;
+  us: string;
+  data: string;
+}
+
+const navigation: NavigationItem[] = [
   { name: "About Us", to: "/about_us" },
   { name: "Services", to: "/services" },
   { name: "Work", to: "/work" },
   { name: "News", to: "/news" },
   { name: "Contacts", to: "/contacts" },
 ];
-const connection = [
+const connection: connectionitem[] = [
   {
     iconID: "iPhone",
     to: "tel:405555-0128",

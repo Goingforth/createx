@@ -1,4 +1,11 @@
-export const dataServicesPage = [
+interface TypeServicePage {
+  src: string;
+  title: string;
+  info: string;
+  route: string;
+}
+
+export const dataServicesPage: TypeServicePage[] = [
   {
     src: "/servicesPage/servicesConstruction.jpg",
     title: "Construction",
