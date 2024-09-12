@@ -6,7 +6,7 @@ type Props = {
   title?: string;
   titleColor?: "white" | "primary";
   bg?: "primary" | "transparent";
-  size: "large" | "regular" | "small";
+  size?: "large" | "regular" | "small";
   border?: boolean;
   borderColor?: "white" | "primary";
   borderR?: "none" | "all" | "left" | "right";
@@ -19,7 +19,7 @@ const ButtonBasic: FC<Props> = ({
   title = "Large Button",
   titleColor,
   bg = "primary",
-  size,
+  size = "regular",
   border,
   borderColor,
   borderR,

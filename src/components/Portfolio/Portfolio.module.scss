@@ -1,0 +1,43 @@
+.container {
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.title {
+  @extend h1;
+  color: $gray900;
+  text-align: left;
+}
+.direction {
+  display: flex;
+  gap: 24px;
+  align-items: end;
+}
+.wrapper {
+  display: flex;
+  gap: 30px;
+}
+.window {
+  width: 100%;
+  overflow: hidden;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @extend button;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: $white;
+  padding: 0;
+}
+.disableButton {
+  cursor: not-allowed; /* Изменить вид курсора */
+  opacity: 0.5; /* Сделать кнопку полупрозрачной */
+  pointer-events: none;
+}
