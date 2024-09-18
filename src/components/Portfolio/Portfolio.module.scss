@@ -24,6 +24,7 @@
 .window {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 .button {
   display: flex;
@@ -40,4 +41,14 @@
   cursor: not-allowed; /* Изменить вид курсора */
   opacity: 0.5; /* Сделать кнопку полупрозрачной */
   pointer-events: none;
+}
+.viewAll {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.viewAllTitle {
+  @extend h3;
+  color: $gray900;
 }

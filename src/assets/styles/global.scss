@@ -1,5 +1,5 @@
-$widthBase: 1920px;
-$widthBlock: 1230px;
+$widthApp: 1920px;
+$widthSection: 1230px;
 
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
@@ -165,12 +165,13 @@ button {
   letter-spacing: 1px;
   text-align: left;
 }
-.containerBase {
+
+.containerApp {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: $widthBase;
+  width: $widthApp;
   margin-left: auto;
   margin-right: auto;
 }
@@ -179,7 +180,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: $widthBlock;
+  width: $widthSection;
   margin-left: auto;
   margin-right: auto;
 }
@@ -201,8 +202,8 @@ button {
   margin-bottom: 60px;
   color: $gray700;
 }
-.container_base {
-  width: 1230px;
+.containerSection {
+  width: $widthSection;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid red;

@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  @extend .containerBase;
+  @extend .containerApp;
   padding-top: 80px;
   padding-bottom: 126px;
   background-color: $gray900;
