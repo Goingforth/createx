@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player/youtube";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import BlockHome from "../BlockHome/BlockHome";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 
 import poster from "/construction.jpg";
 
@@ -18,9 +18,9 @@ const Video = (): React.ReactNode => {
   );
   return (
     <>
-      <BlockHome
+      <SectionWithChildren
         title='We are Createx Construction Bureau'
-        text=' We are
+        subtitle=' We are
       rightfully considered to be the best construction company in the USA.'
         children={Player()}
         mb={120}

@@ -78,13 +78,28 @@ input {
 button {
   cursor: pointer;
 }
-
+.small_bold {
+  //styleName: small/bold;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+}
 .base_bold {
   //styleName: base/bold;
   font-family: Ubuntu;
   font-size: 16px;
   font-weight: 700;
   line-height: 25.6px;
+  text-align: left;
+}
+.mid_bold {
+  //styleName: large/bold;
+  font-family: Ubuntu;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
   text-align: left;
 }
 .lead_bold {
@@ -96,15 +111,16 @@ button {
   text-align: center;
   color: $gray900;
 }
-
-.small_bold {
-  //styleName: small/bold;
+.large_bold {
+  //styleName: lead/bold;
   font-family: Ubuntu;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 21px;
-  text-align: left;
+  line-height: 36px;
+  text-align: center;
+  color: $gray900;
 }
+
 .base_regular {
   //styleName: base/regular;
   font-family: Ubuntu;
@@ -197,7 +213,7 @@ button {
   }
 }
 
-.infoTitle {
+.subTitle {
   margin-top: 24px;
   margin-bottom: 60px;
   color: $gray700;

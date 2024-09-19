@@ -1,19 +1,19 @@
 import { FC, ReactNode } from "react";
-import styles from "./BlockHome.module.scss";
+import styles from "./SectionWithChildren.module.scss";
 type Props = {
   title?: string;
-  text?: string;
+  subtitle?: string;
   children?: ReactNode;
   mb?: string | number;
 };
 
-const BlockHome: FC<Props> = ({ title, text, children, mb }) => {
+const SectionWithChildren: FC<Props> = ({ title, subtitle, children, mb }) => {
   return (
     <div style={{ marginBottom: `${mb}px` }}>
       <div className={styles.containerChildren}>
         <h1 className={styles.title}>{title}</h1>
-        <p className={[styles.large_regular, styles.infoTitle].join(" ")}>
-          {text}
+        <p className={[styles.large_regular, styles.subTitle].join(" ")}>
+          {subtitle}
         </p>
         <div className={styles.playerWrapper}>{children}</div>
       </div>
@@ -21,4 +21,4 @@ const BlockHome: FC<Props> = ({ title, text, children, mb }) => {
   );
 };
 
-export default BlockHome;
+export default SectionWithChildren;
