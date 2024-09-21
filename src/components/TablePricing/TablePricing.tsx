@@ -1,6 +1,6 @@
 import { FC } from "react";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+
 import { dataTablePricing } from "../../data";
 import styles from "./TablePricing.module.scss";
 
@@ -47,30 +47,19 @@ const TablePricing: FC = () => {
               </tr>
             )
           )}
+
           <tr>
             <td></td>
-            <td>
-              <ButtonBasic />
-            </td>
-            <td>
-              <ButtonBasic />
-            </td>
-            <td>
-              <ButtonBasic />
-            </td>
+            {[1, 2, 3].map(() => (
+              <td>
+                <div className={styles.btn}>
+                  <Btn size='small' form='outline' title='send request' />
+                </div>
+              </td>
+            ))}
           </tr>
         </tbody>
       </table>
-      <div className={styles.btn}>
-        <Btn size='large' />
-        <Btn size='regular' />
-        <Btn size='small' />
-      </div>
-      <div className={styles.btn}>
-        <Btn size='large' form='outline' />
-        <Btn size='regular' form='outline' />
-        <Btn size='small' form='outline' />
-      </div>
     </div>
   );
 };
