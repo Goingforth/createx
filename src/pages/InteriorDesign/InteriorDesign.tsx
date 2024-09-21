@@ -5,6 +5,7 @@ import Benefits from "../../components/Benefits/Benefits";
 import styles from "./InteriorDesign.module.scss";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import Pricing from "../../components/Pricing/Pricing";
+import Clients from "../../components/Clients/Clients";
 
 const InteriorDesign: FC = () => {
   return (
@@ -17,6 +18,7 @@ const InteriorDesign: FC = () => {
       <Portfolio />
       <div className={styles.background}>
         <Pricing />
+        <Clients />
       </div>
     </>
   );

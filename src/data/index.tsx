@@ -5,6 +5,7 @@ import { dataPortfolioCards } from "./dataPortfolioCards";
 import { navigation, connection } from "./dataHeader";
 import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
+import { dataClientsLogo } from "./dataClientsLogo";
 
 export {
   dataServicesPage,
@@ -15,4 +16,5 @@ export {
   dataBenefits,
   dataPortfolioCards,
   dataTablePricing,
+  dataClientsLogo,
 };

@@ -12,7 +12,12 @@ const SectionWithChildren: FC<Props> = ({ title, subtitle, children, mb }) => {
     <div style={{ marginBottom: `${mb}px` }}>
       <div className={styles.containerChildren}>
         <h1 className={styles.title}>{title}</h1>
-        <p className={[styles.large_regular, styles.subTitle].join(" ")}>
+        <p
+          className={[
+            styles.large_regular,
+            subtitle ? styles.subTitle : styles.notSubTitle,
+          ].join(" ")}
+        >
           {subtitle}
         </p>
         <div className={styles.playerWrapper}>{children}</div>

@@ -33,7 +33,13 @@ type ID =
   | "ic-helmet"
   | "left"
   | "right"
-  | "mark24";
+  | "mark24"
+  | "client-logo1"
+  | "client-logo2"
+  | "client-logo3"
+  | "client-logo4"
+  | "client-logo5"
+  | "client-logo6";
 
 type Props = {
   id: ID;
