@@ -1,5 +1,5 @@
 import { FC } from "react";
-import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+import Btn from "../../uikit/Buttons/Btn/Btn";
 
 import styles from "./PortfolioCard.module.scss";
 
@@ -19,7 +19,7 @@ const PortfolioCard: FC<TypePortfolioCard> = ({ src, title, subTitle }) => {
         <div className={styles.contentTitle}>{title}</div>
         <div className={styles.contentSubTitle}>{subTitle}</div>
         <div className={styles.contentButton}>
-          <ButtonBasic />
+          <Btn form='outline' title='View Project' />
         </div>
       </div>
     </div>

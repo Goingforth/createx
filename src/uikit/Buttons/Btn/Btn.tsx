@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./Btn.module.scss";
 
 type Props = {
-  // type?: "submit" | "reset" | "button";
+  type?: "submit" | "reset" | "button";
   title?: string;
   // titleColor?: "white" | "primary";
   // bg?: "primary" | "transparent";
@@ -13,11 +13,11 @@ type Props = {
   // borderColor?: "white" | "primary";
   brdRadius?: "none" | "all" | "left" | "right";
   disabled?: boolean;
-  // onClick?: any;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 const Btn: FC<Props> = ({
-  //  type = "button",
+  type = "button",
 
   //   titleColor,
   //   bg = "primary",
@@ -33,13 +33,13 @@ const Btn: FC<Props> = ({
   //   borderColor,
   brdRadius = "all",
   disabled = false,
-  //   onClick,
+  onClick,
 }) => {
   return (
     <button
-      // type={type}
-      // disabled={disabled}
-      // onClick={onClick}
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
       className={[
         styles.basic,
         disabled === true ? styles.disabled : "",

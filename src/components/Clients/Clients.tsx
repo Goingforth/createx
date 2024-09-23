@@ -15,13 +15,12 @@ const Client: FC = () => {
   );
 };
 
-const Clients: FC = () => {
-  return (
-    <SectionWithChildren
-      title='Supported by 12+ partners'
-      children={<Client />}
-    />
-  );
+type Props = {
+  title: string;
+};
+
+const Clients: FC<Props> = ({ title = "Supported by 12+ partners" }) => {
+  return <SectionWithChildren title={title} children={<Client />} />;
 };
 
 export default Clients;

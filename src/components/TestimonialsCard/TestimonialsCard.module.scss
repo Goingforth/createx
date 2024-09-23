@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 600px;
+}
+.faceWrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.content {
+  margin-bottom: 24px;
+  @extend .base_regular;
+  text-align: left;
+  color: $gray800;
+}
+.name {
+  margin-bottom: 4px;
+  @extend .base_bold;
+  color: $gray900;
+}
+
+.position {
+  @extend .small_regular;
+  color: $gray700;
+}
+.imageWrapper {
+  position: absolute;
+  z-index: 200;
+  right: -630px;
+  bottom: -185px;
+  border-radius: 4px;
+  overflow: hidden;
+}

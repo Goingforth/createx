@@ -6,6 +6,7 @@ import { navigation, connection } from "./dataHeader";
 import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
 import { dataClientsLogo } from "./dataClientsLogo";
+import { dataTestimonialsCards } from "./dataTestimonialsCards";
 
 export {
   dataServicesPage,
@@ -17,4 +18,5 @@ export {
   dataPortfolioCards,
   dataTablePricing,
   dataClientsLogo,
+  dataTestimonialsCards,
 };

@@ -2,7 +2,7 @@ import { FC } from "react";
 import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
 import { dataBenefits } from "../../data";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+import Btn from "../../uikit/Buttons/Btn/Btn";
 import styles from "./Benefits.module.scss";
 
 const Benefits: FC = () => {
@@ -28,7 +28,7 @@ const Benefits: FC = () => {
         </div>
       </div>
       <div className={styles.buttonDiscuss}>
-        <ButtonBasic />
+        <Btn size='large' title='Discuss a project' />
       </div>
     </div>
   );

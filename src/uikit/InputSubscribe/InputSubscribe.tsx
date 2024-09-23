@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import ButtonBasic from "../Buttons/ButtonBasic/ButtonBasic";
+import Btn from "../Buttons/Btn/Btn";
 import { patterns } from "../../data/data";
 import styles from "./InputSubscribe.module.scss";
 
@@ -23,10 +23,9 @@ const InputSubscribe: FC = () => {
         onChange={(e: any) => setEmail(e.target.value)}
       />
 
-      <ButtonBasic
-        size='regular'
+      <Btn
         title='subscribe'
-        borderR='right'
+        brdRadius='right'
         disabled={disabled}
         onClick={onClick}
       />

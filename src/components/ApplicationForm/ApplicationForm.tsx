@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import InputForms from "../../uikit/InputForms/InputForms";
 import Checkboxes from "../../uikit/Checkboxes/Checkboxes";
-import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+// import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
+import Btn from "../../uikit/Buttons/Btn/Btn";
 import styles from "./ApplicationForm.module.scss";
 import { ApplicationFormInput } from "../../data/data";
 
@@ -126,12 +127,7 @@ const ApplicationForm: FC = () => {
         )}
 
         <div className={styles.wrapperButton}>
-          <ButtonBasic
-            size='regular'
-            title='send request'
-            disabled={isDisabled}
-            onClick={onClick}
-          />
+          <Btn title='send request' disabled={isDisabled} onClick={onClick} />
         </div>
       </form>
     </div>

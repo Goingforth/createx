@@ -1,0 +1,24 @@
+.container {
+  @extend .containerSection;
+  padding-top: 215px;
+  padding-bottom: 100px;
+}
+.containerGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.loadMore {
+  margin-top: 60px;
+  display: flex;
+  gap: 6px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  justify-content: center;
+  align-items: center;
+
+  @extend .base_bold;
+  color: $gray800;
+
+  cursor: pointer;
+}

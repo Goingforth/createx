@@ -1,0 +1,15 @@
+.container {
+  padding-top: 80px;
+  padding-bottom: 121px;
+  background-color: $gray200;
+}
+.section {
+  @extend .containerSection;
+}
+
+.title {
+  margin-bottom: 60px;
+  @extend h1;
+  color: $gray900;
+  text-align: left;
+}
