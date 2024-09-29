@@ -1,0 +1,21 @@
+.direction {
+  display: flex;
+  height: 24px;
+  gap: 24px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @extend button;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: $white;
+  padding: 0;
+}
+.disableButton {
+  cursor: not-allowed; /* Изменить вид курсора */
+  opacity: 0.5; /* Сделать кнопку полупрозрачной */
+  pointer-events: none;
+}

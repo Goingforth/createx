@@ -1,6 +1,7 @@
+import { TypeIdIcons } from "../uikit/SvgSprite/SvgSprite";
 interface TypeDataBenefits {
   id: string;
-  icon: string;
+  icon: TypeIdIcons;
   title: string;
   content: string;
 }

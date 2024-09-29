@@ -7,6 +7,8 @@ import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
 import { dataClientsLogo } from "./dataClientsLogo";
 import { dataTestimonialsCards } from "./dataTestimonialsCards";
+import { dataMediaTabs } from "./dataMediaTabs";
+import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
 
 export {
   dataServicesPage,
@@ -19,4 +21,8 @@ export {
   dataTablePricing,
   dataClientsLogo,
   dataTestimonialsCards,
+  dataMediaTabs,
+  dataNews,
+  categoriesNews,
+  type TypeCategories,
 };

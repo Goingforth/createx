@@ -7,7 +7,12 @@ type Props = {
   mb?: string | number;
 };
 
-const SectionWithChildren: FC<Props> = ({ title, subtitle, children, mb }) => {
+const SectionWithChildren: FC<Props> = ({
+  title = "SectionWithChildren",
+  subtitle,
+  children,
+  mb,
+}) => {
   return (
     <div style={{ marginBottom: `${mb}px` }}>
       <div className={styles.containerChildren}>

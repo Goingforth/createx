@@ -1,0 +1,83 @@
+.container {
+  box-sizing: border-box;
+  @extend .shadow_small;
+  &:hover {
+    .heading {
+      color: $primary;
+    }
+  }
+}
+.cardWrapper {
+  padding: 24px 24px 21px;
+}
+.imageWrapper {
+  overflow: hidden;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.heading {
+  margin-bottom: 12px;
+  @extend .lead_bold;
+  text-align: left;
+  color: $gray900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  @extend .small_regular;
+  color: $gray700;
+}
+.text {
+  @extend .base_regular;
+  text-align: left;
+  color: $gray800;
+}
+
+.large {
+  width: 705px;
+  height: 540px;
+  .imageWrapper {
+    height: 360px;
+  }
+  .cardWrapper {
+    padding-bottom: 25px;
+  }
+}
+.regular {
+  width: 600px;
+  height: 482px;
+  .imageWrapper {
+    height: 306px;
+  }
+}
+.small {
+  width: 495px;
+  height: 255px;
+  .imageWrapper {
+    height: 156px;
+  }
+  .cardWrapper {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+  .heading {
+    margin-bottom: 8px;
+  }
+  .meta {
+    margin-bottom: 0;
+  }
+  .text {
+    display: none;
+  }
+}

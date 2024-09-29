@@ -1,0 +1,19 @@
+.container {
+  padding-top: 120px;
+  padding-bottom: 180px;
+  @extend .containerChildren;
+}
+.title {
+  @extend h1;
+  color: $gray900;
+  margin-bottom: 40px;
+}
+.filter {
+  display: flex;
+  margin-bottom: 60px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 30px;
+}

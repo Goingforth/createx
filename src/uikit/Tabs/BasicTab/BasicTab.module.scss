@@ -1,0 +1,27 @@
+.itemCategory {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  @extend .base_bold;
+  color: $gray600;
+  &:hover {
+    color: $gray800;
+    cursor: pointer;
+  }
+}
+.active {
+  //   pointer-events: none;
+  color: $primary;
+  border-radius: 4px;
+  border: 1px solid $primary;
+  &:hover {
+    color: $primary;
+  }
+}

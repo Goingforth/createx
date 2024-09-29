@@ -1,10 +1,12 @@
+import { TypeIdIcons } from "../uikit/SvgSprite/SvgSprite";
+
 interface NavigationItem {
   name: string;
   to: string;
 }
 
 interface connectionitem {
-  iconID: string;
+  iconID: TypeIdIcons;
   to: string;
   us: string;
   data: string;

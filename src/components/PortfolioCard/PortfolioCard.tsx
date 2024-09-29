@@ -9,7 +9,8 @@ type TypePortfolioCard = {
   subTitle: string;
 };
 
-const PortfolioCard: FC<TypePortfolioCard> = ({ src, title, subTitle }) => {
+const PortfolioCard: FC<TypePortfolioCard> = (props) => {
+  const { src, title, subTitle } = props;
   return (
     <div className={styles.projectCard}>
       <div className={styles.imageWrapper}>

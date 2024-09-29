@@ -6,6 +6,9 @@ import styles from "./PortfolioGallery.module.scss";
 
 const PortfolioGallery: FC = () => {
   const [indexRender, setIndexRender] = useState(2);
+  const endIndex = dataPortfolioCards.length - 1;
+  const numberItemRow = 3;
+
   return (
     <div className={styles.container}>
       <div className={styles.containerGallery}>
@@ -19,8 +22,14 @@ const PortfolioGallery: FC = () => {
         )}
       </div>
       <div
-        className={styles.loadMore}
-        onClick={() => setIndexRender(indexRender + 3)}
+        className={[
+          styles.loadMore,
+          indexRender === endIndex ? styles.noMore : "",
+        ].join(" ")}
+        onClick={() =>
+          indexRender !== endIndex &&
+          setIndexRender(indexRender + numberItemRow)
+        }
       >
         <SvgSprite id='convert' />
         <p>Load more</p>

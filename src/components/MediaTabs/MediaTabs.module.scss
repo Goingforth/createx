@@ -1,0 +1,9 @@
+.container {
+  @extend .containerSection;
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  top: 541px;
+  left: 50%;
+  transform: translateX(-50%);
+}

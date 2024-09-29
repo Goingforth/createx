@@ -1,0 +1,39 @@
+.container {
+  box-sizing: border-box;
+  width: 230px;
+  height: 154px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $white;
+  @extend .shadow_small;
+
+  fill: $primary;
+  &:hover {
+    cursor: pointer;
+    .title {
+      color: $gray900;
+    }
+    .active {
+      color: $white;
+    }
+  }
+}
+
+.title {
+  @extend .base_bold;
+  color: $gray600;
+}
+.active {
+  pointer-events: none;
+  background-color: $primary;
+  .title {
+    color: $white;
+  }
+  fill: $white;
+  @extend .shadow_drop;
+}
