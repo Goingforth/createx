@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.number {
+  width: 20px;
+  @extend .base_bold;
+  color: $gray800;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.right {
+  display: flex;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.active {
+  color: $primary;
+}
+.cap {
+  width: 24px;
+}

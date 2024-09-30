@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { TypeCategories } from "../../data";
+import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./PostCard.module.scss";
 
 type TypePostCard = {
@@ -30,13 +31,24 @@ const PostCard: FC<TypePostCard> = (props) => {
         <div className={styles.heading}>{title}</div>
         <div className={styles.meta}>
           <div>{categories}</div>
+          <div>
+            <SvgSprite id='divider_small' />
+          </div>
           <div>{date}</div>
           <div>
-            {comments === 0
-              ? "No comments"
-              : comments !== 1
-              ? `${comments} comments`
-              : "1 comment"}
+            <SvgSprite id='divider_small' />
+          </div>
+          <div className={styles.comments}>
+            <div className={styles.icon}>
+              <SvgSprite id='chat' width='16px' height='16px' />
+            </div>
+            <div>
+              {comments === 0
+                ? "No comments"
+                : comments !== 1
+                ? `${comments} comments`
+                : "1 comment"}
+            </div>
           </div>
         </div>
         <div className={styles.text}>{text}</div>
