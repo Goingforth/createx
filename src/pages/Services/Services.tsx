@@ -12,15 +12,8 @@ const Services: FC = () => {
         <HeroPage />
       </div>
       <div className={styles.container}>
-        {dataServicesPage.map(({ src, title, info, route }, index) => (
-          <BlockServicePage
-            key={title}
-            index={index}
-            src={src}
-            title={title}
-            info={info}
-            route={route}
-          />
+        {dataServicesPage.map((props, index) => (
+          <BlockServicePage key={props.title} index={index} {...props} />
         ))}
       </div>
     </>

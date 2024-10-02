@@ -1,6 +1,9 @@
 import { FC, useState } from "react";
 import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./Pagination.module.scss";
+type Props = {
+  activePage: number;
+};
 
 const Pagination: FC = () => {
   const [active, setActive] = useState(1);

@@ -25,13 +25,3 @@
   overflow: hidden;
   margin-bottom: 80px;
 }
-.viewAll {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-}
-.viewAllTitle {
-  @extend h3;
-  color: $gray900;
-}

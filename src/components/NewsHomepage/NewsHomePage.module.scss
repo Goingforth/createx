@@ -1,0 +1,16 @@
+.container {
+  @extend .containerSection;
+}
+.containerNewsGridBlock {
+  display: flex;
+  gap: 30px;
+}
+.alignColumns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrapper {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}

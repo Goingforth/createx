@@ -1,7 +1,7 @@
 import { dataHeroPages } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 import { dataSteps } from "./dataSteps";
-import { dataPortfolioCards } from "./dataPortfolioCards";
+import { dataPortfolioCards, TypePortfolioCard } from "./dataPortfolioCards";
 import { navigation, connection } from "./dataHeader";
 import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
@@ -18,6 +18,7 @@ export {
   dataSteps,
   dataBenefits,
   dataPortfolioCards,
+  type TypePortfolioCard,
   dataTablePricing,
   dataClientsLogo,
   dataTestimonialsCards,

@@ -1,9 +1,9 @@
-interface TypePortfolioCard {
+export type TypePortfolioCard = {
   id: string;
   src: string;
   title: string;
   subTitle: string;
-}
+};
 
 export const dataPortfolioCards: TypePortfolioCard[] = [
   {

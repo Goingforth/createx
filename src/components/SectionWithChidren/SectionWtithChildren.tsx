@@ -7,12 +7,8 @@ type Props = {
   mb?: string | number;
 };
 
-const SectionWithChildren: FC<Props> = ({
-  title = "SectionWithChildren",
-  subtitle,
-  children,
-  mb,
-}) => {
+const SectionWithChildren: FC<Props> = (props) => {
+  const { title = "SectionWithChildren", subtitle, children, mb } = props;
   return (
     <div style={{ marginBottom: `${mb}px` }}>
       <div className={styles.containerChildren}>
@@ -25,7 +21,7 @@ const SectionWithChildren: FC<Props> = ({
         >
           {subtitle}
         </p>
-        <div className={styles.playerWrapper}>{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );

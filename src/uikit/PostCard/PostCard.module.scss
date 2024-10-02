@@ -2,6 +2,7 @@
   box-sizing: border-box;
   @extend .shadow_small;
   &:hover {
+    border: 1px solid $gray100;
     .heading {
       color: $primary;
     }
