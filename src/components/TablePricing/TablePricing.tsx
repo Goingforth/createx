@@ -26,8 +26,8 @@ const TablePricing: FC = () => {
         </thead>
         <tbody>
           {dataTablePricing.map(
-            ({ item, basic, standart, business }, index) => (
-              <tr className={index % 2 === 0 ? styles.trBody : ""}>
+            ({ id, item, basic, standart, business }, index) => (
+              <tr key={id} className={index % 2 === 0 ? styles.trBody : ""}>
                 <td className={styles.item}>{item}</td>
                 <td>
                   {typeof basic === "boolean"
@@ -50,8 +50,8 @@ const TablePricing: FC = () => {
 
           <tr>
             <td></td>
-            {[1, 2, 3].map(() => (
-              <td>
+            {[1, 2, 3].map((item) => (
+              <td key={`sendRequest${item}`}>
                 <div className={styles.btn}>
                   <Btn size='small' form='outline' title='send request' />
                 </div>

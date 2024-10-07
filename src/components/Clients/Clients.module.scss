@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  gap: 102px;
+  flex-wrap: wrap;
+  gap: 40px 102px;
 }
 .clientLogo {
   opacity: 0.8;

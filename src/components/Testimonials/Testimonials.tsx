@@ -1,6 +1,7 @@
 import { FC } from "react";
 //import { dataTestimonialsCards } from "../../data/dataTestimonialsCards";
 import TestimonialsCard from "../TestimonialsCard/TestimonialsCard";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { dataTestimonialsCards } from "../../data";
 import styles from "./Testimonials.module.scss";
 
@@ -28,3 +29,11 @@ const Testimonials: FC = () => {
 };
 
 export default Testimonials;
+
+type PropsTestimonialsBlock = {
+  children?: React.ReactNode;
+};
+
+export const TestimonialsBlock: FC<PropsTestimonialsBlock> = () => {
+  return <SectionWithChildren children={<Testimonials />} />;
+};

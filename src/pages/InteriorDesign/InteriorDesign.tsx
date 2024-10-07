@@ -15,10 +15,10 @@ const InteriorDesign: FC = () => {
         <Offer />
       </div>
       <Benefits />
-      <Portfolio />
+      <Portfolio title='Related projects' pt='180px' pb='100px' />
       <div className={styles.background}>
         <Pricing />
-        <Clients />
+        <Clients title='Supported by 12+ partners' />
       </div>
     </>
   );

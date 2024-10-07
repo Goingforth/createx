@@ -35,4 +35,34 @@ export const dataClientsLogo: TypeClientsLogo[] = [
     src: "/clientLogo/clientLogo5.png",
     alt: "logo client5",
   },
+  {
+    id: "clientLogo6",
+    src: "/clientLogo/clientLogo6.png",
+    alt: "logo client6",
+  },
+  {
+    id: "clientLogo7",
+    src: "/clientLogo/clientLogo7.png",
+    alt: "logo client7",
+  },
+  {
+    id: "clientLogo8",
+    src: "/clientLogo/clientLogo8.png",
+    alt: "logo client8",
+  },
+  {
+    id: "clientLogo9",
+    src: "/clientLogo/clientLogo9.png",
+    alt: "logo client9",
+  },
+  {
+    id: "clientLogo10",
+    src: "/clientLogo/clientLogo10.png",
+    alt: "logo client10",
+  },
+  {
+    id: "clientLogo11",
+    src: "/clientLogo/clientLogo11.png",
+    alt: "logo client11",
+  },
 ];

@@ -23,42 +23,42 @@ const SliderCarousel: FC<PropsSliderCarousel> = (props) => {
   const onClickPrev = () => setOffset(offset + stepOffset);
   const onClickNext = () => setOffset(offset - stepOffset);
   return (
-    <div className={styles.container}>
-      <div className='containerSection'>
-        <div className={styles.head}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.controlsWrapper}>
-            <SliderControls
-              type='carousel'
-              stepOffset={stepOffset}
-              numberBlockingSlide={numberBlockingSlide}
-              offset={offset}
-              onClickNext={onClickNext}
-              onClickPrev={onClickPrev}
-            />
-          </div>
+    // <div className={styles.container}>
+    <div className='containerSection'>
+      <div className={styles.head}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.controlsWrapper}>
+          <SliderControls
+            type='carousel'
+            stepOffset={stepOffset}
+            numberBlockingSlide={numberBlockingSlide}
+            offset={offset}
+            onClickNext={onClickNext}
+            onClickPrev={onClickPrev}
+          />
         </div>
-        <div className={styles.window}>
-          <div
-            className={styles.wrapper}
-            style={{
-              translate: offset,
-              transition: "translate 1s ease-in-out",
-            }}
-          >
-            {dataArray.map((props) => (
-              <PortfolioCard {...props} />
-            ))}
-          </div>
-        </div>
-        <ViewAll
-          titleViewAll={titleViewAll}
-          // to='/work'
-          to={to}
-          btnTitle={btnTitle}
-        />
       </div>
+      <div className={styles.window}>
+        <div
+          className={styles.wrapper}
+          style={{
+            translate: offset,
+            transition: "translate 1s ease-in-out",
+          }}
+        >
+          {dataArray.map((props) => (
+            <PortfolioCard key={props.id} {...props} />
+          ))}
+        </div>
+      </div>
+      <ViewAll
+        titleViewAll={titleViewAll}
+        // to='/work'
+        to={to}
+        btnTitle={btnTitle}
+      />
     </div>
+    // </div>
   );
 };
 

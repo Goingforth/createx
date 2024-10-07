@@ -1,13 +1,14 @@
-.container {
-  padding-top: 180px;
-  padding-bottom: 100px;
-}
+// .container {
+//   padding-top: 180px;
+//   padding-bottom: 100px;
+// }
 .head {
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
 }
 .title {
+  width: 705px;
   @extend h1;
   color: $gray900;
   text-align: left;
