@@ -1,0 +1,59 @@
+.projectCard {
+  width: 285px;
+  height: 416px;
+
+  &:hover {
+    .socialLinks {
+      opacity: 0.7;
+    }
+  }
+}
+
+.projectName {
+  padding-top: 16px;
+  background-color: $white;
+}
+.imageWrapper {
+  position: relative;
+  width: 285px;
+  height: 340px;
+}
+.socialLinks {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 285px;
+  height: 60px;
+  background-color: $primary;
+  opacity: 0;
+}
+.iconWrapper {
+  width: 20px;
+  height: 20px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.contentTitle {
+  @extend .lead_bold;
+  text-align: center;
+  margin-bottom: 4px;
+  color: $gray800;
+}
+
+.contentSubTitle {
+  @extend .base_regular;
+  text-align: center;
+  color: $gray700;
+}

@@ -9,7 +9,7 @@ import { dataClientsLogo } from "./dataClientsLogo";
 import { dataTestimonialsCards } from "./dataTestimonialsCards";
 import { dataMediaTabs } from "./dataMediaTabs";
 import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
-import { dataTeamMembers } from "./dataTeamMembers";
+import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
 
 export {
   dataServicesPage,
@@ -28,4 +28,5 @@ export {
   categoriesNews,
   type TypeCategories,
   dataTeamMembers,
+  type TypeTeamMember,
 };
