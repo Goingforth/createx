@@ -1,0 +1,33 @@
+.container {
+  @extend .containerSection;
+  display: flex;
+  gap: 86px;
+}
+.staticticsItem {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  &:not(:last-child) {
+    width: 240px;
+  }
+}
+.iconWrapper {
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  fill: $gray600;
+}
+
+.rate {
+  @extend h1;
+  color: $primary;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.info {
+  @extend .small_regular;
+  color: $gray900;
+  text-align: center;
+}

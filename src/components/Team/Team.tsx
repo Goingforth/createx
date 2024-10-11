@@ -4,6 +4,7 @@ import TeamMemberCard from "../TeamMemberCard/TeamMemberCard";
 import { dataTeamMembers } from "../../data";
 
 import styles from "./Team.module.scss";
+import { NavLink } from "react-router-dom";
 
 const TeamGallery: FC = () => {
   return (
@@ -15,13 +16,31 @@ const TeamGallery: FC = () => {
   );
 };
 
+const Positions: FC = () => {
+  return (
+    <div className={styles.positions}>
+      <div className={styles.invite}>
+        Become a part of the best team in the construction market of the USA.
+      </div>
+      <NavLink className={styles.to} to='available_positions'>
+        Available Positions
+      </NavLink>
+    </div>
+  );
+};
+
 const Team: FC = () => {
   return (
-    <SectionWithChildren
-      title='Our team'
-      subtitle='People are at the heart of Createx Construction Bureau'
-      children={<TeamGallery />}
-    />
+    <div className={styles.container}>
+      <SectionWithChildren
+        title='Our team'
+        subtitle='People are at the heart of Createx Construction Bureau'
+        children={[<TeamGallery />, <Positions />]}
+      />
+      <div className={styles.imageWrapper}>
+        <img src='/bgImage.jpg' alt='' width='300px' height='300px' />
+      </div>
+    </div>
   );
 };
 

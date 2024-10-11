@@ -1,18 +1,19 @@
 import { FC } from "react";
-import { coreValuesItems } from "../../data/data";
+
+import { dataCoreValuesItems } from "../../data";
 import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import styles from "./CoreValuesView.module.scss";
 
-type Props = [id?: string, icon?: string, title?: string, content?: string];
-
-const CoreValuesView: FC<Props> = () => {
+const CoreValuesView: FC = () => {
   return (
     <div className={styles.container}>
-      {coreValuesItems.map(({ id, icon, title, content }, index) => (
-        <div key={id}>
-          <IconBoxBasic icon={icon} title={title} content={content} />
-          {index !== coreValuesItems.length - 1 && <SvgSprite id='divider' />}
+      {dataCoreValuesItems.map((item, index) => (
+        <div key={item.id} className={styles.item}>
+          <IconBoxBasic {...item} />
+          {index !== dataCoreValuesItems.length - 1 && (
+            <SvgSprite id='divider' />
+          )}
         </div>
       ))}
     </div>

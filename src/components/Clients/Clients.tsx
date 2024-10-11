@@ -21,14 +21,16 @@ const Client: FC<PropsClient> = ({ amountLogo = 6 }) => {
 
 type Props = {
   title: string;
+  subTitle?: string;
   amountLogo?: number;
 };
 
 const Clients: FC<Props> = (props) => {
-  const { title, amountLogo } = props;
+  const { title, subTitle, amountLogo } = props;
   return (
     <SectionWithChildren
       title={title}
+      subtitle={subTitle}
       children={<Client amountLogo={amountLogo} />}
     />
   );

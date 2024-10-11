@@ -9,6 +9,7 @@ import Formdata from "../pages/Formdata/Formdata";
 import News from "../pages/News/News";
 import Work from "../pages/Work/Work";
 import InteriorDesign from "../pages/InteriorDesign/InteriorDesign";
+import AvailablePositions from "../pages/AvailablePositions/AvailablePositions";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "about_us",
-        element: <AboutUs />,
+        children: [
+          { element: <AboutUs />, index: true },
+          {
+            path: "available_positions",
+            element: <AvailablePositions />,
+          },
+        ],
       },
       {
         path: "services",

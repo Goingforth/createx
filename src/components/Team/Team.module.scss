@@ -1,6 +1,39 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
 .containerGallery {
   display: flex;
   flex-wrap: wrap;
   gap: 60px 30px;
   padding-bottom: 80px;
+}
+.positions {
+  @extend .containerSection;
+  display: flex;
+  justify-content: center;
+}
+.invite {
+  margin-right: 4px;
+  @extend .large_regular;
+  color: $gray900;
+}
+
+.to {
+  @extend .large_regular;
+  color: $primary;
+  &:hover {
+    text-decoration: underline $primary;
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  width: 792px;
+  height: 637px;
+  top: 714px;
+  left: -500px;
+  transform: rotate(-45deg);
+  z-index: -10;
+  opacity: 0.3;
 }

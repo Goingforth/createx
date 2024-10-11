@@ -1,0 +1,45 @@
+.container {
+  @extend .containerSection;
+  position: relative;
+  height: 700px;
+}
+
+.imgCEO {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 525px;
+  height: 580px;
+}
+
+.quotation {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  width: 735px;
+  height: 570px;
+  padding: 80px 105px 80px 77px;
+  background-color: $white;
+  @extend .shadow_small;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+}
+.braces {
+  width: 28px;
+  height: 20px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 495px;
+  height: 300px;
+
+  @extend .lead_bold;
+  color: $gray900;
+  text-align: left;
+}

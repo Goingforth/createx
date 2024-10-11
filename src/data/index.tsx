@@ -10,6 +10,8 @@ import { dataTestimonialsCards } from "./dataTestimonialsCards";
 import { dataMediaTabs } from "./dataMediaTabs";
 import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
 import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
+import { dataStatistics, TypeStatistics } from "./dataStatistics";
+import { dataCoreValuesItems } from "./dataCoreValuesItems";
 
 export {
   dataServicesPage,
@@ -29,4 +31,7 @@ export {
   type TypeCategories,
   dataTeamMembers,
   type TypeTeamMember,
+  dataStatistics,
+  type TypeStatistics,
+  dataCoreValuesItems,
 };
