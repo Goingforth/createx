@@ -12,6 +12,7 @@ import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
 import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
 import { dataStatistics, TypeStatistics } from "./dataStatistics";
 import { dataCoreValuesItems } from "./dataCoreValuesItems";
+import { dataCountryFlag, TypeCountryFlag } from "./dataCountryFlag";
 
 export {
   dataServicesPage,
@@ -34,4 +35,6 @@ export {
   dataStatistics,
   type TypeStatistics,
   dataCoreValuesItems,
+  dataCountryFlag,
+  type TypeCountryFlag,
 };

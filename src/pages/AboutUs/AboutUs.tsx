@@ -5,6 +5,7 @@ import Team from "../../components/Team/Team";
 import styles from "./AboutUs.module.scss";
 import Statistics from "../../components/Statistics/Statistics";
 import CEO from "../../components/CEO/CEO";
+import Map from "../../components/Map/Map";
 
 const AboutUs: FC = () => {
   const dataClients = {
@@ -23,6 +24,7 @@ const AboutUs: FC = () => {
         <Clients {...dataClients} />
         <Team />
       </div>
+      <Map />
     </div>
   );
 };
