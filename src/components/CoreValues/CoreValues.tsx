@@ -8,7 +8,6 @@ const CoreValues = () => {
         title='Our core values'
         subtitle=' Our mission is to set the highest standards for construction sphere.'
         children={<CoreValuesView />}
-        mb={271}
       />
     </>
   );

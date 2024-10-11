@@ -19,7 +19,6 @@ const NewsBody: FC = () => {
 
   useEffect(() => {
     if (active.length === 0) {
-      console.log("!empty!");
       setActiveTabs(initialActiveTabs);
     }
   }, [active]);

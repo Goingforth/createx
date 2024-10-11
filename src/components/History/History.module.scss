@@ -1,0 +1,58 @@
+.container {
+  @extend .containerSection;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  @extend h1;
+  text-align: left;
+  color: $gray900;
+  margin-bottom: 60px;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: $gray600;
+}
+.timelineItem {
+  display: flex;
+  gap: 32px;
+  @extend h3;
+  color: $gray600;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.active {
+  color: $primary;
+  fill: $primary;
+}
+.containerSlider {
+  position: relative;
+  width: 822px;
+  height: 546px;
+  margin-top: 4px;
+}
+.controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.imageWrapper {
+  width: 810px;
+  height: 450px;
+  margin-top: 94px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+.description {
+  @extend .base_regular;
+  color: $gray800;
+  text-align: left;
+}
+
+.ellipse {
+  fill: currentColor;
+}

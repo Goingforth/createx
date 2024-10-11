@@ -10,7 +10,7 @@ const TeamGallery: FC = () => {
   return (
     <div className={styles.containerGallery}>
       {dataTeamMembers.map((member) => (
-        <TeamMemberCard {...member} />
+        <TeamMemberCard key={member.id} {...member} />
       ))}
     </div>
   );
@@ -35,7 +35,10 @@ const Team: FC = () => {
       <SectionWithChildren
         title='Our team'
         subtitle='People are at the heart of Createx Construction Bureau'
-        children={[<TeamGallery />, <Positions />]}
+        children={[
+          <TeamGallery key='TeamGallery' />,
+          <Positions key='Positions' />,
+        ]}
       />
       <div className={styles.imageWrapper}>
         <img src='/bgImage.jpg' alt='' width='300px' height='300px' />

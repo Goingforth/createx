@@ -38,7 +38,8 @@ export type TypeIdIcons =
   | "divider_small"
   | "shape"
   | "linkedin"
-  | "braces";
+  | "braces"
+  | "ellipse";
 
 type Props = {
   id: TypeIdIcons;
@@ -888,25 +889,37 @@ const SvgSprite = ({ id, width, height }: Props) => {
           />
         </svg>
       );
-     case "braces":
-          return (
-            <svg
-              width='28'
-              height='20'
-              viewBox='0 0 28 20'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M18 8.92534C18 8.63119 18.1295 8.35196 18.3541 8.16195L28 0V19C28 19.5523 27.5523 20 27 20H19C18.4477 20 18 19.5523 18 19V8.92534Z'
-                fill='#FF5A30'
-              />
-              <path
-                d='M0 8.92534C0 8.63119 0.129507 8.35196 0.354058 8.16195L10 0V19C10 19.5523 9.55228 20 9 20H1C0.447715 20 0 19.5523 0 19V8.92534Z'
-                fill='#FF5A30'
-              />
-            </svg>
-          );
+    case "braces":
+      return (
+        <svg
+          width='28'
+          height='20'
+          viewBox='0 0 28 20'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M18 8.92534C18 8.63119 18.1295 8.35196 18.3541 8.16195L28 0V19C28 19.5523 27.5523 20 27 20H19C18.4477 20 18 19.5523 18 19V8.92534Z'
+            fill='#FF5A30'
+          />
+          <path
+            d='M0 8.92534C0 8.63119 0.129507 8.35196 0.354058 8.16195L10 0V19C10 19.5523 9.55228 20 9 20H1C0.447715 20 0 19.5523 0 19V8.92534Z'
+            fill='#FF5A30'
+          />
+        </svg>
+      );
+    case "ellipse":
+      return (
+        <svg
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
+          fill='current'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <circle cx='8' cy='8' r='6' stroke='#F4F5F7' strokeWidth='4' />
+        </svg>
+      );
 
     default:
       return <svg></svg>;

@@ -6,6 +6,8 @@ import styles from "./AboutUs.module.scss";
 import Statistics from "../../components/Statistics/Statistics";
 import CEO from "../../components/CEO/CEO";
 import Map from "../../components/Map/Map";
+import CoreValues from "../../components/CoreValues/CoreValues";
+import History from "../../components/History/History";
 
 const AboutUs: FC = () => {
   const dataClients = {
@@ -19,6 +21,10 @@ const AboutUs: FC = () => {
       <div className={styles.sectionStatisticsCEO}>
         <Statistics />
         <CEO />
+      </div>
+      <div className={styles.sectionCoreValuesHistory}>
+        <CoreValues />
+        <History />
       </div>
       <div className={styles.sectionPartnersTeam}>
         <Clients {...dataClients} />

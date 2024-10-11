@@ -13,6 +13,7 @@ import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
 import { dataStatistics, TypeStatistics } from "./dataStatistics";
 import { dataCoreValuesItems } from "./dataCoreValuesItems";
 import { dataCountryFlag, TypeCountryFlag } from "./dataCountryFlag";
+import { dataHistorySlides } from "./dataHistory";
 
 export {
   dataServicesPage,
@@ -37,4 +38,5 @@ export {
   dataCoreValuesItems,
   dataCountryFlag,
   type TypeCountryFlag,
+  dataHistorySlides,
 };

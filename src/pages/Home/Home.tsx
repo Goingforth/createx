@@ -15,8 +15,14 @@ const Home: FC = () => {
     <div className={styles.container}>
       <Hero />
       <Video />
-      <CoreValues />
-      <BlockServices />
+
+      <div className={styles.containerCoreValues}>
+        <CoreValues />
+      </div>
+
+      <div className={styles.containerServices}>
+        <BlockServices />
+      </div>
       <Portfolio
         title='Browse our selected projects 
 and learn more about our work'

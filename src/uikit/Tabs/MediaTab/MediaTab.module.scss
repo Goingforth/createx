@@ -31,9 +31,9 @@
 .active {
   pointer-events: none;
   background-color: $primary;
-  .title {
-    color: $white;
-  }
   fill: $white;
   @extend .shadow_drop;
+  &.title {
+    color: $white;
+  }
 }
