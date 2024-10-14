@@ -8,6 +8,7 @@ import Portfolio from "../../components/Portfolio/Portfolio";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import { TestimonialsBlock } from "../../components/Testimonials/Testimonials";
 import styles from "./Home.module.scss";
+import Figures from "../../components/Figures/Figures";
 // import Application from "../../components/Application/Application";
 
 const Home: FC = () => {
@@ -31,6 +32,7 @@ and learn more about our work'
       />
       {/* <Testimonials /> */}
       {/* <TestimonialsBlock /> */}
+      <Figures />
       <NewsHomePage />
     </div>
   );

@@ -1,0 +1,20 @@
+.container {
+  padding-top: 180px;
+  padding-bottom: 180px;
+}
+.containerFigures {
+  display: flex;
+  gap: 48px;
+}
+.figureWrapper {
+  width: 148px;
+  height: 189px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.caption {
+  @extend .small_regular;
+  color: $gray900;
+  text-align: center;
+}

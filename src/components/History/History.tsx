@@ -13,6 +13,7 @@ const History: FC = () => {
         <div className={styles.timeline}>
           {dataHistorySlides.map((history, index) => (
             <div
+              key={history.id}
               className={[
                 styles.timelineItem,
                 index === active ? styles.active : "",

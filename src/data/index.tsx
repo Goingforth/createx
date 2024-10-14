@@ -14,6 +14,12 @@ import { dataStatistics, TypeStatistics } from "./dataStatistics";
 import { dataCoreValuesItems } from "./dataCoreValuesItems";
 import { dataCountryFlag, TypeCountryFlag } from "./dataCountryFlag";
 import { dataHistorySlides } from "./dataHistory";
+import {
+  dataFigures,
+  hexColorsFigures,
+  TypeFigure,
+  ColorsFigures,
+} from "./dataFigures";
 
 export {
   dataServicesPage,
@@ -39,4 +45,8 @@ export {
   dataCountryFlag,
   type TypeCountryFlag,
   dataHistorySlides,
+  dataFigures,
+  hexColorsFigures,
+  type TypeFigure,
+  type ColorsFigures,
 };
