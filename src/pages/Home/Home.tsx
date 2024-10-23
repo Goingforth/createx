@@ -9,6 +9,7 @@ import Testimonials from "../../components/Testimonials/Testimonials";
 import { TestimonialsBlock } from "../../components/Testimonials/Testimonials";
 import styles from "./Home.module.scss";
 import Figures from "../../components/Figures/Figures";
+import Clients from "../../components/Clients/Clients";
 // import Application from "../../components/Application/Application";
 
 const Home: FC = () => {
@@ -30,7 +31,10 @@ and learn more about our work'
         pt='120px'
         pb='120px'
       />
-      {/* <Testimonials /> */}
+      <div className={styles.containerClients}>
+        <Clients title='Supported by 12+ partners' />
+      </div>
+      <Testimonials />
       {/* <TestimonialsBlock /> */}
       <Figures />
       <NewsHomePage />

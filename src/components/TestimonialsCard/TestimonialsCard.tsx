@@ -1,22 +1,10 @@
 import { FC } from "react";
+import { TypeTestimonialsCards } from "../../data";
 
 import styles from "./TestimonialsCard.module.scss";
 
-type Props = {
-  profileImg: string;
-  image: string;
-  content: string;
-  name: string;
-  position: string;
-};
-
-const TestimonialsCard: FC<Props> = ({
-  profileImg,
-  image,
-  content,
-  name,
-  position,
-}) => {
+const TestimonialsCard: FC<TypeTestimonialsCards> = (card) => {
+  const { profileImg, image, content, name, position } = card;
   return (
     <div className={styles.container}>
       <div className={styles.faceWrapper}>

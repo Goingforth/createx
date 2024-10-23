@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
-
-import { contantSliders } from "../../data/data";
+import { dataSlidersHero } from "../../data";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 
 import styles from "./SliderHero.module.scss";
@@ -9,7 +8,7 @@ const SLIDE_WIDTH = 1920;
 const SliderHero: FC = () => {
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);
-  const sliderLength = contantSliders.length;
+  const sliderLength = dataSlidersHero.length;
 
   const SlideLeft = () => {
     offset !== 0
@@ -35,7 +34,7 @@ const SliderHero: FC = () => {
             transform: `translateX(${offset}px)`,
           }}
         >
-          {contantSliders.map(({ id, path, title, content }) => {
+          {dataSlidersHero.map(({ id, path, title, content }) => {
             return (
               <div key={id} style={{ position: "relative" }}>
                 <img

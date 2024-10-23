@@ -6,7 +6,10 @@ import { navigation, connection } from "./dataHeader";
 import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
 import { dataClientsLogo } from "./dataClientsLogo";
-import { dataTestimonialsCards } from "./dataTestimonialsCards";
+import {
+  dataTestimonialsCards,
+  TypeTestimonialsCards,
+} from "./dataTestimonialsCards";
 import { dataMediaTabs } from "./dataMediaTabs";
 import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
 import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
@@ -20,6 +23,7 @@ import {
   TypeFigure,
   ColorsFigures,
 } from "./dataFigures";
+import { dataSlidersHero } from "./dataSliderHero";
 
 export {
   dataServicesPage,
@@ -33,6 +37,7 @@ export {
   dataTablePricing,
   dataClientsLogo,
   dataTestimonialsCards,
+  type TypeTestimonialsCards,
   dataMediaTabs,
   dataNews,
   categoriesNews,
@@ -49,4 +54,5 @@ export {
   hexColorsFigures,
   type TypeFigure,
   type ColorsFigures,
+  dataSlidersHero,
 };

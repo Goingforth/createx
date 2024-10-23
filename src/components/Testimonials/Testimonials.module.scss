@@ -4,6 +4,7 @@
   background-color: $gray200;
 }
 .section {
+  position: relative;
   @extend .containerSection;
 }
 
@@ -12,4 +13,9 @@
   @extend h1;
   color: $gray900;
   text-align: left;
+}
+.sliderControls {
+  position: absolute;
+  bottom: 0;
+  left: 510px;
 }
