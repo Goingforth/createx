@@ -1,7 +1,7 @@
 import { patterns } from "./dataPatterns";
 import { ApplicationFormInput } from "./dataApplicationFormInput";
 import { dataServicesItems, TypeDataServicesItem } from "./dataServicesItems";
-import { dataHeroPages } from "./dataHeroPages";
+import { dataHeroPages, TypeHeroPage } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 import { dataSteps } from "./dataSteps";
 import { dataPortfolioCards, TypePortfolioCard } from "./dataPortfolioCards";
@@ -34,6 +34,7 @@ export {
   ApplicationFormInput,
   dataServicesPage,
   dataHeroPages,
+  type TypeHeroPage,
   navigation,
   connection,
   dataSteps,

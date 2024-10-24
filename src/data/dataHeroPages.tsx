@@ -1,9 +1,18 @@
-interface TypeHeroPage {
-  page: string;
+type TypePage =
+  | "/services"
+  | "/work"
+  | "/about_us"
+  | "/news"
+  | "/contacts"
+  | "/services/interior_design";
+
+export type TypeHeroPage = {
+  // page: string | undefined;
+  page: TypePage;
   title: string;
   note: string;
   bgImage: string;
-}
+};
 
 export const dataHeroPages: TypeHeroPage[] = [
   {
