@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import Steps from "../Steps/Steps";
-import OfferItem from "../OffferItem/OfferItem";
+//import OfferItem from "../OffferItem/OfferItem";
 import styles from "./Offer.module.scss";
 
 const Offer: FC = () => {
