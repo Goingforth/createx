@@ -23,7 +23,6 @@ const Video = (): React.ReactNode => {
         subtitle=' We are
       rightfully considered to be the best construction company in the USA.'
         children={Player()}
-        mb={120}
       />
     </>
   );
