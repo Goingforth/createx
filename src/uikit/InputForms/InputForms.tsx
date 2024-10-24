@@ -70,15 +70,9 @@ const InputForms: FC<Props> = ({
       )}
       {type !== "textarea" && (
         <div className={styles.iconInput}>
-          <SvgSprite
-            id={
-              status === "valid"
-                ? "mark"
-                : status === "novalid" || status === "empty"
-                ? "danger"
-                : ""
-            }
-          />
+          {status === "valid" && <SvgSprite id='mark' />}
+          {status === "novalid" ||
+            (status === "empty" && <SvgSprite id='danger' />)}
         </div>
       )}
     </div>
