@@ -1,9 +1,8 @@
 import { FC } from "react";
 import BloсkLinkFooter from "../../uikit/BlockLinkFooter/BloсkLinkFooter";
-import { dataBlockLinkFooter } from "../../data/data";
+import { dataBlockLinkFooter, dataSocialLinks } from "../../data";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import { NavLink } from "react-router-dom";
-import { socialLinks } from "../../data/data";
 import InputSubscribe from "../../uikit/InputSubscribe/InputSubscribe";
 
 import styles from "./Footer.module.scss";
@@ -18,10 +17,10 @@ const Footer: FC = () => {
               <SvgSprite id='logo_footer' />
             </div>
             <div className={styles.socialLinks}>
-              {socialLinks.map(({ id, name, to }) => (
+              {dataSocialLinks.map(({ id, icon, to }) => (
                 <div key={id} className={styles.socialLink}>
                   <NavLink to={to}>
-                    <SvgSprite id={name} />
+                    <SvgSprite id={icon} />
                   </NavLink>
                 </div>
               ))}

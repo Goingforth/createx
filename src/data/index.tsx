@@ -1,3 +1,6 @@
+import { patterns } from "./dataPatterns";
+import { ApplicationFormInput } from "./dataApplicationFormInput";
+import { dataServicesItems, TypeDataServicesItem } from "./dataServicesItems";
 import { dataHeroPages } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 import { dataSteps } from "./dataSteps";
@@ -24,8 +27,11 @@ import {
   ColorsFigures,
 } from "./dataFigures";
 import { dataSlidersHero } from "./dataSliderHero";
+import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 
 export {
+  patterns,
+  ApplicationFormInput,
   dataServicesPage,
   dataHeroPages,
   navigation,
@@ -55,4 +61,8 @@ export {
   type TypeFigure,
   type ColorsFigures,
   dataSlidersHero,
+  dataServicesItems,
+  type TypeDataServicesItem,
+  dataBlockLinkFooter,
+  dataSocialLinks,
 };

@@ -4,7 +4,7 @@ import Checkboxes from "../../uikit/Checkboxes/Checkboxes";
 // import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
 import Btn from "../../uikit/Buttons/Btn/Btn";
 import styles from "./ApplicationForm.module.scss";
-import { ApplicationFormInput } from "../../data/data";
+import { ApplicationFormInput } from "../../data";
 
 const valuesObj = Object.fromEntries(
   ApplicationFormInput.map(({ name, defaultValue = "" }) => [

@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import Btn from "../Buttons/Btn/Btn";
-import { patterns } from "../../data/data";
+import { patterns } from "../../data";
 import styles from "./InputSubscribe.module.scss";
 
 const InputSubscribe: FC = () => {

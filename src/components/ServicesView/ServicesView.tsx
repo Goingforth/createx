@@ -1,16 +1,14 @@
 import { FC } from "react";
-import { servicesItems } from "../../data/data";
+import { dataServicesItems, TypeDataServicesItem } from "../../data";
 import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
 import styles from "./ServicesView.module.scss";
 
-type Props = [id?: string, icon?: string, title?: string];
-
-const ServicesView: FC<Props> = () => {
+const ServicesView: FC<TypeDataServicesItem> = () => {
   return (
     <div className={styles.container}>
-      {servicesItems.map(({ id, icon, title }) => (
-        <div className={styles.box} key={id}>
-          <IconBoxBasic icon={icon} title={title} />
+      {dataServicesItems.map((item) => (
+        <div className={styles.box} key={item.id}>
+          <IconBoxBasic {...item} />
         </div>
       ))}
     </div>
