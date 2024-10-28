@@ -23,7 +23,6 @@ const SliderCarousel: FC<PropsSliderCarousel> = (props) => {
   const onClickPrev = () => setOffset(offset + stepOffset);
   const onClickNext = () => setOffset(offset - stepOffset);
   return (
-    // <div className={styles.container}>
     <div className='containerSection'>
       <div className={styles.head}>
         <div className={styles.title}>{title}</div>
@@ -51,14 +50,8 @@ const SliderCarousel: FC<PropsSliderCarousel> = (props) => {
           ))}
         </div>
       </div>
-      <ViewAll
-        titleViewAll={titleViewAll}
-        // to='/work'
-        to={to}
-        btnTitle={btnTitle}
-      />
+      <ViewAll titleViewAll={titleViewAll} to={to} btnTitle={btnTitle} />
     </div>
-    // </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
-import TestimonialsCard from "../TestimonialsCard/TestimonialsCard";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
+import { TestimonialsCard } from "../index";
 import SliderControls from "../../uikit/SliderControls/SliderControls";
 import { dataTestimonialsCards } from "../../data";
 import styles from "./Testimonials.module.scss";
@@ -74,11 +73,3 @@ const Testimonials: FC = () => {
 };
 
 export default Testimonials;
-
-type PropsTestimonialsBlock = {
-  children?: React.ReactNode;
-};
-
-export const TestimonialsBlock: FC<PropsTestimonialsBlock> = () => {
-  return <SectionWithChildren children={<Testimonials />} />;
-};

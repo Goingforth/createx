@@ -1,16 +1,17 @@
 import { FC } from "react";
-import Hero from "../../components/Hero/Hero";
-import Video from "../../components/Video/Video";
-import CoreValues from "../../components/CoreValues/CoreValues";
-import BlockServices from "../../components/BlockServices/BlockServices";
-import NewsHomePage from "../../components/NewsHomepage/NewsHomePage";
-import Portfolio from "../../components/Portfolio/Portfolio";
-import Testimonials from "../../components/Testimonials/Testimonials";
-// import { TestimonialsBlock } from "../../components/Testimonials/Testimonials";
+import {
+  Hero,
+  Video,
+  CoreValues,
+  BlockServices,
+  NewsHomePage,
+  Portfolio,
+  Testimonials,
+  Clients,
+  Figures,
+} from "../../components/index";
+
 import styles from "./Home.module.scss";
-import Figures from "../../components/Figures/Figures";
-import Clients from "../../components/Clients/Clients";
-// import Application from "../../components/Application/Application";
 
 const Home: FC = () => {
   return (
@@ -35,7 +36,7 @@ and learn more about our work'
         <Clients title='Supported by 12+ partners' />
       </div>
       <Testimonials />
-      {/* <TestimonialsBlock /> */}
+
       <Figures />
       <NewsHomePage />
     </div>

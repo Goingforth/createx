@@ -1,5 +1,5 @@
 import { FC } from "react";
-import HeroPage from "../../components/HeroPage/HeroPage";
+import { HeroPage } from "../../components";
 
 //import styles from "./Contacts.module.scss";
 

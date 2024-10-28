@@ -1,7 +1,6 @@
 import { FC } from "react";
+import { HeroPage, BlockServicePage } from "../../components";
 
-import HeroPage from "../../components/HeroPage/HeroPage";
-import BlockServicePage from "../../components/BlockServicepage/BlockServicePage";
 import { dataServicesPage } from "../../data";
 import styles from "./Services.module.scss";
 

@@ -1,6 +1,5 @@
 import { FC } from "react";
-import HeroPage from "../../components/HeroPage/HeroPage";
-import NewsBody from "../../components/NewsBody/NewsBody";
+import { HeroPage, NewsBody } from "../../components";
 
 //import styles from "./News.module.scss";
 
