@@ -1,5 +1,5 @@
 .container {
-  position: relative;
+  // position: relative;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -28,13 +28,13 @@
   @extend .small_regular;
   color: $gray700;
 }
-.imageWrapper {
-  position: absolute;
-  width: 495px;
-  height: 550px;
-  z-index: 200;
-  right: -630px;
-  bottom: -185px;
-  border-radius: 4px;
-  overflow: hidden;
-}
+// .imageWrapper {
+//   position: absolute;
+//   width: 495px;
+//   height: 550px;
+//   z-index: 200;
+//   right: -630px;
+//   bottom: -185px;
+//   border-radius: 4px;
+//   overflow: hidden;
+// }

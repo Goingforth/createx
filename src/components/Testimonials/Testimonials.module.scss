@@ -18,4 +18,49 @@
   position: absolute;
   bottom: 0;
   left: 510px;
+  z-index: 10;
+}
+.windowCard {
+  display: flex;
+  width: 600px;
+  overflow: hidden;
+}
+.imageWrapper {
+  position: absolute;
+  display: flex;
+  width: 495px;
+  height: 550px;
+  // right: -630px;
+  // bottom: -185px;
+  right: 0;
+  top: 0;
+  border-radius: 4px;
+  overflow: hidden;
+
+  // opacity: 0;
+  // transition: 1s;
+  // animation: show 3s 1;
+  // animation-fill-mode: forwards;
+  // @keyframes show {
+  //   0% {
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //   }
+  // }
+}
+.pulse {
+  transition: 1s;
+  animation: show1 3s 1;
+  animation-fill-mode: forwards;
+  z-index: 100;
+  @keyframes show1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }

@@ -13,9 +13,9 @@ const TestimonialsCard: FC<TypeTestimonialsCards> = (card) => {
       <div className={styles.content}>{content}</div>
       <div className={styles.name}>{name}</div>
       <div className={styles.position}>{position}</div>
-      <div className={styles.imageWrapper}>
+      {/* <div className={styles.imageWrapper}>
         <img src={image} alt='' />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -7,30 +7,67 @@ import styles from "./Testimonials.module.scss";
 
 const Testimonials: FC = () => {
   const [active, setActive] = useState(0);
+
+  const [offsetCard, setOffsetCard] = useState(0);
+  const [show, setShow] = useState(true);
+
+  const stepOffsetCard = 600;
+
+  const numberBlockingSlide = dataTestimonialsCards.length - 1;
+  const onClickPrev = () => {
+    setOffsetCard(offsetCard + stepOffsetCard);
+
+    setShow(false);
+    setActive(active - 1);
+    setTimeout(() => setShow(true), 0);
+  };
+  const onClickNext = () => {
+    setOffsetCard(offsetCard - stepOffsetCard);
+
+    setShow(false);
+    setActive(active + 1);
+
+    setTimeout(() => setShow(true), 0);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.section}>
         <div className={styles.title}>What our clients are saying</div>
-        <TestimonialsCard
-          key={dataTestimonialsCards[active].id}
-          {...dataTestimonialsCards[active]}
-        />
+
         <div className={styles.sliderControls}>
           <SliderControls
-            type='jump'
-            currentSlide={active}
-            numberBlockingSlide={dataTestimonialsCards.length - 1}
-            onClickPrev={() => {
-              setActive(active - 1);
-            }}
-            onClickNext={() => {
-              setActive(active + 1);
-            }}
+            type='carousel'
+            stepOffset={stepOffsetCard}
+            numberBlockingSlide={numberBlockingSlide}
+            offset={offsetCard}
+            onClickNext={onClickNext}
+            onClickPrev={onClickPrev}
           />
         </div>
-        {/* {dataTestimonialsCards.map((card) => (
-          <TestimonialsCard key={card.id} {...card} />
-        ))} */}
+        <div className={styles.windowCard}>
+          {dataTestimonialsCards.map((card) => (
+            <div
+              key={card.id}
+              style={{
+                translate: offsetCard,
+                transition: "translate 1s ease-in-out",
+              }}
+            >
+              <TestimonialsCard {...card} />
+            </div>
+          ))}
+        </div>
+        <div className={styles.imageWrapper}>
+          {show && (
+            <img
+              src={dataTestimonialsCards[active].image}
+              width='100%'
+              height='100%'
+              alt=''
+              className={styles.pulse}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
