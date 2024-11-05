@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./ButtonBasic.module.scss";
 
-type Props = {
+export type TypeButtonBasic = {
   type?: "submit" | "reset" | "button";
   title?: string;
   titleColor?: "white" | "primary";
@@ -14,7 +14,7 @@ type Props = {
   onClick?: any;
 };
 
-const ButtonBasic: FC<Props> = ({
+const ButtonBasic: FC<TypeButtonBasic> = ({
   type = "button",
   title = "Large Button",
   titleColor,

@@ -1,8 +1,6 @@
 import { FC } from "react";
-import IconBoxBasic from "../../uikit/IconBoxBasic/IconBoxBasic";
+import { IconBoxBasic, SvgSprite, Btn } from "../../uikit";
 import { dataBenefits } from "../../data";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import Btn from "../../uikit/Buttons/Btn/Btn";
 import styles from "./Benefits.module.scss";
 
 const Benefits: FC = () => {
@@ -14,14 +12,9 @@ const Benefits: FC = () => {
           Our mission is to set the highest standards for construction sphere.
         </div>
         <div className={styles.benefits}>
-          {dataBenefits.map(({ id, icon, title, content }, index) => (
-            <div key={id} className={styles.icons}>
-              <IconBoxBasic
-                theme='light'
-                icon={icon}
-                title={title}
-                content={content}
-              />
+          {dataBenefits.map((benefit, index) => (
+            <div key={benefit.id} className={styles.icons}>
+              <IconBoxBasic theme='light' {...benefit} />
               {index !== dataBenefits.length - 1 && <SvgSprite id='divider' />}
             </div>
           ))}

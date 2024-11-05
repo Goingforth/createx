@@ -1,7 +1,8 @@
 import { FC } from "react";
 import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./InputForms.module.scss";
-type Props = {
+export type TypeInputForm = {
+  id?: string;
   label?: string;
   placeholder?: string;
   name: string;
@@ -14,9 +15,10 @@ type Props = {
   pattern: RegExp | undefined;
   size?: "large" | "default" | "small";
   status?: string;
+  width?: string;
 };
 
-const InputForms: FC<Props> = ({
+const InputForms: FC<TypeInputForm> = ({
   label = "write label",
   placeholder = "write placeholder",
   name = "write name",
@@ -28,6 +30,7 @@ const InputForms: FC<Props> = ({
   pattern,
   size = "default",
   status,
+  width = "100%",
 }) => {
   return (
     <div
@@ -37,6 +40,7 @@ const InputForms: FC<Props> = ({
         size === "large" ? styles.large : "",
         size === "small" ? styles.small : "",
       ].join(" ")}
+      style={{ width: `${width}` }}
     >
       <label>{label}</label>
       {type !== "textarea" ? (

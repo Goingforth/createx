@@ -1,0 +1,19 @@
+.container {
+  position: absolute;
+  left: 345px;
+  bottom: -93px;
+  @extend .containerChildren;
+  padding: 48px 60px;
+
+  background-color: $white;
+}
+.titles {
+  @extend h3;
+  color: $gray900;
+  margin-bottom: 32px;
+}
+.formRequest {
+  display: flex;
+  gap: 24px;
+  align-items: end;
+}

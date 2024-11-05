@@ -1,15 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "../components/Layout/Layout";
-import { ErrorPage } from "../components/ErrorPage/ErrorPage";
-import Home from "../pages/Home/Home";
-import AboutUs from "../pages/AboutUs/AboutUs";
-import Contacts from "../pages/Contacts/Contacts";
-import Services from "../pages/Services/Services";
-import Formdata from "../pages/Formdata/Formdata";
-import News from "../pages/News/News";
-import Work from "../pages/Work/Work";
-import InteriorDesign from "../pages/InteriorDesign/InteriorDesign";
-import AvailablePositions from "../pages/AvailablePositions/AvailablePositions";
+import { Layout } from "../components";
+
+import {
+  Home,
+  AboutUs,
+  Contacts,
+  Services,
+  Formdata,
+  News,
+  Work,
+  InteriorDesign,
+  AvailablePositions,
+  ErrorPage,
+  ModernCottage,
+} from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +48,13 @@ export const router = createBrowserRouter([
 
       {
         path: "work",
-        element: <Work />,
+        children: [
+          { element: <Work />, index: true },
+          {
+            path: "modern_cottage",
+            element: <ModernCottage />,
+          },
+        ],
       },
       {
         path: "news",

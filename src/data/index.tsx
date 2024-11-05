@@ -1,5 +1,8 @@
-import { patterns } from "./dataPatterns";
-import { ApplicationFormInput } from "./dataApplicationFormInput";
+import { retPattern } from "./dataPatterns";
+import {
+  dataApplicationFormInput,
+  TypeDataFormInput,
+} from "./dataApplicationFormInput";
 import { dataServicesItems, TypeDataServicesItem } from "./dataServicesItems";
 import { dataHeroPages, TypeHeroPage } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
@@ -30,8 +33,9 @@ import { dataSlidersHero } from "./dataSliderHero";
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 
 export {
-  patterns,
-  ApplicationFormInput,
+  retPattern,
+  dataApplicationFormInput,
+  type TypeDataFormInput,
   dataServicesPage,
   dataHeroPages,
   type TypeHeroPage,

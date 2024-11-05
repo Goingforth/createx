@@ -1,5 +1,23 @@
-import { patterns } from "./dataPatterns";
-export const ApplicationFormInput = [
+import { retPattern } from "../data";
+
+export type TypeDataFormInput = {
+  id: string;
+  label?: string;
+  placeholder?: string;
+  name: string;
+  type?: string;
+  value?: string;
+  defaultValue?: boolean;
+  messages?: {
+    focus: string;
+    input: string;
+    valid: string;
+    noValid: string;
+  };
+  pattern?: RegExp | undefined;
+};
+
+export const dataApplicationFormInput: TypeDataFormInput[] = [
   {
     id: "ApplicationFormInput0",
     label: "Name*",
@@ -12,7 +30,7 @@ export const ApplicationFormInput = [
       noValid: "Please provide a valid input.",
     },
 
-    pattern: patterns["name"],
+    pattern: retPattern("name"),
   },
   {
     id: "ApplicationFormInput1",
@@ -26,7 +44,7 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-    pattern: patterns["phone"],
+    pattern: retPattern("phone"),
   },
   {
     id: "ApplicationFormInput2",
@@ -40,7 +58,7 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-    pattern: patterns["email"],
+    pattern: retPattern("email"),
   },
   {
     id: "ApplicationFormInput3",
@@ -54,8 +72,7 @@ export const ApplicationFormInput = [
       valid: "Looks good!",
       noValid: "Please provide a valid input.",
     },
-    pattern: patterns["textarea"],
-    // pattern: /[A-Za-zа-яА-Я0-9]{1,}/,
+    pattern: retPattern("textarea"),
   },
   {
     id: "ApplicationFormInput4",

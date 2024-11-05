@@ -7,11 +7,14 @@ import {
   Clients,
 } from "../../components";
 
+import { ScrollToTop } from "../../utils";
+
 import styles from "./Work.module.scss";
 
 const Work: FC = () => {
   return (
     <>
+      <ScrollToTop />
       <HeroPage />
       <MediaTabs />
       <PortfolioGallery />

@@ -9,7 +9,8 @@ import {
   Testimonials,
   Clients,
   Figures,
-} from "../../components/index";
+  RequestForm,
+} from "../../components";
 
 import styles from "./Home.module.scss";
 
@@ -21,6 +22,7 @@ const Home: FC = () => {
 
       <div className={styles.containerCoreValues}>
         <CoreValues />
+        <RequestForm />
       </div>
 
       <div className={styles.containerServices}>

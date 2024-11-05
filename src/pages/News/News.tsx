@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { HeroPage, NewsBody } from "../../components";
-
-//import styles from "./News.module.scss";
+import { ScrollToTop } from "../../utils";
 
 const News: FC = () => {
-  // return <div className={styles.container}>News</div>;
   return (
     <div>
+      <ScrollToTop />
       <HeroPage />
       <NewsBody />
     </div>

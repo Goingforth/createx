@@ -4,7 +4,7 @@
 }
 .titleBasic {
   @extend .lead_bold;
-  color: $gray900;
+  color: inherit;
 }
 .contentLight {
   @extend .base_regular;

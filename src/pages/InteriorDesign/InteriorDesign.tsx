@@ -7,12 +7,14 @@ import {
   Clients,
   Pricing,
 } from "../../components";
+import { ScrollToTop } from "../../utils";
 
 import styles from "./InteriorDesign.module.scss";
 
 const InteriorDesign: FC = () => {
   return (
     <>
+      <ScrollToTop />
       <HeroPage />
       <div className={styles.container}>
         <Offer />

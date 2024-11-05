@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./Btn.module.scss";
 
-type Props = {
+export type TypeBtnProps = {
   type?: "submit" | "reset" | "button";
   title?: string;
   // titleColor?: "white" | "primary";
@@ -16,7 +16,7 @@ type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
-const Btn: FC<Props> = ({
+const Btn: FC<TypeBtnProps> = ({
   type = "button",
 
   //   titleColor,

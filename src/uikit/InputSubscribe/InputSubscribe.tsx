@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import Btn from "../Buttons/Btn/Btn";
-import { patterns } from "../../data";
+import { retPattern } from "../../data";
 import styles from "./InputSubscribe.module.scss";
 
 const InputSubscribe: FC = () => {
@@ -8,7 +8,7 @@ const InputSubscribe: FC = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    setDisabled(!patterns["email"].test(email));
+    setDisabled(!retPattern("email")?.test(email));
   }, [email]);
   const onClick = () => {
     setEmail("");
@@ -20,7 +20,9 @@ const InputSubscribe: FC = () => {
         name='email'
         placeholder='Your email address '
         value={email}
-        onChange={(e: any) => setEmail(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setEmail(e.target.value)
+        }
       />
 
       <Btn

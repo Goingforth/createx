@@ -1,7 +1,7 @@
 import { FC } from "react";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import { SvgSprite, TypeIdIcons } from "../index";
+
 import styles from "./IconBoxBasic.module.scss";
-import { TypeIdIcons } from "../SvgSprite/SvgSprite";
 
 type Props = {
   theme?: "light" | "basic";

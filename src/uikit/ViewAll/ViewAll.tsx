@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import Btn from "../Buttons/Btn/Btn";
 import styles from "./ViewAll.module.scss";
 
-type Props = {
+export type TypeViewAll = {
   titleViewAll: string;
   to: string;
   btnTitle: string;
 };
 
-const ViewAll: FC<Props> = (props) => {
+const ViewAll: FC<TypeViewAll> = (props) => {
   const { titleViewAll, to, btnTitle } = props;
   return (
     <div className={styles.viewAll}>

@@ -1,22 +1,21 @@
 import { FC, useState, useEffect } from "react";
-import InputForms from "../../uikit/InputForms/InputForms";
-import Checkboxes from "../../uikit/Checkboxes/Checkboxes";
-// import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
-import Btn from "../../uikit/Buttons/Btn/Btn";
+import { InputForms, Btn, Checkboxes } from "../../uikit";
 import styles from "./ApplicationForm.module.scss";
-import { ApplicationFormInput } from "../../data";
-
+import { dataApplicationFormInput } from "../../data";
+//////////
 const valuesObj = Object.fromEntries(
-  ApplicationFormInput.map(({ name, defaultValue = "" }) => [
+  dataApplicationFormInput.map(({ name, defaultValue = "" }) => [
     name,
     defaultValue,
   ])
 );
-const statusInput = Object.fromEntries(
-  ApplicationFormInput.map(({ name }) => [name, "blank"])
-);
 
+const statusInput = Object.fromEntries(
+  dataApplicationFormInput.map(({ name }) => [name, "blank"])
+);
+////////////////////
 const ApplicationForm: FC = () => {
+  /////////////////////////////
   const [values, setValues] = useState(valuesObj);
   const [status, setStatus] = useState(statusInput);
   const [isDisabled, setDisabled] = useState(true);
@@ -28,38 +27,44 @@ const ApplicationForm: FC = () => {
       : setDisabled(true);
   }, [status]);
 
-  const changeHandler = (name: any, value: any) => {
+  const changeHandler = (name: string, value: string | boolean) => {
     setValues({ ...values, [name]: value });
     setStatus({ ...status, [name]: "input" });
   };
 
-  const changeFocus = (name: any) => {
+  const changeFocus = (name: string) => {
     setStatus({ ...status, [name]: "focus" });
   };
 
-  const changeBlur = (name: any, pattern: RegExp | undefined) => {
+  const changeBlur = (name: string, pattern: RegExp | undefined) => {
     if (values[name] === "") setStatus({ ...status, [name]: "empty" });
     else if (pattern?.test(String(values[name])))
       setStatus({ ...status, [name]: "valid" });
-    else setStatus({ ...status, [name]: "novalid" });
+    else setStatus({ ...status, [name]: "noValid" });
   };
 
-  const changeMessage = (name: string, messages: any) => {
-    const { focus, input, valid, noValid } = messages;
-
-    switch (status[name]) {
-      case "focus":
-        return focus;
-      case "input":
-        return input;
-      case "valid":
-        return valid;
-      case "novalid":
-        return noValid;
-      case "empty":
-        return "The field cannot be empty";
-      default:
-        return "default";
+  const changeMessage = (
+    name: string,
+    messages?: { focus: string; input: string; valid: string; noValid: string }
+  ) => {
+    if (messages !== undefined) {
+      const { focus, input, valid, noValid } = messages;
+      switch (status[name]) {
+        case "focus":
+          return focus;
+        case "input":
+          return input;
+        case "valid":
+          return valid;
+        case "noValid":
+          return noValid;
+        case "empty":
+          return "The field cannot be empty";
+        default:
+          return "default";
+      }
+    } else {
+      return;
     }
   };
   const onClick = () => {
@@ -67,12 +72,12 @@ const ApplicationForm: FC = () => {
     setValues(valuesObj);
     setStatus(statusInput);
   };
-
+  //////////////////
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>A quick way to discuss details</h3>
       <form className={styles.form}>
-        {ApplicationFormInput.map(
+        {dataApplicationFormInput.map(
           ({
             id,
             label,

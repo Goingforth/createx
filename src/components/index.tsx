@@ -21,6 +21,10 @@ import Benefits from "./Benefits/Benefits";
 import Pricing from "./Pricing/Pricing";
 import NewsBody from "./NewsBody/NewsBody";
 import BlockServicePage from "./BlockServicepage/BlockServicePage";
+import RequestForm from "./RequestForm/RequestForm";
+import ServicesView from "./ServicesView/ServicesView";
+import SectionWithChildren from "./SectionWithChidren/SectionWtithChildren";
+import { Layout } from "./Layout/Layout";
 
 export {
   Hero,
@@ -46,4 +50,8 @@ export {
   Pricing,
   NewsBody,
   BlockServicePage,
+  RequestForm,
+  ServicesView,
+  SectionWithChildren,
+  Layout,
 };
