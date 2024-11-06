@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import PortfolioCard from "../PortfolioCard/PortfolioCard";
+import { PortfolioCard } from "../index";
 import { dataPortfolioCards } from "../../data";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
+import { SvgSprite } from "../../uikit";
 import styles from "./PortfolioGallery.module.scss";
 
 const PortfolioGallery: FC = () => {
@@ -13,12 +13,8 @@ const PortfolioGallery: FC = () => {
     <div className={styles.container}>
       <div className={styles.containerGallery}>
         {dataPortfolioCards.map(
-          ({ src, title, subTitle }, index) =>
-            index <= indexRender && (
-              <div key={`portfolioGallery${index}`}>
-                <PortfolioCard src={src} title={title} subTitle={subTitle} />
-              </div>
-            )
+          (card, index) =>
+            index <= indexRender && <PortfolioCard key={card.id} {...card} />
         )}
       </div>
       <div

@@ -6,33 +6,20 @@
   padding-left: 345px;
 }
 
-.navInfo {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 40px;
-  @extend .small_regular;
+.containerSubPage {
+  height: 970px;
 }
+
 .title {
   @extend .display1;
   margin-bottom: 24px;
   color: $gray900;
 }
+.titleSubPage {
+  @extend .display2;
+}
 .note {
   @extend .lead_regular;
   width: 600px;
   color: $gray700;
-}
-.homepage {
-  color: $gray800;
-}
-.namepage {
-  color: $gray600;
-}
-.route {
-  display: flex;
-  gap: 8px;
-}
-.slach {
-  @extend .small_regular;
-  color: $gray600;
 }

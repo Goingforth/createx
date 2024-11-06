@@ -1,17 +1,17 @@
 type TypePage =
   | "/services"
+  | "/services/interior_design"
   | "/work"
+  | "/work/modern_cottage"
   | "/about_us"
   | "/news"
-  | "/contacts"
-  | "/services/interior_design";
+  | "/contacts";
 
 export type TypeHeroPage = {
-  // page: string | undefined;
   page: TypePage;
   title: string;
-  note: string;
-  bgImage: string;
+  note?: string;
+  bgImage?: string;
 };
 
 export const dataHeroPages: TypeHeroPage[] = [
@@ -50,5 +50,9 @@ export const dataHeroPages: TypeHeroPage[] = [
     title: "INTERIOR</br> DESIGN",
     note: "Dui augue nec mi mi. Ut ac lectus donec fames pellentesque.</br> Laoreet aenean vulputate elementum blandit amet.",
     bgImage: "/bgImageHeros/bgInterior_design.jpg",
+  },
+  {
+    page: "/work/modern_cottage",
+    title: "Modern Cottage",
   },
 ];

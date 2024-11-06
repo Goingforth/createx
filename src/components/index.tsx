@@ -25,6 +25,9 @@ import RequestForm from "./RequestForm/RequestForm";
 import ServicesView from "./ServicesView/ServicesView";
 import SectionWithChildren from "./SectionWithChidren/SectionWtithChildren";
 import { Layout } from "./Layout/Layout";
+import PortfolioCard from "./PortfolioCard/PortfolioCard";
+import BreadCrumb from "./BreadCrumb/BreadCrumb";
+import { DataHeroPage } from "./BreadCrumb/BreadCrumb";
 
 export {
   Hero,
@@ -54,4 +57,7 @@ export {
   ServicesView,
   SectionWithChildren,
   Layout,
+  PortfolioCard,
+  BreadCrumb,
+  DataHeroPage,
 };

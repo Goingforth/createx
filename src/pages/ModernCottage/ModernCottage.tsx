@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { ScrollToTop } from "../../utils";
+import { HeroPage } from "../../components";
 import styles from "./ModernCottage.module.scss";
 
 const ModernCottage: FC = () => {
   return (
     <div>
       <ScrollToTop />
-      <h3>ModernCottage</h3>
+      <HeroPage />
     </div>
   );
 };
