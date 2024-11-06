@@ -11,36 +11,38 @@ const HeroPage: FC = () => {
 
   return (
     <>
-      {pageData !== undefined && (
+      {pageData !== undefined && pageData.typeHero === "heroBasic" && (
         <div
-          className={[
-            styles.container,
-            pageData.bgImage === undefined ? styles.containerSubPage : "",
-          ].join(" ")}
+          className={styles.container}
           style={{
-            backgroundImage:
-              pageData.bgImage !== undefined ? `url(${pageData.bgImage})` : "",
+            backgroundImage: `url(${pageData.bgImage})`,
           }}
         >
           <BreadCrumb />
           <div
-            className={[
-              styles.title,
-              pageData.bgImage === undefined ? styles.titleSubPage : "",
-            ].join(" ")}
+            className={styles.title}
             dangerouslySetInnerHTML={{
               __html: `<p>${pageData.title}</p>`,
             }}
           />
 
-          {pageData.note !== undefined && (
-            <div
-              className={styles.note}
-              dangerouslySetInnerHTML={{
-                __html: `<p>${pageData.note}</p>`,
-              }}
-            />
-          )}
+          <div
+            className={styles.note}
+            dangerouslySetInnerHTML={{
+              __html: `<p>${pageData.note}</p>`,
+            }}
+          />
+        </div>
+      )}
+      {pageData !== undefined && pageData.typeHero === "heroNoImg" && (
+        <div className={styles.heroNoImg}>
+          <BreadCrumb />
+          <div
+            className={styles.titleHeroNoImg}
+            dangerouslySetInnerHTML={{
+              __html: `<p>${pageData.title}</p>`,
+            }}
+          />
         </div>
       )}
     </>

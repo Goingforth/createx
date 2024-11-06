@@ -6,7 +6,8 @@
   padding-left: 345px;
 }
 
-.containerSubPage {
+.heroNoImg {
+  @extend .container;
   height: 970px;
 }
 
@@ -15,7 +16,8 @@
   margin-bottom: 24px;
   color: $gray900;
 }
-.titleSubPage {
+.titleHeroNoImg {
+  @extend .title;
   @extend .display2;
 }
 .note {
