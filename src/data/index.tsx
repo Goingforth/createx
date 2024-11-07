@@ -4,7 +4,7 @@ import {
   TypeDataFormInput,
 } from "./dataApplicationFormInput";
 import { dataServicesItems, TypeDataServicesItem } from "./dataServicesItems";
-import { dataHeroPages, TypeHeroPage } from "./dataHeroPages";
+import { dataHeroPages, TypeHeroPage, TypeNamePage } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 import { dataSteps } from "./dataSteps";
 import { dataPortfolioCards, TypePortfolioCard } from "./dataPortfolioCards";
@@ -31,6 +31,7 @@ import {
 } from "./dataFigures";
 import { dataSlidersHero } from "./dataSliderHero";
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
+import { dataProject } from "./dataProject";
 
 export {
   retPattern,
@@ -39,6 +40,7 @@ export {
   dataServicesPage,
   dataHeroPages,
   type TypeHeroPage,
+  type TypeNamePage,
   navigation,
   connection,
   dataSteps,
@@ -70,4 +72,5 @@ export {
   type TypeDataServicesItem,
   dataBlockLinkFooter,
   dataSocialLinks,
+  dataProject,
 };

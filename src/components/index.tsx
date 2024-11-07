@@ -27,7 +27,8 @@ import SectionWithChildren from "./SectionWithChidren/SectionWtithChildren";
 import { Layout } from "./Layout/Layout";
 import PortfolioCard from "./PortfolioCard/PortfolioCard";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
-import { DataHeroPage } from "./BreadCrumb/BreadCrumb";
+
+import AboutProject from "./AboutProject/AboutProject";
 
 export {
   Hero,
@@ -59,5 +60,5 @@ export {
   Layout,
   PortfolioCard,
   BreadCrumb,
-  DataHeroPage,
+  AboutProject,
 };

@@ -1,4 +1,4 @@
-type TypePage =
+export type TypeNamePage =
   | "/services"
   | "/services/interior_design"
   | "/work"
@@ -10,7 +10,7 @@ type TypePage =
 type TypeHero = "heroBasic" | "heroNoImg";
 
 export type TypeHeroPage = {
-  page: TypePage;
+  page: TypeNamePage;
   typeHero: TypeHero;
   title: string;
   note?: string;

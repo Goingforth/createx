@@ -1,0 +1,53 @@
+.container {
+  @extend .containerSection;
+  display: flex;
+  height: 315px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 120px;
+  height: 316px;
+}
+
+.title {
+  @extend h1;
+  color: $gray900;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.note {
+  width: 600px;
+  @extend .large_regular;
+  text-align: left;
+  color: $gray800;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 495px;
+  height: 100%;
+
+  padding: 40px 60px;
+  border-radius: 4px;
+  @extend .shadow_small;
+}
+.keys {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @extend .base_bold;
+  text-align: left;
+  color: $gray900;
+  text-transform: uppercase;
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @extend .base_regular;
+  text-align: left;
+  color: $gray700;
+}

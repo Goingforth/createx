@@ -1,13 +1,14 @@
 import { FC } from "react";
 
-import { BreadCrumb, DataHeroPage } from "../index";
+import { BreadCrumb } from "../index";
+import { DataPage } from "../../utils";
 
-import { TypeHeroPage } from "../../data";
+import { TypeHeroPage, dataHeroPages } from "../../data";
 
 import styles from "./HeroPage.module.scss";
 
 const HeroPage: FC = () => {
-  const pageData: TypeHeroPage | undefined = DataHeroPage();
+  const pageData: TypeHeroPage | undefined = DataPage(dataHeroPages);
 
   return (
     <>
