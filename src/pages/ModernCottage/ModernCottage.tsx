@@ -1,6 +1,10 @@
 import { FC } from "react";
 import { ScrollToTop } from "../../utils";
-import { HeroPage, AboutProject } from "../../components";
+import {
+  HeroPage,
+  AboutProject,
+  ConstructiveDecisions,
+} from "../../components";
 import styles from "./ModernCottage.module.scss";
 
 const ModernCottage: FC = () => {
@@ -9,6 +13,7 @@ const ModernCottage: FC = () => {
       <ScrollToTop />
       <HeroPage />
       <AboutProject />
+      <ConstructiveDecisions />
     </div>
   );
 };

@@ -1,0 +1,38 @@
+.container {
+  @extend .containerApp;
+
+  height: 570px;
+  background-color: $gray200;
+}
+
+.containerContent {
+  display: flex;
+  gap: 133px;
+  height: 100%;
+  box-sizing: border-box;
+  @extend .containerSection;
+  padding-top: 80px;
+  z-index: 10;
+}
+
+.title {
+  @extend h1;
+  text-align: left;
+  color: $gray900;
+  margin-bottom: 60px;
+}
+.blockInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.item {
+  @extend .base_regular;
+  text-align: left;
+  color: $gray800;
+}

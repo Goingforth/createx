@@ -27,8 +27,8 @@ import SectionWithChildren from "./SectionWithChidren/SectionWtithChildren";
 import { Layout } from "./Layout/Layout";
 import PortfolioCard from "./PortfolioCard/PortfolioCard";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
-
 import AboutProject from "./AboutProject/AboutProject";
+import ConstructiveDecisions from "./ConstructiveDecisions/ConstructiveDecisions";
 
 export {
   Hero,
@@ -61,4 +61,5 @@ export {
   PortfolioCard,
   BreadCrumb,
   AboutProject,
+  ConstructiveDecisions,
 };
