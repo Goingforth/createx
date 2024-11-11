@@ -4,6 +4,7 @@ import {
   HeroPage,
   AboutProject,
   ConstructiveDecisions,
+  Portfolio,
 } from "../../components";
 import styles from "./ModernCottage.module.scss";
 
@@ -14,6 +15,12 @@ const ModernCottage: FC = () => {
       <HeroPage />
       <AboutProject />
       <ConstructiveDecisions />
+      <Portfolio
+        title='Similar projects'
+        pt='180px'
+        pb='120px'
+        category={["Private houses"]}
+      />
     </div>
   );
 };

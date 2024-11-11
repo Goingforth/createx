@@ -7,7 +7,11 @@ import { dataServicesItems, TypeDataServicesItem } from "./dataServicesItems";
 import { dataHeroPages, TypeHeroPage, TypeNamePage } from "./dataHeroPages";
 import { dataServicesPage } from "./dataServicePage";
 import { dataSteps } from "./dataSteps";
-import { dataPortfolioCards, TypePortfolioCard } from "./dataPortfolioCards";
+import {
+  dataPortfolioCards,
+  TypePortfolioCard,
+  TypeCategoryPortfolio,
+} from "./dataPortfolioCards";
 import { navigation, connection } from "./dataHeader";
 import { dataBenefits } from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
@@ -32,6 +36,7 @@ import {
 import { dataSlidersHero } from "./dataSliderHero";
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 import { dataProject } from "./dataProject";
+import { dataBulletedList } from "./dataBulletedList";
 
 export {
   retPattern,
@@ -47,6 +52,7 @@ export {
   dataBenefits,
   dataPortfolioCards,
   type TypePortfolioCard,
+  type TypeCategoryPortfolio,
   dataTablePricing,
   dataClientsLogo,
   dataTestimonialsCards,
@@ -73,4 +79,5 @@ export {
   dataBlockLinkFooter,
   dataSocialLinks,
   dataProject,
+  dataBulletedList,
 };

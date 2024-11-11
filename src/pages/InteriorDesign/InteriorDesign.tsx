@@ -20,7 +20,12 @@ const InteriorDesign: FC = () => {
         <Offer />
       </div>
       <Benefits />
-      <Portfolio title='Related projects' pt='180px' pb='100px' />
+      <Portfolio
+        title='Related projects'
+        pt='180px'
+        pb='100px'
+        category={["Apartments & flats", "Private houses"]}
+      />
       <div className={styles.background}>
         <Pricing />
         <Clients title='Supported by 12+ partners' />

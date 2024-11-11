@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { dataPortfolioCards, TypePortfolioCard } from "../../data";
+import { TypePortfolioCard } from "../../data";
 
 import PortfolioCard from "../../components/PortfolioCard/PortfolioCard";
 import ViewAll from "../ViewAll/ViewAll";
@@ -19,7 +19,7 @@ const SliderCarousel: FC<PropsSliderCarousel> = (props) => {
   const { title, dataArray, titleViewAll, to, btnTitle } = props;
   const [offset, setOffset] = useState(0);
   const stepOffset = 420;
-  const numberBlockingSlide = dataPortfolioCards.length - 3;
+  const numberBlockingSlide = dataArray.length - 3;
   const onClickPrev = () => setOffset(offset + stepOffset);
   const onClickNext = () => setOffset(offset - stepOffset);
   return (

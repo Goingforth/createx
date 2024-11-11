@@ -7,12 +7,12 @@ import styles from "./PortfolioCard.module.scss";
 type TypePortfolioCard = {
   src: string;
   title: string;
-  subTitle: string;
+  category: string;
   to: string;
 };
 
 const PortfolioCard: FC<TypePortfolioCard> = (props) => {
-  const { src, title, subTitle, to } = props;
+  const { src, title, category, to } = props;
   return (
     <div className={styles.projectCard}>
       <div className={styles.imageWrapper}>
@@ -20,7 +20,7 @@ const PortfolioCard: FC<TypePortfolioCard> = (props) => {
       </div>
       <div className={styles.projectName}>
         <div className={styles.contentTitle}>{title}</div>
-        <div className={styles.contentSubTitle}>{subTitle}</div>
+        <div className={styles.contentCategory}>{category}</div>
         <Link to={to} className={styles.contentButton}>
           <Btn form='outline' title='View Project' />
         </Link>

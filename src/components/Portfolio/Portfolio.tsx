@@ -1,17 +1,23 @@
 import { FC } from "react";
 import SliderCarousel from "../../uikit/SliderCarousel/SliderCarousel";
 
-import { dataPortfolioCards } from "../../data";
+import { dataPortfolioCards, TypeCategoryPortfolio } from "../../data";
 
 type Props = {
   title: string;
+  category?: TypeCategoryPortfolio[];
   pt?: string | number | undefined;
   pb?: string | number | undefined;
 };
 
-const Portfolio: FC<Props> = ({ title, pt, pb }) => {
+const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
+  const dataFilteredPortfolioCard =
+    category !== undefined
+      ? dataPortfolioCards.filter((card) => category.includes(card.category))
+      : dataPortfolioCards;
+
   const props = {
-    dataArray: dataPortfolioCards,
+    dataArray: dataFilteredPortfolioCard,
     titleViewAll: "Explore all our works",
     to: "/work",
     btnTitle: "View portfolio",
