@@ -1,0 +1,33 @@
+.buttonLeft {
+  fill: $semiWhite;
+
+  &:hover {
+    fill: $white;
+    transition: fill 1s;
+  }
+}
+.buttonRight {
+  fill: $semiWhite;
+
+  &:hover {
+    fill: $white;
+    transition: fill 1s;
+  }
+}
+
+.info {
+  position: absolute;
+  width: 577px;
+  top: 220px;
+  left: 345px;
+  display: flex;
+  flex-direction: column;
+
+  color: $white;
+  span {
+    color: $primary;
+  }
+}
+.title {
+  margin-bottom: 24px;
+}

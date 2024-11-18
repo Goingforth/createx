@@ -5,7 +5,8 @@ export type TypeNamePage =
   | "/work/modern_cottage"
   | "/about_us"
   | "/news"
-  | "/contacts";
+  | "/contacts"
+  | "/about_us/available_positions";
 
 type TypeHero = "heroBasic" | "heroNoImg";
 
@@ -64,5 +65,12 @@ export const dataHeroPages: TypeHeroPage[] = [
     page: "/work/modern_cottage",
     typeHero: "heroNoImg",
     title: "Modern Cottage",
+  },
+  {
+    page: "/about_us/available_positions",
+    typeHero: "heroBasic",
+    title: "AVAILABLE</br> POSITIONS",
+    note: "Build your career with Createx Construction Bureau.",
+    bgImage: "/bgImageHeros/bgAvailPositions.jpg",
   },
 ];

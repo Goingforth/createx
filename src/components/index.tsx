@@ -29,6 +29,14 @@ import PortfolioCard from "./PortfolioCard/PortfolioCard";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import AboutProject from "./AboutProject/AboutProject";
 import ConstructiveDecisions from "./ConstructiveDecisions/ConstructiveDecisions";
+import GalleryModernCottage from "./GalleryModernCottage/GalleryModernCottage";
+import SliderFullImage from "./SliderFullImage/SliderFullImage";
+import { TypeSliderProps } from "./SliderFullImage/SliderFullImage";
+import SliderHero from "./SliderHero/SliderHero";
+import CounterSlider from "./CounterSlider/CounterSlider";
+import { TypeCounterSlider } from "./CounterSlider/CounterSlider";
+import SliderMiniImage from "./SliderMinIImage/SliderMiniImage";
+import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
 
 export {
   Hero,
@@ -62,4 +70,12 @@ export {
   BreadCrumb,
   AboutProject,
   ConstructiveDecisions,
+  GalleryModernCottage,
+  SliderFullImage,
+  type TypeSliderProps,
+  SliderHero,
+  CounterSlider,
+  type TypeCounterSlider,
+  SliderMiniImage,
+  type TypeSlideMiniImage,
 };

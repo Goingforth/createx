@@ -1,5 +1,6 @@
 $widthApp: 1920px;
 $widthSection: 1230px;
+$heightSliderHero: 988px;
 
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
@@ -21,6 +22,10 @@ $gray600: #9a9ca5;
 $gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
+
+// div {
+//   box-sizing: border-box;
+// }
 
 h1,
 h2,
@@ -265,3 +270,31 @@ button {
     0px 26px 24px -10px rgba(255, 90, 48, 0.1),
     0px 60px 80px -20px rgba(255, 90, 48, 0.16);
 }
+///////////////mixins//////////////
+///
+// @mixin sliderViewPort($widthSlider, $heightSlider) {
+//   .container {
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+
+//     width: $widthSlider;
+//     height: $heightSlider;
+//     align-items: center;
+//   }
+//   .viewport {
+//     width: $widthSlider;
+//     height: $heightSlider;
+//     overflow: hidden;
+//   }
+//   .view {
+//     display: flex;
+
+//     width: $widthSlider;
+//     height: $heightSlider;
+//     transition: translate;
+//     transition-property: transform;
+//     transition-duration: 500ms;
+//     transition-timing-function: ease-in-out;
+//   }
+// }

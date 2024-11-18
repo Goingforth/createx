@@ -1,0 +1,36 @@
+.container {
+  position: absolute;
+  top: 48px;
+  width: $widthApp;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.containerBlock {
+  box-sizing: border-box;
+  width: 1946px;
+  height: 922px;
+  border: 1px solid grey;
+}
+.bgWrapper {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 1437px;
+  width: 854px;
+  height: 822px;
+  background-image: url("/bgImageGallery.jpg");
+  opacity: 0.12;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: $widthSection;
+  margin-left: 345px;
+  height: 620px;
+  margin-top: 302px;
+  border: 1px solid red;
+}

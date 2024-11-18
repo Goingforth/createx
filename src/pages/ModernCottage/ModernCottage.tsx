@@ -5,14 +5,15 @@ import {
   AboutProject,
   ConstructiveDecisions,
   Portfolio,
+  GalleryModernCottage,
 } from "../../components";
-import styles from "./ModernCottage.module.scss";
 
 const ModernCottage: FC = () => {
   return (
     <div>
       <ScrollToTop />
       <HeroPage />
+      <GalleryModernCottage />
       <AboutProject />
       <ConstructiveDecisions />
       <Portfolio

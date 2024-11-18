@@ -11,10 +11,11 @@ const toCapizalize = (value: string) => {
 const BreadCrumb: FC = () => {
   const pageData = DataPage(dataHeroPages);
   const namePage = location.pathname
-    .replace("_", " ")
+    .replace(/_/g, " ")
     .split("/")
     .filter((item) => item !== "")
     .map((item) => toCapizalize(item));
+
   return (
     <>
       {pageData !== undefined && (

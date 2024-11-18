@@ -33,10 +33,20 @@ import {
   TypeFigure,
   ColorsFigures,
 } from "./dataFigures";
-import { dataSlidersHero } from "./dataSliderHero";
+import {
+  dataSlidersHero,
+  TypeSliderFullImage,
+  TypeStateSlider,
+} from "./dataSliderHero";
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 import { dataProject } from "./dataProject";
 import { dataBulletedList } from "./dataBulletedList";
+import { widthBlock, TypeConstWidth } from "./data Constant";
+import {
+  dataGalleryModernCottage,
+  dataGalleryMini,
+  TypeDataGalleryProject,
+} from "./dataGalleryModernCottage";
 
 export {
   retPattern,
@@ -74,10 +84,17 @@ export {
   type TypeFigure,
   type ColorsFigures,
   dataSlidersHero,
+  type TypeSliderFullImage,
+  type TypeStateSlider,
   dataServicesItems,
   type TypeDataServicesItem,
   dataBlockLinkFooter,
   dataSocialLinks,
   dataProject,
   dataBulletedList,
+  widthBlock,
+  type TypeConstWidth,
+  dataGalleryModernCottage,
+  type TypeDataGalleryProject,
+  dataGalleryMini,
 };

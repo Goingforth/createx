@@ -1,4 +1,18 @@
-export const dataSlidersHero = [
+export type TypeSliderFullImage = {
+  id: string;
+  path: string;
+  title?: string;
+  content?: string;
+};
+
+export type TypeStateSlider = {
+  offset: number;
+  index: number;
+  setOffset: React.Dispatch<React.SetStateAction<number>>;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export const dataSlidersHero: TypeSliderFullImage[] = [
   {
     id: "imageSlider0",
     path: "/images/heroImages/heroImage1.jpg",

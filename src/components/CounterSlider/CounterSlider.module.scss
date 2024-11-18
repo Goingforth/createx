@@ -1,0 +1,21 @@
+.counter {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  top: 814px;
+  left: 345px;
+}
+.slideWrapper {
+  width: 178px;
+  height: 54px;
+  border-bottom: 2px solid $semiWhite;
+  color: $semiWhite;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.active {
+  color: $white;
+  border-color: $white;
+  transition: all 1s;
+}

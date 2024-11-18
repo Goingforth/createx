@@ -9,7 +9,7 @@ import {
   History,
   Map,
 } from "../../components";
-
+import { ScrollToTop } from "../../utils";
 import styles from "./AboutUs.module.scss";
 
 const AboutUs: FC = () => {
@@ -20,6 +20,7 @@ const AboutUs: FC = () => {
   };
   return (
     <div>
+      <ScrollToTop />
       <HeroPage />
       <div className={styles.sectionStatisticsCEO}>
         <Statistics />
