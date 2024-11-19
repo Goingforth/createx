@@ -37,6 +37,9 @@ import CounterSlider from "./CounterSlider/CounterSlider";
 import { TypeCounterSlider } from "./CounterSlider/CounterSlider";
 import SliderMiniImage from "./SliderMinIImage/SliderMiniImage";
 import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
+import Vacancies from "./Vacancies/Vacancies";
+import CTA from "./CTA/CTA";
+import VacancyCard from "./VacancyCard/VacancyCard";
 
 export {
   Hero,
@@ -78,4 +81,7 @@ export {
   type TypeCounterSlider,
   SliderMiniImage,
   type TypeSlideMiniImage,
+  Vacancies,
+  CTA,
+  VacancyCard,
 };

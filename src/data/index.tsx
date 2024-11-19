@@ -47,6 +47,7 @@ import {
   dataGalleryMini,
   TypeDataGalleryProject,
 } from "./dataGalleryModernCottage";
+import { dataVacancyCards, TypeDataVacancyCard } from "./dataVacancyCard";
 
 export {
   retPattern,
@@ -97,4 +98,6 @@ export {
   dataGalleryModernCottage,
   type TypeDataGalleryProject,
   dataGalleryMini,
+  dataVacancyCards,
+  type TypeDataVacancyCard,
 };

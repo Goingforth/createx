@@ -270,31 +270,3 @@ button {
     0px 26px 24px -10px rgba(255, 90, 48, 0.1),
     0px 60px 80px -20px rgba(255, 90, 48, 0.16);
 }
-///////////////mixins//////////////
-///
-// @mixin sliderViewPort($widthSlider, $heightSlider) {
-//   .container {
-//     display: flex;
-//     flex-direction: column;
-//     position: relative;
-
-//     width: $widthSlider;
-//     height: $heightSlider;
-//     align-items: center;
-//   }
-//   .viewport {
-//     width: $widthSlider;
-//     height: $heightSlider;
-//     overflow: hidden;
-//   }
-//   .view {
-//     display: flex;
-
-//     width: $widthSlider;
-//     height: $heightSlider;
-//     transition: translate;
-//     transition-property: transform;
-//     transition-duration: 500ms;
-//     transition-timing-function: ease-in-out;
-//   }
-// }
