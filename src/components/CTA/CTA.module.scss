@@ -1,0 +1,18 @@
+.container {
+  width: 380px;
+}
+.title {
+  @extend h3;
+  color: $gray900;
+  margin-bottom: 24px;
+}
+.note {
+  color: $gray800;
+  @extend .large_regular;
+  text-align: left;
+  margin-bottom: 48px;
+}
+.blockBtn {
+  display: flex;
+  justify-content: space-between;
+}

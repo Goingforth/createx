@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { dataVacancyCards } from "../../data";
-import VacancyCard from "../VacancyCard/VacancyCard";
+import { VacancyCard } from "../index";
 import styles from "./Vacancies.module.scss";
 
 const Vacancies: FC = () => {

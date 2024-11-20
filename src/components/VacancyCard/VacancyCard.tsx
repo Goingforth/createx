@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { TypeDataVacancyCard } from "../../data";
 import { SvgSprite } from "../../uikit";
+import { Btn } from "../../uikit";
 import styles from "./VacancyCard.module.scss";
 
 const VacancyCard: FC<TypeDataVacancyCard> = ({ ...card }) => {
@@ -18,6 +19,7 @@ const VacancyCard: FC<TypeDataVacancyCard> = ({ ...card }) => {
         </div>
         <div className={styles.position}>{card.position}</div>
       </div>
+      <Btn form='outline' title='Apply now' onClick={() => alert("Click!")} />
     </div>
   );
 };

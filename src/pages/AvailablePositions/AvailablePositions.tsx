@@ -7,6 +7,7 @@ const AvailablePositions: FC = () => {
   return (
     <div>
       <ScrollToTop />
+
       <HeroPage />
       <div className={styles.container}>
         <Vacancies />

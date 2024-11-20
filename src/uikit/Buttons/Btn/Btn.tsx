@@ -7,6 +7,7 @@ export type TypeBtnProps = {
   // titleColor?: "white" | "primary";
   // bg?: "primary" | "transparent";
   size?: "large" | "regular" | "small";
+  width?: number;
   form?: "solid" | "outline";
 
   // border?: boolean;
@@ -22,6 +23,7 @@ const Btn: FC<TypeBtnProps> = ({
   //   titleColor,
   //   bg = "primary",
   size = "regular",
+  width,
   title = size === "large"
     ? "Large Button"
     : size === "small"
@@ -50,6 +52,7 @@ const Btn: FC<TypeBtnProps> = ({
         size === "small" ? styles.small : "",
         form === "solid" ? styles.solid : "",
         form === "outline" ? styles.outline : "",
+
         //   border ? styles.border : "",
         //   borderColor === "white" ? styles.borderColorWhite : "",
         //   borderColor === "primary" ? styles.borderColorPrimary : "",
@@ -60,6 +63,11 @@ const Btn: FC<TypeBtnProps> = ({
         //   titleColor === "white" ? styles.titleColorWhite : "",
         //   titleColor === "primary" ? styles.titleColorPrimary : "",
       ].join(" ")}
+      style={{
+        width: width !== undefined ? `${width}px` : "",
+
+        padding: width !== undefined ? 0 : "",
+      }}
     >
       {title}
     </button>
