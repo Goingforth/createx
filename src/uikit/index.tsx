@@ -8,6 +8,7 @@ import SvgSprite from "./SvgSprite/SvgSprite";
 import { TypeIdIcons } from "./SvgSprite/SvgSprite";
 import ViewAll from "./ViewAll/ViewAll";
 import { TypeViewAll } from "./ViewAll/ViewAll";
+import { ModalWindow } from "./ModalWindow/ModalWindow";
 
 export {
   InputForms,
@@ -20,4 +21,5 @@ export {
   type TypeIdIcons,
   ViewAll,
   type TypeViewAll,
+  ModalWindow,
 };

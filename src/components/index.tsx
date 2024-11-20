@@ -40,7 +40,7 @@ import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
 import Vacancies from "./Vacancies/Vacancies";
 import CTA from "./CTA/CTA";
 import VacancyCard from "./VacancyCard/VacancyCard";
-import ModalWindow from "./ModalWindow/ModalWindow";
+import { ModalSendCV, ModalSubscribe } from "./Modal/Modal";
 
 export {
   Hero,
@@ -85,5 +85,6 @@ export {
   Vacancies,
   CTA,
   VacancyCard,
-  ModalWindow,
+  ModalSendCV,
+  ModalSubscribe,
 };
