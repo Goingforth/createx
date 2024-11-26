@@ -1,5 +1,7 @@
+// import InputForms from "./InputForm/InputForm";
 import InputForms from "./InputForms/InputForms";
 import { TypeInputForm } from "./InputForms/InputForms";
+// import { TypeInputForm } from "./InputForm/InputForm";
 import Checkboxes from "./Checkboxes/Checkboxes";
 import Btn from "./Buttons/Btn/Btn";
 import { TypeBtnProps } from "./Buttons/Btn/Btn";
@@ -9,6 +11,7 @@ import { TypeIdIcons } from "./SvgSprite/SvgSprite";
 import ViewAll from "./ViewAll/ViewAll";
 import { TypeViewAll } from "./ViewAll/ViewAll";
 import { ModalWindow } from "./ModalWindow/ModalWindow";
+import InputForm from "./InputForm/InputForm";
 
 export {
   InputForms,
@@ -22,4 +25,5 @@ export {
   ViewAll,
   type TypeViewAll,
   ModalWindow,
+  InputForm,
 };

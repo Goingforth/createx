@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import styles from "./CTA.module.scss";
 import { Btn, ModalWindow } from "../../uikit";
-import { ModalSendCV, ModalSubscribe } from "../Modal/Modal";
+// import { ModalSendCV, ModalSubscribe } from "../Modal/Modal";
+import { ModalSubscribe } from "../ModalSubcribe/ModalSubscribe";
 
 const CTA: FC = () => {
   const [open, setOpen] = useState(false);
@@ -11,8 +12,8 @@ const CTA: FC = () => {
     switch (name) {
       case "subscribe":
         return <ModalSubscribe setOpen={setOpen} />;
-      case "sendCV":
-        return <ModalSendCV setOpen={setOpen} />;
+      // case "sendCV":
+      //   return <ModalSendCV setOpen={setOpen} />;
       default:
         return;
     }

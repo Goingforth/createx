@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    color: $gray800;
+  }
+
+  input {
+    position: relative;
+    background-color: $gray200;
+    border: 1px solid $gray400;
+    border-radius: 4px;
+    outline: none;
+    color: $gray900;
+    &::placeholder {
+      color: $gray600;
+    }
+    &:focus {
+      border-color: $borderInputHover;
+      background-color: $white;
+      box-shadow: 0px 80px 80px -20px rgba(255, 90, 48, 0.08);
+    }
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $gray200;
+    border: 1px solid $gray400;
+    border-radius: 4px;
+    outline: none;
+    &::placeholder {
+      color: $gray600;
+    }
+
+    &:focus {
+      border-color: $borderInputHover;
+    }
+  }
+}
+.iconInput {
+  position: absolute;
+  right: 14px;
+  width: 16px;
+  height: 16px;
+}
+
+.default {
+  label {
+    @extend .small_regular;
+  }
+
+  input,
+  textarea {
+    @extend .small_regular;
+    padding: 11px 16px;
+    &::placeholder {
+      @extend .small_regular;
+    }
+  }
+  .iconInput {
+    bottom: 14px;
+  }
+}
+.large {
+  label {
+    @extend .base_regular;
+    text-align: left;
+  }
+  input,
+  textarea {
+    @extend .base_regular;
+    padding: 13px 16px;
+    &::placeholder {
+      @extend .base_regular;
+      text-align: left;
+    }
+  }
+  .iconInput {
+    bottom: 18px;
+  }
+}
+.small {
+  label {
+    @extend .extrasmall_regular;
+  }
+  input,
+  textarea {
+    @extend .extrasmall_regular;
+    padding: 9px 12px;
+    &::placeholder {
+      @extend .extrasmall_regular;
+    }
+  }
+  .iconInput {
+    bottom: 10px;
+  }
+}
+.message {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  @extend .extrasmall_regular;
+}
+.valid {
+  color: $success;
+}
+.novalid {
+  color: $danger;
+}
