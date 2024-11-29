@@ -6,16 +6,11 @@ const ModalRootElement = document.querySelector("#modal");
 type TypeModalWindow = {
   children: React.ReactNode;
   open: boolean;
-  // setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ModalWindow: FC<TypeModalWindow> = ({ children, open }) => {
   const element = useMemo(() => document.createElement("div"), []);
-  // const element = useMemo(() => {
-  //   const element = document.createElement("div");
-  //   element.dataset.marker = marker;
-  //   return element;
-  // }, [marker]);
+
   useEffect(() => {
     if (open) {
       ModalRootElement?.appendChild(element);

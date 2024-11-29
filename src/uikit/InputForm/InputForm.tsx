@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import { SvgSprite, InputSelect } from "../index";
 import styles from "./InputForm.module.scss";
 type TypeInputForm = {
   id?: string;
@@ -117,39 +117,38 @@ const InputForm: FC<TypeInputForm> = ({
       style={{ width: `${width}` }}
     >
       <label>{label}</label>
-      {
-        type !== "textarea" && (
-          <input
-            name={name}
-            type={type}
-            value={value}
-            placeholder={placeholder}
-            onChange={(event) => onChange(event.target.value, pattern)}
-            onFocus={() => {
-              onFocus();
-            }}
-            onBlur={() => {
-              onBlur();
-            }}
-          />
-        )
-        // : (
-        // <textarea
-        //   name={name}
-        //   spellCheck='false'
-        //   value={value}
-        //   placeholder={placeholder}
-        //   onChange={(event) => onChange(name, event.target.value)}
-        //   onFocus={() => {
-        //     onFocus(name);
-        //   }}
-        //   onBlur={() => {
-        //     onBlur(name, pattern);
-        //   }}
-        // />
-        // )
-      }
-      {type !== "textarea" && (
+
+      {type !== "textarea" && type !== "select" && (
+        <input
+          name={name}
+          type={type}
+          value={value}
+          placeholder={placeholder}
+          onChange={(event) => onChange(event.target.value, pattern)}
+          onFocus={() => {
+            onFocus();
+          }}
+          onBlur={() => {
+            onBlur();
+          }}
+        />
+      )}
+      {type === "textarea" && (
+        <textarea
+          name={name}
+          spellCheck='false'
+          value={value}
+          placeholder={placeholder}
+          onChange={(event) => onChange(event.target.value, pattern)}
+          onFocus={() => {
+            onFocus();
+          }}
+          onBlur={() => {
+            onBlur();
+          }}
+        />
+      )}
+      {type !== "textarea" && type !== "select" && (
         <div className={styles.iconInput}>
           {status === "valid" && <SvgSprite id='mark' />}
           {(status === "novalid" || status === "empty") && (
@@ -157,6 +156,29 @@ const InputForm: FC<TypeInputForm> = ({
           )}
         </div>
       )}
+      {type === "select" && (
+        // <select value={this.state.value} onChange={this.handleChange}>
+        <InputSelect placeholder={placeholder} />
+        // <select className={styles.selectInput}>
+        //   <div className={styles.option}>
+        //     <option value='grapefruit'>Грейпфрут</option>
+        //   </div>
+        //   <div className={styles.option}>
+        //     <option value='lime'>Лайм</option>
+        //   </div>
+        //   <div className={styles.option}>
+        //     <option className={styles.option} value='coconut'>
+        //       Кокос
+        //     </option>
+        //   </div>
+        //   <div className={styles.option}>
+        //     <option className={styles.option} value='mango'>
+        //       Манго
+        //     </option>
+        //   </div>
+        // </select>
+      )}
+
       {type !== "checkbox" && status !== "blank" ? (
         <div className={[styles.message, changeStylesValid()].join(" ")}>
           {changeMessage(messages)}

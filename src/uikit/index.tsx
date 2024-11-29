@@ -12,6 +12,7 @@ import ViewAll from "./ViewAll/ViewAll";
 import { TypeViewAll } from "./ViewAll/ViewAll";
 import { ModalWindow } from "./ModalWindow/ModalWindow";
 import InputForm from "./InputForm/InputForm";
+import { InputSelect } from "./InputSelect/InputSelect";
 
 export {
   InputForms,
@@ -26,4 +27,5 @@ export {
   type TypeViewAll,
   ModalWindow,
   InputForm,
+  InputSelect,
 };

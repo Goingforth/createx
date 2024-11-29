@@ -1,5 +1,6 @@
 import { FC } from "react";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
+import { SectionWithChildren } from "../index";
+
 import { dataClientsLogo } from "../../data";
 import styles from "./Clients.module.scss";
 

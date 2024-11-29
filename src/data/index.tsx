@@ -48,7 +48,7 @@ import {
   TypeDataGalleryProject,
 } from "./dataGalleryModernCottage";
 import { dataVacancyCards, TypeDataVacancyCard } from "./dataVacancyCard";
-import { dataModalSubscribe } from "./dataModal";
+import { dataModalSubscribe, dataModalSendCV } from "./dataModal";
 
 export {
   retPattern,
@@ -102,4 +102,5 @@ export {
   dataVacancyCards,
   type TypeDataVacancyCard,
   dataModalSubscribe,
+  dataModalSendCV,
 };

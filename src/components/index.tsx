@@ -38,9 +38,10 @@ import { TypeCounterSlider } from "./CounterSlider/CounterSlider";
 import SliderMiniImage from "./SliderMinIImage/SliderMiniImage";
 import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
 import Vacancies from "./Vacancies/Vacancies";
-import CTA from "./CTA/CTA";
+import { CTA, TypeModalName } from "./CTA/CTA";
 import VacancyCard from "./VacancyCard/VacancyCard";
-import { ModalSendCV, ModalSubscribe } from "./Modal/Modal";
+import { ModalCTA } from "./ModalCTA/ModalCTA";
+import { ModalForms, TypeModalForms } from "./ModalForms/ModalForms";
 
 export {
   Hero,
@@ -84,7 +85,9 @@ export {
   type TypeSlideMiniImage,
   Vacancies,
   CTA,
+  type TypeModalName,
   VacancyCard,
-  ModalSendCV,
-  ModalSubscribe,
+  ModalCTA,
+  ModalForms,
+  type TypeModalForms,
 };

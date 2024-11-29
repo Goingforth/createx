@@ -38,6 +38,7 @@ export const ModalSubscribe: FC<TypeModal> = ({ setOpen }) => {
         <SvgSprite id='cross' />
       </div>
       <h3 className={styles.title}>Subscribe to our newsletter</h3>
+      {/*  */}
       <form className={styles.form}>
         {dataModalSubscribe.map(
           ({
@@ -68,6 +69,7 @@ export const ModalSubscribe: FC<TypeModal> = ({ setOpen }) => {
           )
         )}
       </form>
+      {/*  */}
       <Btn
         form='solid'
         title='send'
