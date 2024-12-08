@@ -1,47 +1,63 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import styles from "./InputSelect.module.scss";
 import SvgSprite from "../SvgSprite/SvgSprite";
+import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 
-type TypeInputSelect = {
+type TypeInputSelect = TypeFormValuesStatusInputs & {
   placeholder: string;
+  dataSelect?: TypeDataSelect[];
 };
 
-export const InputSelect: FC<TypeInputSelect> = ({ placeholder }) => {
+export const InputSelect: FC<TypeInputSelect> = (props) => {
+  const {
+    placeholder,
+    dataSelect,
+    setFormValues,
+    setStatusInputs,
+    formValues,
+    statusInputs,
+  } = props;
   const [value, setValue] = useState(placeholder);
   const [select, setSelect] = useState(false);
+  const [isSelect, setIsSelect] = useState(false);
+  useEffect(() => {
+    if (isSelect) {
+      setFormValues({ ...formValues, location: value });
+      setStatusInputs({ ...statusInputs, location: "valid" });
+    }
+  }, [isSelect]);
+
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.placeholder}>{value}</div>
-        <div className={styles.iconWrapper} onClick={() => setSelect(!select)}>
+        <div className={!isSelect ? styles.default : styles.selected}>
+          {value}
+        </div>
+        <div
+          className={styles.iconWrapper}
+          onClick={() => {
+            setSelect(!select), setIsSelect(false);
+          }}
+        >
           <SvgSprite id='downChevron' />
         </div>
+
         {select && (
           <div className={styles.options}>
-            <div
-              className={styles.option}
-              onClick={() => {
-                setValue("1"), setSelect(false);
-              }}
-            >
-              1
-            </div>
-            <div
-              className={styles.option}
-              onClick={() => {
-                setValue("2"), setSelect(false);
-              }}
-            >
-              2
-            </div>
-            <div
-              className={styles.option}
-              onClick={() => {
-                setValue("3"), setSelect(false);
-              }}
-            >
-              3
-            </div>
+            {dataSelect?.map(({ id, option }) => (
+              <div
+                key={id}
+                className={styles.option}
+                onMouseEnter={() => setValue(option)}
+                onClick={() => {
+                  setValue(option);
+                  setSelect(false);
+                  setIsSelect(true);
+                }}
+              >
+                {option}
+              </div>
+            ))}
           </div>
         )}
       </div>

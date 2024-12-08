@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.inputSelect {
+  display: flex;
+  gap: 12px;
+  justify-content: left;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}
+.action {
+  @extend .small_regular;
+  color: $gray800;
+}
+
+.inputFileDefault {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

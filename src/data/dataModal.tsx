@@ -1,6 +1,14 @@
 import { TypeDataFormInput, retPattern } from "./index";
+import { dataLocations } from "./dataLocation";
+import { TypeModalName } from "../components";
 
-export const dataModalSubscribe: TypeDataFormInput[] = [
+type dataArrayModal = {
+  name: TypeModalName;
+  title: string;
+  data: TypeDataFormInput[];
+};
+
+const dataModalSubscribe: TypeDataFormInput[] = [
   {
     id: "modalSubscribe0",
     label: "Name*",
@@ -31,7 +39,7 @@ export const dataModalSubscribe: TypeDataFormInput[] = [
   },
 ];
 
-export const dataModalSendCV: TypeDataFormInput[] = [
+const dataModalSendCV: TypeDataFormInput[] = [
   {
     id: "modalSendCV0",
     label: "Name*",
@@ -52,13 +60,7 @@ export const dataModalSendCV: TypeDataFormInput[] = [
     placeholder: "Choose your location",
     name: "location",
     type: "select",
-    // messages: {
-    //   focus: "enter email",
-    //   input: "email in format email",
-    //   valid: "Looks good!",
-    //   noValid: "Please provide a valid input.",
-    // },
-    //  pattern: retPattern("email"),
+    dataSelect: dataLocations,
   },
   {
     id: "modalSendCV2",
@@ -101,5 +103,22 @@ export const dataModalSendCV: TypeDataFormInput[] = [
       noValid: "Please provide a valid input.",
     },
     pattern: retPattern("textarea"),
+  },
+  {
+    id: "modalSendCV5",
+    name: "file",
+    type: "file",
+  },
+];
+export const dataArrayModal: dataArrayModal[] = [
+  {
+    name: "subscribe",
+    title: "Subscribe to our newsletter",
+    data: dataModalSubscribe,
+  },
+  {
+    name: "sendCV",
+    title: "Send your CV",
+    data: dataModalSendCV,
   },
 ];

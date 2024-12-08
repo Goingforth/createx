@@ -6,11 +6,11 @@ import styles from "./ModalForms.module.scss";
 export type TypeModalForms = {
   data: TypeDataFormInput[];
   formValues: {
-    [k: string]: string | boolean;
+    [k: string]: string | boolean | File;
   };
   setFormValues: React.Dispatch<
     React.SetStateAction<{
-      [k: string]: string | boolean;
+      [k: string]: string | boolean | File;
     }>
   >;
   statusInputs: {
@@ -35,9 +35,9 @@ export const ModalForms: FC<TypeModalForms> = (props) => {
           placeholder,
           name,
           type,
-          // value,
           messages,
           pattern,
+          dataSelect,
         }) => (
           <div key={id} style={{ position: "relative" }}>
             <InputForm
@@ -45,13 +45,13 @@ export const ModalForms: FC<TypeModalForms> = (props) => {
               name={name}
               type={type}
               placeholder={placeholder}
-              // value={values[name]}
               pattern={pattern}
               messages={messages}
               formValues={formValues}
               setFormValues={setFormValues}
               statusInputs={statusInputs}
               setStatusInputs={setStatusInputs}
+              dataSelect={dataSelect}
             />
           </div>
         )

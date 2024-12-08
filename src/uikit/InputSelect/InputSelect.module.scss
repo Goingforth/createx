@@ -9,15 +9,20 @@
   border-radius: 4px;
   outline: none;
   color: $gray900;
-  .placeholder {
+  .default {
     color: $gray600;
   }
-  &:focus {
-    border-color: $borderInputHover;
-    background-color: $white;
-    box-shadow: 0px 80px 80px -20px rgba(255, 90, 48, 0.08);
+  .selected {
+    color: $gray900;
   }
+
+  // &:focus {
+  //   border-color: $borderInputHover;
+  //   background-color: $white;
+  //   box-shadow: 0px 80px 80px -20px rgba(255, 90, 48, 0.08);
+  // }
 }
+
 .iconWrapper {
   width: 16px;
   height: 16px;
@@ -43,5 +48,8 @@
   color: $gray900;
   &:hover {
     cursor: pointer;
+    border-color: $borderInputHover;
+    background-color: $white;
+    box-shadow: 0px 80px 80px -20px rgba(255, 90, 48, 0.08);
   }
 }

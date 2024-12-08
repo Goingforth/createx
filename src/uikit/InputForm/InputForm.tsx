@@ -1,7 +1,9 @@
 import { FC, useState, useEffect } from "react";
-import { SvgSprite, InputSelect } from "../index";
+import { SvgSprite, InputSelect, InputChooseFile } from "../index";
+import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 import styles from "./InputForm.module.scss";
-type TypeInputForm = {
+
+export type TypeInputForm = TypeFormValuesStatusInputs & {
   id?: string;
   label?: string;
   placeholder?: string;
@@ -18,29 +20,14 @@ type TypeInputForm = {
   pattern: RegExp | undefined;
   size?: "large" | "default" | "small";
   width?: string;
-  formValues: {
-    [k: string]: string | boolean;
-  };
-  setFormValues: React.Dispatch<
-    React.SetStateAction<{
-      [k: string]: string | boolean;
-    }>
-  >;
-  statusInputs: {
-    [k: string]: string;
-  };
-  setStatusInputs: React.Dispatch<
-    React.SetStateAction<{
-      [k: string]: string;
-    }>
-  >;
+  dataSelect?: TypeDataSelect[];
 };
 
 const InputForm: FC<TypeInputForm> = ({
-  label = "write label",
+  label,
   placeholder = "write placeholder",
   name = "write name",
-  type = "string",
+  type = "text",
   messages,
   pattern,
   size = "default",
@@ -49,6 +36,7 @@ const InputForm: FC<TypeInputForm> = ({
   setFormValues,
   statusInputs,
   setStatusInputs,
+  dataSelect,
 }) => {
   const changeMessage = (messages?: {
     focus: string;
@@ -106,19 +94,24 @@ const InputForm: FC<TypeInputForm> = ({
       : setStatus("novalid");
     setValue(value);
   };
+
   return (
     <div
-      className={[
-        styles.container,
-        size === "default" ? styles.default : "",
-        size === "large" ? styles.large : "",
-        size === "small" ? styles.small : "",
-      ].join(" ")}
+      className={
+        type !== "file"
+          ? [
+              styles.container,
+              size === "default" ? styles.default : "",
+              size === "large" ? styles.large : "",
+              size === "small" ? styles.small : "",
+            ].join(" ")
+          : ""
+      }
       style={{ width: `${width}` }}
     >
-      <label>{label}</label>
+      {label !== undefined && <label>{label}</label>}
 
-      {type !== "textarea" && type !== "select" && (
+      {(type === "text" || type === "tel" || type === "email") && (
         <input
           name={name}
           type={type}
@@ -148,7 +141,7 @@ const InputForm: FC<TypeInputForm> = ({
           }}
         />
       )}
-      {type !== "textarea" && type !== "select" && (
+      {type !== "textarea" && type !== "file" && type !== "select" && (
         <div className={styles.iconInput}>
           {status === "valid" && <SvgSprite id='mark' />}
           {(status === "novalid" || status === "empty") && (
@@ -157,26 +150,22 @@ const InputForm: FC<TypeInputForm> = ({
         </div>
       )}
       {type === "select" && (
-        // <select value={this.state.value} onChange={this.handleChange}>
-        <InputSelect placeholder={placeholder} />
-        // <select className={styles.selectInput}>
-        //   <div className={styles.option}>
-        //     <option value='grapefruit'>Грейпфрут</option>
-        //   </div>
-        //   <div className={styles.option}>
-        //     <option value='lime'>Лайм</option>
-        //   </div>
-        //   <div className={styles.option}>
-        //     <option className={styles.option} value='coconut'>
-        //       Кокос
-        //     </option>
-        //   </div>
-        //   <div className={styles.option}>
-        //     <option className={styles.option} value='mango'>
-        //       Манго
-        //     </option>
-        //   </div>
-        // </select>
+        <InputSelect
+          placeholder={placeholder}
+          dataSelect={dataSelect}
+          setFormValues={setFormValues}
+          formValues={formValues}
+          setStatusInputs={setStatusInputs}
+          statusInputs={statusInputs}
+        />
+      )}
+      {type === "file" && (
+        <InputChooseFile
+          setFormValues={setFormValues}
+          formValues={formValues}
+          setStatusInputs={setStatusInputs}
+          statusInputs={statusInputs}
+        />
       )}
 
       {type !== "checkbox" && status !== "blank" ? (

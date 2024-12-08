@@ -1,33 +1,13 @@
 import { FC, useState, useEffect } from "react";
 import { Btn, SvgSprite } from "../../uikit";
 import { ModalForms, TypeModalName, TypeModalForms } from "../index";
-import { dataModalSubscribe, dataModalSendCV } from "../../data";
+import { TypeFormValue, dataArrayModal } from "../../data";
 import styles from "./ModalCTA.module.scss";
-import { TypeDataFormInput } from "../../data";
 
 type TypeModalCTA = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   modalName: TypeModalName;
 };
-
-type dataArrayModal = {
-  name: TypeModalName;
-  title: string;
-  data: TypeDataFormInput[];
-};
-
-const dataArrayModal: dataArrayModal[] = [
-  {
-    name: "subscribe",
-    title: "Subscribe to our newsletter",
-    data: dataModalSubscribe,
-  },
-  {
-    name: "sendCV",
-    title: "Send your CV",
-    data: dataModalSendCV,
-  },
-];
 
 export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
   const dataArray = dataArrayModal.find(({ name }) => name === modalName);
@@ -41,9 +21,10 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
     const statusInput = Object.fromEntries(
       data.map(({ name }) => [name, "blank"])
     );
+
     const [isDisabled, setIsDisabled] = useState(true);
     const [statusInputs, setStatusInputs] = useState(statusInput);
-    const [formValues, setFormValues] = useState(valuesObj);
+    const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
 
     const ModalFormsProps: TypeModalForms = {
       data: data,
@@ -54,8 +35,6 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
     };
 
     useEffect(() => {
-      console.log(statusInputs);
-
       Object.values(statusInputs).filter((item) => item === "valid").length ===
       Object.keys(statusInputs).length
         ? setIsDisabled(false)

@@ -48,12 +48,15 @@ import {
   TypeDataGalleryProject,
 } from "./dataGalleryModernCottage";
 import { dataVacancyCards, TypeDataVacancyCard } from "./dataVacancyCard";
-import { dataModalSubscribe, dataModalSendCV } from "./dataModal";
+import { dataArrayModal } from "./dataModal";
+import { dataLocations, TypeDataSelect } from "./dataLocation";
+import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
 
 export {
   retPattern,
   dataApplicationFormInput,
   type TypeDataFormInput,
+  type TypeDataSelect,
   dataServicesPage,
   dataHeroPages,
   type TypeHeroPage,
@@ -101,6 +104,8 @@ export {
   dataGalleryMini,
   dataVacancyCards,
   type TypeDataVacancyCard,
-  dataModalSubscribe,
-  dataModalSendCV,
+  dataLocations,
+  type TypeFormValue,
+  type TypeFormValuesStatusInputs,
+  dataArrayModal,
 };

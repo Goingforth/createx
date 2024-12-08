@@ -1,4 +1,4 @@
-import { retPattern } from "../data";
+import { retPattern, TypeDataSelect } from "../data";
 
 export type TypeDataFormInput = {
   id: string;
@@ -15,6 +15,7 @@ export type TypeDataFormInput = {
     noValid: string;
   };
   pattern?: RegExp | undefined;
+  dataSelect?: TypeDataSelect[];
 };
 
 export const dataApplicationFormInput: TypeDataFormInput[] = [
