@@ -1,24 +1,59 @@
-.container {
-  position: relative;
-  @extend .containerApp;
-  padding-top: 80px;
-  padding-bottom: 126px;
-  background-color: $gray900;
+.light {
+  .container {
+    position: relative;
+    @extend .containerApp;
+    padding-top: 80px;
+    padding-bottom: 126px;
+    background-color: $gray900;
+  }
+  .title {
+    @extend h1;
+    margin-bottom: 24px;
+  }
+  .subTitle {
+    @extend .large_regular;
+    opacity: 0.6;
+    margin-bottom: 60px;
+  }
+  .buttonDiscuss {
+    position: absolute;
+    z-index: 100;
+    bottom: -26px;
+    left: auto;
+    right: auto;
+  }
+}
+
+.basic {
+  .container {
+    position: relative;
+    @extend .containerApp;
+    // padding-top: 80px;
+    padding-bottom: 180px;
+    color: $gray900;
+    background-color: $white;
+  }
+  .title {
+    @extend h1;
+    margin-bottom: 24px;
+    color: $gray900;
+  }
+  .subTitle {
+    @extend .large_regular;
+    opacity: 1;
+    color: $gray700;
+    margin-bottom: 60px;
+  }
+  .buttonDiscuss {
+    display: none;
+  }
 }
 
 .block {
   @extend .containerChildren;
   color: $white;
 }
-.title {
-  @extend h1;
-  margin-bottom: 24px;
-}
-.subTitle {
-  @extend .large_regular;
-  opacity: 0.6;
-  margin-bottom: 60px;
-}
+
 .benefits {
   display: flex;
   width: 100%;
@@ -28,11 +63,4 @@
   display: flex;
   gap: 94px;
   fill: $primary;
-}
-.buttonDiscuss {
-  position: absolute;
-  z-index: 100;
-  bottom: -26px;
-  left: auto;
-  right: auto;
 }

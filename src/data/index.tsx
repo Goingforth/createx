@@ -13,7 +13,11 @@ import {
   TypeCategoryPortfolio,
 } from "./dataPortfolioCards";
 import { navigation, connection } from "./dataHeader";
-import { dataBenefits } from "./dataBenefits";
+import {
+  dataBenefitsInteriorDesign,
+  TypeDataBenefits,
+  dataBenefitsAvailablePositions,
+} from "./dataBenefits";
 import { dataTablePricing } from "./dataTablePricing";
 import { dataClientsLogo } from "./dataClientsLogo";
 import {
@@ -51,6 +55,7 @@ import { dataVacancyCards, TypeDataVacancyCard } from "./dataVacancyCard";
 import { dataArrayModal } from "./dataModal";
 import { dataLocations, TypeDataSelect } from "./dataLocation";
 import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
+import { dataContactUs } from "./dataContactUs";
 
 export {
   retPattern,
@@ -64,7 +69,9 @@ export {
   navigation,
   connection,
   dataSteps,
-  dataBenefits,
+  dataBenefitsInteriorDesign,
+  dataBenefitsAvailablePositions,
+  type TypeDataBenefits,
   dataPortfolioCards,
   type TypePortfolioCard,
   type TypeCategoryPortfolio,
@@ -108,4 +115,5 @@ export {
   type TypeFormValue,
   type TypeFormValuesStatusInputs,
   dataArrayModal,
+  dataContactUs,
 };

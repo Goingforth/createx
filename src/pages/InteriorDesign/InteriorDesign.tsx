@@ -10,6 +10,7 @@ import {
 import { ScrollToTop } from "../../utils";
 
 import styles from "./InteriorDesign.module.scss";
+import { dataBenefitsInteriorDesign } from "../../data";
 
 const InteriorDesign: FC = () => {
   return (
@@ -19,7 +20,7 @@ const InteriorDesign: FC = () => {
       <div className={styles.container}>
         <Offer />
       </div>
-      <Benefits />
+      <Benefits {...dataBenefitsInteriorDesign} />
       <Portfolio
         title='Related projects'
         pt='180px'

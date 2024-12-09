@@ -12,26 +12,22 @@ type Props = {
 
 const IconBoxBasic: FC<Props> = ({ theme = "basic", icon, title, content }) => {
   return (
-    <div className='boxBasic'>
-      <SvgSprite id={icon} />
-      <p
-        className={[
-          theme === "light" ? styles.titleLight : "",
-          theme === "basic" ? styles.titleBasic : "",
-        ].join(" ")}
-        style={{ marginTop: "24px", marginBottom: "8px" }}
-      >
-        {title}
-      </p>
-      {content && (
+    <div className={styles[theme]}>
+      <div className='boxBasic'>
+        <SvgSprite id={icon} />
         <p
-          className={[
-            theme === "light" ? styles.contentLight : "",
-            theme === "basic" ? styles.contentBasic : "",
-          ].join(" ")}
-          dangerouslySetInnerHTML={{ __html: `${content}` }}
-        />
-      )}
+          className={styles.title}
+          style={{ marginTop: "24px", marginBottom: "8px" }}
+        >
+          {title}
+        </p>
+        {content && (
+          <p
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: `${content}` }}
+          />
+        )}
+      </div>
     </div>
   );
 };

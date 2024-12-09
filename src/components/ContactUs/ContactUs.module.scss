@@ -1,0 +1,13 @@
+.container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.contactUsChild {
+  display: flex;
+  width: $widthSection;
+  justify-content: space-between;
+}
+.imageWrapper {
+  width: 495px;
+  height: 586px;
+}

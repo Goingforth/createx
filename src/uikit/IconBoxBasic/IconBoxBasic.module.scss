@@ -1,17 +1,23 @@
-.titleLight {
-  @extend .lead_bold;
-  color: $white;
+.light {
+  .title {
+    @extend .lead_bold;
+    color: $white;
+  }
+  .content {
+    @extend .base_regular;
+    color: $white;
+    opacity: 0.6;
+  }
 }
-.titleBasic {
-  @extend .lead_bold;
-  color: inherit;
-}
-.contentLight {
-  @extend .base_regular;
-  color: $white;
-  opacity: 0.6;
-}
-.contentBasic {
-  @extend .base_regular;
-  color: $gray700;
+
+.basic {
+  .title {
+    @extend .lead_bold;
+    // color: inherit;
+    color: $gray900;
+  }
+  .content {
+    @extend .base_regular;
+    color: $gray700;
+  }
 }

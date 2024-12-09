@@ -17,7 +17,7 @@ import CEO from "./CEO/CEO";
 import History from "./History/History";
 import Map from "./Map/Map";
 import Offer from "./Offer/Offer";
-import Benefits from "./Benefits/Benefits";
+import { Benefits, TypeBenefits } from "./Benefits/Benefits";
 import Pricing from "./Pricing/Pricing";
 import NewsBody from "./NewsBody/NewsBody";
 import BlockServicePage from "./BlockServicepage/BlockServicePage";
@@ -42,6 +42,8 @@ import { CTA, TypeModalName } from "./CTA/CTA";
 import VacancyCard from "./VacancyCard/VacancyCard";
 import { ModalCTA } from "./ModalCTA/ModalCTA";
 import { ModalForms, TypeModalForms } from "./ModalForms/ModalForms";
+import { ContactUs } from "./ContactUs/ContactUs";
+import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
 
 export {
   Hero,
@@ -64,6 +66,7 @@ export {
   Map,
   Offer,
   Benefits,
+  type TypeBenefits,
   Pricing,
   NewsBody,
   BlockServicePage,
@@ -90,4 +93,6 @@ export {
   ModalCTA,
   ModalForms,
   type TypeModalForms,
+  ContactUs,
+  ContactUsForm,
 };
