@@ -153,6 +153,7 @@ const InputForm: FC<TypeInputForm> = ({
         <InputSelect
           placeholder={placeholder}
           dataSelect={dataSelect}
+          size={size}
           setFormValues={setFormValues}
           formValues={formValues}
           setStatusInputs={setStatusInputs}

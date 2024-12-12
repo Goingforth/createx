@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { dataContactUs, TypeFormValue } from "../../data";
-import { InputForm } from "../../uikit";
+import { InputsForm, TypeInputsForm } from "../index";
 import styles from "./ContactUsForm.module.scss";
 
 export const ContactUsForm: FC = () => {
@@ -13,6 +13,32 @@ export const ContactUsForm: FC = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [statusInputs, setStatusInputs] = useState(statusInput);
   const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
+
+  const styleForm: React.CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "285px 285px",
+    gridTemplateRows: "86px 86px 86px 160px",
+    gap: "24px 30px",
+    gridTemplateAreas: `"name interest" "phone location" "email checkbox" "message message"`,
+  };
+  const stateInputs = {
+    statusInputs: statusInputs,
+    setStatusInputs: setStatusInputs,
+    formValues: formValues,
+    setFormValues: setFormValues,
+  };
+
+  const ContactUsFormProps: TypeInputsForm = Object.assign(
+    { data: dataContactUs, style: styleForm },
+    stateInputs
+  );
+  // const ContactUsFormProps: TypeInputsForm = {
+  //   data: dataContactUs,
+  //   statusInputs: statusInputs,
+  //   setStatusInputs: setStatusInputs,
+  //   formValues: formValues,
+  //   setFormValues: setFormValues,
+  // };
   useEffect(() => {
     Object.values(statusInputs).filter((item) => item === "valid").length ===
     Object.keys(statusInputs).length
@@ -21,12 +47,11 @@ export const ContactUsForm: FC = () => {
   }, [statusInputs]);
   console.log("statusInputs :", statusInputs);
   console.log("formValues :", formValues);
+  console.log(ContactUsFormProps);
 
   return (
     <div className={styles.container}>
-      {/* {dataContactUs.map((item) => (
-        <InputForm {...item} />
-      ))} */}
+      <InputsForm {...ContactUsFormProps} />
     </div>
   );
 };

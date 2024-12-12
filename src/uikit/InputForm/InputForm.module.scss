@@ -26,6 +26,8 @@
 
   textarea {
     width: 100%;
+    height: 86px;
+
     box-sizing: border-box;
     background-color: $gray200;
     border: 1px solid $gray400;
@@ -77,6 +79,9 @@
       @extend .base_regular;
       text-align: left;
     }
+  }
+  textarea {
+    height: 128px;
   }
   .iconInput {
     bottom: 18px;

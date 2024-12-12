@@ -1,33 +1,23 @@
 import { FC } from "react";
 import { InputForm } from "../../uikit";
-import { TypeDataFormInput } from "../../data";
-import styles from "./ModalForms.module.scss";
+import { TypeDataFormInput, TypeFormValuesStatusInputs } from "../../data";
 
-export type TypeModalForms = {
+export type TypeInputsForm = TypeFormValuesStatusInputs & {
   data: TypeDataFormInput[];
-  formValues: {
-    [k: string]: string | boolean | File;
-  };
-  setFormValues: React.Dispatch<
-    React.SetStateAction<{
-      [k: string]: string | boolean | File;
-    }>
-  >;
-  statusInputs: {
-    [k: string]: string;
-  };
-  setStatusInputs: React.Dispatch<
-    React.SetStateAction<{
-      [k: string]: string;
-    }>
-  >;
+  style: React.CSSProperties;
 };
 
-export const ModalForms: FC<TypeModalForms> = (props) => {
-  const { formValues, setFormValues, setStatusInputs, statusInputs, data } =
-    props;
+export const InputsForm: FC<TypeInputsForm> = (props) => {
+  const {
+    formValues,
+    setFormValues,
+    setStatusInputs,
+    statusInputs,
+    data,
+    style,
+  } = props;
   return (
-    <form className={styles.form}>
+    <form style={style}>
       {data.map(
         ({
           id,
@@ -38,12 +28,14 @@ export const ModalForms: FC<TypeModalForms> = (props) => {
           messages,
           pattern,
           dataSelect,
+          size,
         }) => (
-          <div key={id} style={{ position: "relative" }}>
+          <div key={id} style={{ position: "relative", gridArea: name }}>
             <InputForm
               label={label}
               name={name}
               type={type}
+              size={size}
               placeholder={placeholder}
               pattern={pattern}
               messages={messages}

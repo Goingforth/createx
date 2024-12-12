@@ -41,7 +41,7 @@ import Vacancies from "./Vacancies/Vacancies";
 import { CTA, TypeModalName } from "./CTA/CTA";
 import VacancyCard from "./VacancyCard/VacancyCard";
 import { ModalCTA } from "./ModalCTA/ModalCTA";
-import { ModalForms, TypeModalForms } from "./ModalForms/ModalForms";
+import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
 import { ContactUs } from "./ContactUs/ContactUs";
 import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
 
@@ -91,8 +91,8 @@ export {
   type TypeModalName,
   VacancyCard,
   ModalCTA,
-  ModalForms,
-  type TypeModalForms,
+  InputsForm,
+  type TypeInputsForm,
   ContactUs,
   ContactUsForm,
 };

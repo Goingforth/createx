@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { Btn, SvgSprite } from "../../uikit";
-import { ModalForms, TypeModalName, TypeModalForms } from "../index";
+import { InputsForm, TypeModalName, TypeInputsForm } from "../index";
 import { TypeFormValue, dataArrayModal } from "../../data";
 import styles from "./ModalCTA.module.scss";
 
@@ -25,14 +25,24 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
     const [isDisabled, setIsDisabled] = useState(true);
     const [statusInputs, setStatusInputs] = useState(statusInput);
     const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
-
-    const ModalFormsProps: TypeModalForms = {
-      data: data,
+    const styleForm: React.CSSProperties = {
+      display: "flex",
+      flexDirection: "column",
+      gap: "20px",
+      width: "100%",
+      marginBottom: "40px",
+    };
+    const stateInputs = {
       statusInputs: statusInputs,
       setStatusInputs: setStatusInputs,
       formValues: formValues,
       setFormValues: setFormValues,
     };
+
+    const ModalFormsProps: TypeInputsForm = Object.assign(
+      { data: data, style: styleForm },
+      stateInputs
+    );
 
     useEffect(() => {
       Object.values(statusInputs).filter((item) => item === "valid").length ===
@@ -51,7 +61,9 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
           <SvgSprite id='cross' />
         </div>
         <h3 className={styles.title}>{title}</h3>
-        <ModalForms {...ModalFormsProps} />
+
+        <InputsForm {...ModalFormsProps} />
+
         <Btn
           form='solid'
           title='send'

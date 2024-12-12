@@ -3,6 +3,7 @@ import {
   retPattern,
   TypeDataSelect,
   dataLocations,
+  // TypeFormValuesStatusInputs,
 } from "./index";
 
 const dataInterest: TypeDataSelect[] = [
@@ -24,11 +25,13 @@ const dataInterest: TypeDataSelect[] = [
   },
 ];
 export const dataContactUs: TypeDataFormInput[] = [
+  // export const dataContactUs: TypeFormValuesStatusInputs[] = [
   {
     id: "inputContactUs0",
     label: "Name*",
     placeholder: "Your name",
     name: "name",
+
     messages: {
       focus: "enter name",
       input: "name in format firstName lastName ",
@@ -37,6 +40,7 @@ export const dataContactUs: TypeDataFormInput[] = [
     },
 
     pattern: retPattern("name"),
+    size: "large",
   },
   {
     id: "inputContactUs1",
@@ -45,6 +49,7 @@ export const dataContactUs: TypeDataFormInput[] = [
     name: "interest",
     type: "select",
     dataSelect: dataInterest,
+    size: "large",
   },
   {
     id: "inputContactUs2",
@@ -59,6 +64,7 @@ export const dataContactUs: TypeDataFormInput[] = [
       noValid: "Please provide a valid input.",
     },
     pattern: retPattern("phone"),
+    size: "large",
   },
   {
     id: "inputContactUs3",
@@ -67,6 +73,7 @@ export const dataContactUs: TypeDataFormInput[] = [
     name: "location",
     type: "select",
     dataSelect: dataLocations,
+    size: "large",
   },
   {
     id: "inputContactUs4",
@@ -81,6 +88,7 @@ export const dataContactUs: TypeDataFormInput[] = [
       noValid: "Please provide a valid input.",
     },
     pattern: retPattern("email"),
+    size: "large",
   },
   {
     id: "inputContactUs5",
@@ -88,6 +96,7 @@ export const dataContactUs: TypeDataFormInput[] = [
     placeholder: "Your working email",
     name: "checkbox",
     type: "checkbox",
+    size: "large",
     // messages: {
     //   focus: "enter email",
     //   input: "email in format email",
@@ -109,6 +118,7 @@ export const dataContactUs: TypeDataFormInput[] = [
       noValid: "Please provide a valid input.",
     },
     pattern: retPattern("textarea"),
+    size: "large",
   },
   {
     id: "inputContactUs7",
@@ -117,6 +127,7 @@ export const dataContactUs: TypeDataFormInput[] = [
       "I agree to receive communications from Createx Construction Bureau.",
     name: "checkbox",
     type: "checkbox",
+    size: "large",
     // messages: {
     //   focus: "enter email",
     //   input: "email in format email",

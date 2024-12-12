@@ -7,6 +7,7 @@ export type TypeDataFormInput = {
   name: string;
   type?: string;
   value?: string;
+  size?: "large" | "default" | "small";
   defaultValue?: boolean;
   messages?: {
     focus: string;

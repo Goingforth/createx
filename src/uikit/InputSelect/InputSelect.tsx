@@ -6,6 +6,7 @@ import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 type TypeInputSelect = TypeFormValuesStatusInputs & {
   placeholder: string;
   dataSelect?: TypeDataSelect[];
+  size: "default" | "large" | "small";
 };
 
 export const InputSelect: FC<TypeInputSelect> = (props) => {
@@ -16,8 +17,16 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
     setStatusInputs,
     formValues,
     statusInputs,
+    size,
   } = props;
-  const [value, setValue] = useState(placeholder);
+
+  const [value, setValue] = useState<string>(
+    placeholder !== "write placeholder"
+      ? placeholder
+      : dataSelect
+      ? dataSelect[0].option
+      : ""
+  );
   const [select, setSelect] = useState(false);
   const [isSelect, setIsSelect] = useState(false);
   useEffect(() => {
@@ -28,7 +37,7 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
   }, [isSelect]);
 
   return (
-    <>
+    <div className={styles[size]}>
       <div className={styles.container}>
         <div className={!isSelect ? styles.default : styles.selected}>
           {value}
@@ -61,6 +70,6 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
