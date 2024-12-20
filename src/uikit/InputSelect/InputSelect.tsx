@@ -4,6 +4,7 @@ import SvgSprite from "../SvgSprite/SvgSprite";
 import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 
 type TypeInputSelect = TypeFormValuesStatusInputs & {
+  name: string;
   placeholder: string;
   dataSelect?: TypeDataSelect[];
   size: "default" | "large" | "small";
@@ -11,6 +12,7 @@ type TypeInputSelect = TypeFormValuesStatusInputs & {
 
 export const InputSelect: FC<TypeInputSelect> = (props) => {
   const {
+    name,
     placeholder,
     dataSelect,
     setFormValues,
@@ -29,10 +31,11 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
   );
   const [select, setSelect] = useState(false);
   const [isSelect, setIsSelect] = useState(false);
+
   useEffect(() => {
     if (isSelect) {
-      setFormValues({ ...formValues, location: value });
-      setStatusInputs({ ...statusInputs, location: "valid" });
+      setFormValues({ ...formValues, [name]: value });
+      setStatusInputs({ ...statusInputs, [name]: "valid" });
     }
   }, [isSelect]);
 
@@ -52,7 +55,13 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
         </div>
 
         {select && (
-          <div className={styles.options}>
+          <div
+            className={styles.options}
+            onMouseLeave={() => {
+              select && setSelect(false);
+              setIsSelect(true);
+            }}
+          >
             {dataSelect?.map(({ id, option }) => (
               <div
                 key={id}

@@ -13,7 +13,9 @@ import {
   AvailablePositions,
   ErrorPage,
   ModernCottage,
+  NewsPage,
 } from "../pages";
+// import * as NewsPages from "../pages/News/NewsPages/index.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -58,8 +60,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "news",
-        element: <News />,
+        children: [
+          { element: <News />, index: true },
+          {
+            path: ":id",
+            element: <NewsPage />,
+          },
+        ],
       },
+
       {
         path: "contacts",
         element: <Contacts />,

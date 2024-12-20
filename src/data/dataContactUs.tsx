@@ -93,9 +93,8 @@ export const dataContactUs: TypeDataFormInput[] = [
   {
     id: "inputContactUs5",
     label: "Preferred contact method",
-    placeholder: "Your working email",
-    name: "checkbox",
-    type: "checkbox",
+    name: "contact",
+    type: "radio",
     size: "large",
     // messages: {
     //   focus: "enter email",
@@ -125,9 +124,10 @@ export const dataContactUs: TypeDataFormInput[] = [
     // label: "Preferred contact method",
     placeholder:
       "I agree to receive communications from Createx Construction Bureau.",
-    name: "checkbox",
+    name: "agree",
     type: "checkbox",
     size: "large",
+
     // messages: {
     //   focus: "enter email",
     //   input: "email in format email",

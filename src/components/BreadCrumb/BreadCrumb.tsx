@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import { DataPage } from "../../utils";
 import { dataHeroPages } from "../../data";
 import styles from "./BreadCrumb.module.scss";

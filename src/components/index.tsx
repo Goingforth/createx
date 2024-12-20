@@ -44,6 +44,7 @@ import { ModalCTA } from "./ModalCTA/ModalCTA";
 import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
 import { ContactUs } from "./ContactUs/ContactUs";
 import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
+import { HeroPageNews } from "./HeroPage News/HeroPageNews";
 
 export {
   Hero,
@@ -95,4 +96,5 @@ export {
   type TypeInputsForm,
   ContactUs,
   ContactUsForm,
+  HeroPageNews,
 };

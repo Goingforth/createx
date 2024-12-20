@@ -862,7 +862,6 @@ const SvgSprite = ({ id, width, height }: Props) => {
           />
         </svg>
       );
-
     case "clock":
       return (
         <svg

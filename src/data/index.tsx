@@ -25,7 +25,7 @@ import {
   TypeTestimonialsCards,
 } from "./dataTestimonialsCards";
 import { dataMediaTabs } from "./dataMediaTabs";
-import { dataNews, categoriesNews, TypeCategories } from "./dataNews";
+import { dataNews, categoriesNews, TypeCategories, TypeNews } from "./dataNews";
 import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
 import { dataStatistics, TypeStatistics } from "./dataStatistics";
 import { dataCoreValuesItems } from "./dataCoreValuesItems";
@@ -81,6 +81,7 @@ export {
   type TypeTestimonialsCards,
   dataMediaTabs,
   dataNews,
+  type TypeNews,
   categoriesNews,
   type TypeCategories,
   dataTeamMembers,

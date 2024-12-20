@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import { BreadCrumb } from "../index";
 import { DataPage } from "../../utils";
 

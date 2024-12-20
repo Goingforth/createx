@@ -1,9 +1,12 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { TypeCategories } from "../../data";
-import SvgSprite from "../SvgSprite/SvgSprite";
+import { Meta } from "../index";
+
 import styles from "./PostCard.module.scss";
 
 type TypePostCard = {
+  id: string;
   size: "regular" | "large" | "small";
   title: string;
   categories: TypeCategories;
@@ -13,48 +16,26 @@ type TypePostCard = {
   img: string;
 };
 
-const PostCard: FC<TypePostCard> = (props) => {
-  const { size, img, title, categories, date, comments, text } = props;
+export const PostCard: FC<TypePostCard> = (props) => {
+  const { id, size, img, title, categories, date, comments, text } = props;
+  const metaProps = {
+    categories: categories,
+    date: date,
+    comments: comments,
+    size: size,
+  };
+
   return (
-    <div
-      className={[
-        styles.container,
-        size === "large" ? styles.large : "",
-        size === "regular" ? styles.regular : "",
-        size === "small" ? styles.small : "",
-      ].join(" ")}
-    >
+    <Link to={id} className={styles[size]}>
       <div className={styles.imageWrapper}>
         <img src={img} alt='' />
       </div>
       <div className={styles.cardWrapper}>
         <div className={styles.heading}>{title}</div>
-        <div className={styles.meta}>
-          <div>{categories}</div>
-          <div>
-            <SvgSprite id='divider_small' />
-          </div>
-          <div>{date}</div>
-          <div>
-            <SvgSprite id='divider_small' />
-          </div>
-          <div className={styles.comments}>
-            <div className={styles.icon}>
-              <SvgSprite id='chat' width='16px' height='16px' />
-            </div>
-            <div>
-              {comments === 0
-                ? "No comments"
-                : comments !== 1
-                ? `${comments} comments`
-                : "1 comment"}
-            </div>
-          </div>
-        </div>
+        <Meta {...metaProps} />
+
         <div className={styles.text}>{text}</div>
       </div>
-    </div>
+    </Link>
   );
 };
-
-export default PostCard;

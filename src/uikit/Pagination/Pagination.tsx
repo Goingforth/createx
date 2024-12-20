@@ -5,7 +5,7 @@ import styles from "./Pagination.module.scss";
 //   activePage: number;
 // };
 
-const Pagination: FC = () => {
+export const Pagination: FC = () => {
   const [active, setActive] = useState(1);
   const [pages, setPages] = useState([1, 2, 3, 4]);
 
@@ -44,5 +44,3 @@ const Pagination: FC = () => {
     </div>
   );
 };
-
-export default Pagination;

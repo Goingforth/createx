@@ -14,6 +14,10 @@ import { ModalWindow } from "./ModalWindow/ModalWindow";
 import InputForm from "./InputForm/InputForm";
 import { InputSelect } from "./InputSelect/InputSelect";
 import InputChooseFile from "./InputChooseFile/InputChooseFile";
+import { BasicTab } from "./Tabs/BasicTab/BasicTab";
+import { PostCard } from "./PostCard/PostCard";
+import { Pagination } from "./Pagination/Pagination";
+import { Meta } from "./PostCard/Meta/Meta";
 
 export {
   InputForms,
@@ -30,4 +34,8 @@ export {
   InputForm,
   InputSelect,
   InputChooseFile,
+  BasicTab,
+  PostCard,
+  Pagination,
+  Meta,
 };

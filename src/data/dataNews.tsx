@@ -21,7 +21,7 @@ export const categoriesNews: TypeCategoriesNews[] = [
   { id: "category5", category: "Marketing", isActive: false },
 ];
 
-interface TypeNews {
+export interface TypeNews {
   id: string;
   title: string;
   categories: TypeCategories;
@@ -29,6 +29,7 @@ interface TypeNews {
   comments: number;
   text: string;
   img: string;
+  imgFull: string;
 }
 export const dataNews: TypeNews[] = [
   {
@@ -39,6 +40,7 @@ export const dataNews: TypeNews[] = [
     comments: 4,
     text: "Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...",
     img: "/news/news0.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
   {
     id: "news1",
@@ -48,6 +50,7 @@ export const dataNews: TypeNews[] = [
     comments: 0,
     text: "Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...",
     img: "/news/news1.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
   {
     id: "news2",
@@ -57,6 +60,7 @@ export const dataNews: TypeNews[] = [
     comments: 0,
     text: "Cras est nisi purus velit facilisi vitae, dolor. Lorem scelerisque integer duis et nulla lobortis cursus. Viverra erat sollicitudin praesent viverra...",
     img: "/news/news2.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
   {
     id: "news3",
@@ -66,6 +70,7 @@ export const dataNews: TypeNews[] = [
     comments: 1,
     text: "Tellus quis aliquet volutpat nunc pulvinar donec sed sapien. Vitae elit id dolor, tristique massa. Fames lobortis orci rutrum bibendum integer...",
     img: "/news/news3.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
   {
     id: "news4",
@@ -75,6 +80,7 @@ export const dataNews: TypeNews[] = [
     comments: 0,
     text: "Dignissim sed enim, eleifend morbi condimentum. Congue id quis vulputate dignissim eget. Ac ullamcorper nunc habitasse enim interdum platea...",
     img: "/news/news4.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
   {
     id: "news5",
@@ -84,5 +90,6 @@ export const dataNews: TypeNews[] = [
     comments: 0,
     text: "Maecenas donec lacinia nunc, quam sit magnis mauris. Neque bibendum et mauris, aenean. Vel arcu amet in sem parturient  integer duis et nulla...",
     img: "/news/news5.jpg",
+    imgFull: "/news/news0_full.jpg",
   },
 ];

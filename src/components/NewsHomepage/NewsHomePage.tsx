@@ -1,7 +1,6 @@
 import { FC } from "react";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
-import PostCard from "../../uikit/PostCard/PostCard";
-import ViewAll from "../../uikit/ViewAll/ViewAll";
+import { SectionWithChildren } from "../index";
+import { PostCard, ViewAll } from "../../uikit";
 import { dataNews } from "../../data";
 import styles from "./NewsHomePage.module.scss";
 

@@ -19,7 +19,7 @@ export const ContactUsForm: FC = () => {
     gridTemplateColumns: "285px 285px",
     gridTemplateRows: "86px 86px 86px 160px",
     gap: "24px 30px",
-    gridTemplateAreas: `"name interest" "phone location" "email checkbox" "message message"`,
+    gridTemplateAreas: `"name interest" "phone location" "email contact" "message message" "agree ."`,
   };
   const stateInputs = {
     statusInputs: statusInputs,
@@ -45,9 +45,9 @@ export const ContactUsForm: FC = () => {
       ? setIsDisabled(false)
       : setIsDisabled(true);
   }, [statusInputs]);
-  console.log("statusInputs :", statusInputs);
-  console.log("formValues :", formValues);
-  console.log(ContactUsFormProps);
+  // console.log("statusInputs :", statusInputs);
+  // console.log("formValues :", formValues);
+  // console.log(ContactUsFormProps);
 
   return (
     <div className={styles.container}>

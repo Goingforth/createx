@@ -1,8 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { categoriesNews, dataNews } from "../../data";
-import BasicTab from "../../uikit/Tabs/BasicTab/BasicTab";
-import PostCard from "../../uikit/PostCard/PostCard";
-import Pagination from "../../uikit/Pagination/Pagination";
+import { BasicTab, PostCard, Pagination } from "../../uikit";
 
 import styles from "./NewsBody.module.scss";
 

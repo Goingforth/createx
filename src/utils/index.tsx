@@ -1,4 +1,4 @@
 import ScrollToTop from "./ScrollToTop";
-import { DataPage } from "./function";
+import { DataPage, DataPageNews } from "./function";
 
-export { ScrollToTop, DataPage };
+export { ScrollToTop, DataPage, DataPageNews };

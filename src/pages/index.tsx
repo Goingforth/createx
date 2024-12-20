@@ -9,6 +9,7 @@ import Services from "./Services/Services";
 import Work from "./Work/Work";
 import { ErrorPage } from "./ErrorPage/ErrorPage";
 import ModernCottage from "./ModernCottage/ModernCottage";
+import { NewsPage } from "./News/NewsPages/NewsPage";
 
 export {
   AboutUs,
@@ -22,4 +23,5 @@ export {
   Work,
   ErrorPage,
   ModernCottage,
+  NewsPage,
 };

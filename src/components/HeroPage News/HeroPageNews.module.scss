@@ -1,0 +1,34 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 600px;
+  padding-top: 152px;
+  // padding-left: 345px;
+  background-color: $gray200;
+}
+
+.pageTitle {
+  @extend .containerSection;
+
+  // height: 970px;
+}
+
+.title {
+  @extend .display2;
+  margin-bottom: 48px;
+  color: $gray900;
+}
+// .titleHeroNoImg {
+//   @extend .title;
+//   @extend .display2;
+// }
+// .note {
+//   @extend .lead_regular;
+//   width: 600px;
+//   color: $gray700;
+// }
+.imageWrapper {
+  @extend .containerSection;
+  margin-top: -80px;
+  margin-bottom: 80px;
+}

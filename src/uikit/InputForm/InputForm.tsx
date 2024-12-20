@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import { SvgSprite, InputSelect, InputChooseFile } from "../index";
+import { SvgSprite, InputSelect, InputChooseFile, Checkboxes } from "../index";
 import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 import styles from "./InputForm.module.scss";
 
@@ -9,6 +9,7 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
   placeholder?: string;
   name: string;
   type?: string;
+
   messages?:
     | {
         focus: string;
@@ -21,6 +22,7 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
   size?: "large" | "default" | "small";
   width?: string;
   dataSelect?: TypeDataSelect[];
+  checked?: boolean | undefined;
 };
 
 const InputForm: FC<TypeInputForm> = ({
@@ -37,6 +39,7 @@ const InputForm: FC<TypeInputForm> = ({
   statusInputs,
   setStatusInputs,
   dataSelect,
+  checked,
 }) => {
   const changeMessage = (messages?: {
     focus: string;
@@ -94,6 +97,7 @@ const InputForm: FC<TypeInputForm> = ({
       : setStatus("novalid");
     setValue(value);
   };
+  console.log("type:", type);
 
   return (
     <div
@@ -141,16 +145,21 @@ const InputForm: FC<TypeInputForm> = ({
           }}
         />
       )}
-      {type !== "textarea" && type !== "file" && type !== "select" && (
-        <div className={styles.iconInput}>
-          {status === "valid" && <SvgSprite id='mark' />}
-          {(status === "novalid" || status === "empty") && (
-            <SvgSprite id='danger' />
-          )}
-        </div>
-      )}
+      {type !== "textarea" &&
+        type !== "file" &&
+        type !== "select" &&
+        type !== "checkbox" &&
+        type !== "radio" && (
+          <div className={styles.iconInput}>
+            {status === "valid" && <SvgSprite id='mark' />}
+            {(status === "novalid" || status === "empty") && (
+              <SvgSprite id='danger' />
+            )}
+          </div>
+        )}
       {type === "select" && (
         <InputSelect
+          name={name}
           placeholder={placeholder}
           dataSelect={dataSelect}
           size={size}
@@ -166,6 +175,19 @@ const InputForm: FC<TypeInputForm> = ({
           formValues={formValues}
           setStatusInputs={setStatusInputs}
           statusInputs={statusInputs}
+        />
+      )}
+      {(type === "radio" || type === "checkbox") && (
+        <Checkboxes
+          name={name}
+          type={type}
+          // value={value}
+          checked={checked}
+          onChange={onChange}
+          // setFormValues={setFormValues}
+          // formValues={formValues}
+          // setStatusInputs={setStatusInputs}
+          // statusInputs={statusInputs}
         />
       )}
 

@@ -5,17 +5,19 @@ type Props = {
   value?: string;
   name: string;
   type?: "radio" | "checkbox";
-  checked: any;
+  checked: boolean | undefined;
   onChange: Function;
 };
 
 const Checkboxes: FC<Props> = ({
   name,
   value = "Input label",
-  type = "checkbox",
+  type,
   checked,
   onChange,
 }) => {
+  console.log("type:", type);
+
   return (
     <div className={styles.container} onClick={() => onChange(name, !checked)}>
       <input

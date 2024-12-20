@@ -8,7 +8,7 @@ type Props = {
   onClick: (index: number) => void;
 };
 
-const BasicTab: FC<Props> = (props) => {
+export const BasicTab: FC<Props> = (props) => {
   const { category, isActive, index, onClick } = props;
   return (
     <div
@@ -19,5 +19,3 @@ const BasicTab: FC<Props> = (props) => {
     </div>
   );
 };
-
-export default BasicTab;
