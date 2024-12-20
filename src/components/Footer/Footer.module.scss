@@ -49,6 +49,8 @@
 .socialLinks {
   display: flex;
   gap: 16px;
+  fill: $white;
+  opacity: 0.6;
 }
 
 .socialLink {

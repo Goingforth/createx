@@ -2,6 +2,7 @@ import { FC } from "react";
 import { BreadCrumb } from "../index";
 import { Meta } from "../../uikit";
 import { DataPageNews } from "../../utils";
+import { Socials } from "./Socials/Socials";
 
 // import { TypeHeroPage, dataHeroPages } from "../../data";
 import { dataNews, TypeNews } from "../../data";
@@ -25,13 +26,14 @@ export const HeroPageNews: FC = () => {
                   __html: `<p>${pageData.title}</p>`,
                 }}
               />
-              <div>
+              <div className={styles.meta_socials}>
                 <Meta
                   categories={pageData.categories}
                   comments={pageData.comments}
                   date={pageData.date}
                   size='large'
                 />
+                <Socials />
               </div>
             </div>
           </div>

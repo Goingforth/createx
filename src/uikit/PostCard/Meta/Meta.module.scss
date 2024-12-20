@@ -20,14 +20,6 @@
     width: 16px;
     height: 16px;
   }
-  .divider {
-    width: 1px;
-    height: 13px;
-  }
-  #divider_small {
-    width: 1px;
-    height: 13px;
-  }
 }
 
 .large {
@@ -54,12 +46,8 @@
     width: 20px;
     height: 20px;
   }
-  #divider_small {
-    width: 1px;
-    height: 16px;
-  }
-  //   .divider {
-  //     width: 1px;
-  //     height: 16px;
-  //   }
+}
+.divider {
+  display: flex;
+  align-items: center;
 }
