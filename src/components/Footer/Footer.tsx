@@ -1,9 +1,8 @@
 import { FC } from "react";
-import BloсkLinkFooter from "../../uikit/BlockLinkFooter/BloсkLinkFooter";
+import BloсkLinkFooter from "./BlockLinkFooter/BloсkLinkFooter";
+import { SvgSprite, InputSubscribe } from "../../uikit";
 import { dataBlockLinkFooter, dataSocialLinks } from "../../data";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import { NavLink } from "react-router-dom";
-import InputSubscribe from "../../uikit/InputSubscribe/InputSubscribe";
 
 import styles from "./Footer.module.scss";
 

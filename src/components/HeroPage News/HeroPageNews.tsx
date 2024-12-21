@@ -1,47 +1,46 @@
 import { FC } from "react";
-import { BreadCrumb } from "../index";
 import { Meta } from "../../uikit";
-import { DataPageNews } from "../../utils";
 import { Socials } from "./Socials/Socials";
 
-// import { TypeHeroPage, dataHeroPages } from "../../data";
-import { dataNews, TypeNews } from "../../data";
+import { TypeNews } from "../../data";
 
 import styles from "./HeroPageNews.module.scss";
 
-export const HeroPageNews: FC = () => {
-  const pageData: TypeNews | undefined = DataPageNews(dataNews);
-  console.log(pageData);
-
+export const HeroPageNews: FC<TypeNews> = (props) => {
+  const { title, categories, comments, date, imgFull } = props;
   return (
     <>
-      {pageData !== undefined && (
-        <div>
-          <div className={styles.container}>
-            <div className={styles.pageTitle}>
-              <BreadCrumb />
-              <div
-                className={styles.title}
-                dangerouslySetInnerHTML={{
-                  __html: `<p>${pageData.title}</p>`,
-                }}
+      <div>
+        <div className={styles.container}>
+          <div className={styles.pageTitle}>
+            <div className={styles.breadcrumb}>
+              <div className={styles.homepage}>Homepage</div>
+              <div className={styles.slash}>/</div>
+              <div className={styles.homepage}>News</div>
+              <div className={styles.slash}>/</div>
+              <div className={styles.namepage}>{title}</div>
+            </div>
+            <div
+              className={styles.title}
+              dangerouslySetInnerHTML={{
+                __html: `<p>${title}</p>`,
+              }}
+            />
+            <div className={styles.meta_socials}>
+              <Meta
+                categories={categories}
+                comments={comments}
+                date={date}
+                size='large'
               />
-              <div className={styles.meta_socials}>
-                <Meta
-                  categories={pageData.categories}
-                  comments={pageData.comments}
-                  date={pageData.date}
-                  size='large'
-                />
-                <Socials />
-              </div>
+              <Socials />
             </div>
           </div>
-          <div className={styles.imageWrapper}>
-            <img src={pageData.imgFull} alt='' />
-          </div>
         </div>
-      )}
+        <div className={styles.imageWrapper}>
+          <img src={imgFull} alt='' />
+        </div>
+      </div>
     </>
   );
 };

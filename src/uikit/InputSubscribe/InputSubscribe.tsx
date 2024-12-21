@@ -1,9 +1,9 @@
 import { FC, useState, useEffect } from "react";
-import Btn from "../Buttons/Btn/Btn";
+import { Btn } from "../index";
 import { retPattern } from "../../data";
 import styles from "./InputSubscribe.module.scss";
 
-const InputSubscribe: FC = () => {
+export const InputSubscribe: FC = () => {
   const [email, setEmail] = useState("");
   const [disabled, setDisabled] = useState(false);
 
@@ -34,5 +34,3 @@ const InputSubscribe: FC = () => {
     </div>
   );
 };
-
-export default InputSubscribe;

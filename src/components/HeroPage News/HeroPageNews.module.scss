@@ -3,14 +3,11 @@
   width: 100%;
   height: 600px;
   padding-top: 152px;
-  // padding-left: 345px;
   background-color: $gray200;
 }
 
 .pageTitle {
   @extend .containerSection;
-
-  // height: 970px;
 }
 
 .title {
@@ -18,15 +15,6 @@
   margin-bottom: 48px;
   color: $gray900;
 }
-// .titleHeroNoImg {
-//   @extend .title;
-//   @extend .display2;
-// }
-// .note {
-//   @extend .lead_regular;
-//   width: 600px;
-//   color: $gray700;
-// }
 .imageWrapper {
   @extend .containerSection;
   margin-top: -80px;
@@ -35,4 +23,20 @@
 .meta_socials {
   display: flex;
   justify-content: space-between;
+}
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  @extend .small_regular;
+}
+.homepage {
+  color: $gray800;
+}
+.namepage {
+  color: $gray600;
+}
+.slash {
+  @extend .small_regular;
+  color: $gray600;
 }

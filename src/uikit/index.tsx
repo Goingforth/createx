@@ -18,9 +18,11 @@ import { BasicTab } from "./Tabs/BasicTab/BasicTab";
 import { PostCard } from "./PostCard/PostCard";
 import { Pagination } from "./Pagination/Pagination";
 import { Meta } from "./PostCard/Meta/Meta";
+import { InputSubscribe } from "./InputSubscribe/InputSubscribe";
 
 export {
   InputForms,
+  InputSubscribe,
   type TypeInputForm,
   Btn,
   type TypeBtnProps,

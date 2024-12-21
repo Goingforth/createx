@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { TypeTeamMember } from "../../data";
 import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
 import styles from "./TeamMemberCard.module.scss";
@@ -10,15 +11,15 @@ const TeamMemberCard: FC<TypeTeamMember> = (props) => {
       <div className={styles.imageWrapper}>
         <img src={image} alt='' />
         <div className={styles.socialLinks}>
-          <div className={styles.iconWrapper}>
+          <Link to="" className={styles.iconWrapper}>
             <SvgSprite id='linkedin' />
-          </div>
-          <div className={styles.iconWrapper}>
+          </Link >
+          <Link to="" className={styles.iconWrapper}>
             <SvgSprite id='twitter' />
-          </div>
-          <div className={styles.iconWrapper}>
+          </Link >
+          <Link to="" className={styles.iconWrapper}>
             <SvgSprite id='facebook' />
-          </div>
+          </Link >
         </div>
       </div>
       <div className={styles.projectName}>
