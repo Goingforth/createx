@@ -11,6 +11,7 @@ const SectionWithChildren: FC<Props> = (props) => {
   return (
     <div className={styles.containerChildren}>
       <h1 className={styles.title}>{title}</h1>
+
       <p
         className={[
           styles.large_regular,
@@ -19,6 +20,17 @@ const SectionWithChildren: FC<Props> = (props) => {
       >
         {subtitle}
       </p>
+
+      {/* {subtitle && (
+        <p
+          className={[
+            styles.large_regular,
+            subtitle ? styles.subTitle : styles.notSubTitle,
+          ].join(" ")}
+        >
+          {subtitle}
+        </p>
+      )} */}
       <div>{children}</div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
-import TeamMemberCard from "../TeamMemberCard/TeamMemberCard";
+import { SectionWithChildren } from "../index";
+import TeamMemberCard from "./TeamMemberCard/TeamMemberCard";
 import { dataTeamMembers } from "../../data";
 
 import styles from "./Team.module.scss";

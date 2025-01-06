@@ -7,6 +7,7 @@ import Btn from "./Buttons/Btn/Btn";
 import { TypeBtnProps } from "./Buttons/Btn/Btn";
 import IconBoxBasic from "./IconBoxBasic/IconBoxBasic";
 import SvgSprite from "./SvgSprite/SvgSprite";
+import { SvgSpriteCountry } from "./SvgSpriteCountry/SvgSpriteCountry";
 import { TypeIdIcons } from "./SvgSprite/SvgSprite";
 import ViewAll from "./ViewAll/ViewAll";
 import { TypeViewAll } from "./ViewAll/ViewAll";
@@ -19,6 +20,7 @@ import { PostCard } from "./PostCard/PostCard";
 import { Pagination } from "./Pagination/Pagination";
 import { Meta } from "./PostCard/Meta/Meta";
 import { InputSubscribe } from "./InputSubscribe/InputSubscribe";
+import { ImgCloudinary } from "./ImgCloudinari/ImgClaudinary";
 
 export {
   InputForms,
@@ -29,6 +31,7 @@ export {
   Checkboxes,
   IconBoxBasic,
   SvgSprite,
+  SvgSpriteCountry,
   type TypeIdIcons,
   ViewAll,
   type TypeViewAll,
@@ -40,4 +43,5 @@ export {
   PostCard,
   Pagination,
   Meta,
+  ImgCloudinary,
 };

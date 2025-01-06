@@ -7,7 +7,7 @@ import { TypeNews } from "../../data";
 import styles from "./HeroPageNews.module.scss";
 
 export const HeroPageNews: FC<TypeNews> = (props) => {
-  const { title, categories, comments, date, imgFull } = props;
+  const { title, categories, comments, date, imageFull } = props;
   return (
     <>
       <div>
@@ -38,7 +38,7 @@ export const HeroPageNews: FC<TypeNews> = (props) => {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <img src={imgFull} alt='' />
+          <img src={imageFull} alt='' />
         </div>
       </div>
     </>

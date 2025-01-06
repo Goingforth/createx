@@ -1,25 +1,43 @@
-import { FC } from "react";
+import { FC, lazy, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Application from "../Application/Application";
-import styles from "./layout.module.scss";
+import { RingLoader } from "react-spinners";
+import { Header } from "../index";
+const Footer = lazy(() => import("../Footer/Footer"));
+const Application = lazy(() => import("../Application/Application"));
+import styles from "./Layout.module.scss";
 
-export const Layout: FC = () => {
+const Loading = () => (
+  <div className={styles.spinner}>
+    <RingLoader
+      color={"grey"}
+      loading={true}
+      // cssOverride={override}
+      size={400}
+      aria-label='Loading Spinner'
+      data-testid='loader'
+    />
+  </div>
+);
+
+const Layout: FC = () => {
   const location = useLocation();
   return (
     <div className={styles.body}>
       <div className={styles.container}>
         <Header />
       </div>
-      <div>
-        <Outlet />
-      </div>
+      <main>
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </main>
+
       {location.pathname !== "/contacts" && <Application />}
 
-      <div className={styles.footer}>
+      <footer className={styles.footer}>
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 };
+export default Layout;

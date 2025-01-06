@@ -1112,7 +1112,7 @@ const SvgSprite = ({ id, width, height }: Props) => {
             x2='0.499999'
             y2='15.5'
             stroke='#787A80'
-            stroke-linecap='round'
+            strokeLinecap='round'
           />
         </svg>
       );

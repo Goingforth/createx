@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { dataHistorySlides } from "../../data";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
+import { SvgSprite, ImgCloudinary } from "../../uikit";
 import SliderControls from "../../uikit/SliderControls/SliderControls";
 import styles from "./History.module.scss";
 
@@ -44,7 +44,7 @@ const History: FC = () => {
         </div>
         <div>
           <div className={styles.imageWrapper}>
-            <img src={dataHistorySlides[active].image} />
+            <ImgCloudinary image={dataHistorySlides[active].image} />
           </div>
           <div className={styles.description}>
             {dataHistorySlides[active].description}

@@ -1,13 +1,15 @@
 import { FC } from "react";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
-import SvgSpriteCountry from "../../uikit/SvgSpriteCountry/SvgSpriteCountry";
+import { SectionWithChildren } from "../index";
+import { SvgSpriteCountry, ImgCloudinary } from "../../uikit";
+// import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
+// import SvgSpriteCountry from "../../uikit/SvgSpriteCountry/SvgSpriteCountry";
 import { dataCountryFlag } from "../../data";
 import styles from "./Map.module.scss";
 
 const MapImg: FC = () => {
   return (
     <div className={styles.mapWrapper}>
-      <img src='/map.jpg' alt='Map' />
+      <ImgCloudinary image='map.jpg' />
 
       {dataCountryFlag.map((country) => (
         <div

@@ -13,11 +13,11 @@ type TypePostCard = {
   date: string;
   comments: number;
   text: string;
-  img: string;
+  image: string;
 };
 
 export const PostCard: FC<TypePostCard> = (props) => {
-  const { id, size, img, title, categories, date, comments, text } = props;
+  const { id, size, image, title, categories, date, comments, text } = props;
   const metaProps = {
     categories: categories,
     date: date,
@@ -28,7 +28,7 @@ export const PostCard: FC<TypePostCard> = (props) => {
   return (
     <Link to={id} className={styles[size]}>
       <div className={styles.imageWrapper}>
-        <img src={img} alt='' />
+        <img src={image} alt='' />
       </div>
       <div className={styles.cardWrapper}>
         <div className={styles.heading}>{title}</div>

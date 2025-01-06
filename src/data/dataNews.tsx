@@ -1,3 +1,5 @@
+const BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
+
 export type TypeCategories =
   | "All News"
   | "Company News"
@@ -28,8 +30,8 @@ export interface TypeNews {
   date: string;
   comments: number;
   text: string;
-  img: string;
-  imgFull: string;
+  image: string;
+  imageFull: string;
 }
 export const dataNews: TypeNews[] = [
   {
@@ -39,8 +41,8 @@ export const dataNews: TypeNews[] = [
     date: "June 24, 2020",
     comments: 4,
     text: "Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...",
-    img: "/news/news0.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news0.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
   {
     id: "news1",
@@ -49,8 +51,8 @@ export const dataNews: TypeNews[] = [
     date: "June 12, 2020",
     comments: 0,
     text: "Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...",
-    img: "/news/news1.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news1.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
   {
     id: "news2",
@@ -59,8 +61,8 @@ export const dataNews: TypeNews[] = [
     date: "May 16, 2020",
     comments: 0,
     text: "Cras est nisi purus velit facilisi vitae, dolor. Lorem scelerisque integer duis et nulla lobortis cursus. Viverra erat sollicitudin praesent viverra...",
-    img: "/news/news2.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news2.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
   {
     id: "news3",
@@ -69,8 +71,8 @@ export const dataNews: TypeNews[] = [
     date: "February 25, 2020",
     comments: 1,
     text: "Tellus quis aliquet volutpat nunc pulvinar donec sed sapien. Vitae elit id dolor, tristique massa. Fames lobortis orci rutrum bibendum integer...",
-    img: "/news/news3.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news3.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
   {
     id: "news4",
@@ -79,8 +81,8 @@ export const dataNews: TypeNews[] = [
     date: "January 14, 2020",
     comments: 0,
     text: "Dignissim sed enim, eleifend morbi condimentum. Congue id quis vulputate dignissim eget. Ac ullamcorper nunc habitasse enim interdum platea...",
-    img: "/news/news4.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news4.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
   {
     id: "news5",
@@ -89,7 +91,7 @@ export const dataNews: TypeNews[] = [
     date: "December 1, 2019",
     comments: 0,
     text: "Maecenas donec lacinia nunc, quam sit magnis mauris. Neque bibendum et mauris, aenean. Vel arcu amet in sem parturient  integer duis et nulla...",
-    img: "/news/news5.jpg",
-    imgFull: "/news/news0_full.jpg",
+    image: `${BASE_URL_PHOTO}/news/news5.jpg`,
+    imageFull: `${BASE_URL_PHOTO}/news/news0_full.jpg`,
   },
 ];

@@ -45,7 +45,7 @@ import {
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 import { dataProject } from "./dataProject";
 import { dataBulletedList } from "./dataBulletedList";
-import { widthBlock, TypeConstWidth } from "./data Constant";
+import { widthBlock, TypeConstWidth } from "./dataConstant";
 import {
   dataGalleryModernCottage,
   dataGalleryMini,

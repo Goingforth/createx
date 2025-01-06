@@ -1,4 +1,7 @@
 import Hero from "./Hero/Hero";
+import { Header } from "./Header/Header";
+import Footer from "./Footer/Footer";
+import Application from "./Application/Application";
 import HeroPage from "./HeroPage/HeroPage";
 import Video from "./Video/Video";
 import MediaTabs from "./MediaTabs/MediaTabs";
@@ -13,18 +16,17 @@ import Portfolio from "./Portfolio/Portfolio";
 import Figures from "./Figures/Figures";
 import Team from "./Team/Team";
 import Statistics from "./Statistics/Statistics";
-import CEO from "./CEO/CEO";
+
 import History from "./History/History";
 import Map from "./Map/Map";
 import Offer from "./Offer/Offer";
 import { Benefits, TypeBenefits } from "./Benefits/Benefits";
 import Pricing from "./Pricing/Pricing";
 import NewsBody from "./NewsBody/NewsBody";
-import BlockServicePage from "./BlockServicepage/BlockServicePage";
+import BlockServicePage from "./BlockServicePage/BlockServicePage";
 import RequestForm from "./RequestForm/RequestForm";
 import ServicesView from "./ServicesView/ServicesView";
 import SectionWithChildren from "./SectionWithChidren/SectionWtithChildren";
-import { Layout } from "./Layout/Layout";
 import PortfolioCard from "./PortfolioCard/PortfolioCard";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import AboutProject from "./AboutProject/AboutProject";
@@ -45,9 +47,13 @@ import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
 import { ContactUs } from "./ContactUs/ContactUs";
 import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
 import { HeroPageNews } from "./HeroPage News/HeroPageNews";
+import { Comments } from "./Comments/Comments";
 
 export {
   Hero,
+  Header,
+  Footer,
+  Application,
   HeroPage,
   Video,
   MediaTabs,
@@ -62,7 +68,6 @@ export {
   Figures,
   Team,
   Statistics,
-  CEO,
   History,
   Map,
   Offer,
@@ -74,7 +79,6 @@ export {
   RequestForm,
   ServicesView,
   SectionWithChildren,
-  Layout,
   PortfolioCard,
   BreadCrumb,
   AboutProject,
@@ -97,4 +101,5 @@ export {
   ContactUs,
   ContactUsForm,
   HeroPageNews,
+  Comments,
 };

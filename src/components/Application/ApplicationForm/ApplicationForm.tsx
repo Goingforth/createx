@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
-import { InputForms, Btn, Checkboxes } from "../../uikit";
+import { InputForms, Btn, Checkboxes } from "../../../uikit";
 import styles from "./ApplicationForm.module.scss";
-import { dataApplicationFormInput } from "../../data";
+import { dataApplicationFormInput } from "../../../data";
 //////////
 const valuesObj = Object.fromEntries(
   dataApplicationFormInput.map(({ name, defaultValue = "" }) => [

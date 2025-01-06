@@ -5,6 +5,8 @@ import { IconBoxBasic, ViewAll, TypeViewAll } from "../../uikit";
 
 import styles from "./ServicesView.module.scss";
 
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
+
 const ServicesView: FC = () => {
   const [blockHover, setBlockHover] = useState(false);
   const [isHover, setIsHover] = useState("");
@@ -31,7 +33,7 @@ const ServicesView: FC = () => {
             style={{
               backgroundImage:
                 blockHover && item.id === isHover
-                  ? `url(${item.bgHoverImage})`
+                  ? `url(${VITE_BASE_URL_PHOTO}/${item.bgHoverImage})`
                   : "",
             }}
           >

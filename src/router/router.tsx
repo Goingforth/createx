@@ -1,21 +1,25 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "../components";
+import Layout from "../components/Layout/Layout";
 
-import {
-  Home,
-  AboutUs,
-  Contacts,
-  Services,
-  Formdata,
-  News,
-  Work,
-  InteriorDesign,
-  AvailablePositions,
-  ErrorPage,
-  ModernCottage,
-  NewsPage,
-} from "../pages";
-// import * as NewsPages from "../pages/News/NewsPages/index.tsx";
+const AboutUs = lazy(() => import("../pages/AboutUs/AboutUs"));
+const AvailablePositions = lazy(
+  () => import("../pages/AvailablePositions/AvailablePositions")
+);
+const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
+const Formdata = lazy(() => import("../pages/Formdata/Formdata"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const InteriorDesign = lazy(
+  () => import("../pages/InteriorDesign/InteriorDesign")
+);
+const News = lazy(() => import("../pages/News/News"));
+const Services = lazy(() => import("../pages/Services/Services"));
+const Work = lazy(() => import("../pages/Work/Work"));
+const ErrorPage = lazy(() => import("../pages/ErrorPage/ErrorPage"));
+const ModernCottage = lazy(
+  () => import("../pages/ModernCottage/ModernCottage")
+);
+const NewsPage = lazy(() => import("../pages/News/NewsPages/NewsPage"));
 
 export const router = createBrowserRouter([
   {

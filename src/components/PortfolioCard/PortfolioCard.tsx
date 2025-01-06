@@ -1,22 +1,22 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import Btn from "../../uikit/Buttons/Btn/Btn";
+import { Btn, ImgCloudinary } from "../../uikit/index";
 
 import styles from "./PortfolioCard.module.scss";
 
 type TypePortfolioCard = {
-  src: string;
+  image: string;
   title: string;
   category: string;
   to: string;
 };
 
 const PortfolioCard: FC<TypePortfolioCard> = (props) => {
-  const { src, title, category, to } = props;
+  const { image, title, category, to } = props;
   return (
     <div className={styles.projectCard}>
       <div className={styles.imageWrapper}>
-        <img src={src} alt='' />
+        <ImgCloudinary image={image} />
       </div>
       <div className={styles.projectName}>
         <div className={styles.contentTitle}>{title}</div>

@@ -10,7 +10,7 @@ type Props = {
   id: TypeIdIconsCountry;
 };
 
-const SvgSpriteCountry = ({ id }: Props) => {
+export const SvgSpriteCountry = ({ id }: Props) => {
   switch (id) {
     case "australia":
       return (
@@ -257,5 +257,3 @@ const SvgSpriteCountry = ({ id }: Props) => {
       return <svg></svg>;
   }
 };
-
-export default SvgSpriteCountry;

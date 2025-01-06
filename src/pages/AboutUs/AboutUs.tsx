@@ -4,11 +4,11 @@ import {
   Clients,
   Team,
   Statistics,
-  CEO,
   CoreValues,
   History,
   Map,
 } from "../../components";
+import { CEO } from "./CEO/CEO";
 import { ScrollToTop } from "../../utils";
 import styles from "./AboutUs.module.scss";
 

@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
-import { HeroPageNews } from "../../../components";
+import { Comments, HeroPageNews } from "../../../components";
 import { ScrollToTop, DataPageNews } from "../../../utils";
 import { dataNews, TypeNews } from "../../../data";
 
 // import ErrorPage from "./ErrorPage/ErrorPage";
 
-export const NewsPage: FC = () => {
+const NewsPage: FC = () => {
   const { id } = useParams();
   const pageData: TypeNews | undefined = DataPageNews(dataNews, id);
 
@@ -15,7 +15,10 @@ export const NewsPage: FC = () => {
       <>
         <ScrollToTop />
         <HeroPageNews {...pageData} />
+        <Comments id={pageData.id} comments={pageData.comments} />
       </>
     )
   );
 };
+
+export default NewsPage;

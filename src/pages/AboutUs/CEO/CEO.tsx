@@ -1,12 +1,13 @@
 import { FC } from "react";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
+import { SvgSprite } from "../../../uikit";
+import { ImgCloudinary } from "../../../uikit";
 import styles from "./CEO.module.scss";
 
-const CEO: FC = () => {
+export const CEO: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgCEO}>
-        <img src='/ceo.jpg' alt='CEO image' />
+        <ImgCloudinary image='ceo.jpg' />
       </div>
       <div className={styles.quotation}>
         <div className={styles.text}>
@@ -32,5 +33,3 @@ const CEO: FC = () => {
     </div>
   );
 };
-
-export default CEO;
