@@ -1,5 +1,5 @@
 import { FC } from "react";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
+import { SvgSprite, ImgCloudinary } from "../../uikit/";
 import { TypeSliderFullImage, TypeStateSlider } from "../../data";
 
 import styles from "./SliderFullImage.module.scss";
@@ -62,10 +62,10 @@ const SliderFullImage: FC<TypeSliderProps> = ({
             transform: `translateX(${offset}px)`,
           }}
         >
-          {dataArray.map(({ id, path, title, content }) => {
+          {dataArray.map(({ id, image, title, content }) => {
             return (
               <div key={id} style={{ position: "relative" }}>
-                <img src={path} alt='Picture of the author' />
+                <ImgCloudinary image={image} />
                 {title !== undefined && content !== undefined && (
                   <div className={styles.info}>
                     <div

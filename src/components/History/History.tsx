@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { dataHistorySlides } from "../../data";
-import { SvgSprite, ImgCloudinary } from "../../uikit";
-import SliderControls from "../../uikit/SliderControls/SliderControls";
+import { SvgSprite, ImgCloudinary, SliderControls } from "../../uikit";
+
 import styles from "./History.module.scss";
 
 const History: FC = () => {

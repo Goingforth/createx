@@ -25,7 +25,7 @@ interface SliderJump {
 
 type Props = SliderCarousel | SliderJump;
 
-const SliderControls: FC<Props> = ({
+export const SliderControls: FC<Props> = ({
   type,
   stepOffset,
   numberBlockingSlide,
@@ -64,5 +64,3 @@ const SliderControls: FC<Props> = ({
     </div>
   );
 };
-
-export default SliderControls;

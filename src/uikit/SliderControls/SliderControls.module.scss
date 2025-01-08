@@ -15,7 +15,8 @@
 
   fill: $gray800;
   &:hover {
-    background-image: url("/shape.svg");
+    border-radius: 50%;
+    background-color: $primary;
     fill: $white;
   }
 }

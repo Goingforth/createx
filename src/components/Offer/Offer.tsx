@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import Steps from "../Steps/Steps";
+import { SvgSprite, ImgCloudinary } from "../../uikit";
+import { Steps } from "../index";
 //import OfferItem from "../OffferItem/OfferItem";
 import styles from "./Offer.module.scss";
 
@@ -31,11 +31,9 @@ const Offer: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.offer}>
-        {/* <div className={styles.offerImg}> */}
         <div className={`offerImg ${isShowBox ? "offerImg_show" : ""}`}>
-          <img
-            src={active ? "/images/bgOffer.jpg" : "/images/bgOffer1.jpg"}
-            alt=''
+          <ImgCloudinary
+            image={active ? "/images/bgOffer.jpg" : "/images/bgOffer1.jpg"}
           />
         </div>
         <div className={styles.offerContent}>

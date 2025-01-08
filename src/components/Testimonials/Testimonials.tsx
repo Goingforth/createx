@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { TestimonialsCard } from "../index";
-import SliderControls from "../../uikit/SliderControls/SliderControls";
+import { SliderControls, ImgCloudinary } from "../../uikit/";
 import { dataTestimonialsCards } from "../../data";
 import styles from "./Testimonials.module.scss";
 
@@ -58,13 +58,9 @@ const Testimonials: FC = () => {
         </div>
         <div className={styles.imageWrapper}>
           {show && (
-            <img
-              src={dataTestimonialsCards[active].image}
-              width='100%'
-              height='100%'
-              alt=''
-              className={styles.pulse}
-            />
+            <div className={styles.pulse}>
+              <ImgCloudinary image={dataTestimonialsCards[active].image} />
+            </div>
           )}
         </div>
       </div>

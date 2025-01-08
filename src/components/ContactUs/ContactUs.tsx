@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { ContactUsForm, SectionWithChildren } from "../index";
-
+import { ImgCloudinary } from "../../uikit";
 import styles from "./ContactUs.module.scss";
 
 const ContactUsChild: FC = () => {
   return (
     <div className={styles.contactUsChild}>
       <div className={styles.imageWrapper}>
-        <img src='/contact.jpg' alt='' />
+        <ImgCloudinary image='/contact.jpg' />
       </div>
       <div>
         <ContactUsForm />

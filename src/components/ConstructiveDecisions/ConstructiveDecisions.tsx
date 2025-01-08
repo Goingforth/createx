@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SvgSprite } from "../../uikit";
+import { SvgSprite, ImgCloudinary } from "../../uikit";
 import { dataBulletedList } from "../../data";
 import styles from "./ConstructiveDecisions.module.scss";
 
@@ -8,7 +8,7 @@ const ConstructiveDecisions: FC = () => {
     <div className={styles.container}>
       <div className={styles.containerContent}>
         <div>
-          <img src='/constructive/image.jpg' alt='' />
+          <ImgCloudinary image='/constructive/image.jpg' />
         </div>
         <div>
           <div className={styles.title}>Constructive decisions</div>

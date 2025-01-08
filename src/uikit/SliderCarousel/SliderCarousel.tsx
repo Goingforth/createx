@@ -4,7 +4,7 @@ import { TypePortfolioCard } from "../../data";
 import PortfolioCard from "../../components/PortfolioCard/PortfolioCard";
 import ViewAll from "../ViewAll/ViewAll";
 
-import SliderControls from "../SliderControls/SliderControls";
+import { SliderControls } from "../index";
 import styles from "./SliderCarousel.module.scss";
 
 type PropsSliderCarousel = {

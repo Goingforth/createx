@@ -11,6 +11,7 @@ import { ScrollToTop } from "../../utils";
 
 import styles from "./InteriorDesign.module.scss";
 import { dataBenefitsInteriorDesign } from "../../data";
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const InteriorDesign: FC = () => {
   return (
@@ -27,7 +28,12 @@ const InteriorDesign: FC = () => {
         pb='100px'
         category={["Apartments & flats", "Private houses"]}
       />
-      <div className={styles.background}>
+      <div
+        className={styles.background}
+        style={{
+          backgroundImage: `url(${VITE_BASE_URL_PHOTO}/background.jpg)`,
+        }}
+      >
         <Pricing />
         <Clients title='Supported by 12+ partners' />
       </div>

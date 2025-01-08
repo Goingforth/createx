@@ -9,6 +9,8 @@ import { dataGalleryMini } from "../../data";
 import { widthBlock, dataGalleryModernCottage } from "../../data";
 import styles from "./GalleryModernCottage.module.scss";
 
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
+
 const GalleryModernCottage: FC = () => {
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);
@@ -42,7 +44,12 @@ const GalleryModernCottage: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerBlock}>
-        <div className={styles.bgWrapper} />
+        <div
+          className={styles.bgWrapper}
+          style={{
+            backgroundImage: `url(${VITE_BASE_URL_PHOTO}//bgImageGallery.jpg)`,
+          }}
+        />
 
         <div className={styles.gallery}>
           <SliderFullImage {...sliderProps} />

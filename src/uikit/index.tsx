@@ -21,6 +21,7 @@ import { Pagination } from "./Pagination/Pagination";
 import { Meta } from "./PostCard/Meta/Meta";
 import { InputSubscribe } from "./InputSubscribe/InputSubscribe";
 import { ImgCloudinary } from "./ImgCloudinari/ImgClaudinary";
+import { SliderControls } from "./SliderControls/SliderControls";
 
 export {
   InputForms,
@@ -44,4 +45,5 @@ export {
   Pagination,
   Meta,
   ImgCloudinary,
+  SliderControls,
 };

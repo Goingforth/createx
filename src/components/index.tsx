@@ -16,6 +16,7 @@ import Portfolio from "./Portfolio/Portfolio";
 import Figures from "./Figures/Figures";
 import Team from "./Team/Team";
 import Statistics from "./Statistics/Statistics";
+import { Steps } from "./Steps/Steps";
 
 import History from "./History/History";
 import Map from "./Map/Map";
@@ -102,4 +103,5 @@ export {
   ContactUsForm,
   HeroPageNews,
   Comments,
+  Steps,
 };

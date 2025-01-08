@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { SectionWithChildren } from "../index";
+import { ImgCloudinary } from "../../uikit";
 
 import { dataClientsLogo } from "../../data";
 import styles from "./Clients.module.scss";
@@ -11,9 +12,9 @@ type PropsClient = {
 const Client: FC<PropsClient> = ({ amountLogo = 6 }) => {
   return (
     <div className={styles.container}>
-      {dataClientsLogo.slice(0, amountLogo).map(({ id, src, alt }) => (
+      {dataClientsLogo.slice(0, amountLogo).map(({ id, image }) => (
         <div key={id} className={styles.clientLogo}>
-          <img src={src} alt={alt} />
+          <ImgCloudinary image={image} />
         </div>
       ))}
     </div>

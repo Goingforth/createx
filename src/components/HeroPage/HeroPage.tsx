@@ -6,6 +6,8 @@ import { TypeHeroPage, dataHeroPages } from "../../data";
 
 import styles from "./HeroPage.module.scss";
 
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
+
 const HeroPage: FC = () => {
   const pageData: TypeHeroPage | undefined = DataPage(dataHeroPages);
 
@@ -15,7 +17,7 @@ const HeroPage: FC = () => {
         <div
           className={styles.container}
           style={{
-            backgroundImage: `url(${pageData.bgImage})`,
+            backgroundImage: `url(${VITE_BASE_URL_PHOTO}/${pageData.bgImage})`,
           }}
         >
           <BreadCrumb />

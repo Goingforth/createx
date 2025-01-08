@@ -1,10 +1,12 @@
 import { FC } from "react";
+import { NavLink } from "react-router-dom";
 import { SectionWithChildren } from "../index";
 import TeamMemberCard from "./TeamMemberCard/TeamMemberCard";
 import { dataTeamMembers } from "../../data";
 
 import styles from "./Team.module.scss";
-import { NavLink } from "react-router-dom";
+
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const TeamGallery: FC = () => {
   return (
@@ -40,9 +42,12 @@ const Team: FC = () => {
           <Positions key='Positions' />,
         ]}
       />
-      <div className={styles.imageWrapper}>
-        <img src='/bgImage.jpg' alt='' width='300px' height='300px' />
-      </div>
+      <div
+        className={styles.imageWrapper}
+        style={{
+          backgroundImage: `url(${VITE_BASE_URL_PHOTO}/bgImage.jpg)`,
+        }}
+      />
     </div>
   );
 };

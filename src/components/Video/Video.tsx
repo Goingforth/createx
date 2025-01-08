@@ -1,13 +1,13 @@
 import ReactPlayer from "react-player/youtube";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
+import { SvgSprite } from "../../uikit/";
+import { SectionWithChildren } from "../index";
 
-import poster from "/construction.jpg";
+const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const Video = (): React.ReactNode => {
   const Player = () => (
     <ReactPlayer
-      light={poster}
+      light={`${VITE_BASE_URL_PHOTO}/construction.jpg`}
       url='http://www.youtube.com/watch?v=CtLy8PXiL58'
       width='1230px'
       height='500px'

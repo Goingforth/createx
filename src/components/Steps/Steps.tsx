@@ -3,7 +3,7 @@ import Step from "../Step/Step";
 import { dataSteps } from "../../data";
 import styles from "./Steps.module.scss";
 
-const Steps: FC = () => {
+export const Steps: FC = () => {
   const [activeStep, setActiveStep] = useState(-1);
 
   return (
@@ -25,5 +25,3 @@ const Steps: FC = () => {
     </div>
   );
 };
-
-export default Steps;

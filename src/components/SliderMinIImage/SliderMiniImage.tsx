@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { TypeDataGalleryProject, TypeStateSlider } from "../../data";
+import { ImgCloudinary } from "../../uikit";
 import styles from "./SliderMiniImage.module.scss";
 
 export type TypeSlideMiniImage = {
@@ -26,7 +27,7 @@ const SliderMiniImage: FC<TypeSlideMiniImage> = ({ ...props }) => {
             setOffset(-i * widthSlide);
           }}
         >
-          <img src={item.path} alt='' />
+          <ImgCloudinary image={item.image} />
         </div>
       ))}
     </div>
