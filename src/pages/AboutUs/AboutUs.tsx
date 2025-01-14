@@ -1,13 +1,15 @@
-import { FC } from "react";
+import { FC, lazy } from "react";
 import {
   HeroPage,
   Clients,
-  Team,
+  //  Team,
   Statistics,
   CoreValues,
   History,
   Map,
 } from "../../components";
+const Team = lazy(() => import("../../components/Team/Team"));
+
 import { CEO } from "./CEO/CEO";
 import { ScrollToTop } from "../../utils";
 import styles from "./AboutUs.module.scss";
@@ -32,7 +34,10 @@ const AboutUs: FC = () => {
       </div>
       <div className={styles.sectionPartnersTeam}>
         <Clients {...dataClients} />
+        {/* <Suspense fallback={<div>Loading...</div>}> */}
         <Team />
+        {/* </Suspense> */}
+        {/* <Team /> */}
       </div>
       <Map />
     </div>
