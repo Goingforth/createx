@@ -22,6 +22,7 @@ import { Meta } from "./PostCard/Meta/Meta";
 import { InputSubscribe } from "./InputSubscribe/InputSubscribe";
 import { ImgCloudinary } from "./ImgCloudinari/ImgClaudinary";
 import { SliderControls } from "./SliderControls/SliderControls";
+import { ServerError } from "./ServerError/ServerError";
 
 export {
   InputForms,
@@ -46,4 +47,5 @@ export {
   Meta,
   ImgCloudinary,
   SliderControls,
+  ServerError,
 };

@@ -42,7 +42,7 @@ import SliderMiniImage from "./SliderMinIImage/SliderMiniImage";
 import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
 import Vacancies from "./Vacancies/Vacancies";
 import { CTA, TypeModalName } from "./CTA/CTA";
-import VacancyCard from "./VacancyCard/VacancyCard";
+import VacancyCard from "./Vacancies/VacancyCard/VacancyCard";
 import { ModalCTA } from "./ModalCTA/ModalCTA";
 import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
 import { ContactUs } from "./ContactUs/ContactUs";

@@ -26,11 +26,11 @@ import {
 } from "./dataTestimonialsCards";
 import { dataMediaTabs } from "./dataMediaTabs";
 import { dataNews, categoriesNews, TypeCategories, TypeNews } from "./dataNews";
-import { dataTeamMembers, TypeTeamMember } from "./dataTeamMembers";
-import { dataStatistics, TypeStatistics } from "./dataStatistics";
+import { TypeTeamMember } from "./dataTeamMembers";
+import { TypeStatistics } from "./dataStatistics";
 import { dataCoreValuesItems } from "./dataCoreValuesItems";
 import { dataCountryFlag, TypeCountryFlag } from "./dataCountryFlag";
-import { dataHistorySlides } from "./dataHistory";
+import { TypeHistorySlide } from "./dataHistory";
 import {
   dataFigures,
   hexColorsFigures,
@@ -51,7 +51,7 @@ import {
   dataGalleryMini,
   TypeDataGalleryProject,
 } from "./dataGalleryModernCottage";
-import { dataVacancyCards, TypeDataVacancyCard } from "./dataVacancyCard";
+import { TypeDataVacancyCard } from "./dataVacancyCard";
 import { dataArrayModal } from "./dataModal";
 import { dataLocations, TypeDataSelect } from "./dataLocation";
 import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
@@ -84,14 +84,12 @@ export {
   type TypeNews,
   categoriesNews,
   type TypeCategories,
-  dataTeamMembers,
   type TypeTeamMember,
-  dataStatistics,
   type TypeStatistics,
   dataCoreValuesItems,
   dataCountryFlag,
   type TypeCountryFlag,
-  dataHistorySlides,
+  type TypeHistorySlide,
   dataFigures,
   hexColorsFigures,
   type TypeFigure,
@@ -110,7 +108,6 @@ export {
   dataGalleryModernCottage,
   type TypeDataGalleryProject,
   dataGalleryMini,
-  dataVacancyCards,
   type TypeDataVacancyCard,
   dataLocations,
   type TypeFormValue,

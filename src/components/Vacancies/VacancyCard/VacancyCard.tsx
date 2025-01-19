@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { TypeDataVacancyCard } from "../../data";
-import { SvgSprite } from "../../uikit";
-import { Btn } from "../../uikit";
+import { TypeDataVacancyCard } from "../../../data";
+import { SvgSprite } from "../../../uikit";
+import { Btn } from "../../../uikit";
 import styles from "./VacancyCard.module.scss";
 
 const VacancyCard: FC<TypeDataVacancyCard> = ({ ...card }) => {

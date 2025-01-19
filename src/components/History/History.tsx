@@ -1,17 +1,30 @@
-import { FC, useState } from "react";
-import { dataHistorySlides } from "../../data";
-import { SvgSprite, ImgCloudinary, SliderControls } from "../../uikit";
+import { FC, useState, useEffect } from "react";
+import { TypeHistorySlide } from "../../data";
+import {
+  SvgSprite,
+  ImgCloudinary,
+  SliderControls,
+  ServerError,
+} from "../../uikit";
+import { getData } from "../../api/getData";
 
 import styles from "./History.module.scss";
 
 const History: FC = () => {
   const [active, setActive] = useState(0);
+  const [data, setData] = useState<Array<TypeHistorySlide>>();
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    getData("/history", setData, setIsError);
+  }, []);
   return (
     <div className={styles.container}>
       <div>
         <div className={styles.title}>Our history</div>
+        {isError && <ServerError />}
         <div className={styles.timeline}>
-          {dataHistorySlides.map((history, index) => (
+          {data?.map((history, index) => (
             <div
               key={history.id}
               className={[
@@ -42,14 +55,15 @@ const History: FC = () => {
             }}
           />
         </div>
-        <div>
-          <div className={styles.imageWrapper}>
-            <ImgCloudinary image={dataHistorySlides[active].image} />
+
+        {data && (
+          <div>
+            <div className={styles.imageWrapper}>
+              <ImgCloudinary image={data[active].image} />
+            </div>
+            <div className={styles.description}>{data[active].description}</div>
           </div>
-          <div className={styles.description}>
-            {dataHistorySlides[active].description}
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
