@@ -5,7 +5,7 @@ import { BreadCrumb } from "../index";
 import { TypeHeroPage } from "../../data";
 
 import { ServerError } from "../../uikit";
-import { getDataHeroPage } from "../../api/getDataHeroPage";
+import { getDataByPage } from "../../api/getDataByPage";
 
 import styles from "./HeroPage.module.scss";
 
@@ -18,7 +18,7 @@ const HeroPage: FC = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    getDataHeroPage(location, setData, setIsError);
+    getDataByPage("/hero_page", location, setData, setIsError);
   }, []);
 
   return (

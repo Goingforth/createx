@@ -8,7 +8,9 @@ export const getData = async (
   try {
     const response = await api.get(`${collection}`);
     setData(response.data);
+    setIsError(false);
   } catch {
+    setData([]);
     setIsError(true);
   }
 };

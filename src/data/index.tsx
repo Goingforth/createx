@@ -17,7 +17,7 @@ import {
 import { TypeTablePricingItem } from "./dataTablePricing";
 import { TypeClientsLogo } from "./dataClientsLogo";
 import { TypeTestimonialsCards } from "./dataTestimonialsCards";
-import { dataMediaTabs } from "./dataMediaTabs";
+import { TypeMediaTabs } from "./dataMediaTabs";
 import { dataNews, categoriesNews, TypeCategories, TypeNews } from "./dataNews";
 import { TypeTeamMember } from "./dataTeamMembers";
 import { TypeStatistics } from "./dataStatistics";
@@ -32,7 +32,7 @@ import {
 } from "./dataFigures";
 import { TypeSliderFullImage, TypeStateSlider } from "./dataSliderHero";
 import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
-import { dataProject } from "./dataProject";
+import { TypeDataProject } from "./dataProject";
 import { dataBulletedList } from "./dataBulletedList";
 import { widthBlock, TypeConstWidth } from "./dataConstant";
 import {
@@ -65,7 +65,7 @@ export {
   type TypeTablePricingItem,
   type TypeClientsLogo,
   type TypeTestimonialsCards,
-  dataMediaTabs,
+  type TypeMediaTabs,
   dataNews,
   type TypeNews,
   categoriesNews,
@@ -85,7 +85,7 @@ export {
   type TypeDataServicesItem,
   dataBlockLinkFooter,
   dataSocialLinks,
-  dataProject,
+  type TypeDataProject,
   dataBulletedList,
   widthBlock,
   type TypeConstWidth,
