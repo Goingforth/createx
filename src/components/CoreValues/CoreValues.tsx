@@ -1,5 +1,5 @@
 import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
-import CoreValuesView from "../CoreValuesView/CoreValuesView";
+import CoreValuesView from "./CoreValuesView/CoreValuesView";
 
 const CoreValues = () => {
   return (

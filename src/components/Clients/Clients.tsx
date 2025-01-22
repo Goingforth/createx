@@ -1,8 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { SectionWithChildren } from "../index";
-import { ImgCloudinary } from "../../uikit";
+import { ImgCloudinary, ServerError } from "../../uikit";
+import { getData } from "../../api/getData";
 
-import { dataClientsLogo } from "../../data";
+import { TypeClientsLogo } from "../../data";
 import styles from "./Clients.module.scss";
 
 type PropsClient = {
@@ -10,13 +11,20 @@ type PropsClient = {
 };
 
 const Client: FC<PropsClient> = ({ amountLogo = 6 }) => {
+  const [data, setData] = useState<Array<TypeClientsLogo>>();
+  const [isError, setIsError] = useState(false);
+  useEffect(() => {
+    getData("/clients_logo", setData, setIsError);
+  }, []);
   return (
     <div className={styles.container}>
-      {dataClientsLogo.slice(0, amountLogo).map(({ id, image }) => (
-        <div key={id} className={styles.clientLogo}>
-          <ImgCloudinary image={image} />
-        </div>
-      ))}
+      {data &&
+        data.slice(0, amountLogo).map(({ id, image }) => (
+          <div key={id} className={styles.clientLogo}>
+            <ImgCloudinary image={image} />
+          </div>
+        ))}
+      {isError && <ServerError />}
     </div>
   );
 };

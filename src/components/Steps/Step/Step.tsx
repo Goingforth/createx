@@ -1,5 +1,5 @@
 import { FC } from "react";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
+import SvgSprite from "../../../uikit/SvgSprite/SvgSprite";
 import styles from "./Step.module.scss";
 
 type Props = {

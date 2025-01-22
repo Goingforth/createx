@@ -6,7 +6,7 @@ import styles from "./SliderControls.module.scss";
 interface SliderCarousel {
   type: "carousel";
   stepOffset: number;
-  numberBlockingSlide: number;
+  numberBlockingSlide?: number;
   offset: number;
   currentSlide?: number;
   onClickPrev: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -17,7 +17,7 @@ interface SliderJump {
   type: "jump";
   currentSlide: number;
   stepOffset?: number;
-  numberBlockingSlide: number;
+  numberBlockingSlide?: number;
   offset?: number;
   onClickPrev: (event: React.MouseEvent<HTMLButtonElement>) => void;
   onClickNext: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -28,7 +28,7 @@ type Props = SliderCarousel | SliderJump;
 export const SliderControls: FC<Props> = ({
   type,
   stepOffset,
-  numberBlockingSlide,
+  numberBlockingSlide = 0,
   offset,
   currentSlide,
   onClickPrev,

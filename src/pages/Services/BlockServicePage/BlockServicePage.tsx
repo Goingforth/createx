@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { ImgCloudinary, Btn } from "../../uikit";
+import { ImgCloudinary, Btn } from "../../../uikit";
 import styles from "./BlockServicePage.module.scss";
 
 type Props = {

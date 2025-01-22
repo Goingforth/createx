@@ -1,7 +1,10 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import SliderCarousel from "../../uikit/SliderCarousel/SliderCarousel";
+import { ServerError } from "../../uikit";
 
-import { dataPortfolioCards, TypeCategoryPortfolio } from "../../data";
+import { getData } from "../../api/getData";
+
+import { TypeCategoryPortfolio, TypePortfolioCard } from "../../data";
 
 type Props = {
   title: string;
@@ -11,10 +14,17 @@ type Props = {
 };
 
 const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
-  const dataFilteredPortfolioCard =
-    category !== undefined
-      ? dataPortfolioCards.filter((card) => category.includes(card.category))
-      : dataPortfolioCards;
+  const [data, setData] = useState<Array<TypePortfolioCard>>();
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    getData("/portfolio_card", setData, setIsError);
+  }, []);
+  const dataFilteredPortfolioCard = data
+    ? category !== undefined
+      ? data.filter((card) => category.includes(card.category))
+      : data
+    : [];
 
   const props = {
     dataArray: dataFilteredPortfolioCard,
@@ -25,7 +35,8 @@ const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
 
   return (
     <div style={{ paddingTop: pt, paddingBottom: pb }}>
-      <SliderCarousel {...props} title={title} />
+      {dataFilteredPortfolioCard && <SliderCarousel {...props} title={title} />}
+      {isError && <ServerError />}
     </div>
   );
 };

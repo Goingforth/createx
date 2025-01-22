@@ -1,52 +1,64 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { BreadCrumb } from "../index";
-import { DataPage } from "../../utils";
 
-import { TypeHeroPage, dataHeroPages } from "../../data";
+import { TypeHeroPage } from "../../data";
+
+import { ServerError } from "../../uikit";
+import { getDataHeroPage } from "../../api/getDataHeroPage";
 
 import styles from "./HeroPage.module.scss";
 
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const HeroPage: FC = () => {
-  const pageData: TypeHeroPage | undefined = DataPage(dataHeroPages);
+  const location = useLocation().pathname;
+
+  const [data, setData] = useState<TypeHeroPage>();
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    getDataHeroPage(location, setData, setIsError);
+  }, []);
 
   return (
     <>
-      {pageData !== undefined && pageData.typeHero === "heroBasic" && (
+      {data !== undefined && data.typeHero === "heroBasic" && (
         <div
           className={styles.container}
           style={{
-            backgroundImage: `url(${VITE_BASE_URL_PHOTO}/${pageData.bgImage})`,
+            backgroundImage: `url(${VITE_BASE_URL_PHOTO}/${data.bgImage})`,
           }}
         >
-          <BreadCrumb />
+          <BreadCrumb location={location} />
+
           <div
             className={styles.title}
             dangerouslySetInnerHTML={{
-              __html: `<p>${pageData.title}</p>`,
+              __html: `<p>${data.title}</p>`,
             }}
           />
 
           <div
             className={styles.note}
             dangerouslySetInnerHTML={{
-              __html: `<p>${pageData.note}</p>`,
+              __html: `<p>${data.note}</p>`,
             }}
           />
         </div>
       )}
-      {pageData !== undefined && pageData.typeHero === "heroNoImg" && (
+      {data !== undefined && data.typeHero === "heroNoImg" && (
         <div className={styles.heroNoImg}>
-          <BreadCrumb />
+          <BreadCrumb location={location} />
           <div
             className={styles.titleHeroNoImg}
             dangerouslySetInnerHTML={{
-              __html: `<p>${pageData.title}</p>`,
+              __html: `<p>${data.title}</p>`,
             }}
           />
         </div>
       )}
+      {isError && <ServerError />}
     </>
   );
 };

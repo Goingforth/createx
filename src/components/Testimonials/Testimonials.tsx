@@ -1,18 +1,27 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { TestimonialsCard } from "../index";
 import { SliderControls, ImgCloudinary } from "../../uikit/";
-import { dataTestimonialsCards } from "../../data";
+import { TypeTestimonialsCards } from "../../data";
+
+import { ServerError } from "../../uikit";
+import { getData } from "../../api/getData";
 import styles from "./Testimonials.module.scss";
 
 const Testimonials: FC = () => {
   const [active, setActive] = useState(0);
-
   const [offsetCard, setOffsetCard] = useState(0);
   const [show, setShow] = useState(true);
 
+  const [data, setData] = useState<Array<TypeTestimonialsCards>>();
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    getData("/testimonials", setData, setIsError);
+  }, []);
+
   const stepOffsetCard = 600;
 
-  const numberBlockingSlide = dataTestimonialsCards.length - 1;
+  const numberBlockingSlide = data && data.length - 1;
   const onClickPrev = () => {
     setOffsetCard(offsetCard + stepOffsetCard);
 
@@ -44,7 +53,7 @@ const Testimonials: FC = () => {
           />
         </div>
         <div className={styles.windowCard}>
-          {dataTestimonialsCards.map((card) => (
+          {data?.map((card) => (
             <div
               key={card.id}
               style={{
@@ -57,11 +66,12 @@ const Testimonials: FC = () => {
           ))}
         </div>
         <div className={styles.imageWrapper}>
-          {show && (
+          {show && data && (
             <div className={styles.pulse}>
-              <ImgCloudinary image={dataTestimonialsCards[active].image} />
+              <ImgCloudinary image={data[active].image} />
             </div>
           )}
+          {isError && <ServerError />}
         </div>
       </div>
     </div>

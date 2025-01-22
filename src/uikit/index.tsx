@@ -5,7 +5,7 @@ import { TypeInputForm } from "./InputForm/InputForm";
 import Checkboxes from "./Checkboxes/Checkboxes";
 import Btn from "./Buttons/Btn/Btn";
 import { TypeBtnProps } from "./Buttons/Btn/Btn";
-import IconBoxBasic from "./IconBoxBasic/IconBoxBasic";
+import { IconBoxBasic } from "./IconBoxBasic/IconBoxBasic";
 import SvgSprite from "./SvgSprite/SvgSprite";
 import { SvgSpriteCountry } from "./SvgSpriteCountry/SvgSpriteCountry";
 import { TypeIdIcons } from "./SvgSprite/SvgSprite";

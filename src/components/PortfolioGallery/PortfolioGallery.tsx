@@ -1,35 +1,50 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { PortfolioCard } from "../index";
-import { dataPortfolioCards } from "../../data";
-import { SvgSprite } from "../../uikit";
+import { TypePortfolioCard } from "../../data";
+import { SvgSprite, ServerError } from "../../uikit";
+
+import { getData } from "../../api/getData";
 import styles from "./PortfolioGallery.module.scss";
 
 const PortfolioGallery: FC = () => {
   const [indexRender, setIndexRender] = useState(2);
-  const endIndex = dataPortfolioCards.length - 1;
+  const [data, setData] = useState<Array<TypePortfolioCard>>();
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    getData("/portfolio_card", setData, setIsError);
+  }, []);
+  const endIndex = data && data.length - 1;
   const numberItemRow = 3;
 
   return (
     <div className={styles.container}>
-      <div className={styles.containerGallery}>
-        {dataPortfolioCards.map(
-          (card, index) =>
-            index <= indexRender && <PortfolioCard key={card.id} {...card} />
-        )}
-      </div>
-      <div
-        className={[
-          styles.loadMore,
-          indexRender === endIndex ? styles.noMore : "",
-        ].join(" ")}
-        onClick={() =>
-          indexRender !== endIndex &&
-          setIndexRender(indexRender + numberItemRow)
-        }
-      >
-        <SvgSprite id='convert' />
-        <p>Load more</p>
-      </div>
+      {data && (
+        <>
+          <div className={styles.containerGallery}>
+            {data.map(
+              (card, index) =>
+                index <= indexRender && (
+                  <PortfolioCard key={card.id} {...card} />
+                )
+            )}
+          </div>
+          <div
+            className={[
+              styles.loadMore,
+              indexRender === endIndex ? styles.noMore : "",
+            ].join(" ")}
+            onClick={() =>
+              indexRender !== endIndex &&
+              setIndexRender(indexRender + numberItemRow)
+            }
+          >
+            <SvgSprite id='convert' />
+            <p>Load more</p>
+          </div>
+        </>
+      )}
+      {isError && <ServerError />}
     </div>
   );
 };

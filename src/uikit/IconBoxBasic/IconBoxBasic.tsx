@@ -10,7 +10,12 @@ type Props = {
   content?: string;
 };
 
-const IconBoxBasic: FC<Props> = ({ theme = "basic", icon, title, content }) => {
+export const IconBoxBasic: FC<Props> = ({
+  theme = "basic",
+  icon,
+  title,
+  content,
+}) => {
   return (
     <div className={styles[theme]}>
       <div className='boxBasic'>
@@ -31,5 +36,3 @@ const IconBoxBasic: FC<Props> = ({ theme = "basic", icon, title, content }) => {
     </div>
   );
 };
-
-export default IconBoxBasic;

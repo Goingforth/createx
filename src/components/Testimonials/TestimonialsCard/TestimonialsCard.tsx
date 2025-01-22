@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { TypeTestimonialsCards } from "../../data";
-import { ImgCloudinary } from "../../uikit";
+import { TypeTestimonialsCards } from "../../../data";
+import { ImgCloudinary } from "../../../uikit";
 
 import styles from "./TestimonialsCard.module.scss";
 
