@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ServerError } from "../../uikit";
-import { getDataByPage } from "../../api/getDataByPage";
+import { getDataByPage } from "../../api/getData";
 import { TypeDataProject } from "../../data";
 
 import styles from "./AboutProject.module.scss";

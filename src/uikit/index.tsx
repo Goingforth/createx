@@ -1,13 +1,14 @@
-// import InputForms from "./InputForm/InputForm";
 import InputForms from "./InputForms/InputForms";
-//import { TypeInputForm } from "./InputForms/InputForms";
 import { TypeInputForm } from "./InputForm/InputForm";
 import Checkboxes from "./Checkboxes/Checkboxes";
 import Btn from "./Buttons/Btn/Btn";
 import { TypeBtnProps } from "./Buttons/Btn/Btn";
 import { IconBoxBasic } from "./IconBoxBasic/IconBoxBasic";
 import SvgSprite from "./SvgSprite/SvgSprite";
-import { SvgSpriteCountry } from "./SvgSpriteCountry/SvgSpriteCountry";
+import {
+  SvgSpriteCountry,
+  TypeIdIconsCountry,
+} from "./SvgSpriteCountry/SvgSpriteCountry";
 import { TypeIdIcons } from "./SvgSprite/SvgSprite";
 import ViewAll from "./ViewAll/ViewAll";
 import { TypeViewAll } from "./ViewAll/ViewAll";
@@ -34,6 +35,7 @@ export {
   IconBoxBasic,
   SvgSprite,
   SvgSpriteCountry,
+  type TypeIdIconsCountry,
   type TypeIdIcons,
   ViewAll,
   type TypeViewAll,

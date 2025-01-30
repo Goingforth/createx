@@ -1,4 +1,4 @@
-import { TypeIdIconsCountry } from "../uikit/SvgSpriteCountry/SvgSpriteCountry";
+import { TypeIdIconsCountry } from "../uikit";
 
 export type TypeCountryFlag = {
   id: string;

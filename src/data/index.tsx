@@ -9,16 +9,12 @@ import { TypeServicesPage } from "./dataServicePage";
 import { TypeDataStep } from "./dataSteps";
 import { TypePortfolioCard, TypeCategoryPortfolio } from "./dataPortfolioCards";
 import { navigation, connection } from "./dataHeader";
-import {
-  dataBenefitsInteriorDesign,
-  TypeDataBenefits,
-  dataBenefitsAvailablePositions,
-} from "./dataBenefits";
+import { TypeDataBenefits, TypeBenefits } from "./dataBenefits";
 import { TypeTablePricingItem } from "./dataTablePricing";
 import { TypeClientsLogo } from "./dataClientsLogo";
 import { TypeTestimonialsCards } from "./dataTestimonialsCards";
 import { TypeMediaTabs } from "./dataMediaTabs";
-import { dataNews, categoriesNews, TypeCategories, TypeNews } from "./dataNews";
+import { categoriesNews, TypeCategories, TypeNews } from "./dataNews";
 import { TypeTeamMember } from "./dataTeamMembers";
 import { TypeStatistics } from "./dataStatistics";
 import { TypeCoreValuesItem } from "./dataCoreValuesItems";
@@ -35,11 +31,7 @@ import { dataBlockLinkFooter, dataSocialLinks } from "./dataFooter";
 import { TypeDataProject } from "./dataProject";
 import { dataBulletedList } from "./dataBulletedList";
 import { widthBlock, TypeConstWidth } from "./dataConstant";
-import {
-  dataGalleryModernCottage,
-  dataGalleryMini,
-  TypeDataGalleryProject,
-} from "./dataGalleryModernCottage";
+import { TypeDataGalleryProject } from "./dataGalleryModernCottage";
 import { TypeDataVacancyCard } from "./dataVacancyCard";
 import { dataArrayModal } from "./dataModal";
 import { TypeDataSelect, dataLocations } from "./dataLocation";
@@ -57,16 +49,14 @@ export {
   navigation,
   connection,
   type TypeDataStep,
-  dataBenefitsInteriorDesign,
-  dataBenefitsAvailablePositions,
   type TypeDataBenefits,
+  type TypeBenefits,
   type TypePortfolioCard,
   type TypeCategoryPortfolio,
   type TypeTablePricingItem,
   type TypeClientsLogo,
   type TypeTestimonialsCards,
   type TypeMediaTabs,
-  dataNews,
   type TypeNews,
   categoriesNews,
   type TypeCategories,
@@ -89,9 +79,7 @@ export {
   dataBulletedList,
   widthBlock,
   type TypeConstWidth,
-  dataGalleryModernCottage,
   type TypeDataGalleryProject,
-  dataGalleryMini,
   type TypeDataVacancyCard,
   type TypeFormValue,
   type TypeFormValuesStatusInputs,

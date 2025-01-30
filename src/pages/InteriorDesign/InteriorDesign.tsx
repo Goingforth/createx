@@ -10,7 +10,7 @@ import {
 import { ScrollToTop } from "../../utils";
 
 import styles from "./InteriorDesign.module.scss";
-import { dataBenefitsInteriorDesign } from "../../data";
+
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const InteriorDesign: FC = () => {
@@ -21,7 +21,7 @@ const InteriorDesign: FC = () => {
       <div className={styles.container}>
         <Offer />
       </div>
-      <Benefits {...dataBenefitsInteriorDesign} />
+      <Benefits />
       <Portfolio
         title='Related projects'
         pt='180px'

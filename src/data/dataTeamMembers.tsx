@@ -5,7 +5,6 @@ interface Social {
 }
 
 export type TypeTeamMember = {
-  // _id?: string;
   id: string;
   image: string;
   name: string;

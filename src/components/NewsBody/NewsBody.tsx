@@ -1,43 +1,36 @@
 import { FC, useState, useEffect } from "react";
-import { categoriesNews, dataNews } from "../../data";
-import { BasicTab, PostCard, Pagination } from "../../uikit";
+import { categoriesNews, TypeCategories, TypeNews } from "../../data";
+import { BasicTab, PostCard, Pagination, ServerError } from "../../uikit";
+import { getNewsByQuery } from "../../api/getData";
 
 import styles from "./NewsBody.module.scss";
 
 const NewsBody: FC = () => {
-  const initialActiveTabs = categoriesNews.map((item) => {
-    return { category: item.category, isActive: item.isActive };
-  });
-
-  const [activeTabs, setActiveTabs] = useState(initialActiveTabs);
-
-  const active = activeTabs
-    .filter((item) => item.isActive === true)
-    .map((item) => item.category);
+  const [activeTabs, setActiveTabs] = useState<Array<string>>(["All News"]);
+  const [data, setData] = useState<Array<TypeNews>>();
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    if (active.length === 0) {
-      setActiveTabs(initialActiveTabs);
-    }
-  }, [active]);
+    getNewsByQuery({ categories: activeTabs }, setData, setIsError);
+  }, [activeTabs]);
 
-  const filterNews = dataNews.filter(
-    (news) =>
-      active.includes(news.categories) === true || active.includes("All News")
-  );
-
-  const onClick = (index: number) => {
-    const newActiveTabs = [...activeTabs];
-    newActiveTabs[index].isActive = !activeTabs[index].isActive;
-    if (index === 0 && newActiveTabs[0].isActive === true) {
-      setActiveTabs(initialActiveTabs);
-    } else if (index !== 0 && newActiveTabs[index].isActive === true) {
-      newActiveTabs[0].isActive = false;
-      setActiveTabs(newActiveTabs);
+  const onClick = (category: TypeCategories) => {
+    if (category === "All News") {
+      setActiveTabs(["All News"]);
     } else {
-      setActiveTabs(newActiveTabs);
+      const posAllNews = activeTabs.indexOf("All News");
+      posAllNews !== -1 && activeTabs.splice(posAllNews, 1);
+      const pos = activeTabs.indexOf(category);
+      if (pos === -1) {
+        setActiveTabs([...activeTabs, category]);
+      } else if (activeTabs.length === 1) {
+        setActiveTabs(["All News"]);
+      } else {
+        setActiveTabs(activeTabs.filter((item) => item !== category));
+      }
     }
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>Categories</div>
@@ -47,16 +40,21 @@ const NewsBody: FC = () => {
             key={props.id}
             {...props}
             index={index}
-            onClick={onClick}
-            isActive={activeTabs[index].isActive}
+            onClick={() => onClick(props.category)}
+            isActive={activeTabs.includes(props.category) ? true : false}
           />
         ))}
       </div>
-      <div className={styles.gallery}>
-        {filterNews.map((props) => (
-          <PostCard key={props.id} {...props} size='regular' />
-        ))}
-      </div>
+      {isError === false ? (
+        <div className={styles.gallery}>
+          {data &&
+            data.map((props) => (
+              <PostCard key={props.id} {...props} size='regular' />
+            ))}
+        </div>
+      ) : (
+        <ServerError />
+      )}
       <Pagination />
     </div>
   );

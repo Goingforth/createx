@@ -17,6 +17,7 @@ import Figures from "./Figures/Figures";
 import Team from "./Team/Team";
 import Statistics from "./Statistics/Statistics";
 import { Steps } from "./Steps/Steps";
+import { SliderForGallery } from "./SliderForGallery/SliderForGallery";
 
 import History from "./History/History";
 import Map from "./Map/Map";
@@ -104,4 +105,5 @@ export {
   HeroPageNews,
   Comments,
   Steps,
+  SliderForGallery,
 };

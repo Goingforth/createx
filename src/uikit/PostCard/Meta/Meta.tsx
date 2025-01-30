@@ -16,8 +16,7 @@ export const Meta: FC<TypeDataMeta> = (props) => {
       <div className={styles.meta}>
         <div className={styles.categories}>{categories}</div>
         <div className={styles.divider}>
-          {size === "regular" && <SvgSprite id='divider_regular' />}
-          {size === "large" && <SvgSprite id='divider_large' />}
+          <SvgSprite id='divider_small' />
         </div>
         <div>{date}</div>
         <div className={styles.divider}>

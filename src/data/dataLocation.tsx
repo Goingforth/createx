@@ -1,5 +1,3 @@
-//type TypeOption = "New York, USA" | "New Jersey, USA" | "San Francisco, USA";
-
 export type TypeDataSelect = {
   id: string;
   option: string;

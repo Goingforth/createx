@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { ScrollToTop } from "../../utils";
 import { CTA, HeroPage, Vacancies, Benefits } from "../../components";
-import { dataBenefitsAvailablePositions } from "../../data";
 import styles from "./AvailablePositions.module.scss";
 
 const AvailablePositions: FC = () => {
@@ -14,7 +13,7 @@ const AvailablePositions: FC = () => {
         <Vacancies />
         <CTA />
       </div>
-      <Benefits {...dataBenefitsAvailablePositions} />
+      <Benefits />
     </div>
   );
 };

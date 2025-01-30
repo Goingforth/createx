@@ -47,6 +47,31 @@
     height: 20px;
   }
 }
+.small {
+  .meta {
+    display: flex;
+    gap: 12px;
+
+    @extend .small_regular;
+    color: $gray700;
+  }
+  .categories {
+    @extend .small_bold;
+    color: $primary;
+  }
+  .comments {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .icon {
+      fill: $gray700;
+    }
+  }
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
 .divider {
   display: flex;
   align-items: center;

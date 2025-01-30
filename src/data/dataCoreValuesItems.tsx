@@ -1,4 +1,4 @@
-import { TypeIdIcons } from "../uikit/SvgSprite/SvgSprite";
+import { TypeIdIcons } from "../uikit";
 
 export type TypeCoreValuesItem = {
   id: string;

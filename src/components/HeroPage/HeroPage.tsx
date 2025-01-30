@@ -5,7 +5,7 @@ import { BreadCrumb } from "../index";
 import { TypeHeroPage } from "../../data";
 
 import { ServerError } from "../../uikit";
-import { getDataByPage } from "../../api/getDataByPage";
+import { getDataByPage } from "../../api/getData";
 
 import styles from "./HeroPage.module.scss";
 

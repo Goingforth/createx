@@ -1,18 +1,33 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { SectionWithChildren } from "../index";
-import { PostCard, ViewAll } from "../../uikit";
-import { dataNews } from "../../data";
+import { PostCard, ViewAll, ServerError } from "../../uikit";
+import { TypeNews } from "../../data";
+import { getNewsByQuery } from "../../api/getData";
+
 import styles from "./NewsHomePage.module.scss";
 
 const NewsGridBlock: FC = () => {
+  const [data, setData] = useState<Array<TypeNews>>();
+  const [isError, setIsError] = useState(false);
+  useEffect(() => {
+    getNewsByQuery({ limit: 3 }, setData, setIsError);
+  }, []);
+
+  console.log(data);
+
   return (
-    <div className={styles.containerNewsGridBlock}>
-      <PostCard size='large' {...dataNews[0]} />
-      <div className={styles.alignColumns}>
-        <PostCard size='small' {...dataNews[1]} />
-        <PostCard size='small' {...dataNews[2]} />
-      </div>
-    </div>
+    <>
+      {data && (
+        <div className={styles.containerNewsGridBlock}>
+          <PostCard size='large' {...data[0]} />
+          <div className={styles.alignColumns}>
+            <PostCard size='small' {...data[1]} />
+            <PostCard size='small' {...data[2]} />
+          </div>
+        </div>
+      )}
+      {isError && <ServerError />}
+    </>
   );
 };
 

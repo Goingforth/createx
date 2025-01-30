@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { TypeCategories } from "../../data";
 import { Meta } from "../index";
+import { ImgCloudinary } from "../index";
 
 import styles from "./PostCard.module.scss";
 
@@ -28,12 +29,11 @@ export const PostCard: FC<TypePostCard> = (props) => {
   return (
     <Link to={id} className={styles[size]}>
       <div className={styles.imageWrapper}>
-        <img src={image} alt='' />
+        <ImgCloudinary image={image} />
       </div>
       <div className={styles.cardWrapper}>
         <div className={styles.heading}>{title}</div>
         <Meta {...metaProps} />
-
         <div className={styles.text}>{text}</div>
       </div>
     </Link>
