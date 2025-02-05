@@ -65,3 +65,19 @@ export const getNewsByQuery = async (
     setIsError(true);
   }
 };
+
+export const getNewsByID = async (
+  // params: { [key: string]: number | string[] },
+  id: string,
+  setData: React.Dispatch<React.SetStateAction<any>>,
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  try {
+    const response = await api.get(`/news/${id}`);
+    setData(response.data);
+    setIsError(false);
+  } catch {
+    setData([]);
+    setIsError(true);
+  }
+};

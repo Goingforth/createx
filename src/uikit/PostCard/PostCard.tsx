@@ -1,33 +1,33 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { TypeCategories } from "../../data";
+import { TypeCategories, TypeCommentNews } from "../../data";
 import { Meta } from "../index";
 import { ImgCloudinary } from "../index";
 
 import styles from "./PostCard.module.scss";
 
 type TypePostCard = {
-  id: string;
+  _id: string;
   size: "regular" | "large" | "small";
   title: string;
   categories: TypeCategories;
   date: string;
-  comments: number;
+  comments: TypeCommentNews[];
   text: string;
   image: string;
 };
 
 export const PostCard: FC<TypePostCard> = (props) => {
-  const { id, size, image, title, categories, date, comments, text } = props;
+  const { _id, size, image, title, categories, date, comments, text } = props;
   const metaProps = {
     categories: categories,
     date: date,
-    comments: comments,
+    comments: comments.length,
     size: size,
   };
 
   return (
-    <Link to={id} className={styles[size]}>
+    <Link to={_id} state={{ data: props }} className={styles[size]}>
       <div className={styles.imageWrapper}>
         <ImgCloudinary image={image} />
       </div>

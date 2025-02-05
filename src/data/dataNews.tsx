@@ -21,12 +21,19 @@ export const categoriesNews: TypeCategoriesNews[] = [
   { id: "category5", category: "Marketing", isActive: false },
 ];
 
+export interface TypeCommentNews {
+  name: string;
+  comment: string;
+  data: Date;
+  reply?: string;
+}
+
 export interface TypeNews {
-  id: string;
+  _id: string;
   title: string;
   categories: TypeCategories;
   date: string;
-  comments: number;
+  comments: TypeCommentNews[];
   text: string;
   image: string;
   imageFull: string;

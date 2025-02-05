@@ -14,7 +14,12 @@ import { TypeTablePricingItem } from "./dataTablePricing";
 import { TypeClientsLogo } from "./dataClientsLogo";
 import { TypeTestimonialsCards } from "./dataTestimonialsCards";
 import { TypeMediaTabs } from "./dataMediaTabs";
-import { categoriesNews, TypeCategories, TypeNews } from "./dataNews";
+import {
+  categoriesNews,
+  TypeCategories,
+  TypeNews,
+  TypeCommentNews,
+} from "./dataNews";
 import { TypeTeamMember } from "./dataTeamMembers";
 import { TypeStatistics } from "./dataStatistics";
 import { TypeCoreValuesItem } from "./dataCoreValuesItems";
@@ -58,6 +63,7 @@ export {
   type TypeTestimonialsCards,
   type TypeMediaTabs,
   type TypeNews,
+  type TypeCommentNews,
   categoriesNews,
   type TypeCategories,
   type TypeTeamMember,

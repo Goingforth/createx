@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Meta } from "../../uikit";
+import { Meta, ImgCloudinary } from "../../uikit";
 import { Socials } from "./Socials/Socials";
 
 import { TypeNews } from "../../data";
@@ -29,7 +29,7 @@ export const HeroPageNews: FC<TypeNews> = (props) => {
             <div className={styles.meta_socials}>
               <Meta
                 categories={categories}
-                comments={comments}
+                comments={comments.length}
                 date={date}
                 size='large'
               />
@@ -38,7 +38,7 @@ export const HeroPageNews: FC<TypeNews> = (props) => {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <img src={imageFull} alt='' />
+          <ImgCloudinary image={imageFull} />
         </div>
       </div>
     </>

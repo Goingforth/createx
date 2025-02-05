@@ -49,7 +49,7 @@ const NewsBody: FC = () => {
         <div className={styles.gallery}>
           {data &&
             data.map((props) => (
-              <PostCard key={props.id} {...props} size='regular' />
+              <PostCard key={props._id} {...props} size='regular' />
             ))}
         </div>
       ) : (

@@ -1,60 +1,82 @@
 [
   {
-    "key": "news0",
+    "id": "news0",
     "title": "How to Build Climate Change-Resilient Infrastructure",
     "categories": "Industry News",
     "date": "June 24, 2020",
-    "comments": 4,
-    "text": "Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tinckeyunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...",
+    "comments": [
+      {
+        "name": "Devon Lane",
+        "comment": "Phasellus varius faucibus ultrices odio in. Massa neque dictum natoque ornare rutrum malesuada et phasellus. Viverra natoque nulla cras vel nisl proin senectus. Tortor sed eleifend ante tristique felis sed urna aliquet. Suspendisse fames egestas sed duis purus diam et.",
+        "date": "July 15, 2020"
+      },
+      {
+        "name": "Annette Black",
+        "comment": "Egestas fermentum natoque sollicitudin mauris. Facilisis praesent urna sed rhoncus quis pharetra pellentesque erat sagittis.",
+        "date": "July 16, 2020",
+        "reply": "Devon Lane "
+      },
+      {
+        "name": "Albert Flores",
+        "comment": "Libero commodo sit dui ac proin. Penatibus ultricies at adipiscing mauris nunc. Fames faucibus nisl duis id diam.",
+        "date": "July 7, 2020"
+      },
+      {
+        "name": "Marvin McKinney",
+        "comment": "Ullamcorper nibh sed ac ipsum nunc imperdiet rhoncus. Quam donec habitant nibh sit consequat erat libero, tincidunt. Eros ut aliquam proin et duis. Mauris, egestas congue nibh dui a nulla.",
+        "date": "June 28, 2020"
+      }
+    ],
+    "text": "Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...",
     "image": "/news/news0.jpg",
     "imageFull": "/news/news0_full.jpg"
   },
   {
-    "key": "news1",
+    "id": "news1",
     "title": "How Construction Can Help Itself",
     "categories": "Innovation",
     "date": "June 12, 2020",
-    "comments": 0,
+    "comments": [],
     "text": "Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...",
     "image": "/news/news1.jpg",
     "imageFull": "/news/news0_full.jpg"
   },
   {
-    "key": "news2",
+    "id": "news2",
     "title": "The Difference Between a Digger and an Excavator",
     "categories": "Expert Tips",
     "date": "May 16, 2020",
-    "comments": 0,
+    "comments": [],
     "text": "Cras est nisi purus velit facilisi vitae, dolor. Lorem scelerisque integer duis et nulla lobortis cursus. Viverra erat sollicitudin praesent viverra...",
     "image": "/news/news2.jpg",
     "imageFull": "/news/news0_full.jpg"
   },
   {
-    "key": "news3",
+    "id": "news3",
     "title": "Building Construction Hand Tools",
     "categories": "Expert Tips",
     "date": "February 25, 2020",
-    "comments": 1,
-    " text": "Tellus quis aliquet volutpat nunc pulvinar donec sed sapien. Vitae elit key dolor, tristique massa. Fames lobortis orci rutrum bibendum integer...",
+    "comments": [],
+    " text": "Tellus quis aliquet volutpat nunc pulvinar donec sed sapien. Vitae elit id dolor, tristique massa. Fames lobortis orci rutrum bibendum integer...",
     "image": "/news/news3.jpg",
     "imageFull": "/news/news0_full.jpg"
   },
   {
-    "key": "news4",
+    "id": "news4",
     "title": "Top 10 Construction Trends",
     "categories": "Industry News",
     "date": "January 14, 2020",
-    "comments": 0,
-    "text": "Dignissim sed enim, eleifend morbi condimentum. Congue key quis vulputate dignissim eget. Ac ullamcorper nunc habitasse enim interdum platea...",
+    "comments": [],
+    "text": "Dignissim sed enim, eleifend morbi condimentum. Congue id quis vulputate dignissim eget. Ac ullamcorper nunc habitasse enim interdum platea...",
     "image": "/news/news4.jpg",
     "imageFull": "/news/news0_full.jpg"
   },
   {
-    "key": "news5",
+    "id": "news5",
     "title": "Types of Flooring Materials",
     "categories": "Company News",
     "date": "December 1, 2019",
-    "comments": 0,
+    "comments": [],
     "text": "Maecenas donec lacinia nunc, quam sit magnis mauris. Neque bibendum et mauris, aenean. Vel arcu amet in sem parturient  integer duis et nulla...",
     "image": "/news/news5.jpg",
     "imageFull": "/news/news0_full.jpg"
