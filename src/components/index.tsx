@@ -22,7 +22,8 @@ import { SliderForGallery } from "./SliderForGallery/SliderForGallery";
 import History from "./History/History";
 import Map from "./Map/Map";
 import Offer from "./Offer/Offer";
-import { Benefits, TypeBenefits } from "./Benefits/Benefits";
+import { Benefits } from "./Benefits/Benefits";
+
 import Pricing from "./Pricing/Pricing";
 import NewsBody from "./NewsBody/NewsBody";
 import BlockServicePage from "../pages/Services/BlockServicePage/BlockServicePage";
@@ -74,7 +75,6 @@ export {
   Map,
   Offer,
   Benefits,
-  type TypeBenefits,
   Pricing,
   NewsBody,
   BlockServicePage,

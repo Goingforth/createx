@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border: 1px solid green;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 150px;
+}
+.name {
+  @extend .mid_bold;
+  text-align: left;
+}
+.date {
+  @extend .small_regular;
+  color: $gray700;
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 630px;
+}
+.content {
+  @extend .base_regular;
+  text-align: left;
+  color: $gray800;
+}
+.reply {
+  display: flex;
+  gap: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.title {
+  @extend .small_regular;
+  color: $gray700;
+}

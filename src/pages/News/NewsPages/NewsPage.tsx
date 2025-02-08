@@ -30,7 +30,7 @@ const NewsPage: FC = () => {
     <>
       <ScrollToTop />
       <HeroPageNews {...data} />
-      <Comments id={data._id} comments={data.comments} />
+      <Comments comments={data.comments} />
     </>
     // )
   );

@@ -50,7 +50,8 @@ export type TypeIdIcons =
   | "ic-success"
   | "ic-budget"
   | "divider_regular"
-  | "divider_large";
+  | "divider_large"
+  | "share-arrow";
 
 type Props = {
   id: TypeIdIcons;
@@ -1113,6 +1114,21 @@ const SvgSprite = ({ id, width, height }: Props) => {
             y2='15.5'
             stroke='#787A80'
             strokeLinecap='round'
+          />
+        </svg>
+      );
+    case "share-arrow":
+      return (
+        <svg
+          width='16'
+          height='17'
+          viewBox='0 0 16 17'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M0.667318 7.82816L6.7625 1.16602V5.14077H8.05839C12.0766 5.14077 15.334 8.38764 15.334 12.393V14.4993L14.7584 13.8706C12.8014 11.7333 10.0324 10.5156 7.1293 10.5156H6.7625V14.4903L0.667318 7.82816Z'
+            fill='#787A80'
           />
         </svg>
       );

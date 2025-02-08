@@ -4,34 +4,26 @@ type Props = {
   title?: string;
   subtitle?: string;
   children?: ReactNode;
+  mtChild?: string;
 };
 
 const SectionWithChildren: FC<Props> = (props) => {
-  const { title = "SectionWithChildren", subtitle, children } = props;
+  const {
+    title = "SectionWithChildren",
+    subtitle,
+    children,
+    mtChild = "60px",
+  } = props;
   return (
     <div className={styles.containerChildren}>
       <h1 className={styles.title}>{title}</h1>
 
-      <p
-        className={[
-          styles.large_regular,
-          subtitle ? styles.subTitle : styles.notSubTitle,
-        ].join(" ")}
-      >
-        {subtitle}
-      </p>
-
-      {/* {subtitle && (
-        <p
-          className={[
-            styles.large_regular,
-            subtitle ? styles.subTitle : styles.notSubTitle,
-          ].join(" ")}
-        >
+      {subtitle && (
+        <p className={[styles.large_regular, styles.subTitle].join(" ")}>
           {subtitle}
         </p>
-      )} */}
-      <div>{children}</div>
+      )}
+      <div style={{ marginTop: `${mtChild}` }}>{children}</div>
     </div>
   );
 };

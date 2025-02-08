@@ -22,9 +22,10 @@ export const categoriesNews: TypeCategoriesNews[] = [
 ];
 
 export interface TypeCommentNews {
+  _id: string;
   name: string;
   comment: string;
-  data: Date;
+  date: string;
   reply?: string;
 }
 
