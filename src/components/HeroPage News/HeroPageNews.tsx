@@ -8,6 +8,12 @@ import styles from "./HeroPageNews.module.scss";
 
 export const HeroPageNews: FC<TypeNews> = (props) => {
   const { title, categories, comments, date, imageFull } = props;
+
+  const amountComments = comments.reduce(
+    (acc, comment) => acc + 1 + comment.replyes.length,
+    0
+  );
+
   return (
     <>
       <div>
@@ -29,7 +35,7 @@ export const HeroPageNews: FC<TypeNews> = (props) => {
             <div className={styles.meta_socials}>
               <Meta
                 categories={categories}
-                comments={comments.length}
+                comments={amountComments}
                 date={date}
                 size='large'
               />

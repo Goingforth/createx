@@ -1,7 +1,20 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { SvgSprite, InputSelect, InputChooseFile, Checkboxes } from "../index";
 import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
+import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import styles from "./InputForm.module.scss";
+
+interface valueCustomInput extends InputHTMLAttributes<HTMLInputElement> {
+  value?: any;
+}
+interface valueCustomTextarea
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  value?: any;
+}
+const Input: React.FC<valueCustomInput> = (props) => <input {...props} />;
+const Textarea: React.FC<valueCustomTextarea> = (props) => (
+  <textarea {...props} />
+);
 
 export type TypeInputForm = TypeFormValuesStatusInputs & {
   id?: string;
@@ -19,7 +32,7 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
       }
     | undefined;
   pattern: RegExp | undefined;
-  size?: "large" | "default" | "small";
+  size?: "large" | "default" | "small" | "post";
   width?: string;
   dataSelect?: TypeDataSelect[];
   checked?: boolean | undefined;
@@ -39,7 +52,6 @@ const InputForm: FC<TypeInputForm> = ({
   statusInputs,
   setStatusInputs,
   dataSelect,
-  checked,
 }) => {
   const changeMessage = (messages?: {
     focus: string;
@@ -49,7 +61,7 @@ const InputForm: FC<TypeInputForm> = ({
   }) => {
     if (messages !== undefined) {
       const { focus, input, valid, noValid } = messages;
-      switch (status) {
+      switch (statusInputs[name]) {
         case "focus":
           return focus;
         case "input":
@@ -68,7 +80,7 @@ const InputForm: FC<TypeInputForm> = ({
     }
   };
   const changeStylesValid = () => {
-    switch (status) {
+    switch (statusInputs[name]) {
       case "valid":
         return styles.valid;
       case "novalid":
@@ -79,25 +91,21 @@ const InputForm: FC<TypeInputForm> = ({
         return "";
     }
   };
-  const [value, setValue] = useState("");
-  const [status, setStatus] = useState("blank");
-  useEffect(() => {
-    setStatusInputs({ ...statusInputs, [name]: status });
-  }, [status]);
   const onFocus = () => {
-    setStatus("focus");
+    setStatusInputs({ ...statusInputs, [`${name}`]: "focus" });
   };
   const onBlur = () => {
-    if (value === "") setStatus("empty");
+    if (formValues[name] === "")
+      setStatusInputs({ ...statusInputs, [`${name}`]: "empty" });
   };
   const onChange = (value: string, pattern: RegExp | undefined) => {
-    setStatus("input");
+    setStatusInputs({ ...statusInputs, [`${name}`]: "input" });
+
+    setFormValues({ ...formValues, [name]: value });
     pattern?.test(String(value))
-      ? (setStatus("valid"), setFormValues({ ...formValues, [name]: value }))
-      : setStatus("novalid");
-    setValue(value);
+      ? setStatusInputs({ ...statusInputs, [`${name}`]: "valid" })
+      : setStatusInputs({ ...statusInputs, [`${name}`]: "novalid" });
   };
-  console.log("type:", type);
 
   return (
     <div
@@ -108,6 +116,7 @@ const InputForm: FC<TypeInputForm> = ({
               size === "default" ? styles.default : "",
               size === "large" ? styles.large : "",
               size === "small" ? styles.small : "",
+              size === "post" ? styles.post : "",
             ].join(" ")
           : ""
       }
@@ -116,10 +125,10 @@ const InputForm: FC<TypeInputForm> = ({
       {label !== undefined && <label>{label}</label>}
 
       {(type === "text" || type === "tel" || type === "email") && (
-        <input
+        <Input
           name={name}
           type={type}
-          value={value}
+          value={formValues[name]}
           placeholder={placeholder}
           onChange={(event) => onChange(event.target.value, pattern)}
           onFocus={() => {
@@ -131,10 +140,10 @@ const InputForm: FC<TypeInputForm> = ({
         />
       )}
       {type === "textarea" && (
-        <textarea
+        <Textarea
           name={name}
           spellCheck='false'
-          value={value}
+          value={formValues[name]}
           placeholder={placeholder}
           onChange={(event) => onChange(event.target.value, pattern)}
           onFocus={() => {
@@ -151,10 +160,9 @@ const InputForm: FC<TypeInputForm> = ({
         type !== "checkbox" &&
         type !== "radio" && (
           <div className={styles.iconInput}>
-            {status === "valid" && <SvgSprite id='mark' />}
-            {(status === "novalid" || status === "empty") && (
-              <SvgSprite id='danger' />
-            )}
+            {statusInputs[name] === "valid" && <SvgSprite id='mark' />}
+            {(statusInputs[name] === "novalid" ||
+              statusInputs[name] === "empty") && <SvgSprite id='danger' />}
           </div>
         )}
       {type === "select" && (
@@ -177,21 +185,21 @@ const InputForm: FC<TypeInputForm> = ({
           statusInputs={statusInputs}
         />
       )}
-      {(type === "radio" || type === "checkbox") && (
+      {/* {(type === "radio" || type === "checkbox") && (
         <Checkboxes
           name={name}
           type={type}
           // value={value}
-          checked={checked}
+          // checked={formValues[name]}
           onChange={onChange}
           // setFormValues={setFormValues}
           // formValues={formValues}
           // setStatusInputs={setStatusInputs}
           // statusInputs={statusInputs}
         />
-      )}
+      )} */}
 
-      {type !== "checkbox" && status !== "blank" ? (
+      {type !== "checkbox" && statusInputs[name] !== "blank" ? (
         <div className={[styles.message, changeStylesValid()].join(" ")}>
           {changeMessage(messages)}
         </div>

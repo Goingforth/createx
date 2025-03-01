@@ -7,7 +7,7 @@ type TypeInputSelect = TypeFormValuesStatusInputs & {
   name: string;
   placeholder: string;
   dataSelect?: TypeDataSelect[];
-  size: "default" | "large" | "small";
+  size: "default" | "large" | "small" | "post";
 };
 
 export const InputSelect: FC<TypeInputSelect> = (props) => {

@@ -14,6 +14,7 @@
     border-radius: 4px;
     outline: none;
     color: $gray900;
+    text-align: left;
     &::placeholder {
       color: $gray600;
     }
@@ -27,6 +28,7 @@
   textarea {
     width: 100%;
     height: 86px;
+    text-align: left;
 
     box-sizing: border-box;
     background-color: $gray200;
@@ -101,6 +103,21 @@
   }
   .iconInput {
     bottom: 10px;
+  }
+}
+.post {
+  label {
+    @extend .base_regular;
+    text-align: left;
+  }
+  textarea {
+    height: 100px;
+    @extend .base_regular;
+    padding: 13px 16px;
+    &::placeholder {
+      @extend .base_regular;
+      text-align: left;
+    }
   }
 }
 .message {

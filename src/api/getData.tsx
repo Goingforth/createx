@@ -67,7 +67,6 @@ export const getNewsByQuery = async (
 };
 
 export const getNewsByID = async (
-  // params: { [key: string]: number | string[] },
   id: string,
   setData: React.Dispatch<React.SetStateAction<any>>,
   setIsError: React.Dispatch<React.SetStateAction<boolean>>

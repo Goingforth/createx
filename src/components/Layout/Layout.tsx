@@ -22,22 +22,24 @@ const Loading = () => (
 const Layout: FC = () => {
   const location = useLocation();
   return (
-    <div className={styles.body}>
-      <div className={styles.container}>
-        <Header />
+    <Suspense fallback={<Loading />}>
+      <div className={styles.body}>
+        <div className={styles.container}>
+          <Header />
+        </div>
+        <main>
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
+        </main>
+
+        {location.pathname !== "/contacts" && <Application />}
+
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </div>
-      <main>
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-        </Suspense>
-      </main>
-
-      {location.pathname !== "/contacts" && <Application />}
-
-      <footer className={styles.footer}>
-        <Footer />
-      </footer>
-    </div>
+    </Suspense>
   );
 };
 export default Layout;

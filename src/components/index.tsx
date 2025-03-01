@@ -51,6 +51,7 @@ import { ContactUs } from "./ContactUs/ContactUs";
 import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
 import { HeroPageNews } from "./HeroPage News/HeroPageNews";
 import { Comments } from "./Comments/Comments";
+import { ContactsOffices } from "./ContactsOffices/ContactsOffices";
 
 export {
   Hero,
@@ -106,4 +107,5 @@ export {
   Comments,
   Steps,
   SliderForGallery,
+  ContactsOffices,
 };

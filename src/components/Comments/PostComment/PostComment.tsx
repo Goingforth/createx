@@ -1,9 +1,13 @@
 import { FC, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {
+  postCommentNewsByID,
+  postCommentReplyByID,
+} from "../../../api/postCommentNews";
 import { InputsForm, TypeInputsForm } from "../../index";
-import { TypeDataFormInput, retPattern } from "../../../data";
-import { TypeFormValue } from "../../../data";
-import { Btn } from "../../../uikit";
 
+import { TypeFormValue, dataPostCommentForm } from "../../../data";
+import { Btn } from "../../../uikit";
 import styles from "./PostComment.module.scss";
 
 const styleForm: React.CSSProperties = {
@@ -14,66 +18,28 @@ const styleForm: React.CSSProperties = {
   gridTemplateAreas: `"name email" "comment comment" `,
 };
 
-const dataPostCommentForm: TypeDataFormInput[] = [
-  {
-    id: "inputPostComment0",
-    label: "Name*",
-    placeholder: "Your name",
-    name: "name",
-
-    messages: {
-      focus: "enter name",
-      input: "name in format firstName lastName ",
-      valid: "Looks good!",
-      noValid: "Please provide a valid input.",
-    },
-
-    pattern: retPattern("name"),
-    size: "large",
-  },
-  {
-    id: "inputPostComment1",
-    label: "Email*",
-    placeholder: "Your working email",
-    name: "email",
-    type: "email",
-    messages: {
-      focus: "enter email",
-      input: "email in format email",
-      valid: "Looks good!",
-      noValid: "Please provide a valid input.",
-    },
-    pattern: retPattern("email"),
-    size: "large",
-  },
-  {
-    id: "inputPostComment2",
-    label: "Your comment*",
-    placeholder: "Type comment here",
-    name: "comment",
-    type: "textarea",
-    messages: {
-      focus: "enter comment",
-      input: "comment noformat",
-      valid: "Looks good!",
-      noValid: "Please provide a valid input.",
-    },
-    pattern: retPattern("textarea"),
-    size: "large",
-  },
-];
-
-const valuesObj = Object.fromEntries(
+const initForm = Object.fromEntries(
   dataPostCommentForm.map(({ name, defaultValue = "" }) => [name, defaultValue])
 );
-const statusInput = Object.fromEntries(
+const initStatusInput = Object.fromEntries(
   dataPostCommentForm.map(({ name }) => [name, "blank"])
 );
 
-export const PostComment: FC = () => {
+interface DataPostComment {
+  setNewComment: React.Dispatch<React.SetStateAction<boolean>>;
+  replyId: string;
+  setReplyId: React.Dispatch<React.SetStateAction<string>>;
+  isReply: boolean;
+  setIsReply: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const PostComment: FC<DataPostComment> = (props) => {
+  const { setNewComment, replyId, setReplyId, isReply, setIsReply } = props;
   const [isDisabled, setIsDisabled] = useState(true);
-  const [statusInputs, setStatusInputs] = useState(statusInput);
-  const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
+  const [statusInputs, setStatusInputs] = useState(initStatusInput);
+  const [formValues, setFormValues] = useState<TypeFormValue>(initForm);
+  const idNews = useParams().id;
+
   useEffect(() => {
     Object.values(statusInputs).filter((item) => item === "valid").length ===
     Object.keys(statusInputs).length
@@ -92,10 +58,24 @@ export const PostComment: FC = () => {
     stateInputs
   );
 
+  const onClick = () => {
+    isReply
+      ? (postCommentReplyByID(replyId, formValues), setIsReply(false))
+      : postCommentNewsByID(idNews, formValues);
+    setReplyId("");
+    setNewComment(true);
+    setFormValues(initForm);
+    setStatusInputs(initStatusInput);
+  };
   return (
     <div className={styles.container}>
       <InputsForm {...PostCommentFormProps} />
-      <Btn width={215} title='Post comment' disabled={isDisabled} />
+      <Btn
+        width={215}
+        title='Post comment'
+        disabled={isDisabled}
+        onClick={onClick}
+      />
     </div>
   );
 };

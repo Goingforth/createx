@@ -26,7 +26,14 @@ export interface TypeCommentNews {
   name: string;
   comment: string;
   date: string;
-  reply?: string;
+  replyes: [
+    {
+      _id: string;
+      name: string;
+      comment: string;
+      date: string;
+    }
+  ];
 }
 
 export interface TypeNews {

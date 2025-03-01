@@ -1,38 +1,35 @@
 import { FC, useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { ServerError } from "../../../uikit";
 
-//import { ServerError } from "../../uikit";
 import { getNewsByID } from "../../../api/getData";
 import { Comments, HeroPageNews } from "../../../components";
 import { ScrollToTop } from "../../../utils";
-// import { dataNews, TypeNews } from "../../../data";
 import { TypeNews } from "../../../data";
 
-// import ErrorPage from "./ErrorPage/ErrorPage";
-
 const NewsPage: FC = () => {
-  // const [data, setData] = useState<TypeNews>();
-  // const [isError, setIsError] = useState(false);
-  // const { id } = useParams();
-  // console.log("useParams :", useParams());
+  const [data, setData] = useState<TypeNews>();
+  const [isError, setIsError] = useState(false);
+  const [isNewComment, setNewComment] = useState(false);
+  const { id } = useParams();
 
-  const { data } = useLocation().state;
+  useEffect(() => {
+    id !== undefined && getNewsByID(id, setData, setIsError);
+    setNewComment(false);
+  }, [isNewComment]);
 
-  // useEffect(() => {
-  //   id !== undefined && getNewsByID(id, setData, setIsError);
-  // }, []);
-
-  // const pageData: TypeNews | undefined = DataPageNews(dataNews, id);
-  // console.log(data);
-
-  return (
-    // data !== undefined && (
+  const commentsProps = {
+    comments: data?.comments,
+    setNewComment: setNewComment,
+  };
+  return data !== undefined && !isError ? (
     <>
       <ScrollToTop />
       <HeroPageNews {...data} />
-      <Comments comments={data.comments} />
+      <Comments {...commentsProps} />
     </>
-    // )
+  ) : (
+    <ServerError />
   );
 };
 

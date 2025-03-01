@@ -1,4 +1,4 @@
-import { TypeIdIcons } from "../uikit/SvgSprite/SvgSprite";
+import { TypeIdIcons } from "../../uikit";
 
 type dataLinkFooter = { label?: string; name: string; to: string };
 

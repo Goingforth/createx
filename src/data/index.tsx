@@ -42,6 +42,8 @@ import { dataArrayModal } from "./dataModal";
 import { TypeDataSelect, dataLocations } from "./dataLocation";
 import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
 import { dataContactUs } from "./dataContactUs";
+import { dataPostCommentForm } from "./dataPostCommentForm";
+import { TypeContactsOffices } from "./dataContactsOfficers";
 
 export {
   retPattern,
@@ -92,4 +94,6 @@ export {
   dataArrayModal,
   dataContactUs,
   dataLocations,
+  dataPostCommentForm,
+  type TypeContactsOffices,
 };

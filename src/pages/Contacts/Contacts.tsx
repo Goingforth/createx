@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { HeroPage, ContactUs } from "../../components";
+import { HeroPage, ContactUs, ContactsOffices } from "../../components";
 
 //import styles from "./Contacts.module.scss";
 
@@ -11,6 +11,7 @@ const Contacts: FC = () => {
         <HeroPage />
       </div>
       <ContactUs />
+      <ContactsOffices />
     </>
   );
 };

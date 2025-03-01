@@ -13,7 +13,7 @@ export type TypeInputForm = {
   onFocus: Function;
   onBlur: Function;
   pattern: RegExp | undefined;
-  size?: "large" | "default" | "small";
+  size?: "large" | "default" | "small" | "post";
   status?: string;
   width?: string;
 };

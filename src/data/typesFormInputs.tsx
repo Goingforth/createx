@@ -1,4 +1,4 @@
-export type TypeFormValue = { [k: string]: string | boolean | File };
+export type TypeFormValue = { [k: string]: string | boolean | File | Date };
 
 export type TypeFormValuesStatusInputs = {
   formValues: TypeFormValue;

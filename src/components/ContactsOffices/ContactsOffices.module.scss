@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+  padding-top: 80px;
+  padding-bottom: 95px;
+  background-color: $gray200;
+}
+.socialLinks {
+  display: flex;
+  gap: 24px;
+}
+.socialLink {
+  width: 32px;
+  height: 32px;
+  fill: $gray700;
+  &:last-child {
+    fill: $primary;
+  }
+}
+.offices {
+  display: flex;
+  gap: 120px;
+}
+.office {
+  width: 250px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: left;
+}
+.city {
+  @extend h3;
+  color: $gray900;
+  margin-bottom: 24px;
+}
+.map {
+  margin-bottom: 20px;
+}
+.address {
+  @extend .base_regular;
+  color: $gray900;
+  text-align: left;
+}
+.link {
+  color: $primary;
+  text-decoration: underline;
+  @extend .base_regular;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @extend .base_regular;
+  text-align: left;
+}
+.spans {
+  margin-left: 4px;
+  color: $gray900;
+  &:hover {
+    color: $primary;
+  }
+}

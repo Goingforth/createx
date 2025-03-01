@@ -23,6 +23,10 @@ $gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
 
+html {
+  scroll-behavior: smooth;
+}
+
 // div {
 //   box-sizing: border-box;
 // }

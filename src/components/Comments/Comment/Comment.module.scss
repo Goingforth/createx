@@ -40,3 +40,13 @@
   @extend .small_regular;
   color: $gray700;
 }
+.replyName {
+  white-space: nowrap;
+  margin-right: 5px;
+  color: $primary;
+}
+.replyes {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}

@@ -76,3 +76,15 @@
     text-align: left;
   }
 }
+.post {
+  .container {
+    padding: 13px 16px;
+    @extend .base_regular;
+    text-align: left;
+  }
+  .option {
+    padding: 13px 16px;
+    @extend .base_regular;
+    text-align: left;
+  }
+}

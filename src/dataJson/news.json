@@ -8,14 +8,16 @@
       {
         "name": "Devon Lane",
         "comment": "Phasellus varius faucibus ultrices odio in. Massa neque dictum natoque ornare rutrum malesuada et phasellus. Viverra natoque nulla cras vel nisl proin senectus. Tortor sed eleifend ante tristique felis sed urna aliquet. Suspendisse fames egestas sed duis purus diam et.",
-        "date": "July 15, 2020"
+        "date": "July 15, 2020",
+        "replyes": [
+          {
+            "name": "Annette Black",
+            "comment": "Egestas fermentum natoque sollicitudin mauris. Facilisis praesent urna sed rhoncus quis pharetra pellentesque erat sagittis.",
+            "date": "July 16, 2020"
+          }
+        ]
       },
-      {
-        "name": "Annette Black",
-        "comment": "Egestas fermentum natoque sollicitudin mauris. Facilisis praesent urna sed rhoncus quis pharetra pellentesque erat sagittis.",
-        "date": "July 16, 2020",
-        "reply": "Devon Lane "
-      },
+
       {
         "name": "Albert Flores",
         "comment": "Libero commodo sit dui ac proin. Penatibus ultricies at adipiscing mauris nunc. Fames faucibus nisl duis id diam.",
