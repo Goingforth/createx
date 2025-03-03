@@ -45,8 +45,8 @@ export const ContactUsForm: FC = () => {
       ? setIsDisabled(false)
       : setIsDisabled(true);
   }, [statusInputs]);
-  // console.log("statusInputs :", statusInputs);
-  // console.log("formValues :", formValues);
+  console.log("statusInputs :", statusInputs);
+  console.log("formValues :", formValues);
   // console.log(ContactUsFormProps);
 
   return (

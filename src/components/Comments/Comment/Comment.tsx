@@ -52,7 +52,6 @@ export const Comment: FC<TypeComment> = (props) => {
 
   return (
     <>
-      {/*  */}
       <CommentBase
         _id={_id}
         name={name}

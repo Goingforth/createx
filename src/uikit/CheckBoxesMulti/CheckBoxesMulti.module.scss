@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  gap: 24px;
+  height: 54px;
+  align-items: center;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.name {
+  @extend .base_regular;
+  color: $gray800;
+}

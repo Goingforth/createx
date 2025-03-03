@@ -94,7 +94,7 @@ export const dataContactUs: TypeDataFormInput[] = [
     id: "inputContactUs5",
     label: "Preferred contact method",
     name: "contact",
-    type: "radio",
+    type: "checkBoxesMulti",
     size: "large",
     // messages: {
     //   focus: "enter email",

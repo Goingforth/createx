@@ -2,6 +2,7 @@ import { FC } from "react";
 import { SvgSprite, InputSelect, InputChooseFile, Checkboxes } from "../index";
 import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import { CheckBoxesMulti } from "../index";
 import styles from "./InputForm.module.scss";
 
 interface valueCustomInput extends InputHTMLAttributes<HTMLInputElement> {
@@ -158,7 +159,8 @@ const InputForm: FC<TypeInputForm> = ({
         type !== "file" &&
         type !== "select" &&
         type !== "checkbox" &&
-        type !== "radio" && (
+        type !== "radio" &&
+        type !== "checkBoxesMulti" && (
           <div className={styles.iconInput}>
             {statusInputs[name] === "valid" && <SvgSprite id='mark' />}
             {(statusInputs[name] === "novalid" ||
@@ -185,19 +187,28 @@ const InputForm: FC<TypeInputForm> = ({
           statusInputs={statusInputs}
         />
       )}
-      {/* {(type === "radio" || type === "checkbox") && (
+      {type === "checkBoxesMulti" && (
+        <CheckBoxesMulti
+          name={name}
+          setFormValues={setFormValues}
+          formValues={formValues}
+          setStatusInputs={setStatusInputs}
+          statusInputs={statusInputs}
+        />
+      )}
+      {(type === "radio" || type === "checkbox") && (
         <Checkboxes
           name={name}
           type={type}
-          // value={value}
-          // checked={formValues[name]}
+          value={placeholder}
+          checked={formValues[name]}
           onChange={onChange}
           // setFormValues={setFormValues}
           // formValues={formValues}
           // setStatusInputs={setStatusInputs}
           // statusInputs={statusInputs}
         />
-      )} */}
+      )}
 
       {type !== "checkbox" && statusInputs[name] !== "blank" ? (
         <div className={[styles.message, changeStylesValid()].join(" ")}>

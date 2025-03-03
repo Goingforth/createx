@@ -5,7 +5,8 @@ type Props = {
   value?: string;
   name: string;
   type?: "radio" | "checkbox";
-  checked: boolean | undefined;
+  // checked: boolean | undefined;
+  checked: any;
   onChange: Function;
 };
 

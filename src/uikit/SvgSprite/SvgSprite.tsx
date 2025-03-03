@@ -51,7 +51,9 @@ export type TypeIdIcons =
   | "ic-budget"
   | "divider_regular"
   | "divider_large"
-  | "share-arrow";
+  | "share-arrow"
+  | "checked"
+  | "unchecked";
 
 type Props = {
   id: TypeIdIcons;
@@ -1110,6 +1112,43 @@ const SvgSprite = ({ id, width, height }: Props) => {
           <path
             d='M0.667318 7.82816L6.7625 1.16602V5.14077H8.05839C12.0766 5.14077 15.334 8.38764 15.334 12.393V14.4993L14.7584 13.8706C12.8014 11.7333 10.0324 10.5156 7.1293 10.5156H6.7625V14.4903L0.667318 7.82816Z'
             fill='#787A80'
+          />
+        </svg>
+      );
+    case "checked":
+      return (
+        <svg
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <circle cx='8' cy='8' r='8' fill='white' />
+          <path
+            fillRule='evenodd'
+            clipRule='evenodd'
+            d='M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8C14.6667 4.3181 11.6819 1.33333 8 1.33333C4.3181 1.33333 1.33333 4.3181 1.33333 8C1.33333 11.6819 4.3181 14.6667 8 14.6667ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z'
+            fill='#FF5A30'
+          />
+          <circle cx='8' cy='8' r='4' fill='#FF5A30' />
+        </svg>
+      );
+    case "unchecked":
+      return (
+        <svg
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <circle cx='8' cy='8' r='8' fill='white' />
+          <path
+            fillRule='evenodd'
+            clipRule='evenodd'
+            d='M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8C14.6667 4.3181 11.6819 1.33333 8 1.33333C4.3181 1.33333 1.33333 4.3181 1.33333 8C1.33333 11.6819 4.3181 14.6667 8 14.6667ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z'
+            fill='#B3B7BC'
           />
         </svg>
       );

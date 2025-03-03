@@ -24,6 +24,7 @@ import { InputSubscribe } from "./InputSubscribe/InputSubscribe";
 import { ImgCloudinary } from "./ImgCloudinari/ImgClaudinary";
 import { SliderControls } from "./SliderControls/SliderControls";
 import { ServerError } from "./ServerError/ServerError";
+import { CheckBoxesMulti } from "./CheckBoxesMulti/CheckBoxesMulti";
 
 export {
   InputForms,
@@ -50,4 +51,5 @@ export {
   ImgCloudinary,
   SliderControls,
   ServerError,
+  CheckBoxesMulti,
 };
