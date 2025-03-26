@@ -8,6 +8,7 @@ type TypeInputSelect = TypeFormValuesStatusInputs & {
   placeholder: string;
   dataSelect?: TypeDataSelect[];
   size: "default" | "large" | "small" | "post";
+  value: string | boolean | File | Date;
 };
 
 export const InputSelect: FC<TypeInputSelect> = (props) => {
@@ -20,15 +21,9 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
     formValues,
     statusInputs,
     size,
+    value,
   } = props;
 
-  const [value, setValue] = useState<string>(
-    placeholder !== "write placeholder"
-      ? placeholder
-      : dataSelect
-      ? dataSelect[0].option
-      : ""
-  );
   const [select, setSelect] = useState(false);
   const [isSelect, setIsSelect] = useState(false);
 
@@ -42,8 +37,12 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
   return (
     <div className={styles[size]}>
       <div className={styles.container}>
-        <div className={!isSelect ? styles.default : styles.selected}>
-          {value}
+        <div
+          className={
+            !isSelect || value === "" ? styles.default : styles.selected
+          }
+        >
+          {String(value) || placeholder}
         </div>
         <div
           className={styles.iconWrapper}
@@ -66,9 +65,11 @@ export const InputSelect: FC<TypeInputSelect> = (props) => {
               <div
                 key={id}
                 className={styles.option}
-                onMouseEnter={() => setValue(option)}
+                onMouseEnter={() =>
+                  setFormValues({ ...formValues, [name]: option })
+                }
                 onClick={() => {
-                  setValue(option);
+                  setFormValues({ ...formValues, [name]: option });
                   setSelect(false);
                   setIsSelect(true);
                 }}

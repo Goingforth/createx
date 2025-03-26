@@ -1,31 +1,12 @@
 import {
   TypeDataFormInput,
   retPattern,
-  TypeDataSelect,
   dataLocations,
-  // TypeFormValuesStatusInputs,
+  dataContactMethod,
+  dataInterest,
 } from "./index";
 
-const dataInterest: TypeDataSelect[] = [
-  {
-    id: "optionInterest0",
-    option: "Interior Design",
-  },
-  {
-    id: "optionInterest1",
-    option: "Construction",
-  },
-  {
-    id: "optionInterest2",
-    option: "Project Development, USA",
-  },
-  {
-    id: "optionInterest3",
-    option: "Repairs",
-  },
-];
 export const dataContactUs: TypeDataFormInput[] = [
-  // export const dataContactUs: TypeFormValuesStatusInputs[] = [
   {
     id: "inputContactUs0",
     label: "Name*",
@@ -45,10 +26,10 @@ export const dataContactUs: TypeDataFormInput[] = [
   {
     id: "inputContactUs1",
     label: "I am interested in",
-    // placeholder: "Choose your location",
     name: "interest",
     type: "select",
     dataSelect: dataInterest,
+    placeholder: " Choose interest",
     size: "large",
   },
   {
@@ -69,10 +50,10 @@ export const dataContactUs: TypeDataFormInput[] = [
   {
     id: "inputContactUs3",
     label: "Location*",
-    // placeholder: "Choose your location",
     name: "location",
     type: "select",
     dataSelect: dataLocations,
+    placeholder: " Choose location",
     size: "large",
   },
   {
@@ -95,14 +76,8 @@ export const dataContactUs: TypeDataFormInput[] = [
     label: "Preferred contact method",
     name: "contact",
     type: "checkBoxesMulti",
+    dataSelect: dataContactMethod,
     size: "large",
-    // messages: {
-    //   focus: "enter email",
-    //   input: "email in format email",
-    //   valid: "Looks good!",
-    //   noValid: "Please provide a valid input.",
-    // },
-    // pattern: retPattern("email"),
   },
   {
     id: "inputContactUs6",
@@ -121,19 +96,16 @@ export const dataContactUs: TypeDataFormInput[] = [
   },
   {
     id: "inputContactUs7",
-    // label: "Preferred contact method",
-    placeholder:
+    label:
       "I agree to receive communications from Createx Construction Bureau.",
     name: "agree",
     type: "checkbox",
-    size: "large",
-
-    // messages: {
-    //   focus: "enter email",
-    //   input: "email in format email",
-    //   valid: "Looks good!",
-    //   noValid: "Please provide a valid input.",
-    // },
-    // pattern: retPattern("email"),
+    fontLabel: "baseFont",
+  },
+  {
+    id: "inputContactUs8",
+    name: "btn",
+    type: "btn",
+    placeholder: "send request",
   },
 ];

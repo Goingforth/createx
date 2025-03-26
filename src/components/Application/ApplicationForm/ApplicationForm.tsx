@@ -20,6 +20,8 @@ const ApplicationForm: FC = () => {
   const [status, setStatus] = useState(statusInput);
   const [isDisabled, setDisabled] = useState(true);
 
+  console.log("values:", values);
+
   useEffect(() => {
     Object.values(status).filter((item) => item === "valid").length ===
       Object.keys(status).length - 1 && values["checked"] === true
@@ -78,16 +80,7 @@ const ApplicationForm: FC = () => {
       <h3 className={styles.title}>A quick way to discuss details</h3>
       <form className={styles.form}>
         {dataApplicationFormInput.map(
-          ({
-            id,
-            label,
-            placeholder,
-            name,
-            type,
-            value,
-            messages,
-            pattern,
-          }) => (
+          ({ id, label, placeholder, name, type, messages, pattern }) => (
             <div key={id} style={{ position: "relative" }}>
               {type !== "checkbox" ? (
                 <div>
@@ -107,9 +100,10 @@ const ApplicationForm: FC = () => {
               ) : (
                 <Checkboxes
                   name={name}
-                  value={value}
-                  checked={values[name]}
-                  onChange={changeHandler}
+                  type={type}
+                  label={label}
+                //  checked={values[name]}
+                 // onChange={changeHandler}
                 />
               )}
 

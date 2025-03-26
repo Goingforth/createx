@@ -39,7 +39,12 @@ import { widthBlock, TypeConstWidth } from "./dataConstant";
 import { TypeDataGalleryProject } from "./dataGalleryModernCottage";
 import { TypeDataVacancyCard } from "./dataVacancyCard";
 import { dataArrayModal } from "./dataModal";
-import { TypeDataSelect, dataLocations } from "./dataLocation";
+import {
+  TypeDataSelect,
+  dataLocations,
+  dataContactMethod,
+  dataInterest,
+} from "./dataLocation";
 import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
 import { dataContactUs } from "./dataContactUs";
 import { dataPostCommentForm } from "./dataPostCommentForm";
@@ -94,6 +99,8 @@ export {
   dataArrayModal,
   dataContactUs,
   dataLocations,
+  dataContactMethod,
+  dataInterest,
   dataPostCommentForm,
   type TypeContactsOffices,
 };

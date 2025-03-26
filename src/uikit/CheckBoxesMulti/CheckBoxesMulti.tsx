@@ -1,56 +1,12 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { SvgSprite } from "..";
 import { TypeFormValue } from "../../data";
+import { TypeDataSelect } from "../../data";
 import styles from "./CheckBoxesMulti.module.scss";
-
-const dataContactMethod = [
-  {
-    id: "method0",
-    item: "phone",
-    name: "Phone",
-  },
-  {
-    id: "method1",
-    item: "email",
-    name: "Email",
-  },
-  {
-    id: "method2",
-    item: "viber",
-    name: "Viber",
-  },
-];
-
-const dataItem = dataContactMethod.map((unit) => unit.item);
-
-interface TypeUnitCheckBoxes {
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  item: string;
-  name: string;
-}
-const UnitCheckBoxes: FC<TypeUnitCheckBoxes> = ({
-  value,
-  setValue,
-  item,
-  name,
-}) => {
-  return (
-    <div className={styles.checkbox} onClick={() => setValue(item)}>
-      <div>
-        {value === item ? (
-          <SvgSprite id='checked' />
-        ) : (
-          <SvgSprite id='unchecked' />
-        )}
-      </div>
-      <div className={styles.name}>{name}</div>
-    </div>
-  );
-};
 
 interface TypeCheckBoxesMulti {
   name: string;
+  value: string | boolean | File | Date;
   formValues: TypeFormValue;
   setFormValues: React.Dispatch<React.SetStateAction<TypeFormValue>>;
   setStatusInputs: React.Dispatch<
@@ -61,6 +17,7 @@ interface TypeCheckBoxesMulti {
   statusInputs: {
     [k: string]: string;
   };
+  dataSelect?: TypeDataSelect[];
 }
 
 export const CheckBoxesMulti: FC<TypeCheckBoxesMulti> = ({
@@ -69,18 +26,38 @@ export const CheckBoxesMulti: FC<TypeCheckBoxesMulti> = ({
   name,
   setStatusInputs,
   statusInputs,
+  value,
+  dataSelect,
 }) => {
-  const [value, setValue] = useState(dataContactMethod[0].item);
+  const dataOption = dataSelect?.map((item) => item.option);
+
   useEffect(() => {
-    setFormValues({ ...formValues, [name]: value });
-    dataItem.includes(value) &&
+    dataOption?.indexOf(String(value)) === -1 &&
+      dataSelect &&
+      setFormValues({ ...formValues, [name]: dataSelect[0].option });
+    dataOption?.includes(String(value)) &&
       setStatusInputs({ ...statusInputs, [name]: "valid" });
   }, [value]);
 
   return (
     <div className={styles.container}>
-      {dataContactMethod.map((unit) => (
-        <UnitCheckBoxes key={unit.id} {...{ value, setValue, ...unit }} />
+      {dataSelect?.map(({ id, option }) => (
+        <div
+          className={styles.checkbox}
+          key={id}
+          onClick={() => {
+            setFormValues({ ...formValues, [name]: option });
+          }}
+        >
+          <div>
+            {value === option ? (
+              <SvgSprite id='checked' />
+            ) : (
+              <SvgSprite id='unchecked' />
+            )}
+          </div>
+          <div className={styles.label}>{option}</div>
+        </div>
       ))}
     </div>
   );

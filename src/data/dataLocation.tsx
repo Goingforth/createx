@@ -17,3 +17,35 @@ export const dataLocations: TypeDataSelect[] = [
     option: "San Francisco, USA",
   },
 ];
+export const dataInterest: TypeDataSelect[] = [
+  {
+    id: "optionInterest0",
+    option: "Interior Design",
+  },
+  {
+    id: "optionInterest1",
+    option: "Construction",
+  },
+  {
+    id: "optionInterest2",
+    option: "Project Development, USA",
+  },
+  {
+    id: "optionInterest3",
+    option: "Repairs",
+  },
+];
+export const dataContactMethod: TypeDataSelect[] = [
+  {
+    id: "method0",
+    option: "Phone",
+  },
+  {
+    id: "method1",
+    option: "Email",
+  },
+  {
+    id: "method2",
+    option: "Viber",
+  },
+];

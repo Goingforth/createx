@@ -9,6 +9,7 @@ export type TypeDataFormInput = {
   value?: string;
   size?: "large" | "default" | "small" | "post";
   defaultValue?: boolean;
+  fontLabel?: "defaultFont" | "baseFont";
   messages?: {
     focus: string;
     input: string;
@@ -78,10 +79,11 @@ export const dataApplicationFormInput: TypeDataFormInput[] = [
   },
   {
     id: "ApplicationFormInput4",
-    value:
+    label:
       "I agree to receive communications from Createx <br/>Construction Bureau.*",
     name: "checked",
     type: "checkbox",
     defaultValue: false,
+    fontLabel: "defaultFont",
   },
 ];

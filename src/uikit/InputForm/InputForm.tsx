@@ -1,5 +1,11 @@
 import { FC } from "react";
-import { SvgSprite, InputSelect, InputChooseFile, Checkboxes } from "../index";
+import {
+  SvgSprite,
+  InputSelect,
+  InputChooseFile,
+  Checkboxes,
+  Btn,
+} from "../index";
 import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
 import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { CheckBoxesMulti } from "../index";
@@ -23,7 +29,8 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
   placeholder?: string;
   name: string;
   type?: string;
-
+  value?: string;
+  fontLabel?: "defaultFont" | "baseFont";
   messages?:
     | {
         focus: string;
@@ -37,10 +44,13 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
   width?: string;
   dataSelect?: TypeDataSelect[];
   checked?: boolean | undefined;
+  isDisabled: boolean;
+  sendDataForm: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const InputForm: FC<TypeInputForm> = ({
   label,
+  value,
   placeholder = "write placeholder",
   name = "write name",
   type = "text",
@@ -53,6 +63,9 @@ const InputForm: FC<TypeInputForm> = ({
   statusInputs,
   setStatusInputs,
   dataSelect,
+  fontLabel,
+  isDisabled,
+  sendDataForm,
 }) => {
   const changeMessage = (messages?: {
     focus: string;
@@ -123,7 +136,7 @@ const InputForm: FC<TypeInputForm> = ({
       }
       style={{ width: `${width}` }}
     >
-      {label !== undefined && <label>{label}</label>}
+      {label !== undefined && type !== "checkbox" && <label>{label}</label>}
 
       {(type === "text" || type === "tel" || type === "email") && (
         <Input
@@ -172,6 +185,7 @@ const InputForm: FC<TypeInputForm> = ({
           name={name}
           placeholder={placeholder}
           dataSelect={dataSelect}
+          value={formValues[name]}
           size={size}
           setFormValues={setFormValues}
           formValues={formValues}
@@ -190,6 +204,8 @@ const InputForm: FC<TypeInputForm> = ({
       {type === "checkBoxesMulti" && (
         <CheckBoxesMulti
           name={name}
+          dataSelect={dataSelect}
+          value={formValues[name]}
           setFormValues={setFormValues}
           formValues={formValues}
           setStatusInputs={setStatusInputs}
@@ -199,14 +215,15 @@ const InputForm: FC<TypeInputForm> = ({
       {(type === "radio" || type === "checkbox") && (
         <Checkboxes
           name={name}
+          label={label}
+          fontLabel={fontLabel}
           type={type}
-          value={placeholder}
           checked={formValues[name]}
-          onChange={onChange}
-          // setFormValues={setFormValues}
-          // formValues={formValues}
-          // setStatusInputs={setStatusInputs}
-          // statusInputs={statusInputs}
+          // onChange={onChangeCheckbox}
+          setFormValues={setFormValues}
+          formValues={formValues}
+          setStatusInputs={setStatusInputs}
+          statusInputs={statusInputs}
         />
       )}
 
@@ -216,6 +233,9 @@ const InputForm: FC<TypeInputForm> = ({
         </div>
       ) : (
         ""
+      )}
+      {type === "btn" && (
+        <Btn title={placeholder} disabled={isDisabled} onClick={sendDataForm} />
       )}
     </div>
   );
