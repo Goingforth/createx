@@ -2,7 +2,8 @@ import { FC, useState, useEffect } from "react";
 import { InputForms, Btn, Checkboxes } from "../../../uikit";
 import styles from "./ApplicationForm.module.scss";
 import { dataApplicationFormInput } from "../../../data";
-//////////
+import { TypeFormValue } from "../../../data";
+
 const valuesObj = Object.fromEntries(
   dataApplicationFormInput.map(({ name, defaultValue = "" }) => [
     name,
@@ -13,18 +14,15 @@ const valuesObj = Object.fromEntries(
 const statusInput = Object.fromEntries(
   dataApplicationFormInput.map(({ name }) => [name, "blank"])
 );
-////////////////////
+
 const ApplicationForm: FC = () => {
-  /////////////////////////////
-  const [values, setValues] = useState(valuesObj);
+  const [values, setValues] = useState<TypeFormValue>(valuesObj);
   const [status, setStatus] = useState(statusInput);
   const [isDisabled, setDisabled] = useState(true);
 
-  console.log("values:", values);
-
   useEffect(() => {
     Object.values(status).filter((item) => item === "valid").length ===
-      Object.keys(status).length - 1 && values["checked"] === true
+    Object.keys(status).length
       ? setDisabled(false)
       : setDisabled(true);
   }, [status]);
@@ -74,7 +72,7 @@ const ApplicationForm: FC = () => {
     setValues(valuesObj);
     setStatus(statusInput);
   };
-  //////////////////
+
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>A quick way to discuss details</h3>
@@ -102,8 +100,11 @@ const ApplicationForm: FC = () => {
                   name={name}
                   type={type}
                   label={label}
-                //  checked={values[name]}
-                 // onChange={changeHandler}
+                  checked={values[name]}
+                  formValues={values}
+                  setFormValues={setValues}
+                  setStatusInputs={setStatus}
+                  statusInputs={status}
                 />
               )}
 

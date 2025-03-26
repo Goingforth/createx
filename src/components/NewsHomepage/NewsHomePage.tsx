@@ -13,8 +13,6 @@ const NewsGridBlock: FC = () => {
     getNewsByQuery({ limit: 3 }, setData, setIsError);
   }, []);
 
-  console.log(data);
-
   return (
     <>
       {data && (
