@@ -1,0 +1,131 @@
+import { FC, useEffect, useState } from "react";
+import { InputForms, Btn, TypeBtnProps } from "../../uikit";
+import { retPattern, TypeDataFormInput } from "../../data";
+import styles from "./RequestForm.module.scss";
+
+const dataRequestForm: TypeDataFormInput[] = [
+  {
+    id: "requestFormInput0",
+    name: "name",
+    label: "Name",
+    placeholder: "Your name",
+    pattern: retPattern("name"),
+    width: "260px",
+  },
+  {
+    id: "requestFormInput1",
+    name: "phone",
+    label: "Phone",
+    placeholder: "Your phone",
+    pattern: retPattern("phone"),
+    width: "260px",
+  },
+  {
+    id: "requestFormInput2",
+    name: "message",
+    label: "Message",
+    placeholder: "Your message",
+    pattern: retPattern("textarea"),
+  },
+];
+
+///
+const initFormValues = Object.fromEntries(
+  dataRequestForm.map(({ name, defaultValue = "" }) => [name, defaultValue])
+);
+
+const initFormStatusinputs = Object.fromEntries(
+  dataRequestForm.map(({ name }) => [name, "blank"])
+);
+
+////
+
+const RequestForm: FC = () => {
+  ////
+  const [formValues, setFormValues] = useState(initFormValues);
+  const [statusInputs, setStatusInputs] = useState(initFormStatusinputs);
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  console.log(formValues);
+  console.log(statusInputs);
+
+  useEffect(() => {
+    Object.values(statusInputs).filter((item) => item === "valid").length ===
+      Object.keys(statusInputs).length - 1 && formValues["checked"] === true
+      ? setIsDisabled(false)
+      : setIsDisabled(true);
+  }, [statusInputs]);
+
+  const changeHandler = (name: string, value: string | boolean) => {
+    setFormValues({ ...formValues, [name]: value });
+    setStatusInputs({ ...statusInputs, [name]: "input" });
+  };
+
+  const changeFocus = (name: string) => {
+    setStatusInputs({ ...statusInputs, [name]: "focus" });
+  };
+
+  const changeBlur = (name: string, pattern: RegExp | undefined) => {
+    if (formValues[name] === "")
+      setStatusInputs({ ...statusInputs, [name]: "empty" });
+    else if (pattern?.test(String(formValues[name])))
+      setStatusInputs({ ...statusInputs, [name]: "valid" });
+    else setStatusInputs({ ...statusInputs, [name]: "noValid" });
+  };
+
+  const changeMessage = (
+    name: string,
+    messages?: { focus: string; input: string; valid: string; noValid: string }
+  ) => {
+    if (messages !== undefined) {
+      const { focus, input, valid, noValid } = messages;
+      switch (statusInputs[name]) {
+        case "focus":
+          return focus;
+        case "input":
+          return input;
+        case "valid":
+          return valid;
+        case "noValid":
+          return noValid;
+        case "empty":
+          return "The field cannot be empty";
+        default:
+          return "default";
+      }
+    } else {
+      return;
+    }
+  };
+  const onClick = () => {
+    alert(JSON.stringify(formValues));
+    setFormValues(initFormValues);
+    setStatusInputs(initFormStatusinputs);
+  };
+  ////
+
+  const ButtonProps: TypeBtnProps = {
+    title: "SEND",
+    onClick: onClick,
+    disabled: isDisabled,
+  };
+  return (
+    <div className={styles.container}>
+      <div className={styles.titles}>Want to know more? Ask us a question:</div>
+      <div className={styles.formRequest}>
+        {dataRequestForm.map((item) => (
+          <InputForms
+            key={item.id}
+            {...item}
+            // onFocus={changeFocus}
+            // onBlur={changeBlur}
+          />
+        ))}
+
+        <Btn {...ButtonProps} />
+      </div>
+    </div>
+  );
+};
+
+export default RequestForm;

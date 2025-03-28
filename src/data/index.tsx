@@ -49,6 +49,7 @@ import { TypeFormValue, TypeFormValuesStatusInputs } from "./typesFormInputs";
 import { dataContactUs } from "./dataContactUs";
 import { dataPostCommentForm } from "./dataPostCommentForm";
 import { TypeContactsOffices } from "./dataContactsOfficers";
+import { dataRequestForm } from "./dataRequestForm";
 
 export {
   retPattern,
@@ -103,4 +104,5 @@ export {
   dataInterest,
   dataPostCommentForm,
   type TypeContactsOffices,
+  dataRequestForm,
 };

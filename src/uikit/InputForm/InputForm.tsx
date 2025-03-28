@@ -50,7 +50,6 @@ export type TypeInputForm = TypeFormValuesStatusInputs & {
 
 const InputForm: FC<TypeInputForm> = ({
   label,
-  value,
   placeholder = "write placeholder",
   name = "write name",
   type = "text",

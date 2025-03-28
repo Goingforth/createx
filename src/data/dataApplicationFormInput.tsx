@@ -18,6 +18,7 @@ export type TypeDataFormInput = {
   };
   pattern?: RegExp | undefined;
   dataSelect?: TypeDataSelect[];
+  width?: string;
 };
 
 export const dataApplicationFormInput: TypeDataFormInput[] = [

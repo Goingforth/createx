@@ -4,21 +4,16 @@ import { InputsForm, TypeInputsForm } from "../index";
 import styles from "./ContactUsForm.module.scss";
 
 export const ContactUsForm: FC = () => {
-  const filterDataContactUs = dataContactUs.filter(
-    (item) => item.name !== "btn"
+  const filterData = dataContactUs.filter((item) => item.name !== "btn");
+  const initFormValues = Object.fromEntries(
+    filterData.map(({ name, defaultValue = "" }) => [name, defaultValue])
   );
-  const valuesObj = Object.fromEntries(
-    filterDataContactUs.map(({ name, defaultValue = "" }) => [
-      name,
-      defaultValue,
-    ])
-  );
-  const statusInput = Object.fromEntries(
-    filterDataContactUs.map(({ name }) => [name, "blank"])
+  const initFormStatusinputs = Object.fromEntries(
+    filterData.map(({ name }) => [name, "blank"])
   );
   const [isDisabled, setIsDisabled] = useState(true);
-  const [statusInputs, setStatusInputs] = useState(statusInput);
-  const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
+  const [statusInputs, setStatusInputs] = useState(initFormStatusinputs);
+  const [formValues, setFormValues] = useState<TypeFormValue>(initFormValues);
 
   const styleForm: React.CSSProperties = {
     display: "grid",
@@ -36,7 +31,7 @@ export const ContactUsForm: FC = () => {
 
   const sendDataForm = () => {
     alert("Send form now!");
-    setStatusInputs(statusInput), setFormValues(valuesObj);
+    setStatusInputs(initFormStatusinputs), setFormValues(initFormValues);
   };
 
   const ContactUsFormProps: TypeInputsForm = Object.assign(
