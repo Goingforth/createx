@@ -38,7 +38,7 @@ import { dataBulletedList } from "./dataBulletedList";
 import { widthBlock, TypeConstWidth } from "./dataConstant";
 import { TypeDataGalleryProject } from "./dataGalleryModernCottage";
 import { TypeDataVacancyCard } from "./dataVacancyCard";
-import { dataArrayModal } from "./dataModal";
+import { dataModals } from "./dataModal";
 import {
   TypeDataSelect,
   dataLocations,
@@ -97,7 +97,7 @@ export {
   type TypeDataVacancyCard,
   type TypeFormValue,
   type TypeFormValuesStatusInputs,
-  dataArrayModal,
+  dataModals,
   dataContactUs,
   dataLocations,
   dataContactMethod,

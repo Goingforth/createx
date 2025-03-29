@@ -10,13 +10,13 @@ const initFormValues = Object.fromEntries(
   filterData.map(({ name, defaultValue = "" }) => [name, defaultValue])
 );
 
-const initFormStatusinputs = Object.fromEntries(
+const initFormStatusInputs = Object.fromEntries(
   filterData.map(({ name }) => [name, "blank"])
 );
 
 const RequestForm: FC = () => {
   const [formValues, setFormValues] = useState<TypeFormValue>(initFormValues);
-  const [statusInputs, setStatusInputs] = useState(initFormStatusinputs);
+  const [statusInputs, setStatusInputs] = useState(initFormStatusInputs);
   const [isDisabled, setIsDisabled] = useState(true);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const RequestForm: FC = () => {
 
   const sendDataForm = () => {
     alert("Send form now!");
-    setStatusInputs(initFormStatusinputs), setFormValues(initFormValues);
+    setStatusInputs(initFormStatusInputs), setFormValues(initFormValues);
   };
 
   const InputsFormProps: TypeInputsForm = Object.assign(

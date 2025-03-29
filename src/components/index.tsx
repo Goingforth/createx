@@ -11,7 +11,7 @@ import Clients from "./Clients/Clients";
 import TestimonialsCard from "./Testimonials/TestimonialsCard/TestimonialsCard";
 import CoreValues from "./CoreValues/CoreValues";
 import BlockServices from "./BlockServices/BlockServices";
-import NewsHomePage from "./NewsHomePage/NewsHomePage";
+import { NewsHomePage } from "./NewsHomePage/NewsHomePage";
 import Portfolio from "./Portfolio/Portfolio";
 import Figures from "./Figures/Figures";
 import Team from "./Team/Team";

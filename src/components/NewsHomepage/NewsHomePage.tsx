@@ -29,7 +29,7 @@ const NewsGridBlock: FC = () => {
   );
 };
 
-const NewsHomePage: FC = () => {
+export const NewsHomePage: FC = () => {
   return (
     <div className={styles.container}>
       <SectionWithChildren
@@ -49,5 +49,3 @@ const NewsHomePage: FC = () => {
     </div>
   );
 };
-
-export default NewsHomePage;

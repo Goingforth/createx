@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
-import { Btn, SvgSprite } from "../../uikit";
+import { SvgSprite } from "../../uikit";
 import { InputsForm, TypeModalName, TypeInputsForm } from "../index";
-import { TypeFormValue, dataArrayModal } from "../../data";
+import { TypeFormValue, dataModals } from "../../data";
 import styles from "./ModalCTA.module.scss";
 
 type TypeModalCTA = {
@@ -10,37 +10,62 @@ type TypeModalCTA = {
 };
 
 export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
-  const dataArray = dataArrayModal.find(({ name }) => name === modalName);
+  const dataArray = dataModals.find(({ nameModal }) => nameModal === modalName);
 
   if (dataArray !== undefined) {
     const data = dataArray.data;
     const title = dataArray.title;
-    const valuesObj = Object.fromEntries(
-      data.map(({ name, defaultValue = "" }) => [name, defaultValue])
+    const filterData = data.filter((item) => item.name !== "btn");
+    const initFormValues = Object.fromEntries(
+      filterData.map(({ name, defaultValue = "" }) => [name, defaultValue])
     );
-    const statusInput = Object.fromEntries(
-      data.map(({ name }) => [name, "blank"])
+    const initFormStatusInputs = Object.fromEntries(
+      filterData.map(({ name }) => [name, "blank"])
     );
 
     const [isDisabled, setIsDisabled] = useState(true);
-    const [statusInputs, setStatusInputs] = useState(statusInput);
-    const [formValues, setFormValues] = useState<TypeFormValue>(valuesObj);
-    const styleForm: React.CSSProperties = {
-      display: "flex",
-      flexDirection: "column",
-      gap: "20px",
-      width: "100%",
-      marginBottom: "40px",
+    const [statusInputs, setStatusInputs] = useState(initFormStatusInputs);
+    const [formValues, setFormValues] = useState<TypeFormValue>(initFormValues);
+
+    const styleFormSubscribe: React.CSSProperties = {
+      width: "486px",
+      height: "250px",
+      display: "grid",
+      gridTemplateColumns: `48px 390px 48px `,
+      gridTemplateRows: "73px 20px 73px 40px 44px",
+      gridTemplateAreas: `". name ." ". . ." ". email . "". . ." ". btn ." `,
     };
+    const styleFormSendCV: React.CSSProperties = {
+      width: "486px",
+      height: "619px",
+      display: "grid",
+      gridTemplateColumns: `48px 390px 48px `,
+      gridTemplateRows:
+        "73px 20px 73px 20px 73px 20px 73px 20px 115px 24px 24px 40px 44px",
+      gridTemplateAreas: `". name ." ". . ." ". location ." ". . . " ". phone ."". . . "". email . "". . ."". message ."". . . " ". file ."". . . "". btn ." `,
+    };
+
+    const styleFormChange = (modalName: TypeModalName) => {
+      switch (modalName) {
+        case "sendCV":
+          return styleFormSendCV;
+        case "subscribe":
+          return styleFormSubscribe;
+      }
+    };
+    const styleForm = styleFormChange(modalName);
+
     const stateInputs = {
       statusInputs: statusInputs,
       setStatusInputs: setStatusInputs,
       formValues: formValues,
       setFormValues: setFormValues,
     };
-
+    const sendDataForm = () => {
+      setOpen(false);
+    };
     const ModalFormsProps: TypeInputsForm = Object.assign(
-      { data: data, style: styleForm },
+      { data: data, style: styleForm, isDisabled, sendDataForm },
       stateInputs
     );
 
@@ -51,10 +76,6 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
         : setIsDisabled(true);
     }, [statusInputs]);
 
-    const onClick = () => {
-      setOpen(false);
-    };
-
     return (
       <div className={styles.container}>
         <div className={styles.iconWrapper} onClick={() => setOpen(false)}>
@@ -63,14 +84,6 @@ export const ModalCTA: FC<TypeModalCTA> = ({ setOpen, modalName }) => {
         <h3 className={styles.title}>{title}</h3>
 
         <InputsForm {...ModalFormsProps} />
-
-        <Btn
-          form='solid'
-          title='send'
-          width={390}
-          disabled={isDisabled}
-          onClick={onClick}
-        />
       </div>
     );
   }

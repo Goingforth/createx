@@ -4,7 +4,7 @@ import { TypeDataFormInput, TypeFormValuesStatusInputs } from "../../data";
 
 export type TypeInputsForm = TypeFormValuesStatusInputs & {
   data: TypeDataFormInput[];
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
   isDisabled: boolean;
   sendDataForm: React.MouseEventHandler<HTMLButtonElement>;
 };

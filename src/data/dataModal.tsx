@@ -2,8 +2,8 @@ import { TypeDataFormInput, retPattern } from "./index";
 import { dataLocations } from "./dataLocation";
 import { TypeModalName } from "../components";
 
-type dataArrayModal = {
-  name: TypeModalName;
+type dataModals = {
+  nameModal: TypeModalName;
   title: string;
   data: TypeDataFormInput[];
 };
@@ -36,6 +36,12 @@ const dataModalSubscribe: TypeDataFormInput[] = [
       noValid: "Please provide a valid input.",
     },
     pattern: retPattern("email"),
+  },
+  {
+    id: "odalSubscribe2",
+    name: "btn",
+    type: "btn",
+    placeholder: "send",
   },
 ];
 
@@ -109,15 +115,21 @@ const dataModalSendCV: TypeDataFormInput[] = [
     name: "file",
     type: "file",
   },
-];
-export const dataArrayModal: dataArrayModal[] = [
   {
-    name: "subscribe",
+    id: "modalSendCV6",
+    name: "btn",
+    type: "btn",
+    placeholder: "send",
+  },
+];
+export const dataModals: dataModals[] = [
+  {
+    nameModal: "subscribe",
     title: "Subscribe to our newsletter",
     data: dataModalSubscribe,
   },
   {
-    name: "sendCV",
+    nameModal: "sendCV",
     title: "Send your CV",
     data: dataModalSendCV,
   },
