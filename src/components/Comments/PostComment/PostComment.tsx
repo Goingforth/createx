@@ -7,22 +7,22 @@ import {
 import { InputsForm, TypeInputsForm } from "../../index";
 
 import { TypeFormValue, dataPostCommentForm } from "../../../data";
-import { Btn } from "../../../uikit";
 import styles from "./PostComment.module.scss";
 
 const styleForm: React.CSSProperties = {
+  width: "810px",
+  height: "342px",
   display: "grid",
-  gridTemplateColumns: "390px 390px",
-  gridTemplateRows: "86px 134px",
-  gap: "22px 30px",
-  gridTemplateAreas: `"name email" "comment comment" `,
+  gridTemplateColumns: "298px 92px 30px 92px 298px",
+  gridTemplateRows: "86px 22px 134px 48px 52px",
+  gridTemplateAreas: `"name name . email email " ". . . . ." "comment comment comment comment comment "  ". . . . ." ". btn btn btn . "`,
 };
-
-const initForm = Object.fromEntries(
-  dataPostCommentForm.map(({ name, defaultValue = "" }) => [name, defaultValue])
+const filterData = dataPostCommentForm.filter((item) => item.name !== "btn");
+const initFormValues = Object.fromEntries(
+  filterData.map(({ name, defaultValue = "" }) => [name, defaultValue])
 );
-const initStatusInput = Object.fromEntries(
-  dataPostCommentForm.map(({ name }) => [name, "blank"])
+const initFormStatusInput = Object.fromEntries(
+  filterData.map(({ name }) => [name, "blank"])
 );
 
 interface DataPostComment {
@@ -36,8 +36,8 @@ interface DataPostComment {
 export const PostComment: FC<DataPostComment> = (props) => {
   const { setNewComment, replyId, setReplyId, isReply, setIsReply } = props;
   const [isDisabled, setIsDisabled] = useState(true);
-  const [statusInputs, setStatusInputs] = useState(initStatusInput);
-  const [formValues, setFormValues] = useState<TypeFormValue>(initForm);
+  const [statusInputs, setStatusInputs] = useState(initFormStatusInput);
+  const [formValues, setFormValues] = useState<TypeFormValue>(initFormValues);
   const idNews = useParams().id;
 
   useEffect(() => {
@@ -53,29 +53,23 @@ export const PostComment: FC<DataPostComment> = (props) => {
     formValues: formValues,
     setFormValues: setFormValues,
   };
-  const PostCommentFormProps: TypeInputsForm = Object.assign(
-    { data: dataPostCommentForm, style: styleForm },
-    stateInputs
-  );
-
-  const onClick = () => {
+  const sendDataForm = () => {
     isReply
       ? (postCommentReplyByID(replyId, formValues), setIsReply(false))
       : postCommentNewsByID(idNews, formValues);
     setReplyId("");
     setNewComment(true);
-    setFormValues(initForm);
-    setStatusInputs(initStatusInput);
+    setFormValues(initFormValues);
+    setStatusInputs(initFormStatusInput);
   };
+  const PostCommentFormProps: TypeInputsForm = Object.assign(
+    { data: dataPostCommentForm, style: styleForm, isDisabled, sendDataForm },
+    stateInputs
+  );
+
   return (
     <div className={styles.container}>
       <InputsForm {...PostCommentFormProps} />
-      <Btn
-        width={215}
-        title='Post comment'
-        disabled={isDisabled}
-        onClick={onClick}
-      />
     </div>
   );
 };

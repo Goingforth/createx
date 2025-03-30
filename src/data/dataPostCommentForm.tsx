@@ -47,4 +47,10 @@ export const dataPostCommentForm: TypeDataFormInput[] = [
     pattern: retPattern("textarea"),
     size: "post",
   },
+  {
+    id: "inputPostComment3",
+    name: "btn",
+    type: "btn",
+    placeholder: "send",
+  },
 ];
