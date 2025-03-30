@@ -49,7 +49,7 @@ import { ModalCTA } from "./ModalCTA/ModalCTA";
 import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
 import { ContactUs } from "./ContactUs/ContactUs";
 import { ContactUsForm } from "./ContactUsForm/ContactUsForm";
-import { HeroPageNews } from "./HeroPage News/HeroPageNews";
+import { HeroPageNews } from "./HeroPageNews/HeroPageNews";
 import { Comments } from "./Comments/Comments";
 import { ContactsOffices } from "./ContactsOffices/ContactsOffices";
 
