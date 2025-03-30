@@ -11,7 +11,6 @@ const Loading = () => (
     <RingLoader
       color={"grey"}
       loading={true}
-      // cssOverride={override}
       size={400}
       aria-label='Loading Spinner'
       data-testid='loader'
