@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { SectionWithChildren } from "../index";
-import { PostCard, ViewAll, ServerError } from "../../uikit";
+// import { PostCard, ViewAll, ServerError } from "../../uikit";
+import { PostCard, ServerError } from "../../uikit";
 import { TypeNews } from "../../data";
 import { getNewsByQuery } from "../../api/getData";
 
@@ -38,11 +39,11 @@ export const NewsHomePage: FC = () => {
         children={[
           <NewsGridBlock key='child0' />,
           <div key='child1' className={styles.wrapper}>
-            <ViewAll
+            {/* <ViewAll
               titleViewAll='Explore all our news posts'
               btnTitle='View all news'
               to='/news'
-            />
+            /> */}
           </div>,
         ]}
       />
