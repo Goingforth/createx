@@ -1,5 +1,4 @@
 import { FC } from "react";
-// import SliderHero from "../SliderHero/SliderHero";
 import { SliderHero } from "../index";
 import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
 // import { Btn } from "../../uikit";

@@ -47,13 +47,15 @@ const SliderHero: FC = () => {
       setIndex: setIndex,
     },
   };
+  console.log("isError :", isError);
+  console.log("isLoading :", !isLoading);
 
   return (
     <>
-      <SliderFullImage {...sliderProps} />
-      <CounterSlider {...counterProps} />
+      {!isError && !isLoading && <SliderFullImage {...sliderProps} />}
       {isError && <ServerError />}
       {isLoading && <LoadingWait />}
+      <CounterSlider {...counterProps} />
     </>
   );
 };

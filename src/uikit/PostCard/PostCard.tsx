@@ -22,7 +22,7 @@ export const PostCard: FC<TypePostCard> = (props) => {
   const metaProps = {
     categories: categories,
     date: date,
-    comments: comments.length,
+    comments: comments?.length,
     size: size,
   };
 

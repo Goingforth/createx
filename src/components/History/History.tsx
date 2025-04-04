@@ -61,9 +61,11 @@ const History: FC = () => {
         {data && (
           <div>
             <div className={styles.imageWrapper}>
-              <ImgCloudinary image={data[active].image} />
+              <ImgCloudinary image={data[active]?.image} />
             </div>
-            <div className={styles.description}>{data[active].description}</div>
+            <div className={styles.description}>
+              {data[active]?.description}
+            </div>
           </div>
         )}
       </div>

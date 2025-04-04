@@ -67,7 +67,7 @@ const Testimonials: FC = () => {
           ))}
         </div>
         <div className={styles.imageWrapper}>
-          {show && data && (
+          {show && data && data?.length > 0 && (
             <div className={styles.pulse}>
               <ImgCloudinary image={data[active].image} />
             </div>
