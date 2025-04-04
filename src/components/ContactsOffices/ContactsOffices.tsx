@@ -2,15 +2,16 @@ import { FC, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { dataSocialLinks, TypeContactsOffices } from "../../data";
-import { SvgSprite, ServerError } from "../../uikit";
+import { SvgSprite, ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./ContactsOffices.module.scss";
 
 export const ContactsOffices: FC = () => {
   const [data, setData] = useState<TypeContactsOffices[]>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/offices", setData, setIsError);
+    getData("/offices", setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -61,6 +62,7 @@ export const ContactsOffices: FC = () => {
             )}
 
             {isError && <ServerError />}
+            {isLoading && <LoadingWait />}
           </>
         }
       />

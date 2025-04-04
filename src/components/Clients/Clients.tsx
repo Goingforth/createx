@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { SectionWithChildren } from "../index";
-import { ImgCloudinary, ServerError } from "../../uikit";
+import { ImgCloudinary, ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 
 import { TypeClientsLogo } from "../../data";
@@ -13,8 +13,10 @@ type PropsClient = {
 const Client: FC<PropsClient> = ({ amountLogo = 6 }) => {
   const [data, setData] = useState<Array<TypeClientsLogo>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
-    getData("/clients_logo", setData, setIsError);
+    getData("/clients_logo", setData, setIsError, setIsLoading);
   }, []);
   return (
     <div className={styles.container}>
@@ -25,6 +27,7 @@ const Client: FC<PropsClient> = ({ amountLogo = 6 }) => {
           </div>
         ))}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

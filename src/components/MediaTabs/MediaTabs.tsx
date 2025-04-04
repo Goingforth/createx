@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { TypeMediaTabs } from "../../data";
 import MediaTab from "../../uikit/Tabs/MediaTab/MediaTab";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./MediaTabs.module.scss";
 
@@ -9,9 +9,10 @@ const MediaTabs: FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [data, setData] = useState<Array<TypeMediaTabs>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/media_tabs", setData, setIsError);
+    getData("/media_tabs", setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -27,6 +28,7 @@ const MediaTabs: FC = () => {
           />
         ))}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

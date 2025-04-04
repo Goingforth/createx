@@ -6,7 +6,7 @@ import {
   CounterSlider,
   TypeCounterSlider,
 } from "../index";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 
 const SliderHero: FC = () => {
@@ -15,8 +15,9 @@ const SliderHero: FC = () => {
 
   const [data, setData] = useState<Array<TypeSliderFullImage>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/slider_hero", setData, setIsError);
+    getData("/slider_hero", setData, setIsError, setIsLoading);
   }, []);
 
   const sliderProps: TypeSliderProps = {
@@ -52,6 +53,7 @@ const SliderHero: FC = () => {
       <SliderFullImage {...sliderProps} />
       <CounterSlider {...counterProps} />
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };

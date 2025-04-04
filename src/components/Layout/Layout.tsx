@@ -2,10 +2,10 @@ import { FC, lazy, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { RingLoader } from "react-spinners";
 import { Header } from "../index";
+
 const Footer = lazy(() => import("../Footer/Footer"));
 const Application = lazy(() => import("../Application/Application"));
 import styles from "./Layout.module.scss";
-
 const Loading = () => (
   <div className={styles.spinner}>
     <RingLoader
@@ -20,6 +20,7 @@ const Loading = () => (
 
 const Layout: FC = () => {
   const location = useLocation();
+
   return (
     <Suspense fallback={<Loading />}>
       <div className={styles.body}>

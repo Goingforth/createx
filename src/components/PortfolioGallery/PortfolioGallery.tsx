@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { PortfolioCard } from "../index";
 import { TypePortfolioCard } from "../../data";
-import { SvgSprite, ServerError } from "../../uikit";
+import { SvgSprite, ServerError, LoadingWait } from "../../uikit";
 
 import { getData } from "../../api/getData";
 import styles from "./PortfolioGallery.module.scss";
@@ -10,9 +10,10 @@ const PortfolioGallery: FC = () => {
   const [indexRender, setIndexRender] = useState(2);
   const [data, setData] = useState<Array<TypePortfolioCard>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/portfolio_card", setData, setIsError);
+    getData("/portfolio_card", setData, setIsError, setIsLoading);
   }, []);
   const endIndex = data && data.length - 1;
   const numberItemRow = 3;
@@ -45,6 +46,7 @@ const PortfolioGallery: FC = () => {
         </>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import Step from "./Step/Step";
 import { TypeDataStep } from "../../data";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./Steps.module.scss";
 
@@ -9,9 +9,10 @@ export const Steps: FC = () => {
   const [activeStep, setActiveStep] = useState(-1);
   const [data, setData] = useState<Array<TypeDataStep>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/steps", setData, setIsError);
+    getData("/steps", setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -31,6 +32,7 @@ export const Steps: FC = () => {
         ))}
       </div>
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

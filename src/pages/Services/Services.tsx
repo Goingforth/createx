@@ -3,15 +3,16 @@ import { HeroPage, BlockServicePage } from "../../components";
 import { ScrollToTop } from "../../utils";
 import { TypeServicesPage } from "../../data";
 
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./Services.module.scss";
 
 const Services: FC = () => {
   const [data, setData] = useState<Array<TypeServicesPage>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/services", setData, setIsError);
+    getData("/services", setData, setIsError, setIsLoading);
   }, []);
   return (
     <>
@@ -25,6 +26,7 @@ const Services: FC = () => {
             <BlockServicePage key={props.title} index={index} {...props} />
           ))}
         {isError && <ServerError />}
+        {isLoading && <LoadingWait />}
       </div>
     </>
   );

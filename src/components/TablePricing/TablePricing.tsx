@@ -1,9 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import SvgSprite from "../../uikit/SvgSprite/SvgSprite";
-
 import { TypeTablePricingItem } from "../../data";
 
-import { ServerError } from "../../uikit";
+import { ServerError, SvgSprite, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./TablePricing.module.scss";
 
@@ -12,8 +10,9 @@ import Btn from "../../uikit/Buttons/Btn/Btn";
 const TablePricing: FC = () => {
   const [data, setData] = useState<Array<TypeTablePricingItem>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/table_pricing", setData, setIsError);
+    getData("/table_pricing", setData, setIsError, setIsLoading);
   }, []);
   return (
     <div className={styles.container}>
@@ -68,6 +67,7 @@ const TablePricing: FC = () => {
         </table>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

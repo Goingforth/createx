@@ -1,7 +1,13 @@
 import { FC, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { TypeDataServicesItem } from "../../data";
-import { IconBoxBasic, ViewAll, TypeViewAll, ServerError } from "../../uikit";
+import {
+  IconBoxBasic,
+  ViewAll,
+  TypeViewAll,
+  ServerError,
+  LoadingWait,
+} from "../../uikit";
 
 import { getData } from "../../api/getData";
 
@@ -15,8 +21,9 @@ const ServicesView: FC = () => {
 
   const [data, setData] = useState<Array<TypeDataServicesItem>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/services_item", setData, setIsError);
+    getData("/services_item", setData, setIsError, setIsLoading);
   }, []);
 
   const PropsViewAll: TypeViewAll = {
@@ -55,6 +62,7 @@ const ServicesView: FC = () => {
       {isError && <ServerError />}
       <div>
         <ViewAll {...PropsViewAll} />
+        {isLoading && <LoadingWait />}
       </div>
     </div>
   );

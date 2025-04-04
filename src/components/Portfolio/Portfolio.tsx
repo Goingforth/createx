@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import SliderCarousel from "../../uikit/SliderCarousel/SliderCarousel";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 
 import { getData } from "../../api/getData";
 
@@ -16,9 +16,10 @@ type Props = {
 const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
   const [data, setData] = useState<Array<TypePortfolioCard>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/portfolio_card", setData, setIsError);
+    getData("/portfolio_card", setData, setIsError, setIsLoading);
   }, []);
   const dataFilteredPortfolioCard = data
     ? category !== undefined
@@ -37,6 +38,7 @@ const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
     <div style={{ paddingTop: pt, paddingBottom: pb }}>
       {dataFilteredPortfolioCard && <SliderCarousel {...props} title={title} />}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

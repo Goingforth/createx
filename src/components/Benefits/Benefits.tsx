@@ -1,8 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { IconBoxBasic, SvgSprite, Btn } from "../../uikit";
+import {
+  IconBoxBasic,
+  SvgSprite,
+  Btn,
+  ServerError,
+  LoadingWait,
+} from "../../uikit";
 import { TypeBenefits } from "../../data";
-import { ServerError } from "../../uikit";
 import { getDataByPage } from "../../api/getData";
 
 import styles from "./Benefits.module.scss";
@@ -11,9 +16,10 @@ export const Benefits: FC = () => {
   const location = useLocation().pathname;
   const [data, setData] = useState<TypeBenefits>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getDataByPage("/benefits", location, setData, setIsError);
+    getDataByPage("/benefits", location, setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -43,6 +49,7 @@ export const Benefits: FC = () => {
         </div>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };

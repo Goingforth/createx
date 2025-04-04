@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { SectionWithChildren } from "../index";
-import { PostCard, ViewAll, ServerError } from "../../uikit";
+import { PostCard, ViewAll, ServerError, LoadingWait } from "../../uikit";
 import { TypeNews } from "../../data";
 import { getNewsByQuery } from "../../api/getData";
 
@@ -9,8 +9,9 @@ import styles from "./NewsHomePage.module.scss";
 const NewsGridBlock: FC = () => {
   const [data, setData] = useState<Array<TypeNews>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getNewsByQuery({ limit: 3 }, setData, setIsError);
+    getNewsByQuery({ limit: 3 }, setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -25,6 +26,7 @@ const NewsGridBlock: FC = () => {
         </div>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };

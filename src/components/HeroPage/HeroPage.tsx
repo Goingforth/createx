@@ -4,7 +4,7 @@ import { BreadCrumb } from "../index";
 
 import { TypeHeroPage } from "../../data";
 
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getDataByPage } from "../../api/getData";
 
 import styles from "./HeroPage.module.scss";
@@ -16,9 +16,10 @@ const HeroPage: FC = () => {
 
   const [data, setData] = useState<TypeHeroPage>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getDataByPage("/hero_page", location, setData, setIsError);
+    getDataByPage("/hero_page", location, setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -59,6 +60,7 @@ const HeroPage: FC = () => {
         </div>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };

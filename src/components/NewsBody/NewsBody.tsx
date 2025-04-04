@@ -1,6 +1,12 @@
 import { FC, useState, useEffect } from "react";
 import { categoriesNews, TypeCategories, TypeNews } from "../../data";
-import { BasicTab, PostCard, Pagination, ServerError } from "../../uikit";
+import {
+  BasicTab,
+  PostCard,
+  Pagination,
+  ServerError,
+  LoadingWait,
+} from "../../uikit";
 import { getNewsByQuery } from "../../api/getData";
 
 import styles from "./NewsBody.module.scss";
@@ -9,9 +15,15 @@ const NewsBody: FC = () => {
   const [activeTabs, setActiveTabs] = useState<Array<string>>(["All News"]);
   const [data, setData] = useState<Array<TypeNews>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getNewsByQuery({ categories: activeTabs }, setData, setIsError);
+    getNewsByQuery(
+      { categories: activeTabs },
+      setData,
+      setIsError,
+      setIsLoading
+    );
   }, [activeTabs]);
 
   const onClick = (category: TypeCategories) => {
@@ -56,6 +68,7 @@ const NewsBody: FC = () => {
         <ServerError />
       )}
       <Pagination />
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import {
   ImgCloudinary,
   SliderControls,
   ServerError,
+  LoadingWait,
 } from "../../uikit";
 import { getData } from "../../api/getData";
 
@@ -14,9 +15,10 @@ const History: FC = () => {
   const [active, setActive] = useState(0);
   const [data, setData] = useState<Array<TypeHistorySlide>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/history", setData, setIsError);
+    getData("/history", setData, setIsError, setIsLoading);
   }, []);
   return (
     <div className={styles.container}>
@@ -65,6 +67,7 @@ const History: FC = () => {
           </div>
         )}
       </div>
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

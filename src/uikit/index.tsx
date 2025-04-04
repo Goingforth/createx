@@ -25,6 +25,7 @@ import { ImgCloudinary } from "./ImgCloudinari/ImgClaudinary";
 import { SliderControls } from "./SliderControls/SliderControls";
 import { ServerError } from "./ServerError/ServerError";
 import { CheckBoxesMulti } from "./CheckBoxesMulti/CheckBoxesMulti";
+import { LoadingWait } from "./LoadingWait/LoadingWait";
 
 export {
   InputForms,
@@ -52,4 +53,5 @@ export {
   SliderControls,
   ServerError,
   CheckBoxesMulti,
+  LoadingWait,
 };

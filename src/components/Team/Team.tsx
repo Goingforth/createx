@@ -5,7 +5,7 @@ import { SectionWithChildren } from "../index";
 import TeamMemberCard from "./TeamMemberCard/TeamMemberCard";
 import { TypeTeamMember } from "../../data";
 import { getData } from "../../api/getData";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 
 import styles from "./Team.module.scss";
 
@@ -14,9 +14,10 @@ const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 const TeamGallery: FC = () => {
   const [data, setData] = useState<Array<TypeTeamMember>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/team", setData, setIsError);
+    getData("/team", setData, setIsError, setIsLoading);
   }, []);
 
   return (
@@ -29,6 +30,7 @@ const TeamGallery: FC = () => {
         </>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

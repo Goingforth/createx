@@ -3,7 +3,7 @@ import { TestimonialsCard } from "../index";
 import { SliderControls, ImgCloudinary } from "../../uikit/";
 import { TypeTestimonialsCards } from "../../data";
 
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 import styles from "./Testimonials.module.scss";
 
@@ -14,9 +14,10 @@ const Testimonials: FC = () => {
 
   const [data, setData] = useState<Array<TypeTestimonialsCards>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData("/testimonials", setData, setIsError);
+    getData("/testimonials", setData, setIsError, setIsLoading);
   }, []);
 
   const stepOffsetCard = 600;
@@ -72,6 +73,7 @@ const Testimonials: FC = () => {
             </div>
           )}
           {isError && <ServerError />}
+          {isLoading && <LoadingWait />}
         </div>
       </div>
     </div>

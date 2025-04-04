@@ -3,8 +3,10 @@ import api from "./api";
 export const getData = async (
   collection: string,
   setData: React.Dispatch<React.SetStateAction<any>>,
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  setIsLoading(true);
   try {
     const response = await api.get(`${collection}`);
     setData(response.data);
@@ -12,6 +14,8 @@ export const getData = async (
   } catch {
     setData([]);
     setIsError(true);
+  } finally {
+    setIsLoading(false);
   }
 };
 
@@ -19,8 +23,10 @@ export const getDataByPage = async (
   collection: string,
   page: string,
   setData: React.Dispatch<React.SetStateAction<any>>,
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  setIsLoading(true);
   try {
     const response = await api.get(collection, {
       params: { page: `${page}` },
@@ -30,13 +36,17 @@ export const getDataByPage = async (
   } catch {
     setData([]);
     setIsError(true);
+  } finally {
+    setIsLoading(false);
   }
 };
 export const getGalleryByName = async (
   name: string,
   setData: React.Dispatch<React.SetStateAction<any>>,
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  setIsLoading(true);
   try {
     const response = await api.get("/gallerys", {
       params: { name: name },
@@ -46,14 +56,18 @@ export const getGalleryByName = async (
   } catch {
     setData([]);
     setIsError(true);
+  } finally {
+    setIsLoading(false);
   }
 };
 
 export const getNewsByQuery = async (
   params: { [key: string]: number | string[] },
   setData: React.Dispatch<React.SetStateAction<any>>,
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  setIsLoading(true);
   try {
     const response = await api.get("/news", {
       params: params,
@@ -63,14 +77,18 @@ export const getNewsByQuery = async (
   } catch {
     setData([]);
     setIsError(true);
+  } finally {
+    setIsLoading(false);
   }
 };
 
 export const getNewsByID = async (
   id: string,
   setData: React.Dispatch<React.SetStateAction<any>>,
-  setIsError: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  setIsLoading(true);
   try {
     const response = await api.get(`/news/${id}`);
     setData(response.data);
@@ -78,5 +96,7 @@ export const getNewsByID = async (
   } catch {
     setData([]);
     setIsError(true);
+  } finally {
+    setIsLoading(false);
   }
 };
