@@ -7,7 +7,7 @@ import {
   TypeSlideMiniImage,
 } from "../index";
 import { widthBlock, TypeDataGalleryProject } from "../../data";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getGalleryByName } from "../../api/getData";
 import styles from "./SliderForGallery.module.scss";
 
@@ -20,8 +20,9 @@ export const SliderForGallery: FC = () => {
   const location = useLocation().pathname;
   const [data, setData] = useState<TypeStateGallery>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getGalleryByName(location, setData, setIsError);
+    getGalleryByName(location, setData, setIsError, setIsLoading);
   }, []);
 
   const [offset, setOffset] = useState(0);
@@ -63,6 +64,7 @@ export const SliderForGallery: FC = () => {
       ) : (
         <ServerError />
       )}
+      {isLoading && <LoadingWait />}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getDataByPage } from "../../api/getData";
 import { TypeDataProject } from "../../data";
 
@@ -10,9 +10,10 @@ const AboutProject: FC = () => {
   const location = useLocation().pathname;
   const [data, setData] = useState<TypeDataProject>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getDataByPage("/projects", location, setData, setIsError);
+    getDataByPage("/projects", location, setData, setIsError, setIsLoading);
   }, []);
 
   const info = data ? data.info : [];
@@ -48,6 +49,7 @@ const AboutProject: FC = () => {
         </div>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };

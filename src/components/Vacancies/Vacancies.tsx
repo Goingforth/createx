@@ -2,14 +2,15 @@ import { FC, useEffect, useState } from "react";
 import { TypeDataVacancyCard } from "../../data";
 import { VacancyCard } from "../index";
 import styles from "./Vacancies.module.scss";
-import { ServerError } from "../../uikit";
+import { ServerError, LoadingWait } from "../../uikit";
 import { getData } from "../../api/getData";
 
 const Vacancies: FC = () => {
   const [data, setData] = useState<Array<TypeDataVacancyCard>>();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    getData("/vacancies", setData, setIsError);
+    getData("/vacancies", setData, setIsError, setIsLoading);
   }, []);
   return (
     <>
@@ -21,6 +22,7 @@ const Vacancies: FC = () => {
         </div>
       )}
       {isError && <ServerError />}
+      {isLoading && <LoadingWait />}
     </>
   );
 };
