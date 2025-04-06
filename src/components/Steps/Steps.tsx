@@ -1,35 +1,31 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import Step from "./Step/Step";
 import { TypeDataStep } from "../../data";
 import { ServerError, LoadingWait } from "../../uikit";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 import styles from "./Steps.module.scss";
 
 export const Steps: FC = () => {
+  const { data, isLoading, isError } = useData("/steps");
   const [activeStep, setActiveStep] = useState(-1);
-  const [data, setData] = useState<Array<TypeDataStep>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getData("/steps", setData, setIsError, setIsLoading);
-  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.stepsTitle}>That’s how we do it</div>
       <div className={styles.steps}>
-        {data?.map(({ id, number, title, info }, index) => (
-          <Step
-            key={id}
-            number={number}
-            title={title}
-            info={info}
-            activeStep={activeStep}
-            setActiveStep={setActiveStep}
-            index={index}
-          />
-        ))}
+        {data?.map(
+          ({ id, number, title, info }: TypeDataStep, index: number) => (
+            <Step
+              key={id}
+              number={number}
+              title={title}
+              info={info}
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+              index={index}
+            />
+          )
+        )}
       </div>
       {isError && <ServerError />}
       {isLoading && <LoadingWait />}

@@ -1,19 +1,13 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { dataSocialLinks, TypeContactsOffices } from "../../data";
 import { SvgSprite, ServerError, LoadingWait } from "../../uikit";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 import styles from "./ContactsOffices.module.scss";
 
 export const ContactsOffices: FC = () => {
-  const [data, setData] = useState<TypeContactsOffices[]>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getData("/offices", setData, setIsError, setIsLoading);
-  }, []);
-
+  const { data, isLoading, isError } = useData("/offices");
   return (
     <div className={styles.container}>
       <SectionWithChildren
@@ -23,41 +17,50 @@ export const ContactsOffices: FC = () => {
           <>
             {data !== undefined && (
               <div className={styles.offices}>
-                {data.map(({ _id, city, address, call, email, schedule }) => (
-                  <div key={_id} className={styles.office}>
-                    <div className={styles.city}>{city}</div>
-                    <div className={styles.map}>
-                      <div className={styles.address}>{address}</div>
-                      <NavLink
-                        to={`https://www.google.com/maps/search/${address}`}
-                        className={styles.link}
-                      >
-                        See on the map
-                      </NavLink>
-                    </div>
-                    <div className={styles.block}>
-                      <div>
-                        <span>Call :</span>
-                        <NavLink to={`tel:${call}`} className={styles.spans}>
-                          {call}
-                        </NavLink>
-                      </div>
-                      <div>
-                        <span>Email :</span>
+                {data.map(
+                  ({
+                    _id,
+                    city,
+                    address,
+                    call,
+                    email,
+                    schedule,
+                  }: TypeContactsOffices) => (
+                    <div key={_id} className={styles.office}>
+                      <div className={styles.city}>{city}</div>
+                      <div className={styles.map}>
+                        <div className={styles.address}>{address}</div>
                         <NavLink
-                          to={`mailto:${email}`}
-                          className={styles.spans}
+                          to={`https://www.google.com/maps/search/${address}`}
+                          className={styles.link}
                         >
-                          {email}
+                          See on the map
                         </NavLink>
                       </div>
-                      <div>
-                        <span>Schedule :</span>
-                        <span className={styles.spans}>{schedule}</span>
+                      <div className={styles.block}>
+                        <div>
+                          <span>Call :</span>
+                          <NavLink to={`tel:${call}`} className={styles.spans}>
+                            {call}
+                          </NavLink>
+                        </div>
+                        <div>
+                          <span>Email :</span>
+                          <NavLink
+                            to={`mailto:${email}`}
+                            className={styles.spans}
+                          >
+                            {email}
+                          </NavLink>
+                        </div>
+                        <div>
+                          <span>Schedule :</span>
+                          <span className={styles.spans}>{schedule}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             )}
 

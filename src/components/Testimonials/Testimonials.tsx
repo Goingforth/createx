@@ -1,24 +1,17 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { TestimonialsCard } from "../index";
 import { SliderControls, ImgCloudinary } from "../../uikit/";
 import { TypeTestimonialsCards } from "../../data";
 
 import { ServerError, LoadingWait } from "../../uikit";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 import styles from "./Testimonials.module.scss";
 
 const Testimonials: FC = () => {
+  const { data, isLoading, isError } = useData("/testimonials");
   const [active, setActive] = useState(0);
   const [offsetCard, setOffsetCard] = useState(0);
   const [show, setShow] = useState(true);
-
-  const [data, setData] = useState<Array<TypeTestimonialsCards>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getData("/testimonials", setData, setIsError, setIsLoading);
-  }, []);
 
   const stepOffsetCard = 600;
 
@@ -54,7 +47,7 @@ const Testimonials: FC = () => {
           />
         </div>
         <div className={styles.windowCard}>
-          {data?.map((card) => (
+          {data?.map((card: TypeTestimonialsCards) => (
             <div
               key={card.id}
               style={{

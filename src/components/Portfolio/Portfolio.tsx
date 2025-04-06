@@ -1,8 +1,8 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import SliderCarousel from "../../uikit/SliderCarousel/SliderCarousel";
 import { ServerError, LoadingWait } from "../../uikit";
 
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 
 import { TypeCategoryPortfolio, TypePortfolioCard } from "../../data";
 
@@ -14,16 +14,13 @@ type Props = {
 };
 
 const Portfolio: FC<Props> = ({ title, pt, pb, category }) => {
-  const [data, setData] = useState<Array<TypePortfolioCard>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { data, isLoading, isError } = useData("/portfolio_card");
 
-  useEffect(() => {
-    getData("/portfolio_card", setData, setIsError, setIsLoading);
-  }, []);
   const dataFilteredPortfolioCard = data
     ? category !== undefined
-      ? data.filter((card) => category.includes(card.category))
+      ? data.filter((card: TypePortfolioCard) =>
+          category.includes(card.category)
+        )
       : data
     : [];
 

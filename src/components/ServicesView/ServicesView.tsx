@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { TypeDataServicesItem } from "../../data";
 import {
@@ -9,22 +9,16 @@ import {
   LoadingWait,
 } from "../../uikit";
 
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 
 import styles from "./ServicesView.module.scss";
 
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const ServicesView: FC = () => {
+  const { data, isLoading, isError } = useData("/services_item");
   const [blockHover, setBlockHover] = useState(false);
   const [isHover, setIsHover] = useState("");
-
-  const [data, setData] = useState<Array<TypeDataServicesItem>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getData("/services_item", setData, setIsError, setIsLoading);
-  }, []);
 
   const PropsViewAll: TypeViewAll = {
     titleViewAll: "Learn more about our services",
@@ -36,7 +30,7 @@ const ServicesView: FC = () => {
     <div className={styles.servicesView}>
       {data && (
         <div className={styles.container}>
-          {data.map((item) => (
+          {data.map((item: TypeDataServicesItem) => (
             <Link
               to={item.to}
               className={styles.box}

@@ -1,20 +1,15 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { PortfolioCard } from "../index";
 import { TypePortfolioCard } from "../../data";
 import { SvgSprite, ServerError, LoadingWait } from "../../uikit";
 
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 import styles from "./PortfolioGallery.module.scss";
 
 const PortfolioGallery: FC = () => {
+  const { data, isLoading, isError } = useData("/portfolio_card");
   const [indexRender, setIndexRender] = useState(2);
-  const [data, setData] = useState<Array<TypePortfolioCard>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    getData("/portfolio_card", setData, setIsError, setIsLoading);
-  }, []);
   const endIndex = data && data.length - 1;
   const numberItemRow = 3;
 
@@ -24,7 +19,7 @@ const PortfolioGallery: FC = () => {
         <>
           <div className={styles.containerGallery}>
             {data.map(
-              (card, index) =>
+              (card: TypePortfolioCard, index: number) =>
                 index <= indexRender && (
                   <PortfolioCard key={card.id} {...card} />
                 )

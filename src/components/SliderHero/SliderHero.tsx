@@ -1,5 +1,5 @@
-import { FC, useState, useEffect } from "react";
-import { TypeSliderFullImage, widthBlock } from "../../data";
+import { FC, useState } from "react";
+import { widthBlock } from "../../data";
 import {
   SliderFullImage,
   TypeSliderProps,
@@ -7,18 +7,12 @@ import {
   TypeCounterSlider,
 } from "../index";
 import { ServerError, LoadingWait } from "../../uikit";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 
 const SliderHero: FC = () => {
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);
-
-  const [data, setData] = useState<Array<TypeSliderFullImage>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getData("/slider_hero", setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useData("/slider_hero");
 
   const sliderProps: TypeSliderProps = {
     widthSlide: widthBlock.widthApp,
@@ -47,8 +41,6 @@ const SliderHero: FC = () => {
       setIndex: setIndex,
     },
   };
-  console.log("isError :", isError);
-  console.log("isLoading :", !isLoading);
 
   return (
     <>

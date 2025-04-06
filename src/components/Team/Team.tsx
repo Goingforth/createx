@@ -1,10 +1,9 @@
 import { FC } from "react";
-import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { SectionWithChildren } from "../index";
 import TeamMemberCard from "./TeamMemberCard/TeamMemberCard";
 import { TypeTeamMember } from "../../data";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 import { ServerError, LoadingWait } from "../../uikit";
 
 import styles from "./Team.module.scss";
@@ -12,13 +11,7 @@ import styles from "./Team.module.scss";
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const TeamGallery: FC = () => {
-  const [data, setData] = useState<Array<TypeTeamMember>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getData("/team", setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useData("/team");
 
   return (
     <div className={styles.containerGallery}>

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 
 import { TypeCoreValuesItem } from "../../../data";
 import {
@@ -7,20 +7,16 @@ import {
   SvgSprite,
   LoadingWait,
 } from "../../../uikit/";
-import { getData } from "../../../api/getData";
+import { useData } from "../../../api/index";
 import styles from "./CoreValuesView.module.scss";
 
 const CoreValuesView: FC = () => {
-  const [data, setData] = useState<Array<TypeCoreValuesItem>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getData("/corevalues", setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useData("/corevalues");
+
   return (
     <div className={styles.container}>
       {data &&
-        data.map((item, index) => (
+        data.map((item: TypeCoreValuesItem, index: number) => (
           <div key={item.id} className={styles.item}>
             <IconBoxBasic {...item} />
             {index !== data.length - 1 && <SvgSprite id='divider' />}

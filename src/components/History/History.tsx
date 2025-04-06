@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { TypeHistorySlide } from "../../data";
 import {
   SvgSprite,
@@ -7,26 +7,20 @@ import {
   ServerError,
   LoadingWait,
 } from "../../uikit";
-import { getData } from "../../api/getData";
+import { useData } from "../../api/index";
 
 import styles from "./History.module.scss";
 
 const History: FC = () => {
+  const { data, isLoading, isError } = useData("/history");
   const [active, setActive] = useState(0);
-  const [data, setData] = useState<Array<TypeHistorySlide>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getData("/history", setData, setIsError, setIsLoading);
-  }, []);
   return (
     <div className={styles.container}>
       <div>
         <div className={styles.title}>Our history</div>
         {isError && <ServerError />}
         <div className={styles.timeline}>
-          {data?.map((history, index) => (
+          {data?.map((history: TypeHistorySlide, index: number) => (
             <div
               key={history.id}
               className={[
