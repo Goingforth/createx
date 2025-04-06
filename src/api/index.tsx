@@ -1,3 +1,5 @@
-import { useData } from "./getData.service/getData";
+import { useData } from "./getData.service/useData";
+import { useDataByPage } from "./getData.service/useDataByPage";
+import { useGalleryByName } from "./getData.service/useGalleryByName";
 
-export { useData };
+export { useData, useDataByPage, useGalleryByName };

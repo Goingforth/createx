@@ -1,11 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import { BreadCrumb } from "../index";
-
-import { TypeHeroPage } from "../../data";
-
 import { ServerError, LoadingWait } from "../../uikit";
-import { getDataByPage } from "../../api/getData";
+import { useDataByPage } from "../../api/index";
 
 import styles from "./HeroPage.module.scss";
 
@@ -13,14 +10,7 @@ const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 
 const HeroPage: FC = () => {
   const location = useLocation().pathname;
-
-  const [data, setData] = useState<TypeHeroPage>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getDataByPage("/hero_page", location, setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useDataByPage("/hero_page", location);
 
   return (
     <>

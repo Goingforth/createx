@@ -6,7 +6,7 @@ import { useData } from "../../api/index";
 import styles from "./MediaTabs.module.scss";
 
 const MediaTabs: FC = () => {
-  const { data, isLoading, isError } = useData("/media_tab");
+  const { data, isLoading, isError } = useData("/media_tabs");
   const [activeTab, setActiveTab] = useState(0);
 
   return (

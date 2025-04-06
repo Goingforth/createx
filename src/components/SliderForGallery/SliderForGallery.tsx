@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   SliderFullImage,
@@ -6,24 +6,14 @@ import {
   SliderMiniImage,
   TypeSlideMiniImage,
 } from "../index";
-import { widthBlock, TypeDataGalleryProject } from "../../data";
+import { widthBlock } from "../../data";
 import { ServerError, LoadingWait } from "../../uikit";
-import { getGalleryByName } from "../../api/getData";
+import { useGalleryByName } from "../../api/index";
 import styles from "./SliderForGallery.module.scss";
-
-interface TypeStateGallery {
-  full: TypeDataGalleryProject[];
-  mini: TypeDataGalleryProject[];
-}
 
 export const SliderForGallery: FC = () => {
   const location = useLocation().pathname;
-  const [data, setData] = useState<TypeStateGallery>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getGalleryByName(location, setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useGalleryByName(location);
 
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import {
   IconBoxBasic,
@@ -7,20 +7,15 @@ import {
   ServerError,
   LoadingWait,
 } from "../../uikit";
-import { TypeBenefits } from "../../data";
-import { getDataByPage } from "../../api/getData";
+import { TypeDataBenefits } from "../../data";
+import { useDataByPage } from "../../api/index";
 
 import styles from "./Benefits.module.scss";
 
 export const Benefits: FC = () => {
   const location = useLocation().pathname;
-  const [data, setData] = useState<TypeBenefits>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getDataByPage("/benefits", location, setData, setIsError, setIsLoading);
-  }, []);
+  const { data, isLoading, isError } = useDataByPage("/benefits", location);
+  console.log(data);
 
   return (
     <>
@@ -32,14 +27,16 @@ export const Benefits: FC = () => {
 
               <div className={styles.subTitle}>{data.subTitle}</div>
               <div className={styles.benefits}>
-                {data.dataArray.map((benefit, index) => (
-                  <div key={benefit.id} className={styles.icons}>
-                    <IconBoxBasic theme={data.theme} {...benefit} />
-                    {index !== data.dataArray.length - 1 && (
-                      <SvgSprite id='divider' />
-                    )}
-                  </div>
-                ))}
+                {data.dataArray.map(
+                  (benefit: TypeDataBenefits, index: number) => (
+                    <div key={benefit.id} className={styles.icons}>
+                      <IconBoxBasic theme={data.theme} {...benefit} />
+                      {index !== data.dataArray.length - 1 && (
+                        <SvgSprite id='divider' />
+                      )}
+                    </div>
+                  )
+                )}
               </div>
             </div>
             <div className={styles.buttonDiscuss}>

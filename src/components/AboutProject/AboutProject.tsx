@@ -1,21 +1,13 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import { ServerError, LoadingWait } from "../../uikit";
-import { getDataByPage } from "../../api/getData";
-import { TypeDataProject } from "../../data";
+import { useDataByPage } from "../../api/index";
 
 import styles from "./AboutProject.module.scss";
 
 const AboutProject: FC = () => {
   const location = useLocation().pathname;
-  const [data, setData] = useState<TypeDataProject>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getDataByPage("/projects", location, setData, setIsError, setIsLoading);
-  }, []);
-
+  const { data, isLoading, isError } = useDataByPage("/projects", location);
   const info = data ? data.info : [];
   const keysInfo: string[] = Object.keys(info);
   const valuesInfo: string[] = Object.values(info);
