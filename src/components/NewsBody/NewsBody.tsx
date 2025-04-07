@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { categoriesNews, TypeCategories, TypeNews } from "../../data";
 import {
   BasicTab,
@@ -7,24 +7,15 @@ import {
   ServerError,
   LoadingWait,
 } from "../../uikit";
-import { getNewsByQuery } from "../../api/getData";
+import { useNewsByQuery } from "../../api/index";
 
 import styles from "./NewsBody.module.scss";
 
 const NewsBody: FC = () => {
   const [activeTabs, setActiveTabs] = useState<Array<string>>(["All News"]);
-  const [data, setData] = useState<Array<TypeNews>>();
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getNewsByQuery(
-      { categories: activeTabs },
-      setData,
-      setIsError,
-      setIsLoading
-    );
-  }, [activeTabs]);
+  const { data, isLoading, isError } = useNewsByQuery({
+    categories: activeTabs,
+  });
 
   const onClick = (category: TypeCategories) => {
     if (category === "All News") {
@@ -60,7 +51,7 @@ const NewsBody: FC = () => {
       {isError === false ? (
         <div className={styles.gallery}>
           {data &&
-            data.map((props) => (
+            data.map((props: TypeNews) => (
               <PostCard key={props._id} {...props} size='regular' />
             ))}
         </div>
