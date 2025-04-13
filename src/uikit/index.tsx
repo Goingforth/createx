@@ -26,6 +26,7 @@ import { SliderControls } from "./SliderControls/SliderControls";
 import { ServerError } from "./ServerError/ServerError";
 import { CheckBoxesMulti } from "./CheckBoxesMulti/CheckBoxesMulti";
 import { LoadingWait } from "./LoadingWait/LoadingWait";
+import { SkeletonCardNews } from "./Skeleton/SkeletonCardNews/SkeletonCardNews";
 
 export {
   InputForms,
@@ -54,4 +55,5 @@ export {
   ServerError,
   CheckBoxesMulti,
   LoadingWait,
+  SkeletonCardNews,
 };

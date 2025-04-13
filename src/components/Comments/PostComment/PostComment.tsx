@@ -1,9 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {
-  postCommentNewsByID,
-  postCommentReplyByID,
-} from "../../../api/postCommentNews";
+import { postCommentNewsByID } from "../../../api/index";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InputsForm, TypeInputsForm } from "../../index";
 
 import { TypeFormValue, dataPostCommentForm } from "../../../data";
@@ -26,19 +24,34 @@ const initFormStatusInput = Object.fromEntries(
 );
 
 interface DataPostComment {
-  setNewComment: React.Dispatch<React.SetStateAction<boolean>>;
-  replyId: string;
-  setReplyId: React.Dispatch<React.SetStateAction<string>>;
+  replyName: string;
+  setReplyName: React.Dispatch<React.SetStateAction<string>>;
   isReply: boolean;
   setIsReply: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const PostComment: FC<DataPostComment> = (props) => {
-  const { setNewComment, replyId, setReplyId, isReply, setIsReply } = props;
+  const queryClient = useQueryClient();
+  const { isReply, setIsReply, replyName, setReplyName } = props;
   const [isDisabled, setIsDisabled] = useState(true);
   const [statusInputs, setStatusInputs] = useState(initFormStatusInput);
   const [formValues, setFormValues] = useState<TypeFormValue>(initFormValues);
   const idNews = useParams().id;
+
+  const initState = () => {
+    setFormValues(initFormValues);
+    setStatusInputs(initFormStatusInput);
+    isReply && (setIsReply(false), setReplyName(""));
+  };
+
+  const { mutate } = useMutation({
+    mutationKey: [`postsnews/${idNews}`],
+    mutationFn: () => postCommentNewsByID(idNews, formValues, replyName),
+    onSuccess: () => {
+      initState();
+      queryClient.invalidateQueries({ queryKey: [`newsByID/${idNews}`] });
+    },
+  });
 
   useEffect(() => {
     Object.values(statusInputs).filter((item) => item === "valid").length ===
@@ -53,14 +66,9 @@ export const PostComment: FC<DataPostComment> = (props) => {
     formValues: formValues,
     setFormValues: setFormValues,
   };
-  const sendDataForm = () => {
-    isReply
-      ? (postCommentReplyByID(replyId, formValues), setIsReply(false))
-      : postCommentNewsByID(idNews, formValues);
-    setReplyId("");
-    setNewComment(true);
-    setFormValues(initFormValues);
-    setStatusInputs(initFormStatusInput);
+
+  const sendDataForm = async () => {
+    mutate();
   };
   const PostCommentFormProps: TypeInputsForm = Object.assign(
     { data: dataPostCommentForm, style: styleForm, isDisabled, sendDataForm },

@@ -24,16 +24,9 @@ export const categoriesNews: TypeCategoriesNews[] = [
 export interface TypeCommentNews {
   _id: string;
   name: string;
+  replyName?: string;
   comment: string;
   date: string;
-  replyes: [
-    {
-      _id: string;
-      name: string;
-      comment: string;
-      date: string;
-    }
-  ];
 }
 
 export interface TypeNews {

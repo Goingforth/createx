@@ -1,13 +1,9 @@
 import { FC, useState } from "react";
 import { categoriesNews, TypeCategories, TypeNews } from "../../data";
-import {
-  BasicTab,
-  PostCard,
-  Pagination,
-  ServerError,
-  LoadingWait,
-} from "../../uikit";
+import { BasicTab, PostCard, Pagination, ServerError } from "../../uikit";
 import { useNewsByQuery } from "../../api/index";
+
+import { SkeletonCardNews } from "../../uikit/index";
 
 import styles from "./NewsBody.module.scss";
 
@@ -59,7 +55,15 @@ const NewsBody: FC = () => {
         <ServerError />
       )}
       <Pagination />
-      {isLoading && <LoadingWait />}
+      {isLoading && (
+        <div className={styles.gallery}>
+          {[0, 1, 2, 3, 4, 5].map((item) => (
+            <div key={item}>
+              <SkeletonCardNews />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -7,17 +7,12 @@ import styles from "./Comments.module.scss";
 
 interface TypeDataComments {
   comments?: TypeCommentNews[];
-  setNewComment: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Comments: FC<TypeDataComments> = (props) => {
-  const { comments, setNewComment } = props;
-  const [replyId, setReplyId] = useState("");
+export const Comments: FC<TypeDataComments> = ({ comments }) => {
+  const [replyName, setReplyName] = useState("");
   const [isReply, setIsReply] = useState(false);
-  const amountComments = comments?.reduce(
-    (acc, comment) => acc + 1 + comment.replyes.length,
-    0
-  );
+  const amountComments = comments?.length;
 
   return (
     <div style={{ marginBottom: "180px" }}>
@@ -28,7 +23,11 @@ export const Comments: FC<TypeDataComments> = (props) => {
             {comments?.map((comment) => (
               <Comment
                 key={comment._id}
-                {...{ ...comment, setReplyId, setIsReply }}
+                {...{
+                  ...comment,
+                  setIsReply,
+                  setReplyName,
+                }}
               />
             ))}
           </div>
@@ -40,11 +39,10 @@ export const Comments: FC<TypeDataComments> = (props) => {
           mtChild='48px'
           children={
             <PostComment
-              setNewComment={setNewComment}
-              replyId={replyId}
-              setReplyId={setReplyId}
               isReply={isReply}
               setIsReply={setIsReply}
+              replyName={replyName}
+              setReplyName={setReplyName}
             />
           }
         />
