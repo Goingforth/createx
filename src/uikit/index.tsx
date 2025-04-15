@@ -27,6 +27,7 @@ import { ServerError } from "./ServerError/ServerError";
 import { CheckBoxesMulti } from "./CheckBoxesMulti/CheckBoxesMulti";
 import { LoadingWait } from "./LoadingWait/LoadingWait";
 import { SkeletonCardNews } from "./Skeleton/SkeletonCardNews/SkeletonCardNews";
+import { Article } from "./Article/Article";
 
 export {
   InputForms,
@@ -56,4 +57,5 @@ export {
   CheckBoxesMulti,
   LoadingWait,
   SkeletonCardNews,
+  Article,
 };

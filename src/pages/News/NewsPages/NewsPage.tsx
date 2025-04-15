@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
-import { ServerError, LoadingWait } from "../../../uikit";
+import { ServerError, LoadingWait, Article } from "../../../uikit";
 
 import { useNewsByID } from "../../../api/index";
 import { Comments, HeroPageNews } from "../../../components";
@@ -17,6 +17,7 @@ const NewsPage: FC = () => {
     <>
       <ScrollToTop />
       <HeroPageNews {...data} />
+      <Article />
       <Comments {...commentsProps} />
       {isLoading && <LoadingWait />}
     </>

@@ -1152,6 +1152,7 @@ const SvgSprite = ({ id, width, height }: Props) => {
           />
         </svg>
       );
+
     default:
       return <svg></svg>;
   }

@@ -1,0 +1,70 @@
+.temaBlack {
+  @extend .lead_bold;
+  text-align: left;
+  color: $gray900;
+}
+.temaGray {
+  @extend .base_regular;
+  text-align: left;
+  color: $gray800;
+}
+.container {
+  padding-left: 555px;
+  padding-right: 555px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  @extend .temaGray;
+}
+
+.title {
+  @extend .temaBlack;
+  margin-bottom: 24px;
+}
+.articleItem1 {
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 48px;
+}
+.articleItem2 {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 48px;
+  @extend .temaBlack;
+}
+.articleItem3 {
+  margin-bottom: 24px;
+}
+.bulletedList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+.listItem {
+  display: flex;
+  gap: 16px;
+}
+.articleItem4 {
+  margin-bottom: 60px;
+}
+.sharing {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.share {
+  @extend .base_bold;
+  color: $gray900;
+}
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+  fill: $gray700;
+  &:hover {
+    cursor: pointer;
+    scale: 1.3;
+  }
+}

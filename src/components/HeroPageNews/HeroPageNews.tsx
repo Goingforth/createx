@@ -7,12 +7,7 @@ import { TypeNews } from "../../data";
 import styles from "./HeroPageNews.module.scss";
 
 export const HeroPageNews: FC<TypeNews> = (props) => {
-  const { title, categories, comments, date, imageFull } = props;
-
-  // const amountComments = comments.reduce(
-  //   (acc, comment) => acc + 1 + comment.replyes.length,
-  //   0
-  // );
+  const { title, categories, comments, date, image } = props;
   const amountComments = comments?.length;
   return (
     <>
@@ -44,7 +39,7 @@ export const HeroPageNews: FC<TypeNews> = (props) => {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <ImgCloudinary image={imageFull} />
+          <ImgCloudinary image={image} width={1230} hight={500} />
         </div>
       </div>
     </>

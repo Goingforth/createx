@@ -16,6 +16,8 @@
   color: $gray900;
 }
 .imageWrapper {
+  width: 1230px;
+  height: 500px;
   @extend .containerSection;
   margin-top: -80px;
   margin-bottom: 80px;

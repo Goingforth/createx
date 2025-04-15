@@ -13,6 +13,7 @@ const SliderHero: FC = () => {
   const [offset, setOffset] = useState(0);
   const [index, setIndex] = useState(1);
   const { data, isLoading, isError } = useData("/slider_hero");
+  console.log("data Hero:", data);
 
   const sliderProps: TypeSliderProps = {
     widthSlide: widthBlock.widthApp,
