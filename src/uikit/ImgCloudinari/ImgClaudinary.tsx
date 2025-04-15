@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Cloudinary } from "@cloudinary/url-gen/index";
 import { scale } from "@cloudinary/url-gen/actions/resize";
-import { AdvancedImage, lazyload, placeholder } from "@cloudinary/react";
+import { AdvancedImage } from "@cloudinary/react";
 
 interface TypeImgCloudinary {
   image: string;
@@ -27,19 +27,9 @@ export const ImgCloudinary: FC<TypeImgCloudinary> = ({
           cldImg={cld
             .image(`createx/${image}`)
             .resize(scale().width(width).height(hight))}
-          plugins={[
-            lazyload({ rootMargin: "0px", threshold: 0.25 }),
-            placeholder({ mode: "blur" }),
-          ]}
         />
       ) : (
-        <AdvancedImage
-          cldImg={cld.image(`createx/${image}`)}
-          plugins={[
-            lazyload({ rootMargin: "0px", threshold: 0.25 }),
-            placeholder({ mode: "blur" }),
-          ]}
-        />
+        <AdvancedImage cldImg={cld.image(`createx/${image}`)} />
       )}
     </>
   );
