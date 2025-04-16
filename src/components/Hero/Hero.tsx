@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { SliderHero } from "../index";
-import ButtonBasic from "../../uikit/Buttons/ButtonBasic/ButtonBasic";
-// import { Btn } from "../../uikit";
+import { Btn } from "../../uikit";
 import styles from "./Hero.module.scss";
 
 const Hero: FC = () => {
@@ -9,14 +8,14 @@ const Hero: FC = () => {
     <div className={styles.container}>
       <SliderHero />
       <div className={styles.blockButton}>
-        <ButtonBasic
+        <Btn
           title='Learn more about us'
-          bg='transparent'
           size='large'
-          border
+          width={278}
+          bgcolor='transparent'
+          border='1px solid white'
         />
-        <ButtonBasic title='SUBMIT REQUEST' bg='primary' size='large' />
-        {/* <Btn title='SUBMIT REQUEST' bg='primary' size='large' /> */}
+        <Btn title='SUBMIT REQUEST' size='large' width={224} />
       </div>
     </div>
   );

@@ -6,6 +6,8 @@ export type TypeBtnProps = {
   title?: string;
   size?: "large" | "regular" | "small";
   width?: number;
+  bgcolor?: string;
+  border?: string;
   form?: "solid" | "outline";
   brdRadius?: "none" | "all" | "left" | "right";
   disabled?: boolean;
@@ -16,6 +18,8 @@ const Btn: FC<TypeBtnProps> = ({
   type = "button",
   size = "regular",
   width,
+  bgcolor,
+  border,
   title = size === "large"
     ? "Large Button"
     : size === "small"
@@ -47,7 +51,8 @@ const Btn: FC<TypeBtnProps> = ({
       ].join(" ")}
       style={{
         width: width !== undefined ? `${width}px` : "",
-
+        background: bgcolor && bgcolor,
+        border: border && border,
         padding: width !== undefined ? 0 : "",
       }}
     >

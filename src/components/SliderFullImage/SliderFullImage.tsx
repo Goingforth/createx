@@ -26,7 +26,6 @@ const SliderFullImage: FC<TypeSliderProps> = ({
   const sliderLength = dataArray.length;
   const { top, left, right } = btnPosition;
   const { offset, setOffset, setIndex, index } = state;
-  console.log("state", state);
 
   const SlideLeft = () => {
     offset !== 0
