@@ -15,7 +15,6 @@ import styles from "./Benefits.module.scss";
 export const Benefits: FC = () => {
   const location = useLocation().pathname;
   const { data, isLoading, isError } = useDataByPage("/benefits", location);
-  console.log(data);
 
   return (
     <>
