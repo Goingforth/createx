@@ -12,7 +12,7 @@
 
 flex, grid, video, slider, send form, axios
 
-- back:[node + express + mongoose:](https://github.com/Goingforth/createx_data_back)
+- back : [node + express + mongoose:](https://github.com/Goingforth/createx_data_back)
 
 - backGitHub : [repo](https://createx-data-back.onrender.com)
 
