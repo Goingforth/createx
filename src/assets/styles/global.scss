@@ -1,7 +1,7 @@
 $widthApp: 1920px;
 $widthSection: 1230px;
 $heightSliderHero: 988px;
-
+//
 $primary: #ff5a30;
 $white: rgba(255, 255, 255, 1);
 $semiWhite: rgba(255, 255, 255, 0.5);
@@ -22,7 +22,7 @@ $gray600: #9a9ca5;
 $gray700: #787a80;
 $gray800: #424551;
 $gray900: #1e212c;
-
+//
 html {
   scroll-behavior: smooth;
 }
@@ -87,6 +87,7 @@ input {
 button {
   cursor: pointer;
 }
+
 .small_bold {
   //styleName: small/bold;
   font-family: Ubuntu;
@@ -180,7 +181,7 @@ button {
   font-weight: 900;
   font-style: normal;
 }
-
+//
 .display1 {
   //styleName: display/1;
   font-family: Ubuntu;
@@ -247,6 +248,7 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
+//
 .shadow_small {
   box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
     0px 30px 24px -10px rgba(154, 156, 165, 0.05),

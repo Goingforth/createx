@@ -7,7 +7,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/assets/styles/global.scss","./src/assets/styles/mixin.scss";`,
+        // additionalData: `@use "./src/assets/styles/global.scss","./src/assets/styles/mixin.scss";`,
+        additionalData: `@use "/src/assets/styles/_global.scss" as *;`,
       },
     },
   },
