@@ -14,10 +14,10 @@ const NewsGridBlock: FC = () => {
     <>
       {data && (
         <div className={styles.containerNewsGridBlock}>
-          <PostCard size='large' {...data[0]} />
+          <PostCard size='large' {...{ ...data[0], page: "news" }} />
           <div className={styles.alignColumns}>
-            <PostCard size='small' {...data[1]} />
-            <PostCard size='small' {...data[2]} />
+            <PostCard size='small' {...{ ...data[1], page: "news" }} />
+            <PostCard size='small' {...{ ...data[2], page: "news" }} />
           </div>
         </div>
       )}

@@ -15,10 +15,12 @@ type TypePostCard = {
   comments: TypeCommentNews[];
   text: string;
   image: string;
+  page?: string;
 };
 
 export const PostCard: FC<TypePostCard> = (props) => {
-  const { _id, size, image, title, categories, date, comments, text } = props;
+  const { _id, size, image, title, categories, date, comments, text, page } =
+    props;
   const metaProps = {
     categories: categories,
     date: date,
@@ -27,7 +29,11 @@ export const PostCard: FC<TypePostCard> = (props) => {
   };
 
   return (
-    <Link to={_id} state={{ data: props }} className={styles[size]}>
+    <Link
+      to={page ? `${page}/${_id}` : `${_id}`}
+      state={{ data: props }}
+      className={styles[size]}
+    >
       <div className={styles.imageWrapper}>
         <ImgCloudinary image={image} />
       </div>
