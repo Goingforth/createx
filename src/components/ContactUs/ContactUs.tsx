@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ContactUsForm, SectionWithChildren } from "../index";
+import { ContactUsForm } from "../ContactUsForm/ContactUsForm";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { ImgCloudinary } from "../../uikit";
 import styles from "./ContactUs.module.scss";
 

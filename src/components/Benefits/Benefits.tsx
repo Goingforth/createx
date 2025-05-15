@@ -7,7 +7,7 @@ import {
   ServerError,
   LoadingWait,
 } from "../../uikit";
-import { TypeDataBenefits } from "../../data";
+import { TypeDataBenefits } from "../../data/dataBenefits";
 import { useDataByPage } from "../../api/index";
 
 import styles from "./Benefits.module.scss";

@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { TypeCategories, TypeCommentNews } from "../../data";
-import { Meta } from "../index";
-import { ImgCloudinary } from "../index";
+import type { TypeCategories, TypeCommentNews } from "../../data/dataNews";
+
+import { Meta } from "../PostCard/Meta/Meta";
+import { ImgCloudinary } from "../ImgCloudinari/ImgClaudinary";
 
 import styles from "./PostCard.module.scss";
 

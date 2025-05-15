@@ -1,4 +1,5 @@
-import { retPattern, TypeDataSelect } from "../data";
+import { retPattern } from "./dataPatterns";
+import type { TypeDataSelect } from "./dataLocation";
 
 export type TypeDataFormInput = {
   id: string;

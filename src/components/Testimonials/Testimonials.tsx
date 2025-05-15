@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { TestimonialsCard } from "../index";
+import TestimonialsCard from "./TestimonialsCard/TestimonialsCard";
 import { SliderControls, ImgCloudinary } from "../../uikit/";
 import { TypeTestimonialsCards } from "../../data";
 

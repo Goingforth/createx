@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { postCommentNewsByID } from "../../../api/index";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { InputsForm, TypeInputsForm } from "../../index";
+import { InputsForm, TypeInputsForm } from "../../InputsForm/InputsForm";
 
 import { TypeFormValue, dataPostCommentForm } from "../../../data";
 import styles from "./PostComment.module.scss";

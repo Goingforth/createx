@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SectionWithChildren } from "../index";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { TypeClientsLogo } from "../../data";
 import { ImgCloudinary, ServerError, LoadingWait } from "../../uikit";
 import { useData } from "../../api/index";

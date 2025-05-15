@@ -1,10 +1,8 @@
-import {
-  TypeDataFormInput,
-  retPattern,
-  dataLocations,
-  dataContactMethod,
-  dataInterest,
-} from "./index";
+import type { TypeDataFormInput } from "./dataApplicationFormInput";
+import { retPattern } from "./dataPatterns";
+import { dataLocations } from "./dataLocation";
+import { dataContactMethod } from "./dataLocation";
+import { dataInterest } from "./dataLocation";
 
 export const dataContactUs: TypeDataFormInput[] = [
   {

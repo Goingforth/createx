@@ -1,6 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import { dataContactUs, TypeFormValue } from "../../data";
-import { InputsForm, TypeInputsForm } from "../index";
+
+import { InputsForm } from "../InputsForm/InputsForm";
+import type { TypeInputsForm } from "../InputsForm/InputsForm";
 import styles from "./ContactUsForm.module.scss";
 
 export const ContactUsForm: FC = () => {

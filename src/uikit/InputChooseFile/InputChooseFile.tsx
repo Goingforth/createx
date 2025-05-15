@@ -1,7 +1,7 @@
 import { FC, useState, useId, useEffect } from "react";
 import SvgSprite from "../SvgSprite/SvgSprite";
 import styles from "./InputChooseFile.module.scss";
-import { TypeFormValuesStatusInputs } from "../../data";
+import { TypeFormValuesStatusInputs } from "../../data/typesFormInputs";
 
 const InputChooseFile: FC<TypeFormValuesStatusInputs> = (props) => {
   const { formValues, setFormValues, statusInputs, setStatusInputs } = props;

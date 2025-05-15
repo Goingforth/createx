@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SliderForGallery } from "../index";
+import { SliderForGallery } from "../SliderForGallery/SliderForGallery";
 import styles from "./GalleryModernCottage.module.scss";
 
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;

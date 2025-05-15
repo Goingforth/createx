@@ -1,4 +1,5 @@
-import { TypeDataFormInput, retPattern } from "../data";
+import { retPattern } from "./dataPatterns";
+import type { TypeDataFormInput } from "./dataApplicationFormInput";
 
 export const dataPostCommentForm: TypeDataFormInput[] = [
   {

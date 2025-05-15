@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useLocation } from "react-router-dom";
-import { BreadCrumb } from "../index";
+import { BreadCrumb } from "../BreadCrumb/BreadCrumb";
 import { ServerError, LoadingWait } from "../../uikit";
 import { useDataByPage } from "../../api/index";
 

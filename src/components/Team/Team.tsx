@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { SectionWithChildren } from "../index";
+
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import TeamMemberCard from "./TeamMemberCard/TeamMemberCard";
 import { TypeTeamMember } from "../../data";
 import { useData } from "../../api/index";

@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
-import { SvgSprite } from "..";
-import { TypeFormValue } from "../../data";
-import { TypeDataSelect } from "../../data";
+import SvgSprite from "../SvgSprite/SvgSprite";
+import type { TypeFormValue } from "../../data/typesFormInputs";
+import type { TypeDataSelect } from "../../data/dataLocation";
 import styles from "./CheckBoxesMulti.module.scss";
 
 interface TypeCheckBoxesMulti {

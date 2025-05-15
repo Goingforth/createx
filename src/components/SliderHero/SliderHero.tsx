@@ -1,11 +1,9 @@
 import { FC, useState } from "react";
 import { widthBlock } from "../../data";
-import {
-  SliderFullImage,
-  TypeSliderProps,
-  CounterSlider,
-  TypeCounterSlider,
-} from "../index";
+import SliderFullImage from "../SliderFullImage/SliderFullImage";
+import type { TypeSliderProps } from "../SliderFullImage/SliderFullImage";
+import CounterSlider from "../CounterSlider/CounterSlider";
+import type { TypeCounterSlider } from "../CounterSlider/CounterSlider";
 import { ServerError, LoadingWait } from "../../uikit";
 import { useData } from "../../api/index";
 

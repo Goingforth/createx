@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import styles from "./InputSelect.module.scss";
 import SvgSprite from "../SvgSprite/SvgSprite";
-import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
+import type { TypeDataSelect } from "../../data/dataLocation";
+import { TypeFormValuesStatusInputs } from "../../data/typesFormInputs";
 
 type TypeInputSelect = TypeFormValuesStatusInputs & {
   name: string;

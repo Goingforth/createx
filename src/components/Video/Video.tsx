@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player/youtube";
 import { SvgSprite } from "../../uikit/";
-import { SectionWithChildren } from "../index";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 
 const VITE_BASE_URL_PHOTO = import.meta.env.VITE_BASE_URL_PHOTO;
 

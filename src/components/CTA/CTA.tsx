@@ -1,9 +1,8 @@
 import { FC, useState } from "react";
 import styles from "./CTA.module.scss";
 import { Btn, ModalWindow } from "../../uikit";
-import { ModalCTA } from "../index";
-
-export type TypeModalName = "subscribe" | "sendCV" | "";
+import { ModalCTA } from "../ModalCTA/ModalCTA";
+import type { TypeModalName } from "../../data";
 
 export const CTA: FC = () => {
   const [open, setOpen] = useState(false);

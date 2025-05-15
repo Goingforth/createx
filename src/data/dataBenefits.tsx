@@ -1,4 +1,4 @@
-import { TypeIdIcons } from "../uikit";
+import type { TypeIdIcons } from "../uikit/index";
 
 export interface TypeDataBenefits {
   id: string;

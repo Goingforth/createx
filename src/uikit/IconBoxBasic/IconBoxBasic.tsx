@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { SvgSprite, TypeIdIcons } from "../index";
+import SvgSprite from "../SvgSprite/SvgSprite";
+import { TypeIdIcons } from "../SvgSprite/SvgSprite";
 
 import styles from "./IconBoxBasic.module.scss";
 

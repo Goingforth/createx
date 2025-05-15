@@ -1,14 +1,15 @@
 import { FC } from "react";
-import {
-  SvgSprite,
-  InputSelect,
-  InputChooseFile,
-  Checkboxes,
-  Btn,
-} from "../index";
-import { TypeDataSelect, TypeFormValuesStatusInputs } from "../../data";
+
+import SvgSprite from "../SvgSprite/SvgSprite";
+import { InputSelect } from "../InputSelect/InputSelect";
+import InputChooseFile from "../InputChooseFile/InputChooseFile";
+import Checkboxes from "../Checkboxes/Checkboxes";
+import Btn from "../Buttons/Btn/Btn";
+import type { TypeDataSelect } from "../../data/dataLocation";
+import type { TypeFormValuesStatusInputs } from "../../data/typesFormInputs";
 import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
-import { CheckBoxesMulti } from "../index";
+import { CheckBoxesMulti } from "../CheckBoxesMulti/CheckBoxesMulti";
+
 import styles from "./InputForm.module.scss";
 
 interface valueCustomInput extends InputHTMLAttributes<HTMLInputElement> {

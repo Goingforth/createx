@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SectionWithChildren } from "../index";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { SvgSpriteCountry, ImgCloudinary } from "../../uikit";
 // import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 // import SvgSpriteCountry from "../../uikit/SvgSpriteCountry/SvgSpriteCountry";

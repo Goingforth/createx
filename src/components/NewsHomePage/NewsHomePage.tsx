@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SectionWithChildren } from "../index";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
 import { PostCard, ViewAll, ServerError, LoadingWait } from "../../uikit";
 import { useNewsByQuery } from "../../api/index";
 

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { PortfolioCard } from "../index";
+import PortfolioCard from "../PortfolioCard/PortfolioCard";
 import { TypePortfolioCard } from "../../data";
 import { SvgSprite, ServerError, LoadingWait } from "../../uikit";
 

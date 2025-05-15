@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { TypeDataVacancyCard } from "../../data";
-import { VacancyCard } from "../index";
+import VacancyCard from "./VacancyCard/VacancyCard";
 import styles from "./Vacancies.module.scss";
 import { ServerError, LoadingWait } from "../../uikit";
 import { useData } from "../../api/index";

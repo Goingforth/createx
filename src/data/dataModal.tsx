@@ -1,6 +1,7 @@
-import { TypeDataFormInput, retPattern } from "./index";
+import { retPattern } from "./dataPatterns";
+import type { TypeDataFormInput } from "./dataApplicationFormInput";
 import { dataLocations } from "./dataLocation";
-import { TypeModalName } from "../components";
+import { TypeModalName } from "./typeModalName";
 
 type dataModals = {
   nameModal: TypeModalName;

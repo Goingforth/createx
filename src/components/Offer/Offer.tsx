@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { SvgSprite, ImgCloudinary } from "../../uikit";
-import { Steps } from "../index";
+import { Steps } from "../Steps/Steps";
 //import OfferItem from "../OffferItem/OfferItem";
 import styles from "./Offer.module.scss";
 

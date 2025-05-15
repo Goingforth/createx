@@ -43,7 +43,7 @@ import { TypeCounterSlider } from "./CounterSlider/CounterSlider";
 import SliderMiniImage from "./SliderMinIImage/SliderMiniImage";
 import { TypeSlideMiniImage } from "./SliderMinIImage/SliderMiniImage";
 import Vacancies from "./Vacancies/Vacancies";
-import { CTA, TypeModalName } from "./CTA/CTA";
+import { CTA } from "./CTA/CTA";
 import VacancyCard from "./Vacancies/VacancyCard/VacancyCard";
 import { ModalCTA } from "./ModalCTA/ModalCTA";
 import { InputsForm, TypeInputsForm } from "./InputsForm/InputsForm";
@@ -96,7 +96,6 @@ export {
   type TypeSlideMiniImage,
   Vacancies,
   CTA,
-  type TypeModalName,
   VacancyCard,
   ModalCTA,
   InputsForm,

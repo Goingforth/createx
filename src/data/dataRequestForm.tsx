@@ -1,4 +1,5 @@
-import { retPattern, TypeDataFormInput } from "./index";
+import { retPattern } from "./dataPatterns";
+import type { TypeDataFormInput } from "./dataApplicationFormInput";
 
 export const dataRequestForm: TypeDataFormInput[] = [
   {

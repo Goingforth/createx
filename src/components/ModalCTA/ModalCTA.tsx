@@ -1,6 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import { SvgSprite } from "../../uikit";
-import { InputsForm, TypeModalName, TypeInputsForm } from "../index";
+import type { TypeModalName } from "../../data";
+import { TypeInputsForm, InputsForm } from "../InputsForm/InputsForm";
+
 import { TypeFormValue, dataModals } from "../../data";
 import styles from "./ModalCTA.module.scss";
 

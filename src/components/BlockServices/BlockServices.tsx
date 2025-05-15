@@ -1,5 +1,7 @@
 import { FC } from "react";
-import { SectionWithChildren, ServicesView } from "../index";
+import SectionWithChildren from "../SectionWithChidren/SectionWtithChildren";
+import ServicesView from "../ServicesView/ServicesView";
+
 const BlockServices: FC = () => {
   return (
     <SectionWithChildren

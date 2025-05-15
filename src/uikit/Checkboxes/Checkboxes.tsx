@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { TypeFormValue } from "../../data";
+import { TypeFormValue } from "../../data/typesFormInputs";
 import styles from "./Checkboxes.module.scss";
 
 type Props = {

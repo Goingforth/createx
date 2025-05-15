@@ -42,7 +42,6 @@ const SliderFullImage: FC<TypeSliderProps> = ({
     <div className={styles.container}>
       <div
         style={{
-          //  display: "flex",
           position: "relative",
           width: widthSlide,
           height: heightSlide,

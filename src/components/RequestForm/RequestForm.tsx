@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
-import { InputsForm } from "../index";
-import { TypeInputsForm } from "../index";
+import { InputsForm } from "../InputsForm/InputsForm";
+import type { TypeInputsForm } from "../InputsForm/InputsForm";
 import { dataRequestForm } from "../../data";
 import { TypeFormValue } from "../../data";
 import styles from "./RequestForm.module.scss";

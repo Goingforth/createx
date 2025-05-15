@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SliderHero } from "../index";
+import SliderHero from "../SliderHero/SliderHero";
 import { Btn } from "../../uikit";
 import styles from "./Hero.module.scss";
 

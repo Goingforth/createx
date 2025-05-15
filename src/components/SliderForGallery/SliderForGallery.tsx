@@ -1,11 +1,10 @@
 import { FC, useState } from "react";
 import { useLocation } from "react-router-dom";
-import {
-  SliderFullImage,
-  TypeSliderProps,
-  SliderMiniImage,
-  TypeSlideMiniImage,
-} from "../index";
+import SliderFullImage from "../SliderFullImage/SliderFullImage";
+import type { TypeSliderProps } from "../SliderFullImage/SliderFullImage";
+import SliderMiniImage from "../SliderMinIImage/SliderMiniImage";
+import type { TypeSlideMiniImage } from "../SliderMinIImage/SliderMiniImage";
+
 import { widthBlock } from "../../data";
 import { ServerError, LoadingWait } from "../../uikit";
 import { useGalleryByName } from "../../api/index";

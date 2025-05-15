@@ -50,6 +50,7 @@ import { dataContactUs } from "./dataContactUs";
 import { dataPostCommentForm } from "./dataPostCommentForm";
 import { TypeContactsOffices } from "./dataContactsOfficers";
 import { dataRequestForm } from "./dataRequestForm";
+import { TypeModalName } from "./typeModalName";
 
 export {
   retPattern,
@@ -105,4 +106,5 @@ export {
   dataPostCommentForm,
   type TypeContactsOffices,
   dataRequestForm,
+  type TypeModalName,
 };

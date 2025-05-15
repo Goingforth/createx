@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SvgSprite } from "../../index";
+import SvgSprite from "../../SvgSprite/SvgSprite";
 import styles from "./Meta.module.scss";
 
 interface TypeDataMeta {
